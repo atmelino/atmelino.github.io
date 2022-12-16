@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type="text/css" href="css/blog.css" media="all" rel="stylesheet">
+  <title></title>
+</head>
+
+<body>
+  <div class="header">
+    <h2>deno learning blog<br>
+    </h2>
+  </div>
+  <div class="row">
+    <div class="leftcolumn">
+      <div class="card">
+        <h2>Dec 15, 2022<br>
+        </h2>
+        <div class="fakeimg" style="height:200px;">Image</div>
+        <br>
+        <br>
+        deno is a javascript runtime environment that may replace
+        nodejs.<br>
+        <br>
+        <a moz-do-not-send="true" href="https://deno.land/">https://deno.land/</a><br>
+        <br>
+        Clicking on Docs/Manual leads to Getting Started section.<br>
+        <br>
+        Installation on Ubuntu 22.04<br>
+        <br>
+        snap offers version v1.27.2:<br>
+        <br>
+        <div class="code"> snap find deno<br>
+          Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+
+          Version&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+
+          Publisher&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+
+          Notes&nbsp; Summary<br>
+          deno&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+
+          v1.27.2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+
+          lukewh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+
+          -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A secure runtime for
+          JavaScript and TypeScript<br>
+        </div>
+        <br>
+        The current version appears to be v1.29.1 (from
+        https://deno.land/manual@v1.29.1/introduction)\ <br>
+        I can't find a PPA so I guess we'll go with snap for now. <br>
+        I use Visual Studio Code so let's install Deno for Visual
+        Studio Code: <br>
+        <br>
+        <a moz-do-not-send="true"
+          href="https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno">https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno</a><br>
+        <br>
+        Usage explained at<br>
+        <a moz-do-not-send="true"
+          href="https://deno.land/manual@v1.29.1/references/vscode_deno">https://deno.land/manual@v1.29.1/references/vscode_deno</a><br>
+        <br>
+        Start with first examples.<br>
+        <a moz-do-not-send="true"
+          href="https://deno.land/manual@v1.29.1/getting_started/first_steps">https://deno.land/manual@v1.29.1/getting_started/first_steps</a><br>
+        <br>
+        Created first_steps.ts and try to run<br>
+        <br>
+        Result:<br>
+        <div class="code">
+          deno run first_steps.ts<br>
+          A new release of Deno is available: 1.27.2 &#8594; 1.29.1 Run `deno
+          upgrade` to install it.<br>
+          error: Permission denied (os error 13)<br>
+          <br>
+          Caused by:<br>
+          &nbsp;&nbsp;&nbsp; Permission denied (os error 13)<br>
+          <br>
+        </div>
+        Try to&nbsp; upgrade deno:<br>
+        <div class="code">
+
+          deno upgrade<br>
+          You are running the Deno snap. The upgrade command is
+          unavailable.<br>
+          The snap is updated automatically after a new release of Deno.<br>
+          You can force an update by running the command:<br>
+          &nbsp;&nbsp;&nbsp; snap refresh deno<br>
+        </div>
+        <br>
+        <br>
+        On second thought, remove snap and install via curl method.<br>
+        <br>
+        Now the example works!<br>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+      <div class="card">
+        <h2>Date</h2>
+        <div class="fakeimg" style="height:200px;">Image</div>
+        <p><br>
+        </p>
+      </div>
+      <div class="card">
+        <h2>Date</h2>
+        <div class="fakeimg" style="height:200px;">Image</div>
+        <br>
+      </div>
+    </div>
+    <div class="rightcolumn">
+      <div class="card">
+        <h2>About Me</h2>
+        <div class="fakeimg" style="height:100px;">Image</div>
+        <p>Some text about me in culpa qui officia deserunt mollit
+          anim..</p>
+      </div>
+      <div class="card">
+        <h3>Posts by Date<br>
+        </h3>
+        <div class="fakeimg">Image</div>
+        <br>
+        <div class="fakeimg">Image</div>
+        <br>
+        <div class="fakeimg">Image</div>
+        <br>
+        <div class="fakeimg">Image</div>
+      </div>
+      <div class="card">
+        <h3>Follow Me</h3>
+        <p>Some text..</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <h2>Footer</h2>
+  </div>
+</body>
+
+</html>
