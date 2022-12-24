@@ -178,11 +178,24 @@
         <div class="code">deno task preview </div>
         A few files are being downloaded (probably node_modules)
         Then error
+        <br>
         TypeError: Invalid package specifier 'npm:react-dom/client@^18.2'. Did you mean to write
         'npm:react-dom@^18.2/client'?
         <br>
         As described in issue
-        <a moz-do-not-send="true" href="https://github.com/denoland/examples/issues/7">https://github.com/denoland/examples/issues/7</a>
+        <a moz-do-not-send="true"
+          href="https://github.com/denoland/examples/issues/7">https://github.com/denoland/examples/issues/7</a>
+        Try
+        <br>
+        Easily soved by changing npm:react-dom/client@^18.2' to 'npm:react-dom@^18.2/client
+        <br>
+        in file
+        <br>
+        vite.config.mjs
+        <br>
+        now the app can be started with
+        <div class="code">deno task run </div>
+
 
       </div>
     </div>
