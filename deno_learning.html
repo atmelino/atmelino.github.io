@@ -143,6 +143,8 @@
         <br>
         create the other folders and files.<br>
         <br>
+        Now try to start the app:
+        <br>
         <div class="code">deno task run </div>
         <br>
         does not work - task not available (also, is not listed in
@@ -172,7 +174,15 @@
         <br>
         works here as well<br>
         <br>
-        <div class="code">deno task dev </div>
+        Now try to start the app:
+        <div class="code">deno task preview </div>
+        A few files are being downloaded (probably node_modules)
+        Then error
+        TypeError: Invalid package specifier 'npm:react-dom/client@^18.2'. Did you mean to write
+        'npm:react-dom@^18.2/client'?
+        <br>
+        As described in issue
+        <a moz-do-not-send="true" href="https://github.com/denoland/examples/issues/7">https://github.com/denoland/examples/issues/7</a>
 
       </div>
     </div>
