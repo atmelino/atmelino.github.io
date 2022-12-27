@@ -79,18 +79,6 @@ body {
   font-family: Consolas, "Liberation Mono", Courier, monospace
 }
 
-.left {
-  background-color: rgb(221, 213, 199);
-  float: left;
-  width: 50%;
-}
-
-.right {
-  background-color: rgb(232, 231, 220);
-  margin-left: 50%;
-}
-
-
 .flexbox {
   display: -ms-flex;
   display: -webkit-flex;
