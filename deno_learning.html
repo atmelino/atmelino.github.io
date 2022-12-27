@@ -222,6 +222,28 @@
         Create the empty new project:<br>
         <div class="code">deno run -A -r https://fresh.deno.dev my-project</div>
         <br>
+        It generates the following folder tree:<br>
+        <pre>├── <font color="#12488B"><b>components</b></font>
+          │   └── Button.tsx
+          ├── deno.json
+          ├── deno.lock
+          ├── <font color="#26A269"><b>dev.ts</b></font>
+          ├── fresh.gen.ts
+          ├── import_map.json
+          ├── <font color="#12488B"><b>islands</b></font>
+          │   └── Counter.tsx
+          ├── main.ts
+          ├── README.md
+          ├── <font color="#12488B"><b>routes</b></font>
+          │   ├── <font color="#12488B"><b>api</b></font>
+          │   │   └── joke.ts
+          │   ├── index.tsx
+          │   └── [name].tsx
+          ├── <font color="#12488B"><b>static</b></font>
+          │   ├── favicon.ico
+          │   └── <font color="#A347BA"><b>logo.svg</b></font>
+          └── twind.config.ts
+          </pre>
         start it with<br>
         <div class="code">deno task start</div>
         and open a browser at <a href="http://localhost:8000/">localhost:8000</a><br>
