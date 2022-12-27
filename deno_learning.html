@@ -223,29 +223,39 @@
         <div class="code">deno run -A -r https://fresh.deno.dev my-project</div>
         <br>
         It generates the following folder tree:<br>
-        <img src="images/tree.jpg" alt="hello World">
-        <br>
-        <pre>├── <font color="#12488B"><b>components</b></font>
-          │   └── Button.tsx
-          ├── deno.json
-          ├── deno.lock
-          ├── <font color="#26A269"><b>dev.ts</b></font>
-          ├── fresh.gen.ts
-          ├── import_map.json
-          ├── <font color="#12488B"><b>islands</b></font>
-          │   └── Counter.tsx
-          ├── main.ts
-          ├── README.md
-          ├── <font color="#12488B"><b>routes</b></font>
-          │   ├── <font color="#12488B"><b>api</b></font>
-          │   │   └── joke.ts
-          │   ├── index.tsx
-          │   └── [name].tsx
-          ├── <font color="#12488B"><b>static</b></font>
-          │   ├── favicon.ico
-          │   └── <font color="#A347BA"><b>logo.svg</b></font>
-          └── twind.config.ts
-          </pre>
+
+        <div class="flexbox">
+          <div class="left">
+            <img src="images/tree.jpg" alt="hello World">
+
+          </div>
+          <div class="right">
+            <pre>├── <font color="#12488B"><b>components</b></font>
+              │   └── Button.tsx
+              ├── deno.json
+              ├── deno.lock
+              ├── <font color="#26A269"><b>dev.ts</b></font>
+              ├── fresh.gen.ts
+              ├── import_map.json
+              ├── <font color="#12488B"><b>islands</b></font>
+              │   └── Counter.tsx
+              ├── main.ts
+              ├── README.md
+              ├── <font color="#12488B"><b>routes</b></font>
+              │   ├── <font color="#12488B"><b>api</b></font>
+              │   │   └── joke.ts
+              │   ├── index.tsx
+              │   └── [name].tsx
+              ├── <font color="#12488B"><b>static</b></font>
+              │   ├── favicon.ico
+              │   └── <font color="#A347BA"><b>logo.svg</b></font>
+              └── twind.config.ts
+              </pre>
+
+          </div>
+        </div>
+
+
         start it with<br>
         <div class="code">deno task start</div>
         and open a browser at <a href="http://localhost:8000/">localhost:8000</a><br>
