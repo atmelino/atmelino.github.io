@@ -277,14 +277,30 @@
             https://fresh.deno.dev/docs/getting-started</a><br>
         </p>
         <p>
-          Chapter create a route:<br>
-          "Route files that render HTML are JavaScript or TypeScript
-          modules that export a JSX component as their default export. "
+        <h4>Chapter 2.3: Create a route</h4>
+        "Route files that render HTML are JavaScript or TypeScript
+        modules that export a JSX component as their default export. "
         </p>
         <p>Create a file named about.tsx in the routes folder.<br>
           The object defined in this file will be displayed as a static web page at<br>
           <a href="http://localhost:8000/about">
             http://localhost:8000/about</a><br>
+        <h4>Chapter 2.4: Dynamic routes</h4>
+        </p>
+        <p>Observation:<br>
+          - add a folder under routes,<br>
+          start the program with with<br>
+        <div class="code">deno task start</div>
+        which is translated into<br>
+        <div class="code">deno run -A --watch=static/,routes/ dev.ts</div>
+        so watch option is active (code updated reflected in running code)<br>
+        Message comes up:<br>
+        <div class="code">Watcher Process started.</div>
+        <div class="code">The manifest has been generated for 6 routes and 1 islands.</div>
+        and in the file fresh.gen.ts<br>
+        the new folder is listed as one of the imports.
+
+
 
         </p>
       </div>
@@ -301,7 +317,7 @@
         JSX files:<br>
         <a href="https://reactjs.org/docs/introducing-jsx.html">
           https://reactjs.org/docs/introducing-jsx.html</a><br>
-
+        JSX files describe what the UI should look like (HTML elements, etc.)
       </div>
 
 
