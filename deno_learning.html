@@ -351,6 +351,7 @@
       <div class="card">
         <h2>Dec 29, 2022</h2>
         <h3>Deployment</h3>
+        <h4>Manual start</h4>
         <p>
           on a Linode server with Ubuntu 20.04:<br>
           Installed deno with the curl method.<br>
@@ -368,17 +369,24 @@
         However, after removing the deno.lock file, the code works.
         </p>
         <p>
-          There are tools available to simplify the deployment process, and also we want the web site
-          to start automatically when the server is rebooted.<br>
-          If you use a cloud provider such as AWS, DigitalOcean, Azure, you can use pm2:<br>
+        <h4>pm2</h4>
+        There are tools available to simplify the deployment process, and also we want the web site
+        to start automatically when the server is rebooted.<br>
+        If you use a cloud provider such as AWS, DigitalOcean, Azure, you can use pm2:<br>
 
-          <a href="https://stackoverflow.com/questions/62081683/how-to-use-deno-in-production">
-            https://stackoverflow.com/questions/62081683/how-to-use-deno-in-production</a><br>
+        <a href="https://stackoverflow.com/questions/62081683/how-to-use-deno-in-production">
+          https://stackoverflow.com/questions/62081683/how-to-use-deno-in-production</a><br>
 
-          <a href="https://github.com/denoland/deno/issues/7137">https://github.com/denoland/deno/issues/7137</a><br>
+        <a href="https://github.com/denoland/deno/issues/7137">https://github.com/denoland/deno/issues/7137</a><br>
 
-          <a href="https://pm2.keymetrics.io/docs/usage/pm2-doc-single-page/#start-any-process-type">
-            https://pm2.keymetrics.io/docs/usage/pm2-doc-single-page/#start-any-process-type</a><br>
+        <a href="https://pm2.keymetrics.io/docs/usage/pm2-doc-single-page/#start-any-process-type">
+          https://pm2.keymetrics.io/docs/usage/pm2-doc-single-page/#start-any-process-type</a><br>
+        </p>
+
+        <p>
+        <h4>Using Systemd</h4>
+        <a href="https://dev.to/alexanderalemayhu/run-deno-apps-via-systemd-on-linux-1ok2">
+          https://dev.to/alexanderalemayhu/run-deno-apps-via-systemd-on-linux-1ok2</a><br>
 
 
         </p>
