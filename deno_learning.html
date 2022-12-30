@@ -388,7 +388,15 @@
         <a href="https://dev.to/alexanderalemayhu/run-deno-apps-via-systemd-on-linux-1ok2">
           https://dev.to/alexanderalemayhu/run-deno-apps-via-systemd-on-linux-1ok2</a><br>
 
-          <div class="code">sudo touch /etc/systemd/system/denoapp_01.service</div>
+        <div class="code">sudo touch /etc/systemd/system/denoapp_01.service</div>
+
+        Copy and modify the contents as shown on web site<br>
+
+        Enable and start it:<br>
+        <div class="code">sudo systemctl enable denoapp_01</div>
+        <div class="code">sudo systemctl start denoapp_01</div>
+
+
 
         </p>
       </div>
