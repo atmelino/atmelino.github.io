@@ -347,6 +347,22 @@
         </p>
       </div>
 
+      <div class="card">
+        <h2>Dec 29, 2022</h2>
+        <h3>Deployment</h3>
+        on a Linode server with Ubuntu 20.04:<br>
+        Installed deno with the curl method.<br>
+        used git to clone the code into a folder <br>
+        The first_steps code works:
+        <class code>deno run --allow-net --allow-write http_server.ts</class>
+        The code in the deno_fresh_01 folder does not work:
+        <class code>deno task start</class>
+        gives
+        <class code>error: The source code is invalid, as it does not match the expected hash in the lock file.
+        </class>
+        However, after removing the deno.lock file, the code works.
+
+      </div>
 
       <div class="card">
         <h2>Date</h2>
