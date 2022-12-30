@@ -354,11 +354,14 @@
         Installed deno with the curl method.<br>
         used git to clone the code into a folder <br>
         The first_steps code works:
-        <class code>deno run --allow-net --allow-write http_server.ts</class>
+        <div class="code">deno run --allow-net --allow-write http_server.ts</div>
+        <class code></class>
         The code in the deno_fresh_01 folder does not work:
-        <class code>deno task start</class>
+        <div class="code">deno task start</div>
         gives
-        <class code>error: The source code is invalid, as it does not match the expected hash in the lock file.
+        <div class="code">error: The source code is invalid, as it does not match the expected hash in the lock file.
+        </div>
+        <class code>
         </class>
         However, after removing the deno.lock file, the code works.
 
