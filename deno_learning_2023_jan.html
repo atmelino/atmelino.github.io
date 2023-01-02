@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type="text/css" href="css/blog.css" media="all" rel="stylesheet">
+  <title></title>
+</head>
+
+<body>
+  <div class="header">
+    <h2>deno learning blog January 2023<br>
+    </h2>
+  </div>
+  <div class="row">
+    <div class="leftcolumn">
+
+      <div class="card">
+        <h2>Jan 1, 2023</h2>
+
+        <p> Create new Linode.<br>
+          Login via ssh<br>
+          Add new admin user.<br>
+        <div class="code">
+          adduser sammy
+        </div>
+        <div class="code">
+          sudo usermod -aG sudo sammy
+        </div>
+        </p>
+
+        <p>
+          Install LAMP server.<br>
+        <div class="code">
+          sudo apt install tasksel
+        </div>
+        <div class="code">
+          sudo tasksel
+        </div>
+        Open browser at<br>
+        <a href="http://45.79.28.148/"> http://45.79.28.148/</a><br>
+        Apache2 Default Page message comes up - it works.<br>
+        This used to offer install LAMP server, but only web server was offered.<br>
+        Alternative instructions at<br>
+        <a
+          href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-22-04">
+          https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-22-04
+        </a><br>
+        </p>
+
+        <p>
+          Install mySQL server:<br>
+        <div class="code">
+          sudo apt install mysql-server
+        </div>
+        <div class="code">
+          sudo mysql
+        </div>
+        </p>
+        <p>
+          Install PHP<br>
+        <div class="code">
+          sudo apt install php libapache2-mod-php php-mysql
+        </div>
+        </p>
+        <p>
+          Install phpmyadmin<br>
+          <a
+            href="https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-on-ubuntu-22-04">
+            https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-on-ubuntu-22-04
+          </a><br>
+        <div class="code">
+          sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl
+        </div>
+
+        Test phpmyadmin<br>
+
+        <a href="http://45.79.28.148/phpmyadmin">http://45.79.28.148/phpmyadmin</a><br>
+
+        Need a user that for logging in to phpmayadmin<br>
+        add sammy to allowed users of mySQL:<br>
+        <div class="code">
+          CREATE USER 'sammy'@'%localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+        </div>
+        Display how each user is authenticated:<br>
+        <div class="code">
+          SELECT user,authentication_string,plugin,host FROM mysql.user;
+        </div>
+        <div class="code">
+          GRANT ALL PRIVILEGES ON *.* TO 'sammy'@'localhost' WITH GRANT OPTION;
+        </div>
+        Leads to<br>
+        <div class="code">
+          ERROR 1410 (42000): You are not allowed to create a user with GRANT
+        </div>
+
+        Try this:<br>
+        <a href="https://lefred.be/content/how-to-grant-privileges-to-users-in-mysql-8-0/">
+          https://lefred.be/content/how-to-grant-privileges-to-users-in-mysql-8-0/ </a><br>
+        <div class="code">
+          sudo mysql<br>
+          create user 'user1' identified by 'ChangeMe' password expire;<br>
+          exit<br>
+          mysql -u user1 -pChangeMe -h localhost<br>
+          select now();<br>
+          set password='MySQL8isGreat';<br>
+          select now();<br>
+          show grants;<br>
+          show privileges;<br>
+        </div>
+        <div class="code">
+          It is now possible to log into phpmyadmin with userq and its password.<br>
+          However,under databases is says: <br>
+          No privileges to create databases<br>
+          grant alter,create,delete,drop,index,insert,select,update,trigger,alter routine,
+          create routine, execute, create temporary tables on user1.* to 'user1';
+        </div>
+        Problem:<br>
+        Now I can't even start mysql anymore, even with root and its password.<br>
+        </p>
+
+        Repair attempt:<br>
+        Remove mysql completely.<br>
+        <a href="https://askubuntu.com/questions/640899/how-do-i-uninstall-mysql-completely">
+          https://askubuntu.com/questions/640899/how-do-i-uninstall-mysql-completely </a><br>
+
+        <p>
+        <h3>New attempt: remove mysql</h3>
+        <div class="code">
+          sudo apt install mysql-server
+        </div>
+        <div class="code">
+          sudo mysql
+        </div>
+        but now terminal hangs when <br>
+        <div class="code">
+          SELECT user,authentication_string,plugin,host FROM mysql.user;
+        </div>
+        </p>
+
+
+        <h3>New attempt: fresh Ubuntu install</h3>
+
+        <p> Create new Linode.<br>
+          Login via ssh<br>
+        <div class="code">
+          sudo apt update
+        </div>
+        <div class="code">
+          sudo apt upgrade
+        </div>
+        <div class="code">
+          sudo reboot
+        </div>
+        </p>
+
+        <h4>Install Apache web server</h4>
+        <p>
+        <div class="code">
+          sudo apt install apache2
+        </div>
+        Open browser at<br>
+        <a href="http://45.79.28.148/"> http://45.79.28.148/</a><br>
+        Apache2 Default Page message comes up - it works.<br>
+        Not changing ufw firewall for now because my deno servers will use port 8000.<br>
+        </p>
+
+        <h4> Install mySQL server</h4>
+        <p>
+        <div class="code">
+          sudo apt install mysql-server
+        </div>
+        Start mysql:<br>
+        <div class="code">
+          sudo mysql
+        </div>
+        Display how each user is authenticated:<br>
+        <div class="code">
+          SELECT user,authentication_string,plugin,host FROM mysql.user;
+        </div>
+        works again, shows<br>
+        <div class="code">
+          mysql> SELECT user,authentication_string,plugin,host FROM mysql.user;<br>
+          +------------------+------------------------------------------------------------------------+-----------------------+-----------+<br>
+          | user | authentication_string | plugin | host |<br>
+          +------------------+------------------------------------------------------------------------+-----------------------+-----------+<br>
+          M2J5j3.SKd.le.AbBBio/lJQPXdr2kuiIlsTkKC03i9 | caching_sha2_password | localhost |<br>
+          | mysql.infoschema | $A$005$THISISACOMBINATIONOFINVALIDSALTANDPASSWORDTHATMUSTNEVERBRBEUSED |
+          caching_sha2_password | localhost |<br>
+          | mysql.session | $A$005$THISISACOMBINATIONOFINVALIDSALTANDPASSWORDTHATMUSTNEVERBRBEUSED |
+          caching_sha2_password | localhost |<br>
+          | mysql.sys | $A$005$THISISACOMBINATIONOFINVALIDSALTANDPASSWORDTHATMUSTNEVERBRBEUSED | caching_sha2_password |
+          localhost |<br>
+          | root | | auth_socket | localhost |<br>
+          +------------------+------------------------------------------------------------------------+-----------------------+-----------+
+          5 rows in set (0.01 sec)
+        </div>
+        Which user am I?<br>
+        <div class="code">
+          SELECT CURRENT_USER();
+        </div>
+        gives<br>
+        <div class="code">
+          mysql> SELECT CURRENT_USER();<br>
+          +----------------+<br>
+          | CURRENT_USER() |<br>
+          +----------------+<br>
+          | root@localhost |<br>
+          +----------------+<br>
+          1 row in set (0.00 sec)<br>
+        </div>
+        Need a user that for logging in to phpmayadmin<br>
+        add sammy to mySQL users:<br>
+        <div class="code">
+          CREATE USER 'sammy'@'%localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+        </div>
+        The grant directive fails againL<br>
+        <div class="code">
+          GRANT ALL PRIVILEGES ON *.* TO 'sammy'@'localhost' WITH GRANT OPTION;
+        </div>
+        Leads to<br>
+        <div class="code">
+          ERROR 1410 (42000): You are not allowed to create a user with GRANT
+        </div>
+        
+      what works is<br>
+      sudo mysql
+      ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+      GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' WITH GRANT OPTION;
+
+      but not with a different user.
+
+
+
+
+      
+      </p>
+
+
+      </div>
+
+      <div class="card">
+        <h2>Date</h2>
+        New Card
+      </div>
+
+
+    </div>
+
+    <div class="rightcolumn">
+      <div class="card">
+        <h2>Blog List<br>
+        </h2>
+        <a moz-do-not-send="true" href="index.html">atmelinos' blogs</a><br>
+      </div>
+      <div class="card">
+        <h3>Posts by Date<br>
+        </h3>
+        <div class="fakeimg">Image</div>
+        <br>
+        <div class="fakeimg">Image</div>
+        <br>
+      </div>
+      <div class="card">
+        <h3>Follow Me</h3>
+        <p>Some text..</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <h2>More coming soon..<br></h2>
+  </div>
+</body>
+
+</html>
