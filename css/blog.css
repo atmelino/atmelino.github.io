@@ -75,7 +75,19 @@ body {
   background-color: rgb(224, 224, 228);
   border: 1px solid rgb(32, 27, 38);
   border-radius: 4px;
-  padding: 2px 5px;
+  padding: 4px 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace
+}
+
+.output {
+  background-color: rgb(217, 223, 201);
+  border: 1px solid rgb(32, 27, 38);
+  border-radius: 4px;
+  padding: 4px 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   font-family: Consolas, "Liberation Mono", Courier, monospace
 }
 

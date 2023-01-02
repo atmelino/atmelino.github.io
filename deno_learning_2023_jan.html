@@ -84,127 +84,123 @@
         <div class="code">
           sudo mysql_secure_installation
         </div>
-
         <br>
         will ask for password, is now 'password'<br>
         <br>
-        Securing the MySQL server deployment.<br>
-        <br>
-        Enter password for user root:<br>
-        The 'validate_password' component is installed on the server.<br>
-        The subsequent steps will run with the existing configuration<br>
-        of the component.<br>
-        Using existing password for root.<br>
-        <br>
-        Estimated strength of the password: 50<br>
-        Change the password for root ? ((Press y|Y for Yes, any other key for No) : n<br>
-        <br>
-        ... skipping.<br>
-        By default, a MySQL installation has an anonymous user,<br>
-        allowing anyone to log into MySQL without having to have<br>
-        a user account created for them. This is intended only for<br>
-        testing, and to make the installation go a bit smoother.<br>
-        You should remove them before moving into a production<br>
-        environment.<br>
-        <br>
-        Remove anonymous users? (Press y|Y for Yes, any other key for No) : n<br>
-        <br>
-        ... skipping.<br>
-        <br>
-        <br>
-        Normally, root should only be allowed to connect from<br>
-        'localhost'. This ensures that someone cannot guess at<br>
-        the root password from the network.<br>
-        <br>
-        Disallow root login remotely? (Press y|Y for Yes, any other key for No) : n<br>
-        <br>
-        ... skipping.<br>
-        By default, MySQL comes with a database named 'test' that<br>
-        anyone can access. This is also intended only for testing,<br>
-        and should be removed before moving into a production<br>
-        environment.<br>
-        <br>
-        <br>
-        Remove test database and access to it? (Press y|Y for Yes, any other key for No) : n<br>
-        <br>
-        ... skipping.<br>
-        Reloading the privilege tables will ensure that all changes<br>
-        made so far will take effect immediately.<br>
-        <br>
-        Reload privilege tables now? (Press y|Y for Yes, any other key for No) : y<br>
-        Success.<br>
-        <br>
-        All done!<br>
-        <br>
-        <br>
-        Now we can add another user<br>
-        <br>
+        Output:<br>
+        <div class="output">
+          Securing the MySQL server deployment.<br>
+          <br>
+          Enter password for user root:<br>
+          The 'validate_password' component is installed on the server.<br>
+          The subsequent steps will run with the existing configuration<br>
+          of the component.<br>
+          Using existing password for root.<br>
+          <br>
+          Estimated strength of the password: 50<br>
+          Change the password for root ? ((Press y|Y for Yes, any other key for No) : n<br>
+          <br>
+          ... skipping.<br>
+          By default, a MySQL installation has an anonymous user,<br>
+          allowing anyone to log into MySQL without having to have<br>
+          a user account created for them. This is intended only for<br>
+          testing, and to make the installation go a bit smoother.<br>
+          You should remove them before moving into a production<br>
+          environment.<br>
+          <br>
+          Remove anonymous users? (Press y|Y for Yes, any other key for No) : n<br>
+          <br>
+          ... skipping.<br>
+          <br>
+          <br>
+          Normally, root should only be allowed to connect from<br>
+          'localhost'. This ensures that someone cannot guess at<br>
+          the root password from the network.<br>
+          <br>
+          Disallow root login remotely? (Press y|Y for Yes, any other key for No) : n<br>
+          <br>
+          ... skipping.<br>
+          By default, MySQL comes with a database named 'test' that<br>
+          anyone can access. This is also intended only for testing,<br>
+          and should be removed before moving into a production<br>
+          environment.<br>
+          <br>
+          <br>
+          Remove test database and access to it? (Press y|Y for Yes, any other key for No) : n<br>
+          <br>
+          ... skipping.<br>
+          Reloading the privilege tables will ensure that all changes<br>
+          made so far will take effect immediately.<br>
+          <br>
+          Reload privilege tables now? (Press y|Y for Yes, any other key for No) : y<br>
+          Success.<br>
+          <br>
+          All done!<br>
+        </div>
+        <p>
+        <h5>Add another user</h5>
         <div class="code">
           mysql -u root -p<br>
         </div>
-        <br>
-        <br>
         <div class="code">
           CREATE USER 'sammy'@'localhost' IDENTIFIED BY 'password';<br>
         </div>
-        <br>
-        <br>
         <div class="code">
           GRANT CREATE, ALTER, DROP, INSERT, UPDATE, INDEX, DELETE, SELECT, REFERENCES, RELOAD on *.* TO
           'sammy'@'localhost' WITH GRANT OPTION;<br>
         </div>
-        <br>
-        <br>
-        now works!!<br>
-        <br>
         <div class="code">
           FLUSH PRIVILEGES;
         </div>
-        <br>
         <div class="code">
           exit
         </div>
-        <br>
-        <br>
+        </p>
+        <p>
+        <h5>Test new user</h5>
         <div class="code">
           mysql -u sammy -p<br>
         </div>
-        <br>
         list databases:<br>
-        <br>
         <div class="code">
           SHOW DATABASES;
         </div>
-        <br>
-        mysql> SHOW DATABASES;<br>
-        +--------------------+<br>
-        | Database |<br>
-        +--------------------+<br>
-        | information_schema |<br>
-        | mysql |<br>
-        | performance_schema |<br>
-        | sys |<br>
-        +--------------------+<br>
-        4 rows in set (0.01 sec)<br>
-        <br>
-        create new database:<br>
-        <br>
-        CREATE DATABASE db_name;<br>
-        <br>
-        <br>
-        SHOW DATABASES;<br>
-        +--------------------+<br>
-        | Database |<br>
-        +--------------------+<br>
-        | db_name |<br>
-        | information_schema |<br>
-        | mysql |<br>
-        | performance_schema |<br>
-        | sys |<br>
-        +--------------------+<br>
-        5 rows in set (0.00 sec)<br>
-        <br>
-        <br>
+        Output:<br>
+        <div class="output">
+          mysql> SHOW DATABASES;<br>
+          +--------------------+<br>
+          | Database |<br>
+          +--------------------+<br>
+          | information_schema |<br>
+          | mysql |<br>
+          | performance_schema |<br>
+          | sys |<br>
+          +--------------------+<br>
+          4 rows in set (0.01 sec)<br>
+        </div>
+        Create new database:<br>
+        <div class="code">
+          CREATE DATABASE db_name;<br>
+        </div>
+        <div class="code">
+          SHOW DATABASES;
+        </div>
+        Output:<br>
+        <div class="output">
+          SHOW DATABASES;<br>
+          +--------------------+<br>
+          | Database |<br>
+          +--------------------+<br>
+          | db_name |<br>
+          | information_schema |<br>
+          | mysql |<br>
+          | performance_schema |<br>
+          | sys |<br>
+          +--------------------+<br>
+          5 rows in set (0.00 sec)<br>
+        </div>
+        The newly created database is listed.
+        </p>
         <br>
 
         <h4>Install Apache web server</h4>
@@ -233,9 +229,9 @@
       <div class="card">
         <h3>Posts by Date<br>
         </h3>
-        <div class="fakeimg">Image</div>
+        <a href="deno_learning_2023_jan.html">January 2023</a><br>
         <br>
-        <div class="fakeimg">Image</div>
+        <a href="deno_learning_2022_dec.html">December 2022</a><br>
         <br>
       </div>
       <div class="card">
