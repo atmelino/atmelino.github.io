@@ -27,7 +27,7 @@
 
       <div class="card">
         <h2>Jan 2, 2023</h2>
-
+        <h3>Install LAMP server</h3>
         <p> Create new Linode.<br>
           Login via ssh<br>
         <div class="code">
@@ -201,12 +201,56 @@
         </div>
         The newly created database is listed.
         </p>
-        <br>
 
         <h4>Install Apache web server</h4>
         <p>
+          Instructions at<br>
+          <a
+            href="https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-22-04">
+            https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-22-04</a><br>
+        <div class="code">
+          sudo apt install apache2
+        </div>
+        Open browser at<br>
+        <a href="http://45.79.28.148/"> http://45.79.28.148/</a><br>
+        Apache2 Default Page message comes up - it works.<br>
+        Not changing ufw firewall for now because my deno servers will use port 8000.<br>
+        </p>
 
+        <h4>Install PHP</h4>
+        <p>
+          Instructions at<br>
+          <a
+            href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-22-04">
+            https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-22-04
+          </a><br>
+        <div class="code">
+          sudo apt install php libapache2-mod-php php-mysql
+        </div>
+        Test the installation:<br>
+        <div class="code">
+          php -v
+        </div>
 
+        </p>
+
+        <h4>Install phpmyadmin</h4>
+        <p>
+          Instructions at<br>
+          <a
+            href="https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-on-ubuntu-22-04">
+            https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-on-ubuntu-22-04
+          </a><br>
+        <div class="code">
+          sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl
+        </div>
+        Make sure to select Apache!<br>
+        Test phpmyadmin<br>
+        <a href="http://45.79.28.148/phpmyadmin">http://45.79.28.148/phpmyadmin</a><br>
+        </p>
+
+        <h4>Run deno app on linode server</h4>
+        <a href="http://45.79.28.148:8000">http://45.79.28.148:8000</a><br>
 
 
       </div>
