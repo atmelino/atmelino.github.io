@@ -21,9 +21,7 @@
         <h2>Jan 1, 2023</h2>
         Failed attempt to install LAMP server, because of mySQL problems<br>
         <a href="deno_learning_failed_attempts.html">deno_learning_failed_attempts.html</a><br>
-
       </div>
-
 
       <div class="card">
         <h2>Jan 2, 2023</h2>
@@ -39,7 +37,6 @@
         <div class="code">
           sudo reboot
         </div>
-
 
         Add new admin user.<br>
         <div class="code">
@@ -74,6 +71,28 @@
 
         <div class="code">
           ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+        </div>
+
+        This command will show whether the previous command was successful:<br>
+        <div class="code">
+          SELECT user,plugin,host FROM mysql.user;
+        </div>
+
+        Output:<br>
+        <div class="output">
+          mysql> SELECT user,plugin,host FROM mysql.user;<br>
+          +------------------+-----------------------+-----------+<br>
+          | user | plugin | host |<br>
+          +------------------+-----------------------+-----------+<br>
+          | debian-sys-maint | caching_sha2_password | localhost |<br>
+          | mysql.infoschema | caching_sha2_password | localhost |<br>
+          | mysql.session | caching_sha2_password | localhost |<br>
+          | mysql.sys | caching_sha2_password | localhost |<br>
+          | phpmyadmin | caching_sha2_password | localhost |<br>
+          | root | mysql_native_password | localhost |<br>
+          | sammy | caching_sha2_password | localhost |<br>
+          +------------------+-----------------------+-----------+<br>
+          7 rows in set (0.00 sec)<br>
         </div>
 
         <div class="code">
@@ -253,10 +272,55 @@
         <a href="http://45.79.28.148:8000">http://45.79.28.148:8000</a><br>
 
         <h3>deno and mySQL</h3>
+        deno module:<br>
         <a href="https://deno.land/x/mysql@v2.10.2">https://deno.land/x/mysql@v2.10.2</a><br>
-
+        <h4>Example 1:</h4>
         <a
           href="https://codeforgeek.com/deno-and-mysql-connection-tutorial/">https://codeforgeek.com/deno-and-mysql-connection-tutorial/</a><br>
+
+        Setup:<br>
+        <ol>
+          <li>User sammy has no password</li>
+          <li>sammy creates a database named "sammydb"</li>
+          <li>sammy creates a table named table1</li>
+          <li>deno code is run on the same server as the mysql database</li>
+        </ol>
+        Configuration:<br>
+        <div class="code">
+          hostname: "127.0.0.1",<br>
+          username: "sammy",<br>
+          db: "sammydb",<br>
+          poolSize: 3, // connection limit<br>
+          password: "",<br>
+          const users = await client.query(`select * from table1`);<br>
+        </div>
+        Output:<br>
+        <div class="output">
+          ~/github/learn/deno/deno_mysql/deno_mysql_01$ deno run --allow-net deno_mysql_01_local.ts<br>
+          INFO connecting 127.0.0.1:3306<br>
+          INFO connected to 127.0.0.1:3306<br>
+          [ { col1: 1, col2: 3, col3: 8, col4: 6 }, { col1: 1, col2: 3, col3: 8, col4: 6 } ]<br>
+        </div>
+
+        If I run the code from another location and change the hostname<br>
+        <div class="code">
+          hostname: "45.79.28.148",<br>
+        </div>
+
+        I get <br>
+        <div class="output">
+          deno run --allow-net deno_mysql_01.ts<br>
+          INFO connecting 45.79.28.148:3306<br>
+          error: Uncaught (in promise) ConnectionRefused: Connection refused (os error 111)<br>
+        </div>
+
+        <h4>Example 1:</h4>
+        https://www.freecodecamp.org/news/how-to-use-mysql-in-deno-oak/
+
+        https://github.com/adeelibr/deno-playground/blob/master/guidelines/setting-up-mysql-mac-os-catalina.md#set-your-mysql-password-to-empty:<br>
+        current MySQL lib of Deno doesn't connect to a username with a password.<br>
+
+
 
       </div>
 
