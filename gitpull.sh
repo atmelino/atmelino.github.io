@@ -1,3 +1,9 @@
+
+echo git pull
+
 git pull
 
-brave-browser deno_learning.html
+echo press enter
+
+read input
+
