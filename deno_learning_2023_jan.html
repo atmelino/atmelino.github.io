@@ -219,6 +219,17 @@
           5 rows in set (0.00 sec)<br>
         </div>
         The newly created database is listed.
+
+        <h5>Change the password</h5>
+        <div class="code">
+          mysql -u sammy -p<br>
+        </div>
+
+        ALTER USER 'sammy'@'localhost' IDENTIFIED BY 'password';
+        FLUSH PRIVILEGES;
+
+
+
         </p>
 
         <h4>Install Apache web server</h4>
@@ -314,16 +325,31 @@
           error: Uncaught (in promise) ConnectionRefused: Connection refused (os error 111)<br>
         </div>
 
-        <h4>Example 1:</h4>
+        <h4>Example 2:</h4>
         https://www.freecodecamp.org/news/how-to-use-mysql-in-deno-oak/
 
         https://github.com/adeelibr/deno-playground/blob/master/guidelines/setting-up-mysql-mac-os-catalina.md#set-your-mysql-password-to-empty:<br>
         current MySQL lib of Deno doesn't connect to a username with a password.<br>
-
-
-
       </div>
 
+      <div class="card">
+        <h2>Jan 3, 2023</h2>
+        <h3>deno and databases</h3>
+
+
+        mySQL does not seem to be well supported by deno so far. What about a different database?<br><br>
+
+        <a href="https://deno.land/x/postgres@v0.17.0">https://deno.land/x/postgres@v0.17.0</a><br>
+
+        <a href="https://deno.land/x/sqlite@v3.7.0">https://deno.land/x/sqlite@v3.7.0</a><br>
+        
+
+
+        <a href="https://blog.logrocket.com/how-to-create-rest-api-deno-postgres/#database-repository-deno-postgres">
+          https://blog.logrocket.com/how-to-create-rest-api-deno-postgres/#database-repository-deno-postgres
+        </a><br>
+
+      </div>
 
       <div class="card">
         <h2>Date</h2>
@@ -340,11 +366,14 @@
         <a href="index.html">atmelinos' blogs</a><br>
       </div>
       <div class="card">
-        <h3>Posts by Date<br>
-        </h3>
+        <h3>Posts by Date</h3>
         <a href="deno_learning_2023_jan.html">January 2023</a><br>
         <br>
         <a href="deno_learning_2022_dec.html">December 2022</a><br>
+        <br>
+        <a href="deno_learning_general.html">General</a><br>
+        <br>
+        <a href="deno_learning_things_to_know.html">Things to Know</a><br>
         <br>
       </div>
       <div class="card">
