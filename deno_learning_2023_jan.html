@@ -197,7 +197,7 @@
           +--------------------+<br>
           4 rows in set (0.01 sec)<br>
         </div>
-        Create new database:<br>
+        <h5>Create new database</h5>
         <div class="code">
           CREATE DATABASE db_name;<br>
         </div>
@@ -222,11 +222,15 @@
 
         <h5>Change the password</h5>
         <div class="code">
-          mysql -u sammy -p<br>
+          mysql -u sammy -p
         </div>
 
-        ALTER USER 'sammy'@'localhost' IDENTIFIED BY 'password';
-        FLUSH PRIVILEGES;
+        <div class="code">
+          ALTER USER 'sammy'@'localhost' IDENTIFIED BY 'password';
+        </div>
+        <div class="code">
+          FLUSH PRIVILEGES;
+        </div>
 
 
 
@@ -325,26 +329,46 @@
           error: Uncaught (in promise) ConnectionRefused: Connection refused (os error 111)<br>
         </div>
 
-        <h4>Example 2:</h4>
-        https://www.freecodecamp.org/news/how-to-use-mysql-in-deno-oak/
+        <h4>More Examples:</h4>
+        <a href="https://www.freecodecamp.org/news/how-to-use-mysql-in-deno-oak/">
+          https://www.freecodecamp.org/news/how-to-use-mysql-in-deno-oak/</a><br>
+        <br>
+        <a
+          href="https://github.com/adeelibr/deno-playground/blob/master/guidelines/setting-up-mysql-mac-os-catalina.md">
+          https://github.com/adeelibr/deno-playground/blob/master/guidelines/setting-up-mysql-mac-os-catalina.md</a><br>
 
-        https://github.com/adeelibr/deno-playground/blob/master/guidelines/setting-up-mysql-mac-os-catalina.md#set-your-mysql-password-to-empty:<br>
-        current MySQL lib of Deno doesn't connect to a username with a password.<br>
+
+        <br>
       </div>
 
       <div class="card">
         <h2>Jan 3, 2023</h2>
         <h3>deno and databases</h3>
+        Database comparison:<br>
+        <a
+          href="https://www.digitalocean.com/community/tutorials/sqlite-vs-mysql-vs-postgresql-a-comparison-of-relational-database-management-systems">
+          https://www.digitalocean.com/community/tutorials/sqlite-vs-mysql-vs-postgresql-a-comparison-of-relational-database-management-systems</a><br>
 
 
-        mySQL does not seem to be well supported by deno so far. What about a different database?<br><br>
-
+        <h5>supported databases</h5>
+        mySQL<br>
+        <a href="https://deno.land/x/mysql@v2.11.0">https://deno.land/x/mysql@v2.11.0</a><br>
+        PostgreSQL<br>
         <a href="https://deno.land/x/postgres@v0.17.0">https://deno.land/x/postgres@v0.17.0</a><br>
-
+        SQLite<br>
         <a href="https://deno.land/x/sqlite@v3.7.0">https://deno.land/x/sqlite@v3.7.0</a><br>
-        
+        <h5>Comments</h5>
+        The blog at <a
+          href="https://github.com/adeelibr/deno-playground/blob/master/guidelines/setting-up-mysql-mac-os-catalina.md">
+          https://github.com/adeelibr/deno-playground/blob/master/guidelines/setting-up-mysql-mac-os-catalina.md</a><br>
+        from Jun 4, 2020 says:
+        "current MySQL lib of Deno doesn't connect to a username with a password."<br>
+
+        However, it seems to work now in January 2023.
+        <br><br>
 
 
+        <h5>Examples</h5>
         <a href="https://blog.logrocket.com/how-to-create-rest-api-deno-postgres/#database-repository-deno-postgres">
           https://blog.logrocket.com/how-to-create-rest-api-deno-postgres/#database-repository-deno-postgres
         </a><br>
