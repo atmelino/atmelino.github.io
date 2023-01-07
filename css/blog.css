@@ -63,7 +63,6 @@ body {
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) {
-
   .leftcolumn,
   .rightcolumn {
     width: 100%;
@@ -130,4 +129,15 @@ body {
   text-align: left;
   background-color: #04AA6D;
   color: white;
+}
+
+.question{
+  background: #f1eae3;
+  margin-top: 5px;
+}
+
+.answer{
+  background: #daefe3;
+  margin-bottom: 5px;
+
 }
