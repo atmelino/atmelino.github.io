@@ -393,28 +393,50 @@
 
       <div class="card">
         <h2>Jan 7, 2023</h2>
-        <h3> Understanding the showcase example Taks</h3>
+        <h3> Understanding the showcase example Tasks</h3>
         <a href="https://fresh.deno.dev/showcase">
           https://fresh.deno.dev/showcase</a><br>
 
-        
-          The file routes/index.tsx contains a function Home() which returns the HTML code for the client.<br>
-          Inside the returned data is an element named
-        <div class="code">
-          <Todo />
-        </div>
+
+        The file routes/index.tsx contains a function Home() which returns the HTML code for the client.<br>
+        Inside the returned data is an element named
+        <div class="code">&lt;Todo /&gt; </div>
         which is declared by the statement<br>
         <div class="code">import Todo from "../islands/Todo.tsx";</div>
+        The Todo element contains a function named Todo().<br>
+        This function starts with <br>
+        <div class="code">const [tasks, setTasks] = useState&lt;ITask[]&gt;([]);</div>
+        which uses the Preact functionality for dealing with states.<br>
+        The return value is an array containing two variables:<br>
+        The first variable is a state, and the second is a function that can be called to update the state using
+        hooks.<br>
+        The first parameter is the initial value, in this case an empty array.<br>
+        The array will contain members of the Task type.<br>
+        <a href="https://preactjs.com/tutorial/04-state/">https://preactjs.com/tutorial/04-state/</a><br>
+        The return of the function contains<br>
+        <ul>
+          <li>a form</li>
+          <li>an element of the type Tasks which is declared in the import.</li>
+        </ul>
+        The form contains
+        <ul>
+          <li>the onSubmit function </li>
+          <li>a textbox for entering a new task</li>
+          <li>a button to trigger the submit for the form</li>
+        </ul>
 
+        Tasks element
+props
 
-        
+        tasks: ITask[];
+        removeTask:
 
+        <br>
 
         <a href="https://www.w3schools.com/react/react_usestate.asp">
           https://www.w3schools.com/react/react_usestate.asp</a><br>
 
 
-          <div class="code">deno run -A -r https://fresh.deno.dev my-project</div>
 
 
       </div>
