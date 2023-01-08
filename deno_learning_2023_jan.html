@@ -231,9 +231,6 @@
         <div class="code">
           FLUSH PRIVILEGES;
         </div>
-
-
-
         </p>
 
         <h4>Install Apache web server</h4>
@@ -248,7 +245,7 @@
         Open browser at<br>
         <a href="http://45.79.28.148/"> http://45.79.28.148/</a><br>
         Apache2 Default Page message comes up - it works.<br>
-        Not changing ufw firewall for now because my deno servers will use port 8000.<br>
+        I am not changing the ufw firewall for now because my deno servers will use port 8000.<br>
         </p>
 
         <h4>Install PHP</h4>
@@ -363,7 +360,10 @@
           https://github.com/adeelibr/deno-playground/blob/master/guidelines/setting-up-mysql-mac-os-catalina.md</a><br>
         from Jun 4, 2020 says:<br>
         "current MySQL lib of Deno doesn't connect to a username with a password."<br>
-        However, it seems to work now in January 2023.
+        However, it seems to work now in January 2023.<br><br>
+        Note: When I create a new user and try to run the program with a password, it does not work.<br>
+        However, it works after I log the new user into mySQL in the terminal.<br>
+        I have verified this behavior on two different computers.<br>
         <br><br>
 
         <h5>Examples</h5>
@@ -389,9 +389,32 @@
         <a href="https://fresh.deno.dev/showcase">
           https://fresh.deno.dev/showcase</a><br>
         PPaste has a text area and a button.<br>
+      </div>
+
+      <div class="card">
+        <h2>Jan 7, 2023</h2>
+        <h3> Understanding the showcase example Taks</h3>
+        <a href="https://fresh.deno.dev/showcase">
+          https://fresh.deno.dev/showcase</a><br>
+
+        
+          The file routes/index.tsx contains a function Home() which returns the HTML code for the client.<br>
+          Inside the returned data is an element named
+        <div class="code">
+          <Todo />
+        </div>
+        which is declared by the statement<br>
+        <div class="code">import Todo from "../islands/Todo.tsx";</div>
 
 
+        
 
+
+        <a href="https://www.w3schools.com/react/react_usestate.asp">
+          https://www.w3schools.com/react/react_usestate.asp</a><br>
+
+
+          <div class="code">deno run -A -r https://fresh.deno.dev my-project</div>
 
 
       </div>
