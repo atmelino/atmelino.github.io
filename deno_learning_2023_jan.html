@@ -406,13 +406,12 @@
         The Todo element contains a function named Todo().<br>
         This function starts with <br>
         <div class="code">const [tasks, setTasks] = useState&lt;ITask[]&gt;([]);</div>
-        which uses the Preact functionality for dealing with states.<br>
+        which uses the Preact functionality for dealing with states.*<br>
         The return value is an array containing two variables:<br>
         The first variable is a state, and the second is a function that can be called to update the state using
         hooks.<br>
         The first parameter is the initial value, in this case an empty array.<br>
         The array will contain members of the Task type.<br>
-        <a href="https://preactjs.com/tutorial/04-state/">https://preactjs.com/tutorial/04-state/</a><br>
         The return of the function contains<br>
         <ul>
           <li>a form</li>
@@ -425,19 +424,46 @@
           <li>a button to trigger the submit for the form</li>
         </ul>
 
-        Tasks element
-props
+        The Tasks element returns a div tag<br>
+        within which a function is called that returns an element of type Task.<br>
 
+        The Task element returns a div tag<br>
+        which contains
+        <ul>
+          <li> a paragraph with the text of the todo which is retrieved from the desc parameter of the props
+            passed
+          </li>
+          <li>a button to remove the task</li>
+        </ul>
         tasks: ITask[];
         removeTask:
-
         <br>
 
+        * More information on hooks:<br>
+        <a href="https://preactjs.com/tutorial/04-state/">https://preactjs.com/tutorial/04-state/</a><br>
         <a href="https://www.w3schools.com/react/react_usestate.asp">
           https://www.w3schools.com/react/react_usestate.asp</a><br>
 
+      </div>
+
+      <div class="card">
+        <h2>Jan 9, 2023</h2>
+        What are the parameters and functions that can be called on a UI element?<br>
+        For example, right-clicking on the word input and choosing opens the file jsx.d.ts<br>
+        where input is part of an interface named<br>
+        "interface IntrinsicElements"<br>
+        <div class="code">
+          input: HTMLAttributes&lt;HTMLInputElement&gt; & { defaultValue?: string };
+        </div>
+        and right-clicking on textarea takes us to<br>
+        <div class="code">
+          textarea: HTMLAttributes&lt;HTMLTextAreaElement&gt;;
+        </div>
 
 
+        More information at<br>
+        <a href="https://reactjs.org/docs/forms.html">
+          https://reactjs.org/docs/forms.html</a><br>
 
       </div>
 
