@@ -459,11 +459,22 @@
         <div class="code">
           textarea: HTMLAttributes&lt;HTMLTextAreaElement&gt;;
         </div>
-
-
         More information at<br>
         <a href="https://reactjs.org/docs/forms.html">
           https://reactjs.org/docs/forms.html</a><br>
+      </div>
+
+      <div class="card">
+        <h2>Jan 11. 2023</h2>
+        Running the app on a local computer works.<br>
+        Running the same app on a Linode server leades to an error when trying to add a note:<br>
+        <img src="images/cryptorandomerror_01.jpg" alt="hello World"><br>
+        However, when calling the function on the command line, it works:<br>
+        <img src="images/cryptorandomerror_02.jpg" alt="hello World"><br>
+        Possible explanation: the Linode server does not run in secure context,<br>
+        no https:// but http://<br>
+        <a href="https://github.com/google/timesketch/issues/2410">
+          https://github.com/google/timesketch/issues/2410</a><br>
 
       </div>
 
