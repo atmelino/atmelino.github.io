@@ -389,10 +389,11 @@
 
         <div class="code">sudo touch /etc/systemd/system/denoapp_01.service</div>
 
-        Copy and modify the contents as shown on web site<br>
-
-        Enable and start it:<br>
+        Copy and modify the contents as shown on the web site.<br>
+        <br>
+        This command will make the app automatically start on boot:<br>
         <div class="code">sudo systemctl enable denoapp_01</div>
+        This command will make the app start right now:<br>
         <div class="code">sudo systemctl start denoapp_01</div>
 
         Monitor status:<br>
@@ -401,14 +402,16 @@
         View journal log:<br>
         <div class="code">sudo journalctl -u denoapp_01</div>
 
+        It took a bit of tweaking until it actually ran.<br><br>
 
-        It took a bit of tweaking until it actually ran.<br>
+        One of the reason for not running was that the lock file deno.lock conflicted with the source code,<br>
+        Simply deleting the file solved the problem.<br><br>
 
         Here is the working service file:<br>
         <div class="code">
           [Unit]<br>
           Description=deno_fresh_01 - deno example<br>
-          Documentation=https://my-cool-thing.io/docs<br>
+          Documentation=https://github.com/atmelino<br>
           After=network.target<br>
           <br>
           [Service]<br>
