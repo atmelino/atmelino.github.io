@@ -487,6 +487,47 @@
       </div>
 
       <div class="card">
+        <h2>Jan 15, 2023</h2>
+        <p>
+          Try to run the mySQL example - fails with error message:<br>
+        <div class=code>
+          INFO connecting 127.0.0.1:3306
+          INFO close connection<br>
+          error: Uncaught (in promise) Error: Access denied for user 'atmelino'@'localhost' (using password: YES)<br>
+          throw new Error(error.message);
+        </div>
+        Now, when I open a terminal and log into mySQL with this user
+        <div class=code>
+          mysql -u atmelino -p
+        </div>
+        and run the program again, it works - multiple times.<br>
+        </p>
+        Reboot the computer.<br>
+        Is mySQL running?<br>
+        <div class=code>
+          sudo systemctl status mysql.service
+        </div>
+        yes:<br>
+        <div class=code>
+          mysql.service - MySQL Community Server<br>
+          Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset: enabled)<br>
+          Active: active (running) since Sun 2023-01-15 20:37:16 CST; 1min 57s ago<br>
+          Process: 899 ExecStartPre=/usr/share/mysql/mysql-systemd-start pre (code=exited, status=0/SUCCESS)<br>
+          Main PID: 989 (mysqld)<br>
+          Status: "Server is operational"<br>
+          Tasks: 39 (limit: 9058)<br>
+          Memory: 425.7M<br>
+          CPU: 1.333s<br>
+          CGroup: /system.slice/mysql.service<br>
+          └─989 /usr/sbin/mysqld<br>
+        </div>
+        login to mySQL as different user - still get Access denied error<br>
+        login to mySQL as the same user as the deno program - deno program works!<br>
+
+
+      </div>
+
+      <div class="card">
         <h2>Date</h2>
         New Card
       </div>
