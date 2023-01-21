@@ -596,37 +596,29 @@
         </p>
 
         <p>
-        <h4>Postgre examples</h4>
-        <p>
-          Example on deno land page:<br>
-          <a href="https://deno.land/x/postgres@v0.17.0">https://deno.land/x/postgres@v0.17.0</a><br>
-          In first example:<br>
-          changed user to postgre<br>
-          added password<br>
+        <h4>Postgre example 1</h4>
 
-          using pgadmin4:<br>
-          created user sammy with database sammy as described in computingforgeeks page.<br>
-          added columns id, name (lowercase) as described in<br>
-          <a href="https://www.pgadmin.org/docs/pgadmin4/development/column_dialog.html">
-            https://www.pgadmin.org/docs/pgadmin4/development/column_dialog.html</a><br>
-          inserted rows as described in<br>
-          <a href="https://stackoverflow.com/questions/22755230/how-to-insert-a-row-in-postgresql-pgadmin/47230112">
-            https://stackoverflow.com/questions/22755230/how-to-insert-a-row-in-postgresql-pgadmin/47230112</a><br>
-          run example - works<br>
+        Example on deno land page:<br>
+        <a href="https://deno.land/x/postgres@v0.17.0">https://deno.land/x/postgres@v0.17.0</a><br>
+        In first example:<br>
+        changed user to postgre<br>
+        added password<br>
+
+        using pgadmin4:<br>
+        created user sammy with database sammy as described in computingforgeeks page.<br>
+        added columns id, name (lowercase) as described in<br>
+        <a href="https://www.pgadmin.org/docs/pgadmin4/development/column_dialog.html">
+          https://www.pgadmin.org/docs/pgadmin4/development/column_dialog.html</a><br>
+        inserted rows as described in<br>
+        <a href="https://stackoverflow.com/questions/22755230/how-to-insert-a-row-in-postgresql-pgadmin/47230112">
+          https://stackoverflow.com/questions/22755230/how-to-insert-a-row-in-postgresql-pgadmin/47230112</a><br>
+        run example - works<br>
         </p>
-        <a href="https://vincenttechblog.com/developing-rest-api-with-deno/">
-          https://vincenttechblog.com/developing-rest-api-with-deno/</a><br>
-        </p>
-
-        <h4>deno Fresh Postgre</h4>
-        <a href="https://dev.to/yonirapoport/build-a-full-stack-crud-app-using-denos-fresh-and-postgres-4l39">
-          https://dev.to/yonirapoport/build-a-full-stack-crud-app-using-denos-fresh-and-postgres-4l39</a><br>
-
       </div>
 
       <div class="card">
         <h2>Jan 19, 2023</h2>
-        <h4>Postgre examples</h4>
+        <h4>Postgre example 2</h4>
         <p>
           <a
             href="https://deno.com/deploy/docs/tutorial-postgres">https://deno.com/deploy/docs/tutorial-postgres</a><br>
@@ -643,6 +635,7 @@
 
       <div class="card">
         <h2>Jan 20, 2023</h2>
+        <h4>Postgre example 2 - ctd.</h4>
         Running the example locally requires either using the environment variable system<br>
         <a href="https://stackoverflow.com/questions/61873926/where-does-deno-env-got-its-data-from">
           https://stackoverflow.com/questions/61873926/where-does-deno-env-got-its-data-from</a><br>
@@ -656,16 +649,56 @@
         <div class="code">
           const databaseUrl = "postgres://postgres:deno1pass2word3@db.lwbjwhxdyxafkxjdldmn.supabase.co:6543/postgres";
         </div>
-
-
         With the server running locally, we can now use the API using cURL:<br>
         <div class="code">
           curl -X GET http://localhost:8000/todos
         </div>
-
         <div class="code">
           curl -X POST -d '"Buy cereal"' http://localhost:8000/todos
         </div>
+        <h5>Run deno app on remote server</h5>
+        ssh into remote server<br>
+        run the deno app<br>
+        On local terminal:<br>
+        <div class="code">
+          curl -X GET http://45.79.28.148:8000/todos
+        </div>
+        <div class="code">
+          curl -X POST -d '"Buy light bulbs"' http://45.79.28.148:8000/todos
+        </div>
+        works:<br>
+        <ul>
+          <li>run curl command in a local terminal</li>
+          <li>deno app runs on a remote server</li>
+          <li>database runs on supabase</li>
+        </ul>
+
+        <h5>Use local Postgre database</h5>
+
+
+      </div>
+
+
+      <div class="card">
+        <h2>For Later</h2>
+        <h4>Postgre examples</h4>
+
+        <a href="https://blog.logrocket.com/how-to-create-rest-api-deno-postgres/">
+          https://blog.logrocket.com/how-to-create-rest-api-deno-postgres/</a><br>
+        <a href="https://github.com/anshulrgoyal/logrocket_deno_api">
+          https://github.com/anshulrgoyal/logrocket_deno_api</a><br>
+
+        <a href="https://vincenttechblog.com/developing-rest-api-with-deno/">
+          https://vincenttechblog.com/developing-rest-api-with-deno/</a><br>
+
+        with deno Fresh:<br>
+        <a href="https://dev.to/yonirapoport/build-a-full-stack-crud-app-using-denos-fresh-and-postgres-4l39">
+          https://dev.to/yonirapoport/build-a-full-stack-crud-app-using-denos-fresh-and-postgres-4l39</a><br>
+
+        <h5>Run Postgre on remote server</h5>
+        Install Postgre as described above.<br>
+        run the deno app<br>
+
       </div>
 
       <div class="card">
