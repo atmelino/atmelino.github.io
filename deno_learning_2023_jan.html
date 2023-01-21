@@ -566,15 +566,21 @@
         </p>
         <p>
         <h4>Install Postgre on Ubuntu 22.04</h4>
+        Installs the latest version:<br>
         <a href="https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-22-04-quickstart">
           https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-22-04-quickstart</a><br>
-
+        <div class="code">
+          sudo apt install postgresql postgresql-contrib
+        </div>
+        Check status:<br>
+        <div class="code">
+          systemctl status postgresql
+        </div>
+        <br><br>
+        This installs an older version but Also explains how to allow access from connections other than localhost:<br>
+        Configure remote Connection<br>
         <a href="https://computingforgeeks.com/how-to-install-postgresql-13-on-ubuntu/">
           https://computingforgeeks.com/how-to-install-postgresql-13-on-ubuntu/</a><br>
-        Also explains how to allow access from connections other than localhost:<br>
-        Configure remote Connection<br>
-        </p>
-
         <p>
         <h4>Install pgadmin4 (phpadmin - like interface)</h4>
         with nginx:<br>
@@ -632,10 +638,35 @@
           psql -h db.lwbjwhxdyxafkxjdldmn.supabase.co -p 5432 -d postgres -U postgres
         </div>
         and it will show the todos table that was created with the playground program.
-
         </p>
       </div>
 
+      <div class="card">
+        <h2>Jan 20, 2023</h2>
+        Running the example locally requires either using the environment variable system<br>
+        <a href="https://stackoverflow.com/questions/61873926/where-does-deno-env-got-its-data-from">
+          https://stackoverflow.com/questions/61873926/where-does-deno-env-got-its-data-from</a><br>
+        change code to <br>
+        <div class="code">
+          import { config } from "https://deno.land/x/dotenv/mod.ts";<br>
+          const databaseUrl = config().DATABASE_URL;<br>
+        </div>
+        and setting the environment variable DATABASE_URL to the according value<br>
+        or simply set the string<br>
+        <div class="code">
+          const databaseUrl = "postgres://postgres:deno1pass2word3@db.lwbjwhxdyxafkxjdldmn.supabase.co:6543/postgres";
+        </div>
+
+
+        With the server running locally, we can now use the API using cURL:<br>
+        <div class="code">
+          curl -X GET http://localhost:8000/todos
+        </div>
+
+        <div class="code">
+          curl -X POST -d '"Buy cereal"' http://localhost:8000/todos
+        </div>
+      </div>
 
       <div class="card">
         <h2>Date</h2>
