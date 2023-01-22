@@ -582,6 +582,70 @@
         <a href="https://computingforgeeks.com/how-to-install-postgresql-13-on-ubuntu/">
           https://computingforgeeks.com/how-to-install-postgresql-13-on-ubuntu/</a><br>
         <p>
+
+        <h4>Using Postgres</h4>
+        <p>
+          The installation automatically creates a user named postgres.<br>
+          Login as default user postgres<br>
+        <div class="code">
+          sudo -i -u postgres
+        </div>
+        On command line, to change the password of the default user:<br>
+        <div class="code">
+          psql -c "alter user postgres with password 'StrongAdminP@ssw0rd'"
+        </div>
+        On command line, access the Postgres prompt:<br>
+        <div class="code">
+          psql
+        </div>
+        The terminal will now show the name of the user who entered the Postgre prompt:<br>
+        <div class="code">
+          postgres=#
+        </div>
+        Exit the Postgre prompt:<br>
+        <div class="code">
+          \q
+        </div>
+        Create a new database:<br>
+        On the postgres user's command prompt:<br>
+        <div class="code">
+          createdb sammy
+        </div>
+
+        Show databases:<br>
+        <div class="code">
+          \l
+        </div>
+        To show tables, first connect to the database:<br>
+        <div class="code">
+          \c sammy
+        </div>
+        Then
+        <div class="code">
+          \dt
+        </div>
+
+
+
+        <p>
+          Create a new user:<br>
+        <div class="code">
+          sudo -u postgres createuser --interactive
+        </div>
+        For Example:
+        <div class="code">
+          Enter name of role to add: sammy<br>
+          Shall the new role be a superuser? (y/n) y
+        </div>
+
+        </p>
+
+
+
+        </p>
+
+
+
         <h4>Install pgadmin4 (phpadmin - like interface)</h4>
         with nginx:<br>
         <a
@@ -674,9 +738,31 @@
         </ul>
 
         <h5>Use local Postgre database</h5>
+        <ul>
+          <li>replace pool.connect() with client.connect()</li>
+          <li>replace connection.queryObject with client.queryArray</li>
+        </ul>
+        We can now<br>
+        <ul>
+          <li>run curl command in a local terminal</li>
+          <li>deno app runs on local computer</li>
+          <li>database runs on local compter</li>
+        </ul>
+      </div>
 
+      <div class="card">
+        <h2>Jan 21, 2023</h2>
+        <h5>Postgre database and deno app on remote server</h5>
+        copy the local deno app to remote server and run it<br>
+        works:
+        <ul>
+          <li>run curl command in a local terminal</li>
+          <li>deno app runs on remote computer</li>
+          <li>database runs on remote compter</li>
+        </ul>
 
       </div>
+
 
 
       <div class="card">
