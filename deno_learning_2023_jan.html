@@ -765,13 +765,18 @@
       <div class="card">
         <h2>Jan 22, 2023</h2>
         <h4>Deno Postgres with Deno Fresh</h4>
-
-        Create Express/Node + Postgres Backend for React App with CRUD, validation, and RBAC | Remult Demo
+        <p>
+          Both the postgre deno app and the deno Fresh todo app use port 8000.<br>
+          Solution: change the deno Fresh todo app to use port 7000.<br>
+          in main.ts:<br>
+        <div class="code">
+          await start(manifest, { port: 7000, plugins: [twindPlugin(twindConfig)] });
+        </div>
+        Both deno apps can now run in parallel.
+        </p>
 
       </div>
 
-      <a href="https://www.youtube.com/watch?v=rEoScmSVNUE">
-        Create Express/Node + Postgres Backend for React App with CRUD, validation, and RBAC | Remult Demo </a><br>
 
 
 
@@ -794,6 +799,8 @@
           https://dev.to/yonirapoport/build-a-full-stack-crud-app-using-denos-fresh-and-postgres-4l39</a><br>
         <a href="https://github.com/yoni-rapoport/fresh-remult-todo">
           https://github.com/yoni-rapoport/fresh-remult-todo</a><br>
+        <a href="https://www.youtube.com/watch?v=rEoScmSVNUE">
+          Create Express/Node + Postgres Backend for React App with CRUD, validation, and RBAC | Remult Demo </a><br>
 
         <h5>Run Postgre on remote server</h5>
         Install Postgre as described above.<br>
