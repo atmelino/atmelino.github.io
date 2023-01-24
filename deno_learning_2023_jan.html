@@ -779,10 +779,25 @@
         <h5> HTTP request in deno</h5>
         <a href="https://examples.deno.land/http-requests">
           https://examples.deno.land/http-requests</a><br>
+      </div>
+
+
+      <div class="card">
+        <h2>Jan 23, 2023</h2>
+        running the two deno apps parallel leads to a problem with CORS:<br>
+        browser gives error message<br>
+        <div class="code">
+          Access to fetch at 'http://localhost:8000/todos' from origin 'http://localhost:7000'
+          has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present
+          on the requested resource. If an opaque response serves your needs, set the request's
+          mode to 'no-cors' to fetch the resource with CORS disabled.
+        </div>
+        <a href="https://stackoverflow.com/questions/62301531/deno-oak-disable-cors">
+          https://stackoverflow.com/questions/62301531/deno-oak-disable-cors</a><br>
+
 
 
       </div>
-
 
 
 
