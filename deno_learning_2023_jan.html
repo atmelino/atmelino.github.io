@@ -805,6 +805,27 @@
       </div>
 
 
+      <div class="card">
+        <h2>Jan 24, 2023</h2>
+        Deployed on remote server, get error:<br>
+
+        <div class="code">
+          NoteKeeper.tsx:49 GET http://localhost:8000/todos net::ERR_BLOCKED_BY_CLIENT
+
+        </div>
+        "This usually happens if you have ad blocker on. "<br>
+        <a href="https://groups.google.com/g/gwdbeta/c/ti-Q8_Hzu7A">
+          https://groups.google.com/g/gwdbeta/c/ti-Q8_Hzu7A</a><br>
+
+        Turned ad blocker off, now get error<br>
+
+        <div class="code">
+          NoteKeeper.tsx:49 GET http://localhost:8000/todos net::ERR_CONNECTION_REFUSED
+        </div>
+      </div>
+
+
+
 
 
 
@@ -829,8 +850,6 @@
         <h4>REST API</h4>
         <a href="https://www.robinwieruch.de/deno-oak-rest-api/">
           https://www.robinwieruch.de/deno-oak-rest-api/</a><br>
-
-
 
       </div>
 
