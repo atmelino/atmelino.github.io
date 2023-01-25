@@ -822,6 +822,21 @@
         <div class="code">
           NoteKeeper.tsx:49 GET http://localhost:8000/todos net::ERR_CONNECTION_REFUSED
         </div>
+
+        Solution:<br>
+
+        Chrome does not like localhost as host<br>
+        <a href="https://www.ionos.com/digitalguide/hosting/technical-matters/err-connection-refused/">
+          https://www.ionos.com/digitalguide/hosting/technical-matters/err-connection-refused/</a><br>
+
+
+        so change in Notekeeper.tsx to<br>
+        <div class="code">
+          const req = new Request("http://45.79.28.148:8000/todos", {
+        </div>
+
+
+
       </div>
 
 
