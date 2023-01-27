@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="../css/blog.css" media="all" rel="stylesheet">
+    <title>Tech Tips</title>
+</head>
+
+<body>
+    <div class="header">
+
+        <table id="headerline">
+            <tr>
+                <td width="80"><a href="../index.html"><img src="../images/home.png"
+                            alt="[[File:Felipe icon User.svg|thumb|Felipe icon User]]"></a></td>
+                <td>
+                    <h2> Tech Tips</h2>
+                </td>
+            </tr>
+        </table>
+
+
+    </div>
+    <div class="row">
+        <div class="leftcolumn">
+
+
+            <div class="card">
+
+                <h4>Create new repository</h4>
+                Log in to github.<br>
+                Create new repository<br>
+                Make sure to init as recommended.<br>
+                Click on Code button and copy repository link.<br>
+
+                <div class="code">
+                    git clone [paste copied text here]
+                </div>
+
+                <h4>Working with local repository</h4>
+                <h5>Upload changed code to github</h5>
+
+                <div class="code">
+                    git add --all<br><br>
+
+                    git commit -m "update"<br><br>
+
+                    git push -u origin main<br>
+                </div>
+                <br>
+                <h5> Update local repository from github</h5>
+                <div class="code">
+                    git pull
+                </div>
+                <br>
+
+                <h5> Undo local changes</h5>
+                Check status<br>
+                <div class="code">
+                    git status
+                </div>
+                If the message is<br>
+                <div class="code">
+                    Changes not staged for commit:
+                </div>
+                run<br>
+                <div class="code">
+                    git restore *
+                </div>
+
+                and check status again, should say<br>
+
+                <div class="code">
+                    Your branch is up to date with 'origin/main'.
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+        <div class="rightcolumn">
+            <div class="card">
+                <h2>About Me</h2>
+                <p><img src="images/sunflower_02.jpg" alt="Arduino" width="150" height="150"><br>
+                    <a href="https://github.com/atmelino">https://github.com/atmelino</a><br>
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Category</h3>
+
+                <h4>git Usage</h4>
+                <h4>Single Board Computers</h4>
+            </div>
+
+            <div class="card">
+                <h3>Follow Me</h3>
+                <p>Some text..</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer">
+        <h2>More coming soon..<br>
+        </h2>
+    </div>
+</body>
+
+</html>
