@@ -826,13 +826,25 @@
         Solution:<br>
 
         Chrome does not like localhost as host<br>
-        <a href="https://www.ionos.com/digitalguide/hosting/technical-matters/err-connection-refused/">
-          https://www.ionos.com/digitalguide/hosting/technical-matters/err-connection-refused/</a><br>
+
 
         so change in Notekeeper.tsx to<br>
         <div class="code">
           const req = new Request("http://45.79.28.148:8000/todos", {
         </div>
+
+        Links to potential solution:<br>
+        <a href="https://www.ionos.com/digitalguide/hosting/technical-matters/err-connection-refused/">
+          https://www.ionos.com/digitalguide/hosting/technical-matters/err-connection-refused/</a><br>
+
+        <a
+          href="https://www.digitalocean.com/community/questions/get-http-localhost-5000-user-net-err_connection_refused-when-running-application">
+          https://www.digitalocean.com/community/questions/get-http-localhost-5000-user-net-err_connection_refused-when-running-application</a><br>
+
+          https://github.com/facebook/create-react-app/issues/2844
+          https://phoenixnap.com/kb/localhost-refused-to-connect
+          https://phoenixnap.com/kb/127-0-0-1-localhost
+
       </div>
 
       <div class="card">
