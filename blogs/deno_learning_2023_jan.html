@@ -616,7 +616,7 @@
         <div class="code">
           \l
         </div>
-        To show tables, first connect to the database:<br>
+        To list the tables in a database, first connect to the database:<br>
         <div class="code">
           \c sammy
         </div>
@@ -624,6 +624,16 @@
         <div class="code">
           \dt
         </div>
+        get specific information about a table named todos:<br>
+        <div class="code">
+          \d+ todos
+        </div>
+        to show the contents of a table named todos:<br>
+        <div class="code">
+          SELECT * FROM todos;
+        </div>
+        Note: The query has to be upper-case and have the semi-colon at the end.<br>
+
 
 
         <br>
