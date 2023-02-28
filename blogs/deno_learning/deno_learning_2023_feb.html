@@ -58,7 +58,7 @@
 
         Global variables?<br>
         <a href="https://reactgo.com/deno-global-variable/">https://reactgo.com/deno-global-variable/</a><br>
-        
+
       </div>
 
 
@@ -68,17 +68,43 @@
         I can use a global variable inside a jsx return function.<br>
         but how to trigger an update?<br>
 
-        search: trigger event in react
+        search: trigger event in react<br>
+        <a href="https://codesandbox.io/s/kml7m2nn4r"> https://codesandbox.io/s/kml7m2nn4r </a><br>
 
-        https://codesandbox.io/s/kml7m2nn4r
+        search: access the jsx dom properties on a component<br>
+        <a
+          href="https://stackoverflow.com/questions/38093760/how-to-access-a-dom-element-in-react-what-is-the-equilvalent-of-document-getele">
+          https://stackoverflow.com/questions/38093760/how-to-access-a-dom-element-in-react-what-is-the-equilvalent-of-document-getele
+        </a><br>
 
-        search: access the jsx dom properties on a component
+        <a href="https://beta.reactjs.org/learn/sharing-state-between-components">
+          https://beta.reactjs.org/learn/sharing-state-between-components </a><br>
+      </div>
 
-->
- https://stackoverflow.com/questions/38093760/how-to-access-a-dom-element-in-react-what-is-the-equilvalent-of-document-getele
+      <div class="card">
+        <h2>Feb 27, 2023</h2>
+        "Lifting state up" works:<br>
+        <a href="https://beta.reactjs.org/learn/sharing-state-between-components">
+          https://beta.reactjs.org/learn/sharing-state-between-components </a><br>
 
-->
-https://beta.reactjs.org/learn/sharing-state-between-components
+
+        Define the state in the calling function:<br>
+        Declare in Body.tsx<br>
+        <div class="code">
+          const [debugMessage, setdebugMessage] = useState("123");
+        </div>
+        pass the state and the function to change it<br>
+        <div class="code">
+          &lt;Debug_user start={1} initmessage="hello" setDebugMesssage={setDebugMesssage} /&gt;<br>
+          &lt;Debug start={1} initmessage="hello" setDebugMesssage={setDebugMesssage} debugMessage={debugMessage} /&gt;
+        </div>
+        and the element (div, textarea, etc.) will change in the called function!<br>
+        Debug.tsx:<br>
+        <div class="code">
+          return (<br>
+          &lt;div &gt;<br>
+          {debugMessage}<br>
+        </div>
 
       </div>
 
