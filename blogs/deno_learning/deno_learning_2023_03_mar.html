@@ -61,10 +61,10 @@
             https://dev.to/yonirapoport/build-a-full-stack-crud-app-using-denos-fresh-and-postgres-4l39</a><br>
         </p>
         <p> github repository:<br>
-        <a href="https://github.com/yoni-rapoport/fresh-remult-todo">
-          https://github.com/yoni-rapoport/fresh-remult-todo</a><br>
+          <a href="https://github.com/yoni-rapoport/fresh-remult-todo">
+            https://github.com/yoni-rapoport/fresh-remult-todo</a><br>
         </p>
-          <a href="https://www.youtube.com/watch?v=rEoScmSVNUE">
+        <a href="https://www.youtube.com/watch?v=rEoScmSVNUE">
           Create Express/Node + Postgres Backend for React App with CRUD, validation, and RBAC | Remult Demo
 
           <a href="https://deno.land/x/remult@v.0.18.0">
@@ -74,8 +74,62 @@
 
       <div class="card">
         <h2>March 5, 2023</h2>
+        <h4>deno Fresh remult example </h4>
+        download the code from github<br>
+        Running it, the program will work and store the data in a json file at<br>
+        <div class="code">
+          db/tasks.json
+        </div>
+        The contents are also visible at<br>
+        <a href="http://localhost:8000/api/tasks">
+          http://localhost:8000/api/tasks</a><br>
+
+
+        How do we get the program to use a database for storage?<br>
+        The file _middleware.ts contains the code<br>
+        <div class="code">
+          dataProvider: async () => {<br>
+          const dbUrl = Deno.env.get("DATABASE_URL");<br>
+          if (dbUrl) {<br>
+          return createPostgresConnection({ connectionString: dbUrl });<br>
+          }</div>
+
+        What is the correct connectionString to work with Postgres?<br>
+        The docs at<br>
         <a href="https://remult.dev/docs/databases.html#postgres">
           https://remult.dev/docs/databases.html#postgres</a><br>
+        show a connectionString in an example:<br>
+        <div class="code">
+          const connectionString = "postgres://user:password@host:5432/database"
+        </div>
+        Changing the connectionString to
+
+        <div class="code">
+          "postgres://postgres:password@localhost:5432/at_data"
+        </div>
+        leads to error<br>
+
+        <div class="code">
+          PostgresError: password authentication failed for user "postgres"
+        </div>
+
+
+
+        <br>
+        https://www.postgresql.org/docs/current/libpq-connect.html
+
+        34.1.1.2. Connection URIs<br>
+
+        https://www.connectionstrings.com/postgresql/
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        modifying the example code to work with a client object didn't work because of a password error<br>
+
+
 
       </div>
 
