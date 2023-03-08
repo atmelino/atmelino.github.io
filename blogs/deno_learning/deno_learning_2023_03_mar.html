@@ -113,8 +113,6 @@
           PostgresError: password authentication failed for user "postgres"
         </div>
 
-
-
         <br>
         https://www.postgresql.org/docs/current/libpq-connect.html
 
@@ -135,8 +133,7 @@
 
       <div class="card">
         <h2>March 7, 2023</h2>
-        Does the plain postgres module work with the same connectionString?<br>
-
+        More on the ConnectionString:<br>
         <a href="https://deno.land/x/postgres@v0.17.0/mod.ts?s=Client">
           https://deno.land/x/postgres@v0.17.0/mod.ts?s=Client</a><br>
 
@@ -144,21 +141,32 @@
           https://deno.land/x/postgres@v0.17.0/mod.ts?s=ConnectionString</a><br>
 
 
-        Constructors
+        Client(config?: ClientOptions | ConnectionString)<br>
 
-        Client(config?: ClientOptions | ConnectionString)
-
+        <p> Does the plain postgres module work with the same connectionString?<br>
+          yes!<br>
         <div class="code">
-          return createPostgresConnection(dbUrl);
+          const dbUrl = "postgres://postgres:password@localhost:5432/sammy"<br>
+          const client = new Client( dbUrl );
+        </div>
+        </p>
+        <p>
+          Observation:<br>
+        <div class="code">
+          return createPostgresConnection(1);<br>
+          or<br>
+          return createPostgresConnection("hello");<br>
+
         </div>
         leades to a different error:
         <div class="code">
-          error: Uncaught (in promise) TypeError: Cannot create property 'poolSize' on string
-          'postgres://postgres:password@localhost:5432/sammy'
-          options.poolSize = 4;
-          ^
+          error: Uncaught (in promise) TypeError: Cannot create property 'poolSize' on number '1'<br>
+          options.poolSize = 4;<br>
+          or<br>
+          error: Uncaught (in promise) TypeError: Cannot create property 'poolSize' on string 'hello'<br>
+          options.poolSize = 4;<br>
         </div>
-
+        </p>
 
 
       </div>
