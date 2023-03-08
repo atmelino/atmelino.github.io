@@ -135,14 +135,32 @@
 
       <div class="card">
         <h2>March 7, 2023</h2>
-        Does the plain postgres module work with the same connectionString?
-        
-        https://deno.land/x/postgres@v0.17.0/mod.ts?s=Client
-        https://deno.land/x/postgres@v0.17.0/mod.ts?s=ConnectionString
+        Does the plain postgres module work with the same connectionString?<br>
+
+        <a href="https://deno.land/x/postgres@v0.17.0/mod.ts?s=Client">
+          https://deno.land/x/postgres@v0.17.0/mod.ts?s=Client</a><br>
+
+        <a href="https://deno.land/x/postgres@v0.17.0/mod.ts?s=ConnectionString">
+          https://deno.land/x/postgres@v0.17.0/mod.ts?s=ConnectionString</a><br>
+
 
         Constructors
-new
-Client(config?: ClientOptions | ConnectionString)
+
+        Client(config?: ClientOptions | ConnectionString)
+
+        <div class="code">
+          return createPostgresConnection(dbUrl);
+        </div>
+        leades to a different error:
+        <div class="code">
+          error: Uncaught (in promise) TypeError: Cannot create property 'poolSize' on string
+          'postgres://postgres:password@localhost:5432/sammy'
+          options.poolSize = 4;
+          ^
+        </div>
+
+
+
       </div>
 
 
