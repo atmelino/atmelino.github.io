@@ -167,16 +167,66 @@
           options.poolSize = 4;<br>
         </div>
         </p>
-
-
       </div>
 
+      <div class="card">
+        <h2>March 9, 2023</h2>
+        By adding a parameter in _middleware.ts that disables TLS, I can get rid of the TLS errors<br>
+        <div class="code">
+          configuration: {<br>
+          tls: {enabled:false}<br>
+          },
+        </div>
+        but I still get the error<br>
+        <div class="code">
+          PostgresError: password authentication failed for user "postgres"
+        </div>
+        Searching for "PostgresError(parseNoticeMessage(maybe_sasl_final));"<br>
+        <a href="https://stackoverflow.com/questions/75162143/why-is-postgres-password-authentication-failing-in-deno">
+          https://stackoverflow.com/questions/75162143/why-is-postgres-password-authentication-failing-in-deno</a><br>
+        Using<br>
+        <a href=https://github.com/denodrivers/postgres/issues/182#issuecomment-767004796>
+          https://github.com/denodrivers/postgres/issues/182#issuecomment-767004796</a><br>
+        and<br>
+        <a href=https://askubuntu.com/questions/256534/how-do-i-find-the-path-to-pg-hba-conf-from-the-shell>
+          https://askubuntu.com/questions/256534/how-do-i-find-the-path-to-pg-hba-conf-from-the-shell
+        </a><br>
+        modified the configuration file
+        <div class="code">
+          sudo nano /etc/postgresql/14/main/pg_hba.conf
+        </div>
+        and changed authentication method to password:<br>
+        <div class="code">
+          host all all 127.0.0.1/32 password
+        </div>
+        and restart Postgres<br>
+        <div class="code">
+          sudo systemctl restart postgresql
+        </div>
+        password error is now gone!<br>
+        Now get error
+        <div class="code">
+          PostgresError: relation "tasks" does not exist
+        </div>
+        and Postgres log says<br>
+        <div class="code">
+          2023-03-09 20:21:45.819 CST [16941] postgres@sammy ERROR: relation "tasks" does not exist at character 35<br>
+          2023-03-09 20:21:45.819 CST [16941] postgres@sammy STATEMENT: select id, title, completed
+          from tasks Order By id
+        </div>
+        <p>
+          Used pgadmin4 to create table named "tasks" and add the required columns<br>
+          <img src="../../images/table_tasks.png" border="1" alt="hello World"><br>
 
+          and it works!!!
+        </p>
+      </div>
 
 
       <div class="card">
         <h2>Date</h2>
         New Card
+        <a href=> </a><br>
       </div>
 
 
