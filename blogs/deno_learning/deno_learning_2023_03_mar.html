@@ -233,8 +233,44 @@
           <a
             href="https://remult.dev/docs/field-types.html#common-field-types">https://remult.dev/docs/field-types.html#common-field-types</a>
         </p>
-        <a href=> </a><br>
       </div>
+
+      <div class="card">
+        <h2>March 12, 2023</h2>
+        <div class="code">
+          error: Uncaught (in promise) TypeError: pragma cannot be set when runtime is automatic at file
+        </div>
+        Created new project with <br>
+        <div class="code">deno run -A -r https://fresh.deno.dev my-project</div>
+        <br>
+        remove<br>
+        <div class="code">
+          /** @jsx h */<br>
+          import { h } from "preact";
+        </div>
+        from todos.tsx<br>
+        and it worked<br>
+        <a href="https://deno.com/blog/fresh-1.1">https://deno.com/blog/fresh-1.1</a><br>
+
+        <a href="https://deno.com/blog/fresh-1.1#automatic-jsx">
+          https://deno.com/blog/fresh-1.1#automatic-jsx</a><br>
+        New projects are now set up to use automatic mode JSX by default. This means that you do not need the /** @jsx h
+        */ pragma and import { h } from "preact"; <br>
+
+        <p>Repair existing project that has pragma error:<br>
+
+          run update<br>
+          To update your project to the latest version of Fresh:<br>
+        <div class="code">deno run -A -r https://fresh.deno.dev/update .
+        </div>
+        and remove the pragma statements.<br>
+
+
+        </p>
+
+
+      </div>
+
 
 
       <div class="card">
