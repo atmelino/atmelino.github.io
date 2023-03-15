@@ -31,8 +31,6 @@
 
 
             <div class="card">
-
-
                 <h4>Install Postgre on Ubuntu 22.04</h4>
                 Installs the latest version:<br>
                 <a
@@ -51,12 +49,14 @@
                 Configure remote Connection<br>
                 <a href="https://computingforgeeks.com/how-to-install-postgresql-13-on-ubuntu/">
                     https://computingforgeeks.com/how-to-install-postgresql-13-on-ubuntu/</a><br>
-                <p>
 
+</div>
+
+            <div class="card">
                 <h4>Using Postgres</h4>
-                <p>
-                    The installation automatically creates a user named postgres.<br>
-                    Login as default user postgres<br>
+
+                The installation automatically creates a user named postgres.<br>
+                Login as default user postgres<br>
                 <div class="code">
                     sudo -i -u postgres
                 </div>
@@ -103,11 +103,7 @@
                     SELECT * FROM todos;
                 </div>
                 Note: The query has to be upper-case and have the semi-colon at the end.<br>
-
-
-
                 <br>
-
                 Create a new user:<br>
                 <div class="code">
                     sudo -u postgres createuser --interactive
@@ -122,9 +118,9 @@
                 <div class="code">
                     sudo adduser sammy
                 </div>
+            </div>
 
-
-
+            <div class="card">
                 <h4>Install pgadmin4 (phpadmin - like interface)</h4>
                 with nginx:<br>
                 <a
@@ -136,7 +132,6 @@
                 <br>Connect to the admin tool:<br>
                 <a href="http://127.0.0.1/pgadmin4">
                     http://127.0.0.1/pgadmin4</a><br>
-                </p>
             </div>
 
             <div class="card">
