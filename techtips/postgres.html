@@ -29,141 +29,163 @@
     <div class="row">
         <div class="leftcolumn">
 
+            <h2>Main site</h2>
+            <a href="https://www.postgresql.org/">
+                https://www.postgresql.org/</a><br>
+        </div>
 
-            <div class="card">
-                <h4>Install Postgre on Ubuntu 22.04</h4>
-                Installs the latest version:<br>
-                <a
-                    href="https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-22-04-quickstart">
-                    https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-22-04-quickstart</a><br>
-                <div class="code">
-                    sudo apt install postgresql postgresql-contrib
-                </div>
-                Check status:<br>
-                <div class="code">
-                    systemctl status postgresql
-                </div>
-                <br><br>
-                This installs an older version but Also explains how to allow access from connections other than
-                localhost:<br>
-                Configure remote Connection<br>
-                <a href="https://computingforgeeks.com/how-to-install-postgresql-13-on-ubuntu/">
-                    https://computingforgeeks.com/how-to-install-postgresql-13-on-ubuntu/</a><br>
-
-</div>
-
-            <div class="card">
-                <h4>Using Postgres</h4>
-
-                The installation automatically creates a user named postgres.<br>
-                Login as default user postgres<br>
-                <div class="code">
-                    sudo -i -u postgres
-                </div>
-                On command line, to change the password of the default user:<br>
-                <div class="code">
-                    psql -c "alter user postgres with password 'StrongAdminP@ssw0rd'"
-                </div>
-                On command line, access the Postgres prompt:<br>
-                <div class="code">
-                    psql
-                </div>
-                The terminal will now show the name of the user who entered the Postgre prompt:<br>
-                <div class="code">
-                    postgres=#
-                </div>
-                Exit the Postgre prompt:<br>
-                <div class="code">
-                    \q
-                </div>
-                Create a new database:<br>
-                On the postgres user's command prompt:<br>
-                <div class="code">
-                    createdb sammy
-                </div>
-
-                Show databases:<br>
-                <div class="code">
-                    \l
-                </div>
-                To list the tables in a database, first connect to the database:<br>
-                <div class="code">
-                    \c sammy
-                </div>
-                Then
-                <div class="code">
-                    \dt
-                </div>
-                get specific information about a table named todos:<br>
-                <div class="code">
-                    \d+ todos
-                </div>
-                to show the contents of a table named todos:<br>
-                <div class="code">
-                    SELECT * FROM todos;
-                </div>
-                Note: The query has to be upper-case and have the semi-colon at the end.<br>
-                <br>
-                Create a new user:<br>
-                <div class="code">
-                    sudo -u postgres createuser --interactive
-                </div>
-                For Example:
-                <div class="code">
-                    Enter name of role to add: sammy<br>
-                    Shall the new role be a superuser? (y/n) y
-                </div>
-
-                To be able to use Postgre with this new user, need to make admin<br>
-                <div class="code">
-                    sudo adduser sammy
-                </div>
+        <div class="card">
+            <h4>Install Postgre on Ubuntu 22.04</h4>
+            Installs the latest version:<br>
+            <a
+                href="https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-22-04-quickstart">
+                https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-22-04-quickstart</a><br>
+            <div class="code">
+                sudo apt install postgresql postgresql-contrib
             </div>
-
-            <div class="card">
-                <h4>Install pgadmin4 (phpadmin - like interface)</h4>
-                with nginx:<br>
-                <a
-                    href="https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-pgadmin-4-in-server-mode-on-ubuntu-22-04">
-                    https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-pgadmin-4-in-server-mode-on-ubuntu-22-04</a><br>
-                with Apache:<br>
-                <a href="https://computingforgeeks.com/how-to-install-pgadmin-4-on-ubuntu/">
-                    https://computingforgeeks.com/how-to-install-pgadmin-4-on-ubuntu/</a><br>
-                <br>Connect to the admin tool:<br>
-                <a href="http://127.0.0.1/pgadmin4">
-                    http://127.0.0.1/pgadmin4</a><br>
+            Check status:<br>
+            <div class="code">
+                systemctl status postgresql
             </div>
-
-            <div class="card">
-                Where are the Postgres log files located?<br>
-                <div class="code">
-                    ls /var/log/postgresql<br>
-                </div>
-            </div>
-
-
-            <div class="card">
-            </div>
-
+            <br><br>
+            This installs an older version but Also explains how to allow access from connections other than
+            localhost:<br>
+            Configure remote Connection<br>
+            <a href="https://computingforgeeks.com/how-to-install-postgresql-13-on-ubuntu/">
+                https://computingforgeeks.com/how-to-install-postgresql-13-on-ubuntu/</a><br>
 
         </div>
 
+        <div class="card">
+            <h4>Using Postgres</h4>
 
-
-        <div class="rightcolumn">
-
-            <div class="card">
-                <h3>Category</h3>
-
-                <h4>git Usage</h4>
-                <h4>Single Board Computers</h4>
+            The installation automatically creates a user named postgres.<br>
+            Login as default user postgres<br>
+            <div class="code">
+                sudo -i -u postgres
+            </div>
+            On command line, to change the password of the default user:<br>
+            <div class="code">
+                psql -c "alter user postgres with password 'StrongAdminP@ssw0rd'"
+            </div>
+            On command line, access the Postgres prompt:<br>
+            <div class="code">
+                psql
+            </div>
+            The terminal will now show the name of the user who entered the Postgre prompt:<br>
+            <div class="code">
+                postgres=#
+            </div>
+            Exit the Postgre prompt:<br>
+            <div class="code">
+                \q
+            </div>
+            Create a new database:<br>
+            On the postgres user's command prompt:<br>
+            <div class="code">
+                createdb sammy
             </div>
 
-            <div class="card">
-                <h3>Follow Me</h3>
-                <p>Some text..</p>
+            Show databases:<br>
+            <div class="code">
+                \l
+            </div>
+            To list the tables in a database, first connect to the database:<br>
+            <div class="code">
+                \c sammy
+            </div>
+            Then
+            <div class="code">
+                \dt
+            </div>
+            get specific information about a table named todos:<br>
+            <div class="code">
+                \d+ todos
+            </div>
+            to show the contents of a table named todos:<br>
+            <div class="code">
+                SELECT * FROM todos;
+            </div>
+            Note: The query has to be upper-case and have the semi-colon at the end.<br>
+            <br>
+            Create a new user:<br>
+            <div class="code">
+                sudo -u postgres createuser --interactive
+            </div>
+            For Example:
+            <div class="code">
+                Enter name of role to add: sammy<br>
+                Shall the new role be a superuser? (y/n) y
+            </div>
+
+            To be able to use Postgre with this new user, need to make admin<br>
+            <div class="code">
+                sudo adduser sammy
             </div>
         </div>
+
+        <div class="card">
+            <h4>Install pgadmin4 (phpadmin - like interface)</h4>
+            with nginx:<br>
+            <a
+                href="https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-pgadmin-4-in-server-mode-on-ubuntu-22-04">
+                https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-pgadmin-4-in-server-mode-on-ubuntu-22-04</a><br>
+            with Apache:<br>
+            <a href="https://computingforgeeks.com/how-to-install-pgadmin-4-on-ubuntu/">
+                https://computingforgeeks.com/how-to-install-pgadmin-4-on-ubuntu/</a><br>
+            <br>Connect to the admin tool:<br>
+            <a href="http://127.0.0.1/pgadmin4">
+                http://127.0.0.1/pgadmin4</a><br>
+        </div>
+
+        <div class="card">
+            <h4>Set Authentication Method</h4>
+            Modify the configuration file
+            <div class="code">
+                sudo nano /etc/postgresql/14/main/pg_hba.conf
+            </div>
+            and change authentication method, for example to password:<br>
+            <div class="code">
+                # IPv4 local connections:<br>
+                host all all 127.0.0.1/32 password
+            </div>
+            and restart Postgres<br>
+            <div class="code">
+                sudo systemctl restart postgresql
+            </div>
+        </div>
+
+
+        <div class="card">
+            Where are the Postgres log files located?<br>
+            <div class="code">
+                ls /var/log/postgresql<br>
+            </div>
+        </div>
+
+
+        <div class="card">
+        </div>
+
+
+    </div>
+
+
+
+    <div class="rightcolumn">
+
+        <div class="card">
+            <h3>Category</h3>
+
+            <h4>git Usage</h4>
+            <h4>Single Board Computers</h4>
+        </div>
+
+        <div class="card">
+            <h3>Follow Me</h3>
+            <p>Some text..</p>
+        </div>
+    </div>
 
     </div>
     <div class="footer">
