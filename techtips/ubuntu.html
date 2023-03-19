@@ -18,7 +18,7 @@
                     <a href="../techtips/index.html"><img src="../images/techtips.png" alt="scroll" height="60"></a>
                     <a href="../techtips/ubuntu.html"><img src="../images/ubuntu.png" alt="git" height="60"></a>
                 </td>
-                <td  id="headerline_cell">
+                <td id="headerline_cell">
                     <h2>Ubuntu</h2>
                 </td>
             </tr>
@@ -28,6 +28,11 @@
     <div class="row">
         <div class="leftcolumn">
 
+            <div class="card">
+                <h4>Project Web Sites</h4>
+                <p>
+                </p>
+            </div>
 
             <div class="card">
                 <h4>snap update status</h4>
@@ -49,9 +54,58 @@
                 <a
                     href="https://askubuntu.com/questions/1144822/how-to-know-what-snapd-is-downloading-and-when-will-it-finish">
                     https://askubuntu.com/questions/1144822/how-to-know-what-snapd-is-downloading-and-when-will-it-finish</a><br>
-
-
             </div>
+
+
+            <div class="card">
+                <h4>Using Systemd</h4>
+                <a href="https://dev.to/alexanderalemayhu/run-deno-apps-via-systemd-on-linux-1ok2">
+                    https://dev.to/alexanderalemayhu/run-deno-apps-via-systemd-on-linux-1ok2</a><br>
+
+                <div class="code">sudo touch /etc/systemd/system/denoapp_01.service</div>
+
+                Copy and modify the contents as shown on the web site.<br>
+                <br>
+                This command will make the app automatically start on boot:<br>
+                <div class="code">sudo systemctl enable denoapp_01</div>
+                This command will make the app start right now:<br>
+                <div class="code">sudo systemctl start denoapp_01</div>
+
+                Monitor status:<br>
+                <div class="code">sudo systemctl status denoapp_01</div>
+
+                View journal log:<br>
+                <div class="code">sudo journalctl -u denoapp_01</div>
+
+                It took a bit of tweaking until it actually ran.<br><br>
+
+                One of the reason for not running was that the lock file deno.lock conflicted with the source code,<br>
+                Simply deleting the file solved the problem.<br><br>
+
+                Here is the working service file:<br>
+                <div class="code">
+                    [Unit]<br>
+                    Description=deno_fresh_01 - deno example<br>
+                    Documentation=https://github.com/atmelino<br>
+                    After=network.target<br>
+                    <br>
+                    [Service]<br>
+                    Type=simple<br>
+                    User=atmelino<br>
+                    WorkingDirectory=/home/atmelino/github/learn/deno/deno_Fresh/deno_fresh_01<br>
+                    ExecStart=/usr/local/bin/deno run --allow-env --allow-read --allow-write --allow-net --allow-run
+                    main.ts<br>
+                    <br>
+                    Restart=on-failure<br>
+                    <br>
+                    [Install]<br>
+                    WantedBy=multi-user.target<br>
+                </div>
+                </p>
+            </div>
+
+
+
 
         </div>
 
