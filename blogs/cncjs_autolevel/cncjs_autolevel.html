@@ -18,7 +18,7 @@
           <a href="../../index.html"><img src="../../images/home.png" alt="home" height="60"></a>
           <a href="../../blogs/index.html"><img src="../../images/scroll.png" alt="scroll" height="60"></a>
           <a href="../../blogs/cncjs_autolevel/cncjs_autolevel.html"><img src="../../images/gears.png" alt="deno"
-            height="60"></a>
+              height="60"></a>
         </td>
         <td>
           <h2>cncjs autolevel widget blog</h2>
@@ -138,11 +138,51 @@
         <a href="https://aralroca.com/blog/from-node-to-deno">
           https://aralroca.com/blog/from-node-to-deno</a><br>
 
-          <a href="https://www.edgedb.com/blog/how-we-converted-our-node-js-library-to-deno-using-deno">
-            https://www.edgedb.com/blog/how-we-converted-our-node-js-library-to-deno-using-deno</a><br>
-          
+        <a href="https://www.edgedb.com/blog/how-we-converted-our-node-js-library-to-deno-using-deno">
+          https://www.edgedb.com/blog/how-we-converted-our-node-js-library-to-deno-using-deno</a><br>
+      </div>
+
+      <div class="card">
+        <h2>March 19, 2023</h2>
+        Installed node version 14 by<br>
+        <div class="code">
+          nvm install 14
+        </div>
+        Clone the source code by running<br>
+        <div class="code">
+          git clone https://github.com/cncjs/cncjs.git
+        </div>
+
+        Trying to build dev version by running<br>
+        <div class="code">
+          npm run build-dev
+        </div>
+        get errors<br>
+        <div class="code">
+          scripts/build-dev.sh: line 3: yarn: command not found
+          /media/data/github/cncjs/src /media/data/github/cncjs
+          scripts/build-dev.sh: line 11: cross-env: command not found
+          scripts/build-dev.sh: line 14: cross-env: command not found
+          /media/data/github/cncjs
+          scripts/build-dev.sh: line 19: babel: command not found
+          scripts/build-dev.sh: line 20: i18next-scanner: command not found
+          scripts/build-dev.sh: line 22: cross-env: command not found
+          scripts/build-dev.sh: line 23: i18next-scanner: command not found
+        </div>
+        Installed yarn:<br>
+        <div class="code">
+          npm install -g yarn
+        </div>
+        Simply run<br>
+        <div class="code">
+          yarn
+        </div>
+        A lot of node modules are being downloaded!<br>
+
 
       </div>
+
+
 
       <div class="card">
         <h2>Date</h2>

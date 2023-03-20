@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="../css/blog.css" media="all" rel="stylesheet">
+    <title>Tech Tips</title>
+</head>
+
+<body>
+    <div class="header">
+        <table id="headerline_table">
+            <tr>
+                <td width="240">
+                    <a href="../index.html"><img src="../images/home.png" alt="home" height="60"></a>
+                    <a href="../techtips/index.html"><img src="../images/techtips.png" alt="scroll" height="60"></a>
+                    <a href="../techtips/tailwind.html"><img src="../images/tailwind.png" alt="git" height="60"></a>
+                </td>
+                <td id="headerline_cell">
+                    <h2>cncjs</h2>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="row">
+        <div class="leftcolumn">
+
+            <div class="card">
+                <h2>Project Web Sites</h2>
+                <p>
+                    <a href="https://cnc.js.org/">
+                        https://cnc.js.org/</a><br>
+                </p>
+                <p> github repository:<br>
+                    <a href="https://github.com/cncjs/cncjs">
+                        https://github.com/cncjs/cncjs</a><br>
+                </p>
+            </div>
+
+            <div class="card">
+                <h2>Documentation</h2>
+            </div>
+
+            <div class="card">
+                <h2>Development</h2>
+                Clone the source code by running<br>
+                <div class="code">
+                    git clone https://github.com/cncjs/cncjs.git
+                </div>
+
+                <h4>Building the project</h4>
+                Open a terminal in the root of the project.<br>
+                <h5>Production code</h5>
+                The file package.json contains a line such as<br>
+                <div class="code">
+                    "build-prod": "bash scripts/build-prod.sh",
+                </div>
+                This can be called by running<br>
+                <div class="code">
+                    npm run build-prod
+                </div>
+                <h5>Development code</h5>
+                The file package.json contains a line such as<br>
+                <div class="code">
+                    "build-dev": "bash scripts/build-dev.sh",
+                </div>
+                This can be called by running<br>
+                <div class="code">
+                    npm run build-dev
+                </div>
+
+
+            </div>
+
+            <div class="card">
+                <h2>cncjs FAQ</h2>
+                <div class="question">
+                    How do I know which version the source code is?<br>
+                </div>
+                <div class="answer">
+                    <h5>Running version</h5>
+                    Running the command cnc -V gives the version number<br>
+                    <div class="code">
+                        -V, --version output the version number
+                    </div>
+                    <h5>Source code</h5>
+                    The file package.json contains a line such as<br>
+                    <div class="code">
+                        "version": "1.10.1",
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+
+            </div>
+
+        </div>
+
+        <div class="rightcolumn">
+
+            <div class="card">
+                <h3>Category</h3>
+
+                <h4>git Usage</h4>
+                <h4>Single Board Computers</h4>
+            </div>
+
+            <div class="card">
+                <h3>Follow Me</h3>
+                <p>Some text..</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer">
+        <h2>More coming soon..<br>
+        </h2>
+    </div>
+</body>
+
+</html>
