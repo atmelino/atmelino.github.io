@@ -483,24 +483,73 @@
           script src="../dist/bundle.js"
         </div>
         Then it worked.<br>
-
         This example is started by opening public/index.html which links to bundle.js.<br>
         However, this does not help me with running the chartjs example which has the code in App.js<br>
-
         I need a React boilerplate project that has typescript support and an App.js that I can modify.<br>
-
         Tried this boilerplate, but it has errors and doesn't start, also has npo App.js<br>
         <a href="https://github.com/react-boilerplate/react-boilerplate-cra-template">
           https://github.com/react-boilerplate/react-boilerplate-cra-template </a><br>
-
         What about<br>
         <a href="https://github.com/microsoft/TypeScript-React-Starter">
           https://github.com/microsoft/TypeScript-React-Starter </a><br>
-
+        <div class="code">
           npx create-react-app my-app --template typescript
-          
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>React typescript boilerplate creation</h2>
+        <p>
+          This seems to work:<br>
+          <a href="https://github.com/microsoft/TypeScript-React-Starter">
+            https://github.com/microsoft/TypeScript-React-Starter </a><br>
+        <div class="code">
+          npx create-react-app my-app --template typescript<br>
+          cd my-app<br>
+          npm run start
+        </div>
+        </p>
+
+        Observation:<br>
+        If I run<br>
+        <div class="code">
+          yarn
+        </div>
+        afterwards, npm run start doesn't work anymore!<br>
+        So not using yarn in this project.<br>
+
+        <h4>Add chart.js to React typescript project</h4>
+        step 1: copy typescript boilerplate folder to new folder<br>
+        step 2 : verify that npm run start still works<br>
+        step 3: add App.tsx from
+        <a href="https://blog.logrocket.com/using-chart-js-react/">
+          https://blog.logrocket.com/using-chart-js-react/</a>
+        to src folder, but under name App_logrocket.tsx<br>
+
+        Now I get error in App_logrocket.tsx:<br>
+        import { CategoryScale } from "chart.js"; Cannot find module 'chart.js'<br>
+        Try to resolve by running<br>
+        <div class="code">
+          npm install --save chart.js react-chartjs-2
+        </div>
+        as described at<br>
+        <a href="https://react-chartjs-2.js.org/"> https://react-chartjs-2.js.org/</a><br>
+        under Quickstart<br>
+        Now get error<br>
+        <div class="code">
+          npm ERR! While resolving: chartjs_logrocket_01@0.1.0<br>
+          npm ERR! Found: react@18.2.0<br>
+          npm ERR! node_modules/react<br>
+          npm ERR! react@"^18.2.0" from the root project<br>
+          npm ERR!<br>
+          npm ERR! Could not resolve dependency:<br>
+          npm ERR! peer react@"^16.8.0 || ^17.0.0" from react-chartjs-2@3.0.3<br>
+          npm ERR! node_modules/react-chartjs-2<br>
+          npm ERR! react-chartjs-2@"3.0.3" from the root project<br>
+        </div>
 
 
+        <a href=""> </a><br>
       </div>
 
 
