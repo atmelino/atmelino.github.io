@@ -547,6 +547,19 @@
           npm ERR! node_modules/react-chartjs-2<br>
           npm ERR! react-chartjs-2@"3.0.3" from the root project<br>
         </div>
+        Fixed by changing package.json lines to<br>
+        "react-chartjs-2": "^5.0.0",
+        "chart.js": "^4.0.0",
+        as found in
+        https://github.com/reactchartjs/react-chartjs-2/blob/master/sandboxes/line/area/package.json
+
+        and then run
+        <div class="code">
+          npm install --save chart.js react-chartjs-2
+        </div>
+
+        again
+
 
 
         <a href=""> </a><br>
