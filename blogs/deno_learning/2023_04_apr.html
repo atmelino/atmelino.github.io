@@ -59,6 +59,49 @@
 
       </div>
 
+      <div class="card">
+        <h2>Apr 2, 2023</h2>
+        Dynamically updated chart with scrolling x-axis works in React!<br>
+        <a href=""> </a><br>
+      </div>
+
+
+      <div class="card">
+        <h2>Apr 4, 2023</h2>
+        <h4>Update a chart based on d3no-data</h4>
+        Back to deno.<br>
+        I don't know how to get a reference to the chart for calling the update function.<br>
+        New approach:<br>
+        Modify the d3no-data library itself.<br>
+        Download the code and put it into a folder named library.<br>
+        Change the import statements from<br>
+        <div class="code">
+          import { BarChart } from "https://deno.land/x/d3nodata@v0.1.3.1/charts.ts";
+        </div>
+        to
+        <div class="code">
+          import { BarChart } from "../library/charts.ts";
+        </div>
+        Works!<br>
+        <p>
+          How to call the update function in the library module BarChart.tsx?<br>
+          The useEffect hook will be called every time the variable in the array change.<br>
+
+        <div class="code">
+          useEffect(() => {<br>
+          //Runs on the first render<br>
+          //And any time any dependency value changes<br>
+          }, [prop, state]);
+        </div>
+        <a href="https://www.w3schools.com/react/react_useeffect.asp">
+          https://www.w3schools.com/react/react_useeffect.asp
+        </a><br>
+        Thos works, but some errors in the updated chart appear, for example wrong y-axis scale.<br>
+        </p>
+        <a href=""> </a><br>
+      </div>
+
+
 
       <div class="card">
         <h2>Date</h2>
