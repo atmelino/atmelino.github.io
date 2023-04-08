@@ -128,13 +128,9 @@
           https://www.tutorialspoint.com/d3js/d3js_selections.htm
         </a><br>
 
-
-
         Can we get a working example with node.js, React, and d3?<br>
         <a href="https://codesandbox.io/s/b8yc9?file=/src/index.tsx">
           https://codesandbox.io/s/b8yc9?file=/src/index.tsx </a><br>
-
-
         <a href="https://blog.logrocket.com/creating-visualizations-d3-typescript/">
           https://blog.logrocket.com/creating-visualizations-d3-typescript/ </a><br>
         <p>
@@ -150,7 +146,57 @@
         </p>
         <a href="https://blog.logrocket.com/getting-started-d3-js-react/">
           https://blog.logrocket.com/getting-started-d3-js-react/ </a><br>
+      </div>
 
+      <div class="card">
+        <h2>Apr 7, 2023</h2>
+        So far, only the examples work where the javascript is in an html file:<br>
+        <a href="https://www.tutorialsteacher.com/d3js">
+          https://www.tutorialsteacher.com/d3js </a><br>
+
+        <a href=""> </a><br>
+      </div>
+
+      <div class="card">
+        <h2>Apr 8, 2023</h2>
+        In the example<br>
+        <a href="https://www.tutorialsteacher.com/d3js/create-bar-chart-using-d3js">
+          https://www.tutorialsteacher.com/d3js/create-bar-chart-using-d3js
+        </a><br>
+        Removing indivual bars works, they were named with selectAll upon creation:<br>
+        <div class="code">
+          g.selectAll(".bar")<br>
+          .data(data)<br>
+          .enter()<br>
+        </div>
+        <div class="code">
+          g.select(".bar").remove();
+        </div>
+        Removing the xaxis also works by adding an id<br>
+        <a
+          href="https://stackoverflow.com/questions/19387898/how-to-assign-unique-id-to-svg-text-element-in-d3-javascript">
+          https://stackoverflow.com/questions/19387898/how-to-assign-unique-id-to-svg-text-element-in-d3-javascript
+        </a><br>
+        <div class="code">
+          g.append("g")<br>
+          .attr("transform", "translate(0," + height + ")")<br>
+          .call(d3.axisBottom(xScale))<br>
+          .attr("id", "xaxis")
+        </div>
+        <div class="code">
+          g.select("#xaxis") .remove();
+        </div>
+        Note the refers to the element after which we call the id naming.<br>
+        If we place the statement after the label creation
+        <div class="code">
+          g.append("g")<br>
+          .attr("transform", "translate(0," + height + ")")<br>
+          .call(d3.axisBottom(xScale))<br>
+          .append("text")<br>
+          .attr("id", "xaxis")
+
+        </div>
+        The only the label will be removed.<br>
 
 
       </div>
