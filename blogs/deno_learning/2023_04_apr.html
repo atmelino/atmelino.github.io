@@ -272,8 +272,34 @@
       </div>
 
 
-      https://subscription.packtpub.com/book/web-development/9781782162162/5/ch05lvl1sec38/drawing-grid-lines
 
+
+
+      <div class="card">
+        <h2>Apr 20, 2023</h2>
+        x axis vertical tick lines disappear after removing and adding x axis<br>
+
+        This shows how to examine the svg structure in the elements inspector.<br>
+        <a
+          href="https://subscription.packtpub.com/book/web-development/9781782162162/5/ch05lvl1sec38/drawing-grid-lines">
+          https://subscription.packtpub.com/book/web-development/9781782162162/5/ch05lvl1sec38/drawing-grid-lines
+        </a><br>
+        <p>
+          Observation:<br>
+          before removing x-axis<br>
+        <div class="code">
+          &lt;line stroke="currentColor" y2="-420" stroke-width="0.5" opacity="0.3"></line>
+        </div>
+        after removing and adding x-axis<br>
+        <div class="code">
+          &lt;line stroke="currentColor" y2="6" stroke-width:="" opacity:=""></line>
+        </div>
+        When I change the y2 value to -420, the vertical line re-appears.<br>
+        </p>
+
+
+
+      </div>
 
 
 
