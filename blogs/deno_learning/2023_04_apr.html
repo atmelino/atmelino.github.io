@@ -328,8 +328,22 @@
           </a><br>
           <li>every commit and push will now update the livechart branch on github.</li>
         </ul>
+      </div>
 
+      <div class="card">
+        <h2>Apr 28, 2023</h2>
+        Work on contributing to d3nodata continues<br>
 
+        Issues to resolve:<br>
+        when updating the chart, and if <br>
+        addLegend, addLabel, and/or addTooltip is enabled,<br>
+        we add a new legend, label, tooltips to the chart<br>
+        potentially causing memory issues.<br>
+        This can be verified by looking at the elements in the console of the browser:<br><br>
+        <img src="../../images/d3_legend.png" alt="d3_legend" height="300">&nbsp;<br>
+        A text element "TITLE" is unnecessarily added in each cycle.<br> 
+
+        <a href=""> </a><br>
       </div>
 
 
