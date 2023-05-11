@@ -79,24 +79,100 @@
         <a href="https://effectivetypescript.com/2020/05/26/iterate-objects/">
           https://effectivetypescript.com/2020/05/26/iterate-objects/ </a><br>
 
+
+
+
+
+        <h3>Create divs from array in React-type framework</h3>
+        <div class="code">
+          export default function Body() {<br>
+          return (<br>
+          &lt;div><br>
+          &lt;table class=" border-2"><br>
+          {<br>
+          [1, 2, 3, 4, 5, 6].map((value, index) => {<br>
+          return &lt;div key={index}>{value}&lt;/div><br>
+          })<br>
+          }<br>
+          &lt;/table><br>
+          &lt;/div><br>
+          )<br>
+          }<br>
+        </div>
+
+        <h3>Create a table in React-type framework</h3>
+        <div class="code">
+          export default function Body() {<br>
+          return (<br>
+          &lt;div><br>
+          &lt;table class=" border-2"><br>
+          {<br>
+          [1, 2, 3, 4, 5, 6].map((value, index) => {<br>
+          return &lt;tr key={index}>{value}<br>
+          &lt;td>cell content&lt;/td><br>
+          &lt;td>{value}&lt;/td><br>
+          &lt;/tr><br>
+          })<br>
+          }<br>
+          &lt;/table><br>
+          &lt;/div><br>
+          )<br>
+        </div>
+
+
+
       </div>
+
+
+
+
+
+
 
       <div class="card">
         <h2>May 9, 2023</h2>
-        Data table data are stored in an array of objects:<br>
+        The data for the table are stored in an array of objects:<br>
         <div class="code">
-          mydata=<br>
+          dataArray=<br>
           [<br>
           { key1: value1, key2: value2, ..etc.}<br>
           { key1: value1, key2: value2, ..etc.}<br>
           { key1: value1, key2: value2, ..etc.}<br>
           ]
         </div>
+        The problem with accessing the data in transcript is that the type of the key is not known: <br>
+
+        This code<br>
+        <div class="code">
+          for (const data of dataArray) {<br>
+          const keys = Object.keys(data);<br>
+          for (const key of keys) {<br>
+          console.log(data[key]);
+        </div>
+        leads to the error<br>
+        <div class="code">
+          Element implicitly has an 'any' type because expression of type 'string' can't be used to index type
+        </div>
+        Solution:<br>
+        <div class="code">
+          for (const data of dataArray) {<br>
+          const someObj = data;<br>
+          const keys = Object.keys(data);<br>
+          for (const key of keys) {<br>
+          const temp = someObj[key as keyof typeof someObj]<br>
+          }
+        </div>
+        from<br>
+        <a
+          href="https://stackoverflow.com/questions/57086672/element-implicitly-has-an-any-type-because-expression-of-type-string-cant-b/69198602#69198602">
+          https://stackoverflow.com/questions/57086672/element-implicitly-has-an-any-type-because-expression-of-type-string-cant-b/69198602#69198602
+        </a><br>
 
 
-        Problem with
+        tailwind table styles<br>
+        https://freefrontend.com/tailwind-tables/
+        https://www.tailwindtoolbox.com/components/responsive-table
 
-        <a href=""> </a><br>
       </div>
 
       <div class="card">
