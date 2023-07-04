@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type="text/css" href="../../css/blog.css" media="all" rel="stylesheet">
+  <title></title>
+</head>
+
+<body>
+
+  <div class="header">
+    <table id="headerline">
+      <tr>
+        <td width="200">
+          <a href="../../index.html"><img src="../../images/home.png" alt="home" height="60"></a>
+          <a href="../../blogs/index.html"><img src="../../images/scroll.png" alt="scroll" height="60"></a>
+          <a href="../../blogs/cncjs_autolevel/index.html"><img src="../../images/cncjs.png" alt="deno" height="60"></a>
+        </td>
+        <td>
+          <h2>cncjs autolevel widget blog July 2023</h2>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="row">
+    <div class="leftcolumn">
+
+      <div class="card">
+        <h2>July 2, 2023</h2>
+        Tried to start cncjs, did not work:<br>
+        <div class="code">
+          npm run start-prod
+        </div>
+        leads to error during compile<br>
+        <div class="code">
+          Error: error:0308010C:digital envelope routines::unsupported<br>
+          at new Hash (node:internal/crypto/hash:71:19)<br>
+        </div>
+        and when opening URL<br>
+        <div class="code">
+          Error: Failed to lookup view "index.hbs" in views directories "/media/data/github/cncjs/dist/cncjs/app" or
+          "/media/data/github/cncjs/dist/cncjs/server/views"
+        </div>
+        Noticed that in the ouput, it said:<br>
+        <div class="code">
+          Node.js v19.2.0
+        </div>
+        so used<br>
+        <div class="code">
+          nvm use 14
+        </div>
+        after that, it worked again.<br>
+        <a href=""> </a><br>
+      </div>
+
+
+
+
+      <div class="card">
+        <h2>Date</h2>
+        <a href=""> </a><br>
+      </div>
+
+    </div>
+    <div class="rightcolumn">
+      <div class="card">
+        <h3>Posts by Date</h3>
+        <br>
+      </div>
+
+      <div class="card">
+        <h3>Follow Me</h3>
+        <p>Some text..</p>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="footer">
+    <h2>More coming soon..<br>
+  </div>
+</body>
+
+</html>
