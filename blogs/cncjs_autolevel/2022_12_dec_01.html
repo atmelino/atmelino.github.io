@@ -1,0 +1,4825 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type="text/css" href="../../css/blog.css" media="all" rel="stylesheet">
+  <title></title>
+  <style type="text/css">
+    @page {
+      size: 8.5in 11in;
+      margin: 0.79in
+    }
+
+    p {
+      line-height: 115%;
+      margin-bottom: 0.1in;
+      background: transparent
+    }
+
+    h2 {
+      margin-top: 0.14in;
+      margin-bottom: 0.08in;
+      background: transparent;
+      page-break-after: avoid
+    }
+
+    h2.western {
+      font-family: "Liberation Sans", sans-serif;
+      font-size: 16pt;
+      font-weight: bold
+    }
+
+    h2.cjk {
+      font-family: "Noto Sans CJK SC Regular";
+      font-size: 16pt;
+      font-weight: bold
+    }
+
+    h2.ctl {
+      font-family: "Lohit Devanagari";
+      font-size: 16pt;
+      font-weight: bold
+    }
+
+    td p {
+      background: transparent
+    }
+
+    h1 {
+      margin-bottom: 0.08in;
+      background: transparent;
+      page-break-after: avoid
+    }
+
+    h1.western {
+      font-family: "Liberation Sans", sans-serif;
+      font-size: 18pt;
+      font-weight: bold
+    }
+
+    h1.cjk {
+      font-family: "Noto Sans CJK SC Regular";
+      font-size: 18pt;
+      font-weight: bold
+    }
+
+    h1.ctl {
+      font-family: "Lohit Devanagari";
+      font-size: 18pt;
+      font-weight: bold
+    }
+
+    h3 {
+      margin-top: 0.1in;
+      margin-bottom: 0.08in;
+      background: transparent;
+      page-break-after: avoid
+    }
+
+    h3.western {
+      font-family: "Liberation Sans", sans-serif;
+      font-size: 14pt;
+      font-weight: bold
+    }
+
+    h3.cjk {
+      font-family: "Noto Sans CJK SC Regular";
+      font-size: 14pt;
+      font-weight: bold
+    }
+
+    h3.ctl {
+      font-family: "Lohit Devanagari";
+      font-size: 14pt;
+      font-weight: bold
+    }
+
+    a:link {
+      color: #000080;
+      so-language: zxx;
+      text-decoration: underline
+    }
+
+    a:visited {
+      color: #800000;
+      so-language: zxx;
+      text-decoration: underline
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="header">
+    <table id="headerline">
+      <tr>
+        <td width="200">
+          <a href="../../index.html"><img src="../../images/home.png" alt="home" height="60"></a>
+          <a href="../../blogs/index.html"><img src="../../images/scroll.png" alt="scroll" height="60"></a>
+          <a href="../../blogs/cncjs_autolevel/index.html"><img src="../../images/cncjs.png" alt="deno" height="60"></a>
+        </td>
+        <td>
+          <h2>cncjs autolevel widget blog December 2022</h2>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="row">
+    <div class="leftcolumn">
+
+
+      <div class="card">
+        <div id="Table of Contents1" dir="ltr">
+          <div id="Table of Contents1_Head" dir="ltr">
+            <p style="line-height: 100%; margin-top: 0.17in; margin-bottom: 0.08in; page-break-after: avoid">
+              <font face="Liberation Sans, sans-serif">
+                <font size="4" style="font-size: 16pt"><b>Table
+                    of Contents</b></font>
+              </font>
+            </p>
+          </div>
+          <p style="line-height: 100%; margin-bottom: 0in"><a href="#__RefHeading___Toc3171_4290992476">Document
+              Revision History 2</a></p>
+          <p style="line-height: 100%; margin-bottom: 0in"><a href="#__RefHeading___Toc1743_3051514094">Introduction
+              3</a></p>
+          <p style="line-height: 100%; margin-left: 0.2in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc3204_1376189887">Goal 3</a>
+          </p>
+          <p style="line-height: 100%; margin-left: 0.2in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc3206_1376189887">Approach 3</a>
+          </p>
+          <p style="line-height: 100%; margin-bottom: 0in"><a href="#__RefHeading___Toc1745_3051514094">Development
+              3</a></p>
+          <p style="line-height: 100%; margin-left: 0.2in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc3208_1376189887">Installation 3</a>
+          </p>
+          <p style="line-height: 100%; margin-left: 0.2in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc2773_185379805">GRBL Arduino Serial Port
+              Permission 3</a>
+          </p>
+          <p style="line-height: 100%; margin-left: 0.2in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc2768_185379805">Autostart cnc.js 4</a>
+          </p>
+          <p style="line-height: 100%; margin-left: 0.2in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc2718_2797838048">Building the Project 5</a>
+          </p>
+          <p style="line-height: 100%; margin-left: 0.2in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc2720_2797838048">Production version 5</a>
+          </p>
+          <p style="line-height: 100%; margin-left: 0.2in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc1882_3068016539">Configuration 6</a>
+          </p>
+          <p style="line-height: 100%; margin-left: 0.2in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc1887_3068016539">Scripts 6</a>
+          </p>
+          <p style="line-height: 100%; margin-left: 0.2in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc1747_3051514094">Working with git and
+              github 7</a>
+          </p>
+          <p style="line-height: 100%; margin-left: 0.2in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc3210_1376189887">Methods for outputting
+              text for debugging purposes 8</a>
+          </p>
+          <p style="line-height: 100%; margin-left: 0.39in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc2499_3471171846">Server Side 8</a>
+          </p>
+          <p style="line-height: 100%; margin-left: 0.39in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc2501_3471171846">Client Side 9</a>
+          </p>
+          <p style="line-height: 100%; margin-bottom: 0in"><a href="#__RefHeading___Toc1773_3051514094">Source
+              Code Modification 10</a></p>
+          <p style="line-height: 100%; margin-left: 0.2in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc3212_1376189887">Analyzing Program
+              Structure 10</a>
+          </p>
+          <p style="line-height: 100%; margin-left: 0.39in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc2376_399122378">Server Side 10</a>
+          </p>
+          <p style="line-height: 100%; margin-left: 0.39in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc2378_399122378">Client Side 11</a>
+          </p>
+          <p style="line-height: 100%; margin-left: 0.2in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc2282_761723641">Adding the Autolevel
+              widget 12</a>
+          </p>
+          <p style="line-height: 100%; margin-left: 0.2in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc2388_399122378">Capture Probing event
+              from Serial Port 13</a>
+          </p>
+          <p style="line-height: 100%; margin-left: 0.2in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc2687_1346135180">Adding a Dialog for the
+              Probing Grid Parameters 14</a>
+          </p>
+          <p style="line-height: 100%; margin-left: 0.2in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc2959_288041017">Update web page in
+              React 14</a>
+          </p>
+          <p style="line-height: 100%; margin-left: 0.2in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc3218_1376189887">Display messages that
+              are stored in G-Code 15</a>
+          </p>
+          <p style="line-height: 100%; margin-left: 0.2in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc3220_1376189887">Have to click Resume
+              several times for one G-Code Line 15</a>
+          </p>
+          <p style="line-height: 100%; margin-left: 0.2in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc3040_1216396130">Trigger loading g-code
+              programmatically 16</a>
+          </p>
+          <p style="line-height: 100%; margin-left: 0.2in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc2907_4268615812">G-Code Simulator
+              CAMotics 17</a>
+          </p>
+          <p style="line-height: 100%; margin-left: 0.2in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc2961_288041017">3d Plot with SciDAVis 17</a>
+          </p>
+          <p style="line-height: 100%; margin-bottom: 0in"><a href="#__RefHeading___Toc1771_3051514094">Observations
+              18</a></p>
+          <p style="line-height: 100%; margin-left: 0.39in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc2390_399122378">2018-10-30 18</a>
+          </p>
+          <p style="line-height: 100%; margin-left: 0.39in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc2392_399122378">2018-11-06 18</a>
+          </p>
+          <p style="line-height: 100%; margin-left: 0.2in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc2380_399122378">2018 18</a>
+          </p>
+          <p style="line-height: 100%; margin-left: 0.39in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc2394_399122378">Passing Data from Grbl
+              Controller to Autolevel Widget 18</a>
+          </p>
+          <p style="line-height: 100%; margin-left: 0.39in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc3216_1376189887">Serial port Data
+              Parsing and sending probe data to the widget 21</a>
+          </p>
+          <p style="line-height: 100%; margin-left: 0.2in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc1889_3068016539">2020-02-03 23</a>
+          </p>
+          <p style="line-height: 100%; margin-left: 0.2in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc1891_3068016539">2020-02-04 25</a>
+          </p>
+          <p style="line-height: 100%; margin-left: 0.2in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc1890_1586111487">2020-02-05 25</a>
+          </p>
+          <p style="line-height: 100%; margin-left: 0.2in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc2284_761723641">2020-02-09 26</a>
+          </p>
+          <p style="line-height: 100%; margin-left: 0.2in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc2356_4157620613">2020-02-10 26</a>
+          </p>
+          <p style="line-height: 100%; margin-left: 0.39in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc2382_399122378">2020-02-12 27</a>
+          </p>
+          <p style="line-height: 100%; margin-left: 0.39in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc2511_3471171846">2020-02-13 28</a>
+          </p>
+          <p style="line-height: 100%; margin-left: 0.2in; margin-bottom: 0in">
+            <a href="#__RefHeading___Toc3042_1216396130">2020-03-08 29</a>
+          </p>
+          <p style="line-height: 100%; margin-bottom: 0in"><a href="#__RefHeading___Toc2696_3123084980">References
+              31</a></p>
+        </div>
+        <h2 class="western"><br />
+          <br />
+
+        </h2>
+        <h1 class="western" style="page-break-before: always"><a name="__RefHeading___Toc3171_4290992476"></a>
+          Document Revision History</h1>
+        <p><br />
+          <br />
+
+        </p>
+        <table width="100%" cellpadding="5" cellspacing="0">
+          <col width="43*" />
+
+          <col width="43*" />
+
+          <col width="171*" />
+
+          <tr valign="top">
+            <td width="17%"
+              style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                Revision Date</p>
+            </td>
+            <td width="17%"
+              style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                Version</p>
+            </td>
+            <td width="67%" style="border: 1px solid #000000; padding: 0.04in">
+              <p>
+                Description</p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="17%"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                2020-03-08</p>
+            </td>
+            <td width="17%"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                0.1</p>
+            </td>
+            <td width="67%"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                Initial Version</p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="17%"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                2022-12-09</p>
+            </td>
+            <td width="17%"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+            <td width="67%"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="17%"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+            <td width="17%"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+            <td width="67%"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="17%"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+            <td width="17%"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+            <td width="67%"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+          </tr>
+        </table>
+        <p><br />
+          <br />
+
+        </p>
+        <h2 class="western"><br />
+          <br />
+
+        </h2>
+        <h1 class="western" style="page-break-before: always"><a name="__RefHeading___Toc1743_3051514094"></a>
+          Introduction</h1>
+        <h2 class="western"><a name="__RefHeading___Toc3204_1376189887"></a>Goal</h2>
+        <p style="line-height: 100%; margin-bottom: 0in">modify CNC.JS to
+          output the probing results.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h2 class="western"><a name="__RefHeading___Toc3206_1376189887"></a>Approach</h2>
+        <p style="line-height: 100%; margin-bottom: 0in">Modify autolevel
+          widget to output the measured probe positions.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h2 class="western"></h2>
+        <h1 class="western"><a name="__RefHeading___Toc1745_3051514094"></a>Development</h1>
+        <h2 class="western"><a name="__RefHeading___Toc3208_1376189887"></a>Runtime
+          Environment Installation</h2>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Install node.js:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><a
+            href="https://linuxhint.com/ways-install-use-nodejs-ubuntu/">https://linuxhint.com/ways-install-use-nodejs-ubuntu/</a>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Use nvm (node
+          version manager) to install the latest version</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">curl
+            -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh |
+            bash</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">log out and back in
+          so that .bash_rc is run</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">List available
+          versions:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">nvm
+            list-remote</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Install version 12
+          of node:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">nvm
+            install 12</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">This is the version
+          that is listed as the version to use at</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace"><a
+              href="https://github.com/cncjs/cncjs#supported-nodejs-versions">https://github.com/cncjs/cncjs#supported-nodejs-versions</a>
+          </font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Validate
+          installation and list version:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">node --version</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">as of current date:
+          v19.2.0</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h2 class="western"><a name="__RefHeading___Toc2773_185379805"></a>GRBL
+          Arduino Serial Port Permission</h2>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><a
+            href="https://www.arduino.cc/en/Guide/Linux#toc6">https://www.arduino.cc/en/Guide/Linux#toc6</a></p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">sudo
+            usermod -a -G dialout user</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">And / or</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">sudo
+            chmod a+rw /dev/ttyACM0</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">logout and login or
+          reboot</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h2 class="western">Source Code Installation</h2>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Download curent
+          development source code:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">git
+            clone <a
+              href="https://github.com/atmelino/cncjs_1_10_0_AL.git">https://github.com/atmelino/cncjs_1_10_0_AL.git</a>
+          </font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">The github
+          repository does not contain all the node modules required, because of
+          the size and number of files. In its current state, the source code
+          size is about 66 Mbytes.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Install node
+          dependencies:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">npm
+            install</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">The file
+          package.json contains a list of the required modules as well as
+          commands that can be run.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h2 class="western">Build Process</h2>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">In the root of the
+          project, run</p>
+        <p style="line-height: 100%; margin-bottom: 0in">npm run build-prod</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">at the new version,
+          this leads to error
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">events.js:160</p>
+        <p style="line-height: 100%; margin-bottom: 0in"> throw er; //
+          Unhandled 'error' event</p>
+        <p style="line-height: 100%; margin-bottom: 0in"> ^</p>
+        <p style="line-height: 100%; margin-bottom: 0in">Error: This socket
+          has been ended by the other party</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">In that case, build
+          van be completed sucessfully by building parts separately.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">The build-prod
+          script stands for</p>
+        <p style="line-height: 100%; margin-bottom: 0in">&quot;build-prod&quot;:
+          &quot;concurrently --kill-others-on-fail --names
+          \&quot;build-prod-app,build-prod-web\&quot; \&quot;npm run
+          build-prod-app\&quot; \&quot;npm run build-prod-web\&quot;&quot;,</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Instead of running
+          build-prod, first run</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">npm
+            run build-prod-app</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">when it is finished,
+          run</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">npm
+            run build-prod-web</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in; page-break-before: always">
+          <br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">From Previous doc:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h2 class="western"><a name="__RefHeading___Toc2768_185379805"></a>Autostart
+          cnc.js</h2>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Create a service for
+          autostart:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">sudo
+            nano /etc/systemd/system/cncjs.service</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">and enter</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">
+            <font size="2" style="font-size: 11pt">[Unit]</font>
+          </font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">
+            <font size="2" style="font-size: 11pt">Description=cncjs
+              application</font>
+          </font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">
+            <font size="2" style="font-size: 11pt">Documentation=https://github.com/atmelino/cncjs</font>
+          </font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">
+            <font size="2" style="font-size: 11pt">After=network.target</font>
+          </font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">
+            <font size="2" style="font-size: 11pt">[Service]</font>
+          </font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">
+            <font size="2" style="font-size: 11pt">Environment=NODE_PORT=3002</font>
+          </font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">
+            <font size="2" style="font-size: 11pt">Type=simple</font>
+          </font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">
+            <font size="2" style="font-size: 11pt">User=root</font>
+          </font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">
+            <font size="2" style="font-size: 11pt">WorkingDirectory=/media/data/github/cncjs</font>
+          </font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">
+            <font size="2" style="font-size: 11pt">ExecStart=/usr/local/n/versions/node/12.16.1/bin/node
+              /media/data/github/cncjs_1_10_0_AL/bin/cncjs</font>
+          </font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">
+            <font size="2" style="font-size: 11pt">Restart=on-failure</font>
+          </font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">
+            <font size="2" style="font-size: 11pt">[Install]</font>
+          </font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">
+            <font size="2" style="font-size: 11pt">WantedBy=multi-user.target</font>
+          </font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">to start the
+          service:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">sudo
+            systemctl start cncjs</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">to stop the service:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">sudo
+            systemctl stop cncjs</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">make sure it starts
+          every time system boots:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">sudo
+            systemctl enable cncjs</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">To get the status of
+          the Dropbox service:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">systemctl
+            status cncjs</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h2 class="western"><a name="__RefHeading___Toc2718_2797838048"></a>Building
+          the Project</h2>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Download original
+          source code:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">git
+            clone <a href="https://github.com/cncjs/cncjs.git">https://github.com/cncjs/cncjs.git</a></font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">The follwing command
+          will build the project and start the server:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">npm
+            run dev</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">When changes are
+          made to the source code, the changes are automatically updated in the
+          running application.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Run the client:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Open a web browser
+          and go to the URL</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">http://127.0.1.1:8000</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Just check for
+          syntax errors:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">npm
+            run eslint</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h2 class="western"><a name="__RefHeading___Toc2720_2797838048"></a>Production
+          version</h2>
+        <p style="line-height: 100%; margin-bottom: 0in">- For production:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">npm
+            run build-latest</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Run the server:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">npm
+            start</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Run the client:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Open a web browser
+          and go to the URL</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">http://127.0.1.1:8000</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Test: Installation
+          on a new computer</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">- install npm by
+          sudo apt install npm</p>
+        <p style="line-height: 100%; margin-bottom: 0in">- npm update</p>
+        <p style="line-height: 100%; margin-bottom: 0in">- download zip from
+          cnc.js github</p>
+        <p style="line-height: 100%; margin-bottom: 0in">- extract</p>
+        <p style="line-height: 100%; margin-bottom: 0in">- cd cncjs-master/</p>
+        <p style="line-height: 100%; margin-bottom: 0in">- npm run
+          build-latest</p>
+        <p style="line-height: 100%; margin-bottom: 0in">- npm start</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">works!</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h2 class="western"><a name="__RefHeading___Toc1882_3068016539"></a>Configuration</h2>
+        <p style="line-height: 100%; margin-bottom: 0in">Settings are stored
+          in the file
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">package.json</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Different
+          directories can have their own</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">package.json</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">To prevent certain
+          code issues from causing an error in building, edit
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">./.eslintrc.js</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">and add</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">&quot;rules&quot;:
+            {</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">&quot;lines-between-class-members&quot;:
+            &quot;off&quot;,</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">&quot;no-unused-vars&quot;:
+            &quot;off&quot;,</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">&quot;max-lines-per-function&quot;:
+            &quot;off&quot;,</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">}</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h2 class="western"><a name="__RefHeading___Toc1887_3068016539"></a>Scripts</h2>
+        <p style="line-height: 100%; margin-bottom: 0in">The source code
+          repository has a script folder.</p>
+        <p style="line-height: 100%; margin-bottom: 0in">In the script
+          folder, there is a file named prebuild-prod.sh.</p>
+        <p style="line-height: 100%; margin-bottom: 0in">In prebuild-prod.sh,
+          trhere is a line &quot;mkdir -p ../dist/cnc/&quot; (hehe!!!)</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">To use the scripts,
+          we need babel:</p>
+        <p style="line-height: 100%; margin-bottom: 0in">npm install -g
+          babel-cli</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">scripts/prebuild-prod.sh
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">leads to the
+          creation of dist/cnc/electron-app but not dist/cnc/web</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">However,
+          package.json contains a script section. In this file is a number of
+          build commands, some of which refer to a web folder.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">The command
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">npm run
+          build-prod-web</p>
+        <p style="line-height: 100%; margin-bottom: 0in">will create the
+          desired web folder.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h2 class="western"></h2>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h2 class="western"><a name="__RefHeading___Toc1747_3051514094"></a>Working
+          with git and github</h2>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Getting whole
+          repository from github:</p>
+        <p style="line-height: 100%; margin-bottom: 0in">git clone
+          <a href="https://github.com/atmelino/cncjs.git">https://github.com/atmelino/cncjs.git</a>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Getting new changes
+          from github:</p>
+        <p style="line-height: 100%; margin-bottom: 0in">git pull</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Sending new changes
+          to github:</p>
+        <p style="line-height: 100%; margin-bottom: 0in">if new files:</p>
+        <p style="line-height: 100%; margin-bottom: 0in">git add (name of
+          file or folder)</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">git commit -a</p>
+        <p style="line-height: 100%; margin-bottom: 0in">git push origin
+          master</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h2 class="western" style="page-break-before: always"><a name="__RefHeading___Toc3210_1376189887"></a>
+          Methods for outputting text for debugging purposes</h2>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h3 class="western"><a name="__RefHeading___Toc2499_3471171846"></a>Server
+          Side</h3>
+        <p>Messages from the server side will be shown in the terminal in
+          which we run</p>
+        <p>
+          <font face="Courier New, monospace">npm start</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">The file in which we
+          log must have the import</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">import
+            logger from '../../lib/logger';</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">This logging system
+          has several verbosity levels:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <table width="100%" cellpadding="5" cellspacing="0">
+          <col width="128*" />
+
+          <col width="128*" />
+
+          <tr valign="top">
+            <td width="50%"
+              style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <i>Name</i>
+              </p>
+            </td>
+            <td width="50%"
+              style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0in; padding-right: 0.04in">
+              <p>
+                <i>Program start parameter</i>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                verbose</p>
+            </td>
+            <td width="50%"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0in; padding-right: 0.04in">
+              <p>
+                v</p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                debug</p>
+            </td>
+            <td width="50%"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0in; padding-right: 0.04in">
+              <p>
+                vv</p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                silly</p>
+            </td>
+            <td width="50%"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0in; padding-right: 0.04in">
+              <p>
+                vvv</p>
+            </td>
+          </tr>
+        </table>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">For example, if we
+          start the server with the parameter vvv then this will print a
+          message:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">run</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">node
+            bin/cncjs -vvv</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Edit file</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">GrblController.js</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">52:
+            log.silly('hello hello !!!');</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">and start in vvv
+          level</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Alternatively, we
+          could add the line</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">&quot;start-vvv&quot;:
+            &quot;./bin/cnc -vvv&quot;,</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">in the scripts
+          section of package.json</p>
+        <p style="line-height: 100%; margin-bottom: 0in">and start with</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">npm
+            run start-vvv</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">the function
+          log.error will output in the terminal at the lowest and any verbosity
+          level.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h3 class="western"><br />
+          <br />
+
+        </h3>
+        <h3 class="western" style="page-break-before: always"><a name="__RefHeading___Toc2501_3471171846"></a>
+          Client Side</h3>
+        <p>Messages from the client side will be shown in the web browser in
+          which we open the console panel</p>
+        <p style="line-height: 100%; margin-bottom: 0in">In Chrome, we open
+          the console panel with CRTL-SHIFT-J</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">The file in which we
+          log must have the imports</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">import
+            { TRACE, DEBUG, INFO, WARN, ERROR } from 'universal-logger';</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">import
+            log from '../../lib/log';</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Example:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <table width="831" cellpadding="5" cellspacing="0">
+          <col width="57" />
+
+          <col width="753" />
+
+          <tr valign="top">
+            <td width="57"
+              style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+            <td width="753" style="border: 1px solid #000000; padding: 0.04in">
+              <p>
+                <font face="Courier New, monospace">src/web/widgets/Macro/index.jsx</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="57"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">11</font>
+              </p>
+            </td>
+            <td width="753"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">import log from
+                  '../../lib/log';</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="57"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">70</font>
+              </p>
+            </td>
+            <td width="753"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">log.error('full
+                  screen toggled');</font>
+              </p>
+            </td>
+          </tr>
+        </table>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">In addition, cncjs
+          has a console widget and in this we can print debug messages</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">File:</p>
+        <p style="line-height: 100%; margin-bottom: 0in">src/web/widgets/Console/index.jsx</p>
+        <p style="line-height: 100%; margin-bottom: 0in">103:
+          this.terminal.writeln('hello');</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">File:</p>
+        <p style="line-height: 100%; margin-bottom: 0in">GrblController.js</p>
+        <p style="line-height: 100%; margin-bottom: 0in">492:
+          this.emit('serialport:read', `test ALARM:${code}
+          (${alarm.message})`);</p>
+        <p style="line-height: 100%; margin-bottom: 0in">shows up in console</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">shows up in browser
+          console</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h2 class="western"><br />
+          <br />
+
+        </h2>
+        <h1 class="western" style="page-break-before: always"><a name="__RefHeading___Toc1773_3051514094"></a>
+          Source Code Modification</h1>
+        <h2 class="western"><a name="__RefHeading___Toc3212_1376189887"></a>Analyzing
+          Program Structure</h2>
+        <h3 class="western"><a name="__RefHeading___Toc2376_399122378"></a>Server
+          Side</h3>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">The command</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">npm
+            start</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">looks into the file</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">.</font>
+          <font face="Courier New, monospace">/</font>
+          <font face="Courier New, monospace">package.json</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">In this file is a
+          scripts section with</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">&quot;scripts&quot;:
+            {</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace"> ..</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace"> &quot;start&quot;:
+            &quot;./bin/cncjs&quot;,</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace"> ..</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">}</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">It is also possible
+          to start the server by typing</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">node
+            bin/cncjs</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">In the file</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">./bin/cncjs</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">the function</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">default()</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">is called from the
+          file</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">./dist/cncjs/server-cli.js</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">This function calls
+          the function</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">createServer()</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">in the file</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">./dist/server/index.js</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Unknown: somehow,
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">./src/server/services/cncengine/CNCEngine.js</p>
+        <p style="line-height: 100%; margin-bottom: 0in">is started and it
+          starts</p>
+        <p style="line-height: 100%; margin-bottom: 0in">./src/server/controllers/Grbl/GrblController.js</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Inside the class
+          GrblController</p>
+        <p style="line-height: 100%; margin-bottom: 0in">the constructor sets
+          up
+        </p>
+        <ul>
+          <li>
+            <p style="line-height: 100%; margin-bottom: 0in">this.feeder and
+              this.feeder.on events</p>
+          <li>
+            <p style="line-height: 100%; margin-bottom: 0in">this.sender and
+              this.sender.on events</p>
+          <li>
+            <p style="line-height: 100%; margin-bottom: 0in">this.workflow
+              and this.workflow.on events</p>
+          <li>
+            <p style="line-height: 100%; margin-bottom: 0in">this.runner and
+              this.runner.on events</p>
+        </ul>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">The follwing is from
+          previous doc, needs to be reworked</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><i>the server is
+            created in </i>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><i>nodeDevelop/cncjs-autolevel/src/app/index.js</i></p>
+        <p style="line-height: 100%; margin-bottom: 0in"><i>const
+            createServer = (options, callback) =&gt; {</i></p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><i>There is a
+            function const appMain = () =&gt; { </i>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><i>in </i>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><i>nodeDevelop/cncjs-autolevel/src/app/app.js</i></p>
+        <p style="line-height: 100%; margin-bottom: 0in"><i>If I delete it
+            and run</i></p>
+        <p style="line-height: 100%; margin-bottom: 0in"><i>npm run prepare</i></p>
+        <p style="line-height: 100%; margin-bottom: 0in"><i>I get error</i></p>
+        <p style="line-height: 100%; margin-bottom: 0in"><i>nodeDevelop/cncjs-autolevel/src/app/index.js</i></p>
+        <p style="line-height: 100%; margin-bottom: 0in"> <i>18:17 error
+            Unable to resolve path to module './app' import/no-unresolved</i></p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h3 class="western"><a name="__RefHeading___Toc2378_399122378"></a>Client
+          Side</h3>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">The framework used
+          causes the initial page to be loaded from</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">./dist/app/index.hbs</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">in this file, a
+          javascript source is loaded at</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">app.e2134974ba17dc978fbd.bundle.js</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">This is the actual
+          web page.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Sources:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">The file</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">./dist/app/index.hbs</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">is built from the
+          source at</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">./dist/src/index.jsx</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h2 class="western" style="page-break-before: always"><a name="__RefHeading___Toc2282_761723641"></a>
+          Adding the Autolevel widget</h2>
+        <p>One approach is to clone a widget, such as laser as laser2, and
+          then compile the code and see if it still runs. If it runs, modify it
+          and restore previous source code state if run time error occurs.
+        </p>
+        <p><br />
+          <br />
+
+        </p>
+        <p>The file</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">./src/app/containers/Workspace/WidgetManager/WidgetManager.jsx</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">contains the
+          variable widgetList. Adding an item will result in the item being
+          offered as an option.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <img src="images/devNotes_html_6e8665d1739d5c04.png" name="Image2" align="bottom" width="444" height="50"
+            border="0" />
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><img src="images/devNotes_html_9491aaac53fe8adc.png" name="Image3"
+            align="bottom" width="831" height="602" border="0" />
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h2 class="western"></h2>
+        <p><br />
+          <br />
+
+        </p>
+        <p><br />
+          <br />
+
+        </p>
+        <p><br />
+          <br />
+
+        </p>
+        <p>The new widget also needs to be added to the file</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">./src/app/containers/Workspace/Widget.jsx</font>
+        </p>
+        <p><br />
+          <br />
+
+        </p>
+        <p>the default state needs to be added to</p>
+        <p>
+          <font face="Courier New, monospace">src/app/store/defaultState.js</font>
+        </p>
+        <p>Finally we need to add a folder named</p>
+        <p>
+          <font face="Courier New, monospace">./src/app/widgets/ProbingGrid</font>
+        </p>
+        <p>containing the files</p>
+        <p>
+          <font face="Courier New, monospace">index.jsx index.styl
+            ProbingGrid.jsx react-table.css</font>
+        </p>
+        <p>Probing grid uses additional modules which need to be installed:</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">npm
+            i react-table</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">npm
+            i numeral</font>
+        </p>
+        <p><br />
+          <br />
+
+        </p>
+        <p><br />
+          <br />
+
+        </p>
+        <p><br />
+          <br />
+
+        </p>
+        <h2 class="western"><a name="__RefHeading___Toc2388_399122378"></a>Capture
+          Probing event from Serial Port</h2>
+        <p><br />
+          <br />
+
+        </p>
+        <p>When a probing command is sent to the GRBL controller through the
+          serial port, the machine will start probing, and when contact is
+          made, the GRBL controller will send throug the serial port data such
+          as</p>
+        <p>
+          <font face="Courier New, monospace">[PRB:0.000,0.000,7.404:1]</font>
+        </p>
+        <p>We want to capture these data and send them to the widget.</p>
+        <p>In the file
+        </p>
+        <p>
+          <font face="Courier New, monospace">./src/server/controllers/Grbl/GrblController.js</font>
+        </p>
+        <p>replace</p>
+        <p>
+          <font face="Courier New, monospace">this.runner.on('parameters',
+            (res) =&gt; {</font>
+        </p>
+        <p>
+          <font face="Courier New, monospace">this.emit('serialport:read',
+            res.raw);</font>
+        </p>
+        <p>
+          <font face="Courier New, monospace">});</font>
+        </p>
+        <p><br />
+          <br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">with</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          this.runner.on('parameters', (res) =&gt; {</p>
+        <p style="line-height: 100%; margin-bottom: 0in"> //
+          atmelino</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          log.error('parameters: ' + JSON.stringify(res));</p>
+        <p style="line-height: 100%; margin-bottom: 0in"> const
+          probingData = {</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          type: 'probing',</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          printed: false,</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          result: res.value</p>
+        <p style="line-height: 100%; margin-bottom: 0in"> };</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          //this.emit('serialport:read', 'parameters');</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          this.emit('serialport:read', probingData);</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          this.emit('serialport:read', res.raw);</p>
+        <p style="line-height: 100%; margin-bottom: 0in"> });</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h2 class="western"><a name="__RefHeading___Toc2687_1346135180"></a>Adding
+          a Dialog for the Probing Grid Parameters</h2>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">The Probe widget and
+          the Macro widget have dialogs, for reference.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h2 class="western"><a name="__RefHeading___Toc2959_288041017"></a>Update
+          web page in React</h2>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">If a component has a
+          member of state,</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">state = {</p>
+        <p style="line-height: 100%; margin-bottom: 0in"> mynumber: 9</p>
+        <p style="line-height: 100%; margin-bottom: 0in">}</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"> then calling
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">this.setState({
+          mynumber: 2.3 });</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">will update the web
+          page.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h2 class="western"><a name="__RefHeading___Toc3218_1376189887"></a>Display
+          messages that are stored in G-Code</h2>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">2018-11-17</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">in vvv mode, entire
+          line of g-code is printed in terminal</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">file:</p>
+        <p style="line-height: 100%; margin-bottom: 0in">src/app/controllers/Grbl/GrblController.js</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">2018-11-18T02:05:59.941Z
+          - silly: controller:Grbl &gt; M0 (Attach probe wires and clips that
+          need attaching)</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h2 class="western"><a name="__RefHeading___Toc3220_1376189887"></a>Have
+          to click Resume several times for one G-Code Line</h2>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">First M0, have to
+          click only once:</p>
+        <p style="line-height: 100%; margin-bottom: 0in">2018-11-18T02:51:40.938Z
+          - error: controller:Grbl M0 Program Pause in Sender</p>
+        <p style="line-height: 100%; margin-bottom: 0in">2018-11-18T02:51:40.941Z
+          - error: controller:Grbl GbrController.js this.sender.onM0 (Attach
+          probe wires and clips that need attaching)</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Second M0, have to
+          click twice:</p>
+        <p style="line-height: 100%; margin-bottom: 0in">2018-11-18T02:53:49.224Z
+          - error: controller:Grbl M0 Program Pause in Sender</p>
+        <p style="line-height: 100%; margin-bottom: 0in">2018-11-18T02:53:52.597Z
+          - error: controller:Grbl2 Grbl.js: prb found</p>
+        <p style="line-height: 100%; margin-bottom: 0in">2018-11-18T02:53:52.598Z
+          - error: controller:Grbl2 Grbl.js: GrblLineParserResultParameters
+          parameters emit</p>
+        <p style="line-height: 100%; margin-bottom: 0in">2018-11-18T02:53:52.599Z
+          - error: controller:Grbl
+          parameters{&quot;name&quot;:&quot;PRB&quot;,&quot;value&quot;:{&quot;result&quot;:1,&quot;x&quot;:&quot;-82.888&quot;,&quot;y&quot;:&quot;-0.048&quot;,&quot;z&quot;:&quot;-2.676&quot;},&quot;raw&quot;:&quot;[PRB:-82.888,-0.048,-2.676:1]&quot;}
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">first click:</p>
+        <p style="line-height: 100%; margin-bottom: 0in">2018-11-18T02:54:30.947Z
+          - error: controller:Grbl M0 Program Pause in Sender</p>
+        <p style="line-height: 100%; margin-bottom: 0in">2018-11-18T02:54:30.948Z
+          - error: controller:Grbl GbrController.js this.sender.onM0 (Detach
+          any clips used for probing)</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">needs second click!</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Maybe because of the
+          probing G38.2?</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Observation:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">if there is one
+          G38.2 command before the M0 command, there is only one click to
+          continue.</p>
+        <p style="line-height: 100%; margin-bottom: 0in">if there are teo
+          G38.2 commands before the M0 command, there are two clicks to
+          continue!</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <table width="100%" cellpadding="0" cellspacing="0">
+          <col width="256*" />
+
+          <tr>
+            <td width="100%" valign="top" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">G38.2 Z-1 F100 (Probe to a
+                  maximum of the specified probe height at the specified feed rate)</font>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td width="100%" valign="top" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">G92 Z0 (Touch off Z to 0 once
+                  contact is made)</font>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td width="100%" valign="top" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">G0 Z2 (Move Z to above the
+                  contact point)</font>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td width="100%" valign="top" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">G38.2 Z-1 F50 (Repeat at a
+                  more accurate slower rate)</font>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td width="100%" valign="top" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">G92 Z0</font>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td width="100%" valign="top" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">G0 Z2</font>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td width="100%" valign="top" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">M0 (Detach any clips used for
+                  probing)</font>
+              </p>
+            </td>
+          </tr>
+        </table>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h2 class="western"><a name="__RefHeading___Toc3040_1216396130"></a>Trigger
+          loading g-code programmatically</h2>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">If a gcode file is
+          loaded and I press reload in the browser, the same gcode file is
+          automatically loaded so there is probably another way to initiate
+          loading other than clicking the Upload G-Code button in the
+          Visualizer.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Daog and dropping a
+          gcode file into the web browser window causes the function</p>
+        <p style="line-height: 100%; margin-bottom: 0in">onDrop</p>
+        <p style="line-height: 100%; margin-bottom: 0in">in the file</p>
+        <p style="line-height: 100%; margin-bottom: 0in">Workspace.jsx</p>
+        <p style="line-height: 100%; margin-bottom: 0in">to be called.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">The function call</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          api.loadGCode({ port, name, gcode })</p>
+        <p style="line-height: 100%; margin-bottom: 0in">in the function
+          onDrop works.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in; page-break-before: always">
+          <br />
+
+        </p>
+        <h2 class="western"><a name="__RefHeading___Toc2907_4268615812"></a>G-Code
+          Simulator CAMotics</h2>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">CAMotics</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Download deb file
+          and install</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Fix missing library
+          error by</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">sudo apt-get install
+          libqt5websockets5-dev</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h2 class="western"><a name="__RefHeading___Toc2961_288041017"></a>3d
+          Plot with SciDAVis</h2>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Create data in
+          Libreoffice Calc</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">export as csv</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">import in SciDAVis</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">convert to matrix</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">enter column and row
+          coordinates</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">make 3D Plot</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h1 class="western" style="page-break-before: always"><a name="__RefHeading___Toc1771_3051514094"></a>
+          Observations</h1>
+        <h3 class="western"><a name="__RefHeading___Toc2390_399122378"></a>2018-10-30</h3>
+        <p style="line-height: 100%; margin-bottom: 0in">Cloned another
+          widget and named it Autoleveller.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">removed Start-Y
+          section from ./src/web/widgets/Autoleveller/Autoleveller.jsx</p>
+        <p style="line-height: 100%; margin-bottom: 0in">and it shows up
+          accordingly on web page</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h3 class="western"><a name="__RefHeading___Toc2392_399122378"></a>2018-11-06</h3>
+        <p style="line-height: 100%; margin-bottom: 0in">the code for GRBL
+          controller communication appears to be in
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">cncjs-autolevel/src/app/controllers/Grbl/GrblController.js</p>
+        <p style="line-height: 100%; margin-bottom: 0in">here a class named
+          GrblController is defined.
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">It contains a
+          variable named controller which is of type Grbl</p>
+        <p style="line-height: 100%; margin-bottom: 0in">38:
+          this.controller = new Grbl();</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Grbl is defined in
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">cncjs-autolevel/src/app/controllers/Grbl/Grbl.js</p>
+        <p style="line-height: 100%; margin-bottom: 0in">588: class Grbl
+          extends events.EventEmitter {</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h2 class="western"><a name="__RefHeading___Toc2380_399122378"></a>2018</h2>
+        <p><br />
+          <br />
+
+        </p>
+        <h3 class="western"><a name="__RefHeading___Toc2394_399122378"></a>Passing
+          Data from Grbl Controller to Autolevel Widget</h3>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">There are several
+          widgets that receive data from GrblController.js, for example the
+          Axes widget.</p>
+        <p style="line-height: 100%; margin-bottom: 0in">How are the data
+          sent from the GRBL controller to the widget?</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">In
+          src/web/widgets/Axes/DisplayPanel.jsx</p>
+        <p style="line-height: 100%; margin-bottom: 0in">there is a
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">class DisplayPanel
+          extends PureComponent {</p>
+        <p style="line-height: 100%; margin-bottom: 0in">and a render
+          function.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">we have a variable
+          named machinePosition</p>
+        <p style="line-height: 100%; margin-bottom: 0in">it gets it's value
+          from</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+        </p>
+        <table width="831" cellpadding="5" cellspacing="0">
+          <col width="49" />
+
+          <col width="760" />
+
+          <tr valign="top">
+            <td width="49"
+              style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+            <td width="760" style="border: 1px solid #000000; padding: 0.04in">
+              <p>
+                <font face="Courier New, monospace">src/web/widgets/Axes/DisplayPanel.jsx</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="49"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+            <td width="760"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">const { state, actions } =
+                  this.props;</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="49"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+            <td width="760"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">const { units, canClick, axes,
+                  machinePosition, workPosition } = state;</font>
+              </p>
+            </td>
+          </tr>
+        </table>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">so props are used to
+          pass data into the widget which is a React component.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Working backwards
+          from the component:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <table width="831" cellpadding="5" cellspacing="0">
+          <col width="49" />
+
+          <col width="760" />
+
+          <tr valign="top">
+            <td width="49"
+              style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+            <td width="760" style="border: 1px solid #000000; padding: 0.04in">
+              <p>
+                <font face="Courier New, monospace">src/web/widgets/Axes/DisplayPanel.jsx</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="49"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">35</font>
+              </p>
+            </td>
+            <td width="760"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">render() {</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="49"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">52</font>
+              </p>
+            </td>
+            <td width="760"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">return (</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="49"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">210</font>
+              </p>
+            </td>
+            <td width="760"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">&lt;span
+                  className={styles.integerPart}&gt;</font>
+              </p>
+              <p>
+                <font face="Courier New, monospace">{machinePosition.x.split('.')[0]}&lt;/span&gt;</font>
+              </p>
+            </td>
+          </tr>
+        </table>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">The value of
+          machinePosition is used to display in the axes widget</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><img src="images/devNotes_html_c431bc0e7ec021c9.png" name="Image1"
+            align="bottom" width="399" height="91" border="0" />
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">the value of
+          machinePosition is assigned from this.props</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">DisplayPanel is
+          instantiated in
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <table width="831" cellpadding="0" cellspacing="0">
+          <col width="68" />
+
+          <col width="764" />
+
+          <tr valign="top">
+            <td width="68" style="border: none; padding: 0in">
+              <p><br />
+
+              </p>
+            </td>
+            <td width="764" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">src/web/widgets/Axes/Axes.jsx</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="68" style="border: none; padding: 0in">
+              <p><br />
+
+              </p>
+            </td>
+            <td width="764" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">const
+                  Axes = (props) =&gt; {</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="68" style="border: none; padding: 0in">
+              <p><br />
+
+              </p>
+            </td>
+            <td width="764" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">const
+                  { config, state, actions } = props;</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="68" style="border: none; padding: 0in">
+              <p><br />
+
+              </p>
+            </td>
+            <td width="764" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">return
+                  (</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="68" style="border: none; padding: 0in">
+              <p><br />
+
+              </p>
+            </td>
+            <td width="764" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">&lt;div&gt;</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="68" style="border: none; padding: 0in">
+              <p><br />
+
+              </p>
+            </td>
+            <td width="764" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">&lt;DisplayPanel
+                  config={config} state={state} actions={actions} /&gt;</font>
+              </p>
+            </td>
+          </tr>
+        </table>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">so DisplayPanel
+          receives its props from Axes, Axes passes the props down to
+          DisplayPanel.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Axes is instantiated
+          in
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <table width="831" cellpadding="5" cellspacing="0">
+          <col width="57" />
+
+          <col width="753" />
+
+          <tr valign="top">
+            <td width="57"
+              style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+            <td width="753" style="border: 1px solid #000000; padding: 0.04in">
+              <p>
+                <font face="Courier New, monospace">src/web/widgets/Axes/index.jsx
+                </font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="57"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">87</font>
+              </p>
+            </td>
+            <td width="753"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">class AxesWidget extends
+                  PureComponent {</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="57"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">686</font>
+              </p>
+            </td>
+            <td width="753"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">render() {</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="57"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">811</font>
+              </p>
+            </td>
+            <td width="753"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">&lt;Axes config={config}
+                  state={state} actions={actions} /&gt;</font>
+              </p>
+            </td>
+          </tr>
+        </table>
+        <p style="line-height: 100%; margin-bottom: 0in">
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">It seems like this
+          calls is added to the listeners of the controller. Could this be the
+          connection to the Grbl data received from the serial port?</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">The function
+          controllerEvents() is added to the listeners of the controller:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <table width="831" cellpadding="5" cellspacing="0">
+          <col width="49" />
+
+          <col width="760" />
+
+          <tr valign="top">
+            <td width="49"
+              style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+            <td width="760" style="border: 1px solid #000000; padding: 0.04in">
+              <p>
+                <font face="Courier New, monospace">src/web/widgets/Axes/index.jsx</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="49"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">528</font>
+              </p>
+            </td>
+            <td width="760"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">componentDidMount() {</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="49"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">529</font>
+              </p>
+            </td>
+            <td width="760"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">this.addControllerEvents();</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="49"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">596</font>
+              </p>
+            </td>
+            <td width="760"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">addControllerEvents() {</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="49"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">597</font>
+              </p>
+            </td>
+            <td width="760"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">Object.keys(this.controllerEvents).forEach(eventName
+                  =&gt; {</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="49"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">598</font>
+              </p>
+            </td>
+            <td width="760"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">const callback =
+                  this.controllerEvents[eventName];</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="49"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">599</font>
+              </p>
+            </td>
+            <td width="760"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">controller.addListener(eventName,
+                  callback);</font>
+              </p>
+            </td>
+          </tr>
+        </table>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">And in the function
+          controllerEvents() , the variable machinePosition is assigned a value
+          from the state
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">(coming from the
+          controller ?)</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <table width="831" cellpadding="5" cellspacing="0">
+          <col width="64" />
+
+          <col width="745" />
+
+          <tr valign="top">
+            <td width="64"
+              style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+            <td width="745" style="border: 1px solid #000000; padding: 0.04in">
+              <p>
+                <font face="Courier New, monospace">src/web/widgets/Axes/index.jsx</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="64"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">324</font>
+              </p>
+            </td>
+            <td width="745"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">controllerEvents = {</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="64"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">355</font>
+              </p>
+            </td>
+            <td width="745"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">'controller:state':
+                  (type, controllerState) =&gt; {</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="64"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+            <td width="745"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="64"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">416</font>
+              </p>
+            </td>
+            <td width="745"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">this.setState(state =&gt; ({</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="64"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">417</font>
+              </p>
+            </td>
+            <td width="745"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">units: units,</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="64"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">418</font>
+              </p>
+            </td>
+            <td width="745"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">controller:
+                  {</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="64"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">419</font>
+              </p>
+            </td>
+            <td width="745"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">...state.controller,</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="64"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">420</font>
+              </p>
+            </td>
+            <td width="745"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">type:
+                  type,</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="64"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">421</font>
+              </p>
+            </td>
+            <td width="745"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">state:
+                  controllerState</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="64"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+            <td width="745"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="64"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+            <td width="745"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="64"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+            <td width="745"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">machinePosition:
+                  mapValues({</font>
+              </p>
+              <p>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="64"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+            <td width="745"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">...state.machinePosition,</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="64"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+            <td width="745"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="64"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+            <td width="745"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+          </tr>
+        </table>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <table width="831" cellpadding="5" cellspacing="0">
+          <col width="64" />
+
+          <col width="745" />
+
+          <tr valign="top">
+            <td width="64"
+              style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+            <td width="745" style="border: 1px solid #000000; padding: 0.04in">
+              <p>
+                <font face="Courier New, monospace">src/app/controllers/Grbl/GrblController.js</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="64"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+            <td width="745"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="64"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">662</font>
+              </p>
+            </td>
+            <td width="745"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">this.emit('controller:state',
+                  GRBL, this.state);</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="64"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+            <td width="745"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+          </tr>
+        </table>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Added line to
+          GrblController.js</p>
+        <p style="line-height: 100%; margin-bottom: 0in">664:
+          log.error('GrblController.js Grbl state');</p>
+        <p style="line-height: 100%; margin-bottom: 0in">and it shows up in
+          the terminal.</p>
+        <p style="line-height: 100%; margin-bottom: 0in">Especially, it shows
+          up when probe command is issued.</p>
+        <p style="line-height: 100%; margin-bottom: 0in">The command
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          log.error('' + JSON.stringify(this.state));</p>
+        <p style="line-height: 100%; margin-bottom: 0in">prints all the
+          values in the state.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Autoleveller widget
+          does not have the controller:state case in controller events.</p>
+        <p style="line-height: 100%; margin-bottom: 0in">Perhaps it would be
+          better to clone a different widget for probing output?</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Laser seems like a
+          good candidate because it has addListener and controller:state</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Added log output to
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <table width="831" cellpadding="5" cellspacing="0">
+          <col width="57" />
+
+          <col width="753" />
+
+          <tr valign="top">
+            <td width="57"
+              style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+            <td width="753" style="border: 1px solid #000000; padding: 0.04in">
+              <p>
+                <font face="Courier New, monospace">src/web/widgets/Laser/index.jsx</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="57"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">11</font>
+              </p>
+            </td>
+            <td width="753"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">import log from
+                  '../../lib/log';</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="57"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+            <td width="753"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="57"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">117</font>
+              </p>
+            </td>
+            <td width="753"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">log.error('laser
+                  lasertest:on');</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="57"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">123</font>
+              </p>
+            </td>
+            <td width="753"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">controllerEvents = {</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="57"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">141</font>
+              </p>
+            </td>
+            <td width="753"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">'controller:state':
+                  (type, controllerState) =&gt; {</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="57"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">149</font>
+              </p>
+            </td>
+            <td width="753"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">log.error('laser
+                  controller:state');</font>
+              </p>
+            </td>
+          </tr>
+        </table>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Lasertest info
+          output works (in browser console)</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">laser controller
+          state also works.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p><br />
+          <br />
+
+        </p>
+        <p><br />
+          <br />
+
+        </p>
+        <h3 class="western"><a name="__RefHeading___Toc3216_1376189887"></a>Serial
+          port Data Parsing and sending probe data to the widget</h3>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Where does the
+          parsing of serial port data received take place?</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <table width="831" cellpadding="5" cellspacing="0">
+          <col width="49" />
+
+          <col width="760" />
+
+          <tr valign="top">
+            <td width="49"
+              style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+            <td width="760" style="border: 1px solid #000000; padding: 0.04in">
+              <p>
+                <font face="Courier New, monospace">src/app/controllers/Grbl/GrblLineParserResultParameters.js</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="49"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">395</font>
+              </p>
+            </td>
+            <td width="760"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">class
+                  GrblLineParserResultParameters {</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="49"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">396</font>
+              </p>
+            </td>
+            <td width="760"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">static parse(line) {</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="49"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">426</font>
+              </p>
+            </td>
+            <td width="760"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">if (name === 'PRB') {</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="49"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">428</font>
+              </p>
+            </td>
+            <td width="760"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">log.error('prb
+                  found');</font>
+              </p>
+            </td>
+          </tr>
+        </table>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Leads to output in
+          terminal</p>
+        <p style="line-height: 100%; margin-bottom: 0in">2018-11-14T01:32:31.631Z
+          - error: controller:Grbl2 prb found</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">how can we send the
+          result to the widget?</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <table width="831" cellpadding="5" cellspacing="0">
+          <col width="49" />
+
+          <col width="760" />
+
+          <tr valign="top">
+            <td width="49"
+              style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+            <td width="760" style="border: 1px solid #000000; padding: 0.04in">
+              <p>
+                <font face="Courier New, monospace">src/app/controllers/Grbl/GrblRunner.js</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="49"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">718</font>
+              </p>
+            </td>
+            <td width="760"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">if (type ===
+                  GrblLineParserResultParameters) {</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="49"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">730</font>
+              </p>
+            </td>
+            <td width="760"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">log.error('Grbl.js:
+                  GrblLineParserResultParameters parameters emit');</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="49"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">731</font>
+              </p>
+            </td>
+            <td width="760"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">this.emit('parameters',
+                  payload);</font>
+              </p>
+            </td>
+          </tr>
+        </table>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Leads to</p>
+        <p style="line-height: 100%; margin-bottom: 0in">2018-11-14T02:07:02.325Z
+          - error: controller:Grbl2 Grbl.js: GrblLineParserResultParameters
+          parameters emit</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">but
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <table width="831" cellpadding="5" cellspacing="0">
+          <col width="49" />
+
+          <col width="760" />
+
+          <tr valign="top">
+            <td width="49"
+              style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+            <td width="760" style="border: 1px solid #000000; padding: 0.04in">
+              <p>
+                <font face="Courier New, monospace">src/web/widgets/Autoleveller/index.jsx</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="49"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <font face="Courier New, monospace">71</font>
+              </p>
+            </td>
+            <td width="760"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">controllerEvents = {</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="49"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+            <td width="760"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">'parameters':
+                  (payload) =&gt; {</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="49"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+              <p>
+                <br />
+
+              </p>
+            </td>
+            <td width="760"
+              style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+              <p>
+                <font face="Courier New, monospace">log.error('Autolevel
+                  Probing PRB');</font>
+              </p>
+            </td>
+          </tr>
+        </table>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Does not show in
+          browser console.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Note: in order to
+          print state values in console, need to make sure that they already
+          exist
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">if
+            (Object.prototype.hasOwnProperty.call(state, 'machinePosition')) {</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">To learn about
+          controller, emit, addListener</p>
+        <p style="line-height: 100%; margin-bottom: 0in">google controller
+          emit addlistener</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Temporary Solution:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <table width="831" cellpadding="0" cellspacing="0">
+          <col width="60" />
+
+          <col width="771" />
+
+          <tr valign="top">
+            <td width="60" style="border: none; padding: 0in">
+              <p><br />
+
+              </p>
+            </td>
+            <td width="771" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">src/app/controllers/Grbl/GrblController.js</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="60" style="border: none; padding: 0in">
+              <p><br />
+
+              </p>
+            </td>
+            <td width="771" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">this.controller.on('parameters',
+                  (res) =&gt; {</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="60" style="border: none; padding: 0in">
+              <p><br />
+
+              </p>
+            </td>
+            <td width="771" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">const myobj = {</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="60" style="border: none; padding: 0in">
+              <p><br />
+
+              </p>
+            </td>
+            <td width="771" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">type: 'probing',</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="60" style="border: none; padding: 0in">
+              <p><br />
+
+              </p>
+            </td>
+            <td width="771" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">printed: false,</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="60" style="border: none; padding: 0in">
+              <p><br />
+
+              </p>
+            </td>
+            <td width="771" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">res: res</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="60" style="border: none; padding: 0in">
+              <p><br />
+
+              </p>
+            </td>
+            <td width="771" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">};</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="60" style="border: none; padding: 0in">
+              <p><br />
+
+              </p>
+            </td>
+            <td width="771" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">this.emit('serialport:read',
+                  myobj);</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="60" style="border: none; padding: 0in">
+              <p><br />
+
+              </p>
+            </td>
+            <td width="771" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">// my debug</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="60" style="border: none; padding: 0in">
+              <p><br />
+
+              </p>
+            </td>
+            <td width="771" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">log.error('parameters' +
+                  JSON.stringify(res));</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="60" style="border: none; padding: 0in">
+              <p><br />
+
+              </p>
+            </td>
+            <td width="771" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">this.emit('prbevent',
+                  res.raw);</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="60" style="border: none; padding: 0in">
+              <p><br />
+
+              </p>
+            </td>
+            <td width="771" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">});</font>
+              </p>
+            </td>
+          </tr>
+        </table>
+        <p style="line-height: 100%; margin-bottom: 0in">And on the receiving
+          side:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <table width="831" cellpadding="0" cellspacing="0">
+          <col width="60" />
+
+          <col width="771" />
+
+          <tr valign="top">
+            <td width="60" style="border: none; padding: 0in">
+              <p><br />
+
+              </p>
+            </td>
+            <td width="771" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">src/web/widgets/Autoleveller/index.jsx</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="60" style="border: none; padding: 0in">
+              <p><br />
+
+              </p>
+            </td>
+            <td width="771" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">controllerEvents = {</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="60" style="border: none; padding: 0in">
+              <p><br />
+
+              </p>
+            </td>
+            <td width="771" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">'serialport:read': (received)
+                  =&gt; {</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="60" style="border: none; padding: 0in">
+              <p><br />
+
+              </p>
+            </td>
+            <td width="771" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">if (received.type ===
+                  'probing') {</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="60" style="border: none; padding: 0in">
+              <p><br />
+
+              </p>
+            </td>
+            <td width="771" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">// atmelino</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="60" style="border: none; padding: 0in">
+              <p><br />
+
+              </p>
+            </td>
+            <td width="771" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">log.error('Autolevel probing
+                  received through serialport:read');</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="60" style="border: none; padding: 0in">
+              <p><br />
+
+              </p>
+            </td>
+            <td width="771" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">this.setState({ myvals:
+                  received });</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="60" style="border: none; padding: 0in">
+              <p><br />
+
+              </p>
+            </td>
+            <td width="771" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">}</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="60" style="border: none; padding: 0in">
+              <p><br />
+
+              </p>
+            </td>
+            <td width="771" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">const { opt } = received;</font>
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td width="60" style="border: none; padding: 0in">
+              <p><br />
+
+              </p>
+            </td>
+            <td width="771" style="border: none; padding: 0in">
+              <p>
+                <font face="Courier New, monospace">},</font>
+              </p>
+            </td>
+          </tr>
+        </table>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">It would be better
+          to have its own event for this rather than using serialport:read, but
+          I have tried and the event was not received.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h2 class="western"><a name="__RefHeading___Toc1889_3068016539"></a>2020-02-03</h2>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">1. location of
+          transpiled code</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">When I delete the
+          folder <font face="Courier New, monospace">./dist/cnc</font>
+          <font face="Courier New, monospace">js
+          </font>, then
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">npm
+            start</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">causes an error.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">Error:
+            Cannot find module '../dist/cncjs/server-cli'</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">When I run</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">npm
+            run build-prod-server</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">npm
+            run build-latest</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">then the folder is
+          recreated and
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">npm
+            start</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">works again.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">2.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">When I change the
+          version line in
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">./</font>
+          <font face="Courier New, monospace">src/</font>
+          <font face="Courier New, monospace">package.json</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">from</p>
+        <p style="line-height: 100%; margin-bottom: 0in">&quot;version&quot;:
+          &quot;1.10.0-latest&quot;</p>
+        <p style="line-height: 100%; margin-bottom: 0in">to</p>
+        <p style="line-height: 100%; margin-bottom: 0in">&quot;version&quot;:
+          &quot;1.10.0-atmelino&quot;,</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">and restart
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">npm
+            start</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">the version text in
+          the web browser is not changed.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">npm
+            run build-prod-server</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">does not cause the
+          change to be reflected.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">The text
+          &quot;1.10.0-latest&quot; is still in the files
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">./dist/cncjs/package.json</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">and</p>
+        <p style="line-height: 100%; margin-bottom: 0in">./dist/cncjs/app/vendor.c96e7fe8b2de493a9c69.bundle.js</p>
+        <p style="line-height: 100%; margin-bottom: 0in">and</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          /media/data/nodeDevelop/cncjs/dist/cncjs/app/app.e9fff98e88ba50bf3081.bundle.js</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Running
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">npm
+            run build-</font>
+          <font face="Courier New, monospace">latest</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">changes the text
+          back from atmelino to latest!!!</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">When I change the
+          version line in
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">.</font>
+          <font face="Courier New, monospace">/</font>
+          <font face="Courier New, monospace">package.json</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">from</p>
+        <p style="line-height: 100%; margin-bottom: 0in">&quot;version&quot;:
+          &quot;1.10.0&quot;</p>
+        <p style="line-height: 100%; margin-bottom: 0in">to</p>
+        <p style="line-height: 100%; margin-bottom: 0in">&quot;version&quot;:
+          &quot;2.10.0&quot;,</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">and run</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">npm
+            run build</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">and then</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">npm
+            start</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">then the text in the
+          web browser IS changed.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">In the built
+          version, the page that is displayed in the client is stored in</p>
+        <p style="line-height: 100%; margin-bottom: 0in">app.e2134974ba17dc978fbd.bundle.js</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">When I change the
+          text</p>
+        <p style="line-height: 100%; margin-bottom: 0in">from</p>
+        <p style="line-height: 100%; margin-bottom: 0in">&quot;version&quot;:
+          &quot;2.10.0&quot;</p>
+        <p style="line-height: 100%; margin-bottom: 0in">to</p>
+        <p style="line-height: 100%; margin-bottom: 0in">&quot;version&quot;:
+          &quot;3.45.6&quot;,</p>
+        <p style="line-height: 100%; margin-bottom: 0in">and empty cache and
+          hard reload in chrome, the change is working.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h2 class="western"><a name="__RefHeading___Toc1891_3068016539"></a>2020-02-04</h2>
+        <p style="line-height: 100%; margin-bottom: 0in">Introduced syntax
+          error in
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">./src/main.js</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">ran</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">npm
+            run eslint</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">but no error was
+          indicated</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h2 class="western"><a name="__RefHeading___Toc1890_1586111487"></a>2020-02-05</h2>
+        <p style="line-height: 100%; margin-bottom: 0in">If I add the line</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">console.log('hello');</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">to the file</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">./dist/cncjs/server-cli.js</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">and start the
+          program, the word “hello” is being displayed.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">When I change the
+          name of the folder</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">./dist/cncjs/app</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">to</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">./dist/cncjs/app2</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">the server still
+          starts but with errors</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">Error:
+            ENOENT: no such file or directory, stat
+            '/media/data/nodeDevelop/cncjs/dist/cncjs/app/favicon.ico'</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">This means that the
+          web site data that is sent to the client (root of the web page) is at</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">./dist/cncjs/app</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">or for the source
+          code, at</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">./src/cncjs/app</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h2 class="western"><a name="__RefHeading___Toc2284_761723641"></a>2020-02-09</h2>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">The file</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">.src/app/widgets/ProbingGrid/ProbingGrid.jsx</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">uses the modules
+          numeral and which is not part of the original cnc.js</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">When I run build I
+          get error</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">[build-prod-app]
+          /media/data/github/cncjs_1_10_0/src/app/widgets/ProbingGrid/ProbingGrid.jsx</p>
+        <p style="line-height: 100%; margin-bottom: 0in">[build-prod-app]
+          3:21 error Unable to resolve path to module 'numeral'
+          import/no-unresolved</p>
+        <p style="line-height: 100%; margin-bottom: 0in">[build-prod-app]
+          4:24 error Unable to resolve path to module 'react-table'
+          import/no-unresolved</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">After running</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">npm
+            i react-table</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">npm
+            i numeral</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">the errors are
+          resolved.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h2 class="western"><a name="__RefHeading___Toc2356_4157620613"></a>2020-02-10</h2>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">What about the
+          turnaround time to compile code changes?</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Memory: 15.6 GiB</p>
+        <p style="line-height: 100%; margin-bottom: 0in">Processor: Intel®
+          Core™ i7-7500U CPU @ 2.70GHz × 4
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">npm
+            run build-latest</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">takes 109 seconds</p>
+        <p style="line-height: 100%; margin-bottom: 0in">Mon Feb 10 17:55:12
+          CST 2020</p>
+        <p style="line-height: 100%; margin-bottom: 0in">Mon Feb 10 17:57:01
+          CST 2020</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">To compile only
+          changes in /src/app source files:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">npm
+            run build-prod-app</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">takes 100 seconds</p>
+        <p style="line-height: 100%; margin-bottom: 0in">Mon Feb 10 18:05:31
+          CST 2020</p>
+        <p style="line-height: 100%; margin-bottom: 0in">Mon Feb 10 18:07:11
+          CST 2020</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Running only the
+          part where webpack is called</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">npm
+            run build-pa</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">where</p>
+        <p style="line-height: 100%; margin-bottom: 0in"> &quot;build-pa&quot;:
+          &quot;cross-env NODE_ENV=production webpack-cli --config
+          webpack.config.app.production.js&quot;,</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">takes 97 seconds</p>
+        <p style="line-height: 100%; margin-bottom: 0in">Mon Feb 10 18:26:25
+          CST 2020</p>
+        <p style="line-height: 100%; margin-bottom: 0in">Mon Feb 10 18:28:02
+          CST 2020</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Using a RAM disk:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">npm
+            run build-pa</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">takes 96 seconds</p>
+        <p style="line-height: 100%; margin-bottom: 0in">Tue Feb 11 16:47:46
+          CST 2020</p>
+        <p style="line-height: 100%; margin-bottom: 0in">Tue Feb 11 16:49:22
+          CST 2020</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Memory: 11.6 GiB</p>
+        <p style="line-height: 100%; margin-bottom: 0in">Processor: Intel®
+          CoreTM i7-8700 CPU @ 3.20GHz × 12</p>
+        <p style="line-height: 100%; margin-bottom: 0in">npm run
+          build-prod-app</p>
+        <p style="line-height: 100%; margin-bottom: 0in">takes 69 seconds</p>
+        <p style="line-height: 100%; margin-bottom: 0in">Tue Feb 11 22:54:08
+          CST 2020</p>
+        <p style="line-height: 100%; margin-bottom: 0in">Tue Feb 11 22:55:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h3 class="western"><a name="__RefHeading___Toc2382_399122378"></a>2020-02-12</h3>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">When I install cncjs
+          1.10.0 and modify the code to add ProbingGrid, an error occurs when I
+          check the probing grid in the widget manager and click ok.
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">The error occurred
+          when I had rthe latest react-table module in package.json:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">&quot;dependencies&quot;:
+            {</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">&quot;react-table&quot;:
+            &quot;^7.0.0-rc.15&quot;,</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">}</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">The error goes away
+          when I change the version to the one that was working in version
+          1.9.16-pre:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">&quot;dependencies&quot;:
+            {</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">&quot;react-table&quot;:
+            &quot;~6.8.6&quot;,</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">}</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h3 class="western"><a name="__RefHeading___Toc2511_3471171846"></a>2020-02-13</h3>
+        <p style="line-height: 100%; margin-bottom: 0in">1.</p>
+        <p style="line-height: 100%; margin-bottom: 0in">When I start the
+          server with</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">node
+            bin/cncjs -vv</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Then the terminal
+          shows the messsage</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">
+            <font size="2" style="font-size: 10pt">debug
+              service:cncengine Loaded controllers: Grbl,Marlin,Smoothie,TinyG</font>
+          </font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">This message is in</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">./src/server/services/cncengine/CNCEngine.js</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">and it loads and
+          runs the class GrblController from</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          <font face="Courier New, monospace">./src/server/controllers/Grbl/GrblController.js</font>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h2 class="western" style="page-break-before: always"><a name="__RefHeading___Toc3042_1216396130"></a>
+          2020-03-08</h2>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Variables can passed
+          from a class to another class that is declared as follows:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">in index.js:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">import
+          ApplyAutoLevel from './ApplyAutoLevel';</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">state = {</p>
+        <p style="line-height: 100%; margin-bottom: 0in"> bla:7,</p>
+        <p style="line-height: 100%; margin-bottom: 0in"> ALgcode:
+          ['bla', 'blo']</p>
+        <p style="line-height: 100%; margin-bottom: 0in">};</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">and in render():</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          &lt;ApplyAutoLevel state={state} actions={actions} /&gt;</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">and in
+          ApplyAutoLevel.jsx:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">inside any function</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"> const {
+          state, actions } = this.props;</p>
+        <p style="line-height: 100%; margin-bottom: 0in"> const { bla
+          } = state;</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">The variable bla can
+          now be read in ApplyAutoLevel.jsx.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Trying to write to a
+          variable from within the declared class:</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          applyCompensation() {</p>
+        <p style="line-height: 100%; margin-bottom: 0in"> const {
+          state, actions } = this.props;</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          log.info('ApplyAutoLevel applyCompensation ALgcode \n' +
+          state.Algcode);</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">ApplyAutoLevel
+          applyCompensation ALgcode
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">bla,blo
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">Then we write to
+          state.Algcode</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          state.ALgcode = result;</p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          log.info('ApplyAutoLevel applyCompensation ALgcode:' +
+          state.ALgcode);</p>
+        <p style="line-height: 100%; margin-bottom: 0in">and we get whatever
+          was in result.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">However, in a call
+          after that in index.js</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">
+          log.info('AutoLevel/index.jsx ALgcode' + this.state.Algcode);</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">we get</p>
+        <p style="line-height: 100%; margin-bottom: 0in">AutoLevel/index.jsx
+          ALgcodebla,blo at Object.loadAutoLevelledGcode
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in">again, so it was not
+          changed in the declared class.</p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <h1 class="western" style="page-break-before: always"><a name="__RefHeading___Toc2696_3123084980"></a>
+          References</h1>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><a
+            href="https://itnext.io/react-setstate-usage-and-gotchas-ac10b4e03d60">https://itnext.io/react-setstate-usage-and-gotchas-ac10b4e03d60</a>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><a
+            href="https://humanwhocodes.com/blog/2012/05/15/working-with-files-in-javascript-part-2/">https://humanwhocodes.com/blog/2012/05/15/working-with-files-in-javascript-part-2/</a>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><a
+            href="https://upmostly.com/tutorials/pass-a-parameter-through-onclick-in-react">https://upmostly.com/tutorials/pass-a-parameter-through-onclick-in-react</a>
+        </p>
+        <p style="line-height: 100%; margin-bottom: 0in"><br />
+
+        </p>
+      </div>
+
+    </div>
+    <div class="rightcolumn">
+      <div class="card">
+        <h3>Posts by Date</h3>
+        <br>
+      </div>
+
+      <div class="card">
+        <h3>Follow Me</h3>
+        <p>Some text..</p>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="footer">
+    <h2>More coming soon..<br>
+  </div>
+</body>
+
+</html>
