@@ -109,26 +109,17 @@
           crw-rw---- 1 root dialout 188, 0 5 apr 23.01 ttyACM0
         </div>
         so root is owner.<br>
+        <br>
+        Solution: add our user to the group:<br>
 
-        Solution: add our user to the group:
+        <div class="code">
+          usermod -a -G dialout user
+        </div>
         <p>
-          <font face="Courier New, monospace">sudo
-            usermod -a -G dialout user</font>
+          To put the change into effect:<br><br>
+          logging out and back in should theoretically work,<br>
+          but in my case, only rebooting worked.
         </p>
-        <br>
-        <p>And / or</p>
-        <br>
-        <p>
-          <font face="Courier New, monospace">sudo
-            chmod a+rw /dev/ttyACM0</font>
-        </p>
-        <br>
-        <p>logout and login or
-          reboot</p>
-        <br>
-
-
-
 
       </div>
 
