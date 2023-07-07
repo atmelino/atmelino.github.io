@@ -91,12 +91,43 @@
           https://cnc.js.org/docs/faq/#testing-without-arduino-board
         </a><br>
 
-        <h4>Serial port permissions</h4>
+        <h4>Arduino Serial Port Permission</h4>
 
         Arduino Mega is connected and port appears as /dev/ttyACM0<br>
         However, error message appears as<br>
         Error opening serial port<br>
         <img src="images/port_01.png" alt="home" width="">
+
+        <p><a href="https://www.arduino.cc/en/Guide/Linux#toc6">https://www.arduino.cc/en/Guide/Linux#toc6</a></p>
+
+        Test current permissons:<br>
+        <div class="code">
+          ls -l /dev/ttyACM*
+        </div>
+        gives<br>
+        <div class="code">
+          crw-rw---- 1 root dialout 188, 0 5 apr 23.01 ttyACM0
+        </div>
+        so root is owner.<br>
+
+        Solution: add our user to the group:
+        <p>
+          <font face="Courier New, monospace">sudo
+            usermod -a -G dialout user</font>
+        </p>
+        <br>
+        <p>And / or</p>
+        <br>
+        <p>
+          <font face="Courier New, monospace">sudo
+            chmod a+rw /dev/ttyACM0</font>
+        </p>
+        <br>
+        <p>logout and login or
+          reboot</p>
+        <br>
+
+
 
 
       </div>
