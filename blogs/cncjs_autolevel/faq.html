@@ -30,47 +30,53 @@
     <div class="leftcolumn">
 
       <div class="card">
-        <h2>FAQ</h2>
-        <div class="question">
-          How do I know which version the source code is?<br>
+
+        <div class="question2">
+          How do I know which version the source code is?
         </div>
-        <div class="answer">
-          <h5>Running version</h5>
-          Running the command cnc -V gives the version number<br>
-          <div class="code">
-            -V, --version output the version number
-          </div>
-          <h5>Source code</h5>
+        <div class="answer2">
+          Source code:<br>
           The file package.json contains a line such as<br>
           <div class="code">
             "version": "1.10.1",
           </div>
+          command line:<br>
+          Run <br>
+          <div class="code">
+            cnc -V
+          </div>
         </div>
+      </div>
 
-        <div class="question">
+      <div class="card">
+        <div class="question2">
           How do I build the project?
         </div>
-        <div class="answer">
-
-Starting with version 1.10.0, The package manager has been changed from NPM to Yarn<br>
-
-          https://github.com/cncjs/cncjs/releases
-
-
+        <div class="answer2">
+          Starting with version 1.10.0, The package manager has been changed from NPM to Yarn<br>
+          <a href="https://github.com/cncjs/cncjs/releases"> https://github.com/cncjs/cncjs/releases</a><br>
+          run
+          <div class="code">
+            yarn
+          </div>
         </div>
 
-        <div class="question">
+        <div class="question2">
           How do I start the server?
         </div>
-        <div class="answer">
+        <div class="answer2">
+          run
+          <div class="code">
+            bin/cncjs
+          </div>
         </div>
 
-        <div class="question">
+        <div class="question2">
           How do I run the app?
         </div>
-        <div class="answer">
+        <div class="answer2">
+          open a browser at <address></address>
         </div>
-
 
       </div>
 
