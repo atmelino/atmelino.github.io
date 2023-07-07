@@ -128,10 +128,60 @@
 
 
       <div class="card">
-        verbose output<br>
+        <h3> Ways to output text for debugging purposes</h3>
+
+        <h4>logging 1</h4>
+        Logging can be enabled<br>
+        There are three verbosity levels:<br>
+        'verbose','debug','silly'<br>
+        <p>
+          In the source file, add the import<br>
+        <div class="code">
+          import logger from '../lib/logger';
+        </div>
+        </p>
+        <p>
+          In a source file, call the log command<br>
+          Example:<br>
+          in the file ./src/server/controllers/Grbl/GrblController.js<br>
+        <div class="code">
+          log.silly(`> ${data}`);
+        </div>
+        </p>
+
+        Start the server with a verbosity option:<br>
         <div class="code">
           bin/cncjs -vv
         </div>
+
+        <h4>logging 2</h4>
+        universal-logger
+
+
+
+
+        <a href=""> </a><br>
+      </div>
+
+
+
+
+
+
+      <div class="card">
+        <h3>Analyzing Program Structure</h3>
+
+
+        const appMain = () => {
+in 
+./src/server/app.js
+
+
+
+const createServer = (options, callback) => {
+in
+
+index.js
 
 
         <a href=""> </a><br>
