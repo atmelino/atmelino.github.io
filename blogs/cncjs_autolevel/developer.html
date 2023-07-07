@@ -33,28 +33,44 @@
         <h3>Steps to setup development environmnt</h3>
 
         Instructions apply to cncjs version 1.10.1<br>
+
         <h4>install nvm</h4>
         cncjs 1.10.1 will only run with node version 14.<br>
         nvm allows to choose the node version.<br>
+        <p>
+          <a href="https://linuxhint.com/ways-install-use-nodejs-ubuntu/">
+            https://linuxhint.com/ways-install-use-nodejs-ubuntu/</a>
+        </p>
+        <div class="code">
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+        </div>
+        <p>log out and back in so that .bash_rc is run</p>
+        <p>List available versions:</p>
+        <p>
+        <div class="code">
+          nvm list-remote </div>
+        </p>
 
-
-        <h4>install node</h4>
-
+        <h4>Install node</h4>
         Install node version 14 by<br>
         <div class="code">
           nvm install 14
         </div>
 
-
-
-        <h4>install yarn</h4>
+        <h4>Install yarn</h4>
         Install yarn:<br>
         <div class="code">
           npm install -g yarn
         </div>
 
+        <h4>Initial project build</h4>
 
-        <a href=""> </a><br>
+        <div class="code">
+          yarn
+        </div>
+
+
+
       </div>
 
 
