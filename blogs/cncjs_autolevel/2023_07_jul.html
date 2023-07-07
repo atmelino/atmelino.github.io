@@ -72,9 +72,66 @@
           <img src="images/version.png" alt="ver" width="50"> <br>
         </p>
 
+        <h4>Modifying the code </h4>
 
+        The file ./package.json as well as ./src/package.json contain the line <br>
+        <div class="code">
+          "version": "1.10.1",
+        </div>
 
+        When I change this line to
+        <div class="code">
+          "version": "1.10.1-AL",
+        </div>
 
+        and rebuild the project, the change should be reflected in the app.<br>
+
+        I tried<br>
+        <div class="code">
+          yarn
+        </div>
+        and<br>
+        <div class="code">
+          yarn rebuild
+        </div>
+        and the change was not reflected in the app running in the browser, even after reloading. <br>
+
+        Checking the file <br>
+        <div class="code">
+          ./dist/cncjs/package.json
+        </div>
+        shows that the original line is still in the package.json file.
+
+        However:<br>
+
+        the file ./package.json contains a scripts section, and this section contains the line<br>
+        <div class="code">
+          "build": "yarn run build-prod",
+        </div>
+        Running <br>
+        <div class="code">
+          yarn build
+        </div>
+        causes the project to be rebuilt.<br>
+        Now the file
+        <div class="code">
+          ./dist/cncjs/package.json
+        </div>
+        is changed to the new version string,<br>
+        and the change is reflected in the app.<br>
+
+        Have to change node version or error:<br>
+        <div class="code">
+          nvm use 14
+        </div>
+        and<br>
+        <div class="code">
+          bin/cncjs
+        </div>
+        leads to<br>
+        <p>
+          <img src="images/version2.png" alt="ver2" width="50"> <br>
+        </p>
 
 
       </div>
