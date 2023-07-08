@@ -125,29 +125,40 @@
 
       <div class="card">
         <h3>Analyzing Program Structure</h3>
+        <h4>server side</h4>
         The server is started by opening a terminal in the root directory of cncjs and calling<br>
         <div class="code">
           bin/cncjs
         </div>
 
-        In bin/cncjs,<br>
+        In bin/cncjs:<br>
         <div class="code">
           require('../dist/cncjs/server-cli');
         </div>
 
-
-        <h4>server side</h4>
+        In ./dist/cncjs/server-cli.js:<br>
         <div class="code">
-          const appMain = () => {
+          require('./server').createServer({
         </div>
-        in ./src/server/app.js
 
+        in ./src/server/index.js:
         <div class="code">
-          const createServer = (options, callback) => {
+          import app from './app';<br>
+          const createServer = (options, callback) => {<br>
+          const app = express();
         </div>
-        in ./src/server/index.js
+
+        in ./src/server/app.js:
+        <div class="code">
+          const appMain = () => {<br>
+          app.get(urljoin(settings.route, '/'), renderPage('index.hbs', (req, res) => {
+        </div>
 
         <h4>client side</h4>
+        The build process generates a file named ./dist/cncjs/app/index.hbs.<br>
+        It is the file that the client browser loads.<br>
+        In it, various bundled javascript files are loaded.<br>
+
         <div class="code">
           const renderPage = () => {
         </div>
