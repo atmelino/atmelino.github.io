@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type="text/css" href="../../css/blog.css" media="all" rel="stylesheet">
+  <title></title>
+</head>
+
+<body>
+
+  <div class="header">
+    <table id="headerline">
+      <tr>
+        <td width="200">
+          <a href="../../index.html"><img src="../../images/home.png" alt="home" height="60"></a>
+          <a href="../../blogs/index.html"><img src="../../images/scroll.png" alt="scroll" height="60"></a>
+          <a href="../../blogs/cncjs_autolevel/index.html"><img src="../../images/cncjs.png" alt="deno" height="60"></a>
+        </td>
+        <td>
+          <h2>Debug Output</h2>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="row">
+    <div class="leftcolumn">
+
+      <div class="card">
+        <h3> Ways to output text for debugging purposes</h3>
+        It appears that cncjs has two loggers built-in, one for server-side and one for client-side (in browser)<br>
+        <h4>logging 1</h4>
+        The logger from
+        <a href="https://github.com/winstonjs/winston"> https://github.com/winstonjs/winston</a><br>
+        has been integrated into cncjs.<br>
+        There are three verbosity levels:<br>
+        'verbose','debug','silly'<br>
+        <p>
+          In the source file, add the import<br>
+        <div class="code">
+          import logger from '../lib/logger';
+        </div>
+        </p>
+        <p>
+          In a source file, call the log command<br>
+          Example:<br>
+          in the file ./src/server/controllers/Grbl/GrblController.js<br>
+        <div class="code">
+          log.silly(`> ${data}`);
+        </div>
+        </p>
+
+        Start the server with a verbosity option:<br>
+        <div class="code">
+          bin/cncjs -vv
+        </div>
+
+        <h4>logging 2</h4>
+        The logger from
+        <a href="https://github.com/cheton/universal-logger"> https://github.com/cheton/universal-logger</a><br>
+        has also been integrated into cncjs.<br>
+        <p> The file ./src/app/lib/log.js contains the lines<br>
+        <div class="code">
+          import { TRACE, DEBUG, INFO, WARN, ERROR } from 'universal-logger';<br>
+          import logger from 'universal-logger';
+        </div>
+        </p>
+        <p>
+          This file is then used as the import for logging:<br>
+        <div class="code">
+          import log from './lib/log';
+        </div>
+
+        In a source file, call the log command<br>
+        Example:<br>
+        in the file ./src/app/index.jsx <br>
+        <div class="code">
+          log.debug('Create and establish a WebSocket connection');
+        </div>
+        </p>
+      </div>
+
+
+      <div class="card">
+        <a href=""> </a><br>
+      </div>
+
+    </div>
+    <div class="rightcolumn">
+      <div class="card">
+        <h3>Posts by Date</h3>
+        <br>
+      </div>
+
+      <div class="card">
+        <h3>Follow Me</h3>
+        <p>Some text..</p>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="footer">
+    <h2>More coming soon..<br>
+  </div>
+</body>
+
+</html>
