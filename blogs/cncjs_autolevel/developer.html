@@ -123,15 +123,13 @@
 
       </div>
 
-
-
-
-
       <div class="card">
         <h3> Ways to output text for debugging purposes</h3>
-
+        It appears that cncjs has two loggers built-in, one for server-side and one for client-side (in browser)<br>
         <h4>logging 1</h4>
-        Logging can be enabled<br>
+        The logger from
+        <a href="https://github.com/winstonjs/winston"> https://github.com/winstonjs/winston</a><br>
+        has been integrated into cncjs.<br>
         There are three verbosity levels:<br>
         'verbose','debug','silly'<br>
         <p>
@@ -155,36 +153,54 @@
         </div>
 
         <h4>logging 2</h4>
-        universal-logger
+        The logger from
+        <a href="https://github.com/cheton/universal-logger"> https://github.com/cheton/universal-logger</a><br>
+        has also been integrated into cncjs.<br>
+        <p> The file ./src/app/lib/log.js contains the lines<br>
+        <div class="code">
+          import { TRACE, DEBUG, INFO, WARN, ERROR } from 'universal-logger';<br>
+          import logger from 'universal-logger';
+        </div>
+        </p>
+        <p>
+          This file is then used as the import for logging:<br>
+        <div class="code">
+          import log from './lib/log';
+        </div>
 
-
-
-
-        <a href=""> </a><br>
+        In a source file, call the log command<br>
+        Example:<br>
+        in the file ./src/app/index.jsx <br>
+        <div class="code">
+          log.debug('Create and establish a WebSocket connection');
+        </div>
+        </p>
       </div>
-
-
-
-
 
 
       <div class="card">
         <h3>Analyzing Program Structure</h3>
+        The server is started by opening a terminal in the root directory of cncjs and calling<br>
+        <div class="code">
+          bin/cncjs
+        </div>
 
+        <h4>server side</h4>
+        <div class="code">
+          const appMain = () => {
+        </div>
+        in ./src/server/app.js
 
-        const appMain = () => {
-in 
-./src/server/app.js
+        <div class="code">
+          const createServer = (options, callback) => {
+        </div>
+        in ./src/server/index.js
 
-
-
-const createServer = (options, callback) => {
-in
-
-index.js
-
-
-        <a href=""> </a><br>
+        <h4>client side</h4>
+        <div class="code">
+          const renderPage = () => {
+        </div>
+        in ./src/app/index.jsx
       </div>
 
 
