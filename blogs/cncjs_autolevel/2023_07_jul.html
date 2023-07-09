@@ -133,8 +133,87 @@
           <img src="images/version2.png" alt="ver2" width="50"> <br>
         </p>
 
-
       </div>
+
+
+      <div class="card">
+        <h2>Adding the Autolevel widget</h2>
+
+        Two strategies:<br>
+        <ul>
+          <li>
+            Add a custom widget, as offered in cncjs<br>
+
+            <a href="https://github.com/cncjs/cncjs-widget-boilerplate">
+              https://github.com/cncjs/cncjs-widget-boilerplate
+            </a><br>
+          <li>Add the autolevel widget to the core of cncjs
+        </ul>
+        <p> The first method is based on creating a separate React app that communicates with cncjs through the
+          network<br>
+          but how does it send data between the widget and the running cncjs?</p>
+        <p>
+          Going to use the second method for now, since I already have the code. <br>
+          Tried to just copy the code and run, but didn't work.
+        </p>
+        <p>One approach is to clone a widget, such as laser to laser2, and
+          then compile the code and see if it still runs. If it runs, modify it
+          and restore previous source code state if run time error occurs.
+        </p>
+
+        <p>
+          To identify in which files the code for laser is contained:<br>
+          change to ./src/app folder<br>
+        <div class="code">
+          grep -r -i laser *
+        </div>
+        </p>
+        The files are (without language translation files):<br>
+        <div class="code">
+          containers/Workspace/WidgetManager/WidgetManager.jsx<br>
+          containers/Workspace/Widget.jsx<br>
+          store/defaultState.js <br>
+          widgets/Laser/index.jsx<br>
+        </div>
+
+        <h5>Steps</h5>
+        <p>
+          Copy the folder widgets/Laser to folder widgets/Laser2<br>
+          rename widgets/Laser2/Laser.jsx to rename widgets/Laser2/Laser2.jsx<br>
+          and inside file, rename class Laser to class Laser2<br>
+
+          in file widgets/Laser2/index.jsx, rename class LaserWidget to class Laser2Widget<br>
+          in file widgets/Laser2/index.jsx, change import Laser from './Laser'; to import Laser2 from './Laser2';
+          in file widgets/Laser2/index.jsx, change &lt;Laser to &lt;Laser2<br>
+
+          in file containers/Workspace/Widget.jsx<br>
+          duplicate everything from LaserWidget to LaserWidget2<br>
+
+
+          in file containers/Workspace/WidgetManager/WidgetManager.jsx<br>
+          duplicate array element from laser to laser2<br>
+
+          in file store/defaultState.js add 'laser2' to secondary widgets<br>
+
+        </p>
+        Result:<br>
+        new widget shows up in manage widgets dialog,<br>
+        <p>
+          <img src="images/devNotes_html_6e8665d1739d5c04.png" name="Image2"  width="444" height="50"
+            border="0" />
+        </p>
+        <p>
+          <img src="images/laserwidget_01.png" name="laserwidget_01" width="444"  />
+        </p>
+        
+        but the widget does not show up in the workspace when enabled.<br>
+        The original laser component does show up in the workspace when enabled.<br>
+
+
+        <a href=""> </a><br>
+      </div>
+
+
 
       <div class="card">
         <h2>Date</h2>
