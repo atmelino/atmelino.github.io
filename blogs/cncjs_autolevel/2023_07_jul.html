@@ -179,25 +179,33 @@
         <h5>Steps</h5>
         <p>
           Copy the folder widgets/Laser to folder widgets/Test01<br>
-          rename widgets/Test01/Laser.jsx to rename widgets/Test01/Test01.jsx<br>
+          rename widgets/Test01/Laser.jsx to widgets/Test01/Test01.jsx<br>
+        <p>
+          in file widgets/Test01/Test01.jsx<br>
           and inside file, rename class Laser to class Test01<br>
 
-          in file widgets/Test01/index.jsx, rename class LaserWidget to class Test01Widget<br>
-          in file widgets/Test01/index.jsx, change import Laser from './Laser'; to import Test01 from './Test01';
-          in file widgets/Test01/index.jsx, change &lt;Laser to &lt;Test01<br>
-
+        </p>
+        <p>
+          in file widgets/Test01/index.jsx<br>
+          rename class LaserWidget to class Test01Widget<br>
+          change import Laser from './Laser'; to import Test01 from './Test01';<br>
+          change &lt;Laser to &lt;Test01<br>
+        </p>
+        <p>
           in file containers/Workspace/Widget.jsx<br>
           duplicate everything from LaserWidget to Test01Widget2<br>
-
+        </p>
+        <p>
           in file containers/Workspace/WidgetManager/WidgetManager.jsx<br>
           duplicate array element from laser to Test01<br>
-
-          in file store/defaultState.js add 'Test01' to secondary widgets<br>
-          in file store/defaultState.js copy test01 section under
-        <div class="code">
-          widgets: {
-        </div>
-        and rename to Test01
+        </p>
+        <p>
+          in file store/defaultState.js<br>
+          add 'Test01' to secondary widgets<br>
+          copy laser section under
+          'widgets: {'
+          and rename to Test01
+        </p>
         <br>
 
         </p>
