@@ -182,7 +182,7 @@
           rename widgets/Test01/Laser.jsx to widgets/Test01/Test01.jsx<br>
         <p>
           in file widgets/Test01/Test01.jsx<br>
-          and inside file, rename class Laser to class Test01<br>
+          rename class Laser to class Test01<br>
 
         </p>
         <p>
@@ -193,18 +193,19 @@
         </p>
         <p>
           in file containers/Workspace/Widget.jsx<br>
-          duplicate everything from LaserWidget to Test01Widget2<br>
+          add line import Test01Widget from 'app/widgets/Test01';<br>
+          in function getWidgetByName, add     'test01': Test01Widget,<br>
         </p>
         <p>
           in file containers/Workspace/WidgetManager/WidgetManager.jsx<br>
-          duplicate array element from laser to Test01<br>
+          in function widgetList, duplicate array element from laser to test01<br>
         </p>
         <p>
           in file store/defaultState.js<br>
           add 'Test01' to secondary widgets<br>
           copy laser section under
           'widgets: {'
-          and rename to Test01
+          and rename to test01
         </p>
         <br>
 
