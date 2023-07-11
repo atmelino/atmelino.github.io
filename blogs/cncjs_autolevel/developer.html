@@ -178,8 +178,46 @@
         for example,
         ./src/app/containers/Header/Header.jsx
 
+      </div>
+
+
+
+      <div class="card">
+        <h3>Adding the AutoLevel widget</h3>
+
+        Add the lines
+        <div class="code">
+          "numeral": "^2.0.6",<br>
+          "react-table": "^6.8.6",
+        </div>
+        to package.json in the root folder of the project.<br>
+
+        the command<br>
+        <div class="code">
+          yarn</div>
+        has to be run again to install the additional node modules.<br>
+
+        <p>
+          in file containers/Workspace/Widget.jsx<br>
+          add line import AutoLevelWidget from 'app/widgets/AutoLevel';<br>
+          in function getWidgetByName, add     'autolevel': AutoLevelWidget,<br>
+        </p>
+        <p>
+          in file containers/Workspace/WidgetManager/WidgetManager.jsx<br>
+          in function widgetList, duplicate array element from laser to autolevel<br>
+        </p>
+        <p>
+          in file store/defaultState.js<br>
+          add 'AutoLevel' to secondary widgets<br>
+          copy laser section under
+          'widgets: {'
+          and rename to autolevel
+        </p>
+
+
 
       </div>
+
 
 
       <div class="card">
