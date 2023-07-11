@@ -194,7 +194,7 @@
         <p>
           in file containers/Workspace/Widget.jsx<br>
           add line import Test01Widget from 'app/widgets/Test01';<br>
-          in function getWidgetByName, add     'test01': Test01Widget,<br>
+          in function getWidgetByName, add 'test01': Test01Widget,<br>
         </p>
         <p>
           in file containers/Workspace/WidgetManager/WidgetManager.jsx<br>
@@ -238,6 +238,35 @@
         right after the img tag<br>
 
       </div>
+
+
+      <div class="card">
+        <h2>July 10, 2023</h2>
+
+
+        Started copying AutoLevel from cncjs_1_10_0_AL to cncjs_1_10_3_AL.<br>
+
+        The widget shows up correctly, and gcode for probing is generated and can be run,<br>
+
+        The results from probing are not showing up in the widget yet<br>
+        (more modules have to modified)<br>
+
+        When trying to sync new code to github, an error appears.<br>
+        Running
+        <div class="code">
+          yarn eslint-debug
+        </div>
+        displays a number of errors.<br>
+
+        After changing indent as requested by eslint<br>
+        <a href="https://stackoverflow.com/questions/34174207/how-to-change-indentation-in-visual-studio-code">
+          https://stackoverflow.com/questions/34174207/how-to-change-indentation-in-visual-studio-code </a><br>
+        and commenting unused variables<br>
+        git commit and push worked.<br>
+
+
+      </div>
+
 
 
       <div class="card">
