@@ -31,13 +31,20 @@
 
       <div class="card">
         <h3> Ways to output text for debugging purposes</h3>
-        It appears that cncjs has two loggers built-in, one for server-side and one for client-side (in browser)<br>
+        cncjs has two built-in loggers, one for server-side and one for client-side (in browser)<br>
         <h4>server side logging (terminal)</h4>
         The logger from
         <a href="https://github.com/winstonjs/winston"> https://github.com/winstonjs/winston</a><br>
         has been integrated into cncjs.<br>
-        There are three verbosity levels:<br>
-        'verbose','debug','silly'<br>
+        cncjs implements 5 severity levels (./src/server/lib/logger.js):<br>
+        <div class="code">
+          'error', // 0<br>
+          'warn', // 1<br>
+          'info', // 2<br>
+          'verbose', // 3<br>
+          'debug', // 4<br>
+          'silly', // 5
+        </div>
         <p>
           In the source file, add the import<br>
         <div class="code">
@@ -53,10 +60,16 @@
         </div>
         </p>
 
+        When starting the server, a verbosity option can be selected.(see readme.md) <br>
+        <div class=code>
+          -v, --verbose Increase the verbosity level (-v, -vv, -vvv)
+        </div>
         Start the server with a verbosity option:<br>
         <div class="code">
           bin/cncjs -vv
         </div>
+
+        Everything including and above the severity level will be printed in the terminal.<br>
 
         <h4>client side logging (browser)</h4>
         The logger from
