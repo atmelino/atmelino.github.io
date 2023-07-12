@@ -243,7 +243,6 @@
       <div class="card">
         <h2>July 10, 2023</h2>
 
-
         Started copying AutoLevel from cncjs_1_10_0_AL to cncjs_1_10_3_AL.<br>
 
         The widget shows up correctly, and gcode for probing is generated and can be run,<br>
@@ -265,14 +264,88 @@
         git commit and push worked.<br>
 
 
+
+      </div>
+
+      <div class="card">
+        <h2>July 11, 2023</h2>
+
         <h3>Capture Probing event from Serial Port</h3>
 
         Which other files have to be modified?<br>
 
-
+        The file
         <div class="code">
           ./src/server/controllers/Grbl/GrblController.js
         </div>
+        has the code that communicates with the GRBL device through the serial port.<br>
+
+        Comparing the file from cncjs_1_10_0_AL and cncjs_1_10_3_AL<br>
+        from line 134, we add to line 134<br>
+        <div class="code">
+          log.debug("GrblController constructor");
+        </div>
+        and the message will be printed in the terminal window that runs the server.<br>
+
+        cncjs_1_10_3_AL online 588, we replace<br>
+
+        <div class="code">
+          this.runner.on("parameters", (res) => {<br>
+          this.emit("serialport:read", res.raw);<br>
+          });
+        </div>
+
+        with cncjs_1_10_0_AL on line 567
+        <div class="code">
+          this.runner.on("parameters", (res) => {<br>
+          // atmelino<br>
+          log.debug("parameters: " + JSON.stringify(res));<br>
+          const probingData = {<br>
+          type: "probing",<br>
+          printed: false,<br>
+          result: res.value,<br>
+          };<br>
+          //this.emit('serialport:read', 'parameters');<br>
+          this.emit("serialport:read", probingData);<br>
+          this.emit("serialport:read", res.raw);<br>
+          });
+        </div>
+
+        <p>
+          Every time I change a jsx file, eslint complains about double quotes.<br>
+          <a
+            href="https://stackoverflow.com/questions/29312957/how-to-tell-eslint-that-you-prefer-single-quotes-around-your-strings">
+            https://stackoverflow.com/questions/29312957/how-to-tell-eslint-that-you-prefer-single-quotes-around-your-strings
+          </a><br>
+
+          Adding this to rules in ./.eslintrc.js fixes it:<br>
+        <div class="code">
+          rules: {<br>
+          "quotes": [1, "double", {<br>
+          "avoidEscape": false,<br>
+          "allowTemplateLiterals": true,<br>
+          }],<br>
+        </div>
+        </p>
+        <p>
+          To verify that the GRBL controller responds:<br>
+          $$ - View Grbl settings<br>
+          <a href="https://github.com/gnea/grbl/wiki/Grbl-v1.1-Configuration">
+            https://github.com/gnea/grbl/wiki/Grbl-v1.1-Configuration
+          </a><br>
+          In the console widget, run
+        <div class="code">
+          $$
+        </div>
+        <p>
+          <img src="images/GRBL_settings.png" alt="GRBL_settings" width=""> <br>
+        </p>
+        </p>
+
+
+
+
+
 
       </div>
 
