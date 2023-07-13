@@ -194,13 +194,14 @@
 
         the command<br>
         <div class="code">
-          yarn</div>
+          yarn
+        </div>
         has to be run again to install the additional node modules.<br>
 
         <p>
           in file containers/Workspace/Widget.jsx<br>
           add line import AutoLevelWidget from 'app/widgets/AutoLevel';<br>
-          in function getWidgetByName, add     'autolevel': AutoLevelWidget,<br>
+          in function getWidgetByName, add 'autolevel': AutoLevelWidget,<br>
         </p>
         <p>
           in file containers/Workspace/WidgetManager/WidgetManager.jsx<br>
@@ -215,6 +216,56 @@
         </p>
 
 
+
+
+
+        The result from probing is captured in GrblController.js:<br>
+
+        <div class="code">
+          this.runner.on("parameters", (res) => {
+          // // atmelino
+          log.error("parameters: " + JSON.stringify(res));
+          const probingData = {
+          type: "probing",
+          printed: false,
+          result: res.value,
+          };
+          //this.emit('serialport:read', 'parameters');
+          this.emit("serialport:read", probingData);
+          this.emit("serialport:read", res.raw);
+          });
+
+        </div>
+
+
+        The event that is emitted from GrblController.js is received in AutoLevel/index.jsx:<br>
+        <div class="code">
+          controllerEvents = {
+          'serialport:read': (received) => {
+          if (received.type === 'probing') {
+          // atmelino
+          log.info('AutoLevel/index.jsx probing received through serialport:read');
+          log.info('AutoLevel/index.jsx received=' + JSON.stringify(received));
+          const modified = {
+          type: received.type,
+          printed: false,
+          result:
+          {
+          result: received.result.result,
+          x: Number(received.result.x),
+          y: Number(received.result.y),
+          z: Number(received.result.z )
+          }
+
+          };
+          log.info('AutoLevel/index.jsx modified=' + JSON.stringify(modified));
+
+          this.setState({ probingData: modified });
+          }
+          //const { opt } = received;
+          },
+
+        </div>
 
       </div>
 
