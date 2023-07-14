@@ -32,6 +32,94 @@
       <div class="card">
         <h2>Ubuntu and cncjs AutoLevel</h2>
 
+        There are many ways to install cncjs:
+        <ul>
+          <li>source code</li>
+          <li>Electron app</li>
+          <li>docker</li>
+        </ul>
+
+        In this instance, we will use Ubuntu 22.04.<br>
+        We will install cncjs with the AutoLevel modification from the source code, build the project,
+        and run the app.<br>
+
+        <p>
+          Open a terminal in Ubuntu.
+        </p>
+
+        <h4>Install node version manager nvm</h4>
+        The current AutoLevel widget is based on cncjs version 1.10.3.
+        cncjs 1.10.3 will not run with the latest node version, but it will run with node version 14.<br>
+        The node version manager nvm allows to choose the node version.<br>
+        <div class="code">
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+        </div>
+        <p>log out and back in so that .bash_rc is run</p>
+        <p>List available versions:</p>
+        <p>
+        <div class="code">
+          nvm list-remote </div>
+        </p>
+
+        <h4>Install node</h4>
+        Install node version 14 by<br>
+        <div class="code">
+          nvm install 14
+        </div>
+
+        <h4>Switch node version</h4>
+        Every time we open the terminal, we have to make sure that we are using node version 14.<br>
+        There are ways to make this switch permanent, but I have tried and they didn't work, leading to errors that were
+        hard to trace.<br>
+        The saftest way to ensure the correct node version is to run this every time you open the terminal:<br>
+        <div class="code">
+          nvm use 14
+        </div>
+
+        <h4>Install yarn</h4>
+        yarn is the package manager used to manage this project.<br>
+        Install yarn:<br>
+        <div class="code">
+          npm install -g yarn
+        </div>
+
+        <h4>Retrieve the source code</h4>
+        Clone the cncjs repository with the AutoLevel modification to your local computer<br>
+        <div class="code">
+          git clone https://github.com/atmelino/cncjs_1_10_3_AL.git
+        </div>
+        and switch to the folder in which cncjs_1_10_3_AL is installed.<br>
+        <div class="code">
+          cd cncjs_1_10_3_AL
+        </div>
+
+        <h4>Initial project install</h4>
+        <div class="code">
+          yarn
+        </div>
+
+        Then<br>
+        <div class="code">
+          yarn build
+        </div>
+
+        <h4>Start the cncjs server</h4>
+
+        <div class="code">
+          bin/cncjs
+        </div>
+        You should see something similar to this:<br>
+        <p>
+          <img src="images/start_cncjs.png" alt="start_cncjs" width="" height=""> <br>
+        </p>
+
+        Hold the CTRL-key on the keyboard and mouse-click on the link<br>
+        <a href="http://127.0.1.1:8000/">http://127.0.1.1:8000/ </a><br>
+
+        You should see a browser opening, displaying the workspace of cncjs<br>
+        <p>
+          <img src="images/Workspace.png" alt="Workspace" width="600"> <br>
+        </p>
 
 
       </div>
