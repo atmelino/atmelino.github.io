@@ -32,14 +32,16 @@
       <div class="card">
         <h2>Ubuntu and cncjs AutoLevel</h2>
 
-        There are many ways to install cncjs:
+        There are several ways to install cncjs:
         <ul>
           <li>source code</li>
           <li>Electron app</li>
-          <li>docker</li>
+          <li>Docker</li>
         </ul>
 
-        In this instance, we will use Ubuntu 22.04.<br>
+        AutoLevel is currently not part of official cncjs, therefore the only way to get AutoLevel is to run from source
+        code.
+        In this instance, we will use Ubuntu 22.04 as the operating system.<br>
         We will install cncjs with the AutoLevel modification from the source code, build the project,
         and run the app.<br>
 
@@ -94,17 +96,17 @@
         </div>
 
         <h4>Initial project install</h4>
+        Run
         <div class="code">
           yarn
         </div>
-
-        Then<br>
+        to install the dependencies, then run
         <div class="code">
           yarn build
         </div>
-
+        to build the app.
         <h4>Start the cncjs server</h4>
-
+        Run
         <div class="code">
           bin/cncjs
         </div>
@@ -123,12 +125,15 @@
 
         <h4>Arduino Serial Port Permission</h4>
 
-        Arduino Mega is connected and port appears as /dev/ttyACM0<br>
-        However, error message appears as<br>
-        Error opening serial port<br>
+        <p>
+          The GRBL software runs on an Arduino, for example an Arduino Mega.
+          When the Arduino Mega is connected, the port appears in the Connection widget as /dev/ttyACM0.
+        </p>
+        However, an error message may appear:<br>
+        "Error opening serial port"<br>
         <img src="images/port_01.png" alt="home" width="">
-
         <p><a href="https://www.arduino.cc/en/Guide/Linux#toc6">https://www.arduino.cc/en/Guide/Linux#toc6</a></p>
+        To resolve:<br>
 
         Test current permissons:<br>
         <div class="code">
@@ -150,8 +155,6 @@
           logging out and back in should theoretically work,<br>
           but in my case, only rebooting worked.
         </p>
-
-
 
 
       </div>
