@@ -30,9 +30,9 @@
     <div class="leftcolumn">
 
       <div class="card">
-        <h3>Steps to setup development environmnt</h3>
+        <h3>Steps to add AutoLevel to cncjs</h3>
 
-        Instructions apply to cncjs version 1.10.3<br>
+        Instructions apply to cncjs version 1.10.3 and development under Ubuntu 22.04<br>
 
         <h4>install nvm</h4>
         cncjs 1.10.3 will only run with node version 14.<br>
@@ -68,6 +68,12 @@
         Install yarn:<br>
         <div class="code">
           npm install -g yarn
+        </div>
+
+        <h4>Retrieve the source code</h4>
+        Clone the original cncjs repository to your local computer<br>
+        <div class="code">
+          git clone https://github.com/cncjs/cncjs.git
         </div>
 
         <h4>Initial project install</h4>
@@ -132,6 +138,7 @@
 
       <div class="card">
         <h3>Analyzing Program Structure</h3>
+        The basic structure of cncjs is as follows:<br>
         <h4>server side</h4>
         The server is started by opening a terminal in the root directory of cncjs and calling<br>
         <div class="code">
