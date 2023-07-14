@@ -121,6 +121,38 @@
           <img src="images/Workspace.png" alt="Workspace" width="600"> <br>
         </p>
 
+        <h4>Arduino Serial Port Permission</h4>
+
+        Arduino Mega is connected and port appears as /dev/ttyACM0<br>
+        However, error message appears as<br>
+        Error opening serial port<br>
+        <img src="images/port_01.png" alt="home" width="">
+
+        <p><a href="https://www.arduino.cc/en/Guide/Linux#toc6">https://www.arduino.cc/en/Guide/Linux#toc6</a></p>
+
+        Test current permissons:<br>
+        <div class="code">
+          ls -l /dev/ttyACM*
+        </div>
+        gives<br>
+        <div class="code">
+          crw-rw---- 1 root dialout 188, 0 5 apr 23.01 ttyACM0
+        </div>
+        so root is owner.<br>
+        <br>
+        Solution: add our user to the group:<br>
+
+        <div class="code">
+          sudo usermod -a -G dialout user
+        </div>
+        <p>
+          To put the change into effect:<br><br>
+          logging out and back in should theoretically work,<br>
+          but in my case, only rebooting worked.
+        </p>
+
+
+
 
       </div>
 
