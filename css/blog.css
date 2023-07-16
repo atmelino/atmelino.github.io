@@ -173,3 +173,15 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   width: 33%;
 }
+
+#plain_table {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  border: 1px solid black;
+}
+
+#plain_cell {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 33%;
+  border: 1px solid black;
+}
