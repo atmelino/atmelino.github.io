@@ -28,8 +28,13 @@
   <div class="row">
     <div class="leftcolumn">
 
-
       <div class="card">
+
+        <p>
+          Note:<br>
+          Use the software at your own risk. Author is not responsible for any damages.
+        </p>
+
         Start cncjs to open the workspace<br>
         <p>
           <img src="images/Workspace.png" alt="Workspace" width="600"> <br>
@@ -41,18 +46,6 @@
           <img src="images/connect.png" alt="connect" width="300"> <br>
         </p>
 
-        <h2>Set the coordinate system</h2>
-
-        Move the engraving bit to the bottom left of the probing area.<br>
-
-        Lower the Z-axis so that it is a few millimeters above the PCB.<br>
-
-        <p>
-          In the Axes widget:<br>
-          Zero out the X-axis and the Y-Axis<br>
-          <img src="images/zero_offsets.png" alt="zero_offsets" width="300" height=""> <br>
-
-        </p>
 
         <h2>Connect the probes</h2>
 
@@ -63,6 +56,26 @@
           <img src="images/pos_neg_probe.jpg" alt="pos_neg_probe" width="" height="350"> <br>
         </p>
 
+
+        <h2>Set the coordinate system</h2>
+
+        Move the engraving bit to the bottom left of the probing area.<br>
+        Lower the Z-axis so that it is a few millimeters above the PCB.<br>
+
+        <p>
+          In the Axes widget:<br>
+          Zero out the X-axis and the Y-Axis<br>
+          <img src="images/zero_offsets.png" alt="zero_offsets" width="300" height=""> <br>
+        </p>
+
+        <p>
+          Open the Probe widget:<br>
+          Set the Touch Plate Thickness to Zero.<br>
+          <img src="images/probe_01.png" alt="probe_01" width="300" height=""> <br>
+        </p>
+
+        Click on "Probe" to start setting the zero of the Z-axis.<br>
+        After probing is done, the coordinate origin should be set to the probing area.
 
 
         <h2>Open the AutoLevel widget</h2>
@@ -89,7 +102,7 @@
         but make sure that the probing area is smaller than the physical PCB, <br>
         otherwise a crash may occur.
         <p>
-          <img src="images/HelloWorld_setup.png" alt="HelloWorld_setup" width="" height="350"> <br>
+          <img src="images/PCB_setup.png" alt="PCB_setup" width="" height="350"> <br>
         </p>
         <p>You can choose to save the g-code for probing to a file for later re-use<br>
           by clicking on "Make File"</p>
@@ -97,7 +110,7 @@
         <p>or you can load the g-code directly into the workspace<br>
           by clicking on "Upload G-Code"</p>
         <p>
-          <img src="images/HelloWorld_grid.png" alt="HelloWorld_grid" width="" height="350"> <br>
+          <img src="images/PCB_grid.png" alt="PCB_grid" width="" height="400"> <br>
         </p>
 
         <h2>Start the Probing Process</h2>
@@ -106,6 +119,7 @@
         </p>
 
         <p>
+          The probing code will now start.<br>
           The results will be displayed in the AutoLevel widget table,<br>
           as the probe touches each individual point
         </p>
@@ -115,7 +129,7 @@
 
         <h2>Applying AutoLevel results</h2>
 
-        We can now modify the G-code of the circuit<br>
+        We can now modify the G-code of the circuit.<br>
         <p>Click on "Apply in the AutoLevel widget</p>
         <p>
           <img src="images/apply_01.png" alt="apply_01" width="" height="350"> <br>
