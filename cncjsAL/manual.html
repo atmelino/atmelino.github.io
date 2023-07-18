@@ -59,14 +59,28 @@
 
         <h2>Set the coordinate system</h2>
 
-        Move the engraving bit to the bottom left of the probing area.<br>
-        Lower the Z-axis so that it is a few millimeters above the PCB.<br>
+        <p>
+          The probing can only be done inside the area of the PCB.<br>
+          Example: red area<br>
+          <img src="images/insets.png" alt="insets" width="300" height=""> <br>
+        </p>
+        <p>
+          We will set the origin of the coordinate system to the bottom left corner of the PCB,<br>
+          and define the probing area inside the confines of the PCB.
+        </p>
+        Move the engraving bit to a point above the bottom left corner of the PCB.<br>
 
         <p>
           In the Axes widget:<br>
           Zero out the X-axis and the Y-Axis<br>
           <img src="images/zero_offsets.png" alt="zero_offsets" width="300" height=""> <br>
         </p>
+
+        <p> Now move the bit to a point that will be the starting point of the probing area.<br>
+          For example, to X = 5 mm and Y = 5 mm
+        </p>
+        Lower the Z-axis so that it is a few millimeters above the PCB.<br>
+
 
         <p>
           Open the Probe widget:<br>
@@ -75,9 +89,10 @@
         </p>
 
         Click on "Probe" to start setting the zero of the Z-axis.<br>
-        After probing is done, the coordinate origin should be set to the probing area.
-
-
+        <p>
+          After probing is done, the Z-axis will be set to zero at the surface of the PCB at the starting
+          point of the probing grid.
+        </p>
         <h2>Open the AutoLevel widget</h2>
 
         Click on Manage Widgets<br>
@@ -99,7 +114,7 @@
         <p>Click on "Setup" in the AutoLevel widget to setup the AutoLevel grid
         </p>
         Choose the probing area to match the size of the area of the PCB that will be isolation milled,<br>
-        but make sure that the probing area is smaller than the physical PCB, <br>
+        but make sure that the probing area is within the physical PCB, <br>
         otherwise a crash may occur.
         <p>
           <img src="images/PCB_setup.png" alt="PCB_setup" width="" height="350"> <br>
@@ -224,7 +239,7 @@
 
   </div>
   <div class="footer">
-    <h2>More coming soon..<br>
+    <h2>July 2023<br>
     </h2>
   </div>
 </body>
