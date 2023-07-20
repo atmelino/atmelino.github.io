@@ -2,192 +2,192 @@
 <html>
 
 <head>
-    <meta http-equiv="content-type" content="text/html;
+  <meta http-equiv="content-type" content="text/html;
       charset=windows-1252">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link type="text/css" href="../css/blog.css" media="all" rel="stylesheet">
-    <title>Tech Tips</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type="text/css" href="../css/blog.css" media="all" rel="stylesheet">
+  <title>Tech Tips</title>
 </head>
 
 <body>
-    <div class="header">
-        <table id="headerline_table">
-            <tr>
-                <td width="200">
-                    <a href="../index.html"><img src="../images/home.png" alt="home" height="60"></a>
-                    <a href="../techtips/index.html"><img src="../images/techtips.png" alt="scroll" height="60"></a>
-                    <a href="../techtips/git.html"><img src="../images/git.png" alt="git" height="60"></a>
-                </td>
-                <td id="headerline_cell">
-                    <h2>git Usage</h2>
-                </td>
-            </tr>
-        </table>
-    </div>
+  <div class="header">
+    <table id="headerline_table">
+      <tr>
+        <td width="200">
+          <a href="../index.html"><img src="../images/home.png" alt="home" height="60"></a>
+          <a href="../techtips/index.html"><img src="../images/techtips.png" alt="scroll" height="60"></a>
+          <a href="../techtips/git.html"><img src="../images/git.png" alt="git" height="60"></a>
+        </td>
+        <td id="headerline_cell">
+          <h2>git Usage</h2>
+        </td>
+      </tr>
+    </table>
+  </div>
 
-    <div class="row">
-        <div class="leftcolumn">
-
-
-
-            <div class="card">
-                <h4></h4>
-
-                https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address
-
-
-                git config --global user.email "YOUR_EMAIL"
-
-
-                
-            </div>
-
-            <div class="card">
-                <h4>Create new repository</h4>
-                Log in to github.<br>
-                Create new repository<br>
-                Make sure to init as recommended.<br>
-                Click on Code button and copy repository link.<br>
-
-                <div class="code">
-                    git clone [paste copied text here]
-                </div>
-
-                <h4>Working with local repository</h4>
-                <h5>Upload changed code to github</h5>
-
-                <div class="code">
-                    git add --all<br><br>
-
-                    git commit -m "update"<br><br>
-
-                    git push -u origin main<br>
-                </div>
-                <br>
-                <h5> Update local repository from github</h5>
-                <div class="code">
-                    git pull
-                </div>
-                <br>
-
-                <h5> Undo local changes</h5>
-                Check status<br>
-                <div class="code">
-                    git status
-                </div>
-                If the message is<br>
-                <div class="code">
-                    Changes not staged for commit:
-                </div>
-                run<br>
-                <div class="code">
-                    git restore *
-                </div>
-
-                and check status again, should say<br>
-
-                <div class="code">
-                    Your branch is up to date with 'origin/main'.
-                </div>
-            </div>
-
-
-            <div class="card">
-                <h2>Authentication</h2>
-                <p>Authentication for git could be done in the past by entering user name and password in the command
-                    line.
-                    github no longer allows this method, instead we can use a credential manager.</p>
-                <p>preparation for using credential manager<br>
-                </p>
-                <p>git config --global credential.credentialStore
-                    secretservice<br>
-                </p>
-                <p><a
-                        href="https://techoverflow.net/2021/09/19/how-to-fix-git-credential-manager-core-git-fatal-no-credential-backing-store-has-been-selected/">https://techoverflow.net/2021/09/19/how-to-fix-git-credential-manager-core-git-fatal-no-credential-backing-store-has-been-selected/</a><br>
-                </p>
-                <p><br>
-                    now, when running git push<br>
-                    <img src="../images/git-credential-manager.png" alt="git
-                      credential manager" width="422" height="369"> <br>
-                </p>
-                <p>Click on Token and enter the token generated in the
-                    previous step.<br>
-                    Now git push will work without entering the credentials.<br>
-                </p>
-            </div>
-
-
-            <div class="card">
-                <h2>Collaboration via Branches</h2>
-
-                <p>
-                    <a
-                        href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">https://docs.github.com/en/get-started/quickstart/fork-a-repo</a><br>
-                </p>
-
-
-                <h3>Example: Contributing to d3nodata</h3>
-                working on a branch of D3NO DATA<br>
-                <a href="https://github.com/oslabs-beta/d3no-data/blob/main/CONTRIBUTING.md">
-                    https://github.com/oslabs-beta/d3no-data/blob/main/CONTRIBUTING.md
-                </a><br>
-
-                <ul>
-                    <li>fork the d3nodata repository</li>
-                    <li>create a branch that we will be working on</li>
-                    <img src="../images/git_branch.png" alt="git branch" height="300">&nbsp;<br>
-                    <li>clone the branch that we are working on:<br>
-                        <div class="code">
-                            git clone -b livechart https://github.com/atmelino/d3no-data.git
-                        </div>
-                    </li>
-                    How do I know which branch I have on my computer?<br>
-                    <div class="code">
-                        git branch
-                    </div>
-                    results in<br>
-                    <div class="code">
-                        * livechart
-                    </div>
-                    <a href="https://www.atlassian.com/git/tutorials/using-branches">
-                        https://www.atlassian.com/git/tutorials/using-branches
-                    </a><br>
-                    <li>every commit and push will now update the livechart branch on github.</li>
-                </ul>
-
-                <h4>Adding the new feature to the main branch</h4>
-                <a
-                    href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request">
-                    https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
-                </a><br>
-
-
-            </div>
+  <div class="row">
+    <div class="leftcolumn">
 
 
 
+      <div class="card">
+        <h4></h4>
+
+        https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address
+
+
+        git config --global user.email "YOUR_EMAIL"
+
+
+
+      </div>
+
+      <div class="card">
+        <h4>Create new repository</h4>
+        Log in to github.<br>
+        Create new repository<br>
+        Make sure to init as recommended.<br>
+        Click on Code button and copy repository link.<br>
+
+        <div class="code">
+          git clone [paste copied text here]
         </div>
 
-        <div class="rightcolumn">
+        <h4>Working with local repository</h4>
+        <h5>Upload changed code to github</h5>
 
-            <div class="card">
-                <h3>Category</h3>
+        <div class="code">
+          git add --all<br><br>
 
-                <h4>git Usage</h4>
-                <h4>Single Board Computers</h4>
+          git commit -m "update"<br><br>
+
+          git push -u origin main<br>
+        </div>
+        <br>
+        <h5> Update local repository from github</h5>
+        <div class="code">
+          git pull
+        </div>
+        <br>
+
+        <h5> Undo local changes</h5>
+        Check status<br>
+        <div class="code">
+          git status
+        </div>
+        If the message is<br>
+        <div class="code">
+          Changes not staged for commit:
+        </div>
+        run<br>
+        <div class="code">
+          git restore *
+        </div>
+
+        and check status again, should say<br>
+
+        <div class="code">
+          Your branch is up to date with 'origin/main'.
+        </div>
+      </div>
+
+
+      <div class="card">
+        <h2>Authentication</h2>
+        <p>Authentication for git could be done in the past by entering user name and password in the command
+          line.
+          github no longer allows this method, instead we can use a credential manager.</p>
+        <p>preparation for using credential manager<br>
+        </p>
+        <p>git config --global credential.credentialStore
+          secretservice<br>
+        </p>
+        <p><a
+            href="https://techoverflow.net/2021/09/19/how-to-fix-git-credential-manager-core-git-fatal-no-credential-backing-store-has-been-selected/">https://techoverflow.net/2021/09/19/how-to-fix-git-credential-manager-core-git-fatal-no-credential-backing-store-has-been-selected/</a><br>
+        </p>
+        <p><br>
+          now, when running git push<br>
+          <img src="../images/git-credential-manager.png" alt="git
+                      credential manager" width="422" height="369"> <br>
+        </p>
+        <p>Click on Token and enter the token generated in the
+          previous step.<br>
+          Now git push will work without entering the credentials.<br>
+        </p>
+      </div>
+
+
+      <div class="card">
+        <h2>Collaboration via Branches</h2>
+
+        <p>
+          <a
+            href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">https://docs.github.com/en/get-started/quickstart/fork-a-repo</a><br>
+        </p>
+
+
+        <h3>Example: Contributing to d3nodata</h3>
+        working on a branch of D3NO DATA<br>
+        <a href="https://github.com/oslabs-beta/d3no-data/blob/main/CONTRIBUTING.md">
+          https://github.com/oslabs-beta/d3no-data/blob/main/CONTRIBUTING.md
+        </a><br>
+
+        <ul>
+          <li>fork the d3nodata repository</li>
+          <li>create a branch that we will be working on</li>
+          <img src="../images/git_branch.png" alt="git branch" height="300">&nbsp;<br>
+          <li>clone the branch that we are working on:<br>
+            <div class="code">
+              git clone -b livechart https://github.com/atmelino/d3no-data.git
             </div>
+          </li>
+          How do I know which branch I have on my computer?<br>
+          <div class="code">
+            git branch
+          </div>
+          results in<br>
+          <div class="code">
+            * livechart
+          </div>
+          <a href="https://www.atlassian.com/git/tutorials/using-branches">
+            https://www.atlassian.com/git/tutorials/using-branches
+          </a><br>
+          <li>every commit and push will now update the livechart branch on github.</li>
+        </ul>
+
+        <h4>Adding the new feature to the main branch</h4>
+        <a
+          href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request">
+          https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
+        </a><br>
+
+
+      </div>
+
+
+
+    </div>
+
+    <div class="rightcolumn">
+
+      <div class="card">
+        <h3>Category</h3>
+
+        <h4>git Usage</h4>
+        <h4>Single Board Computers</h4>
+      </div>
 
       <div class="card">
         <h3>Follow Me</h3>
         <a href="https://discord.gg/3Y4HDpkY"><img src="../images/discord.png" alt="discord" height="30"></a>
       </div>
-        </div>
+    </div>
 
-    </div>
-    <div class="footer">
-        <h3>July 2023
-        </h3>
-    </div>
+  </div>
+  <div class="footer">
+    <h3>July 2023
+    </h3>
+  </div>
 </body>
 
 </html>
