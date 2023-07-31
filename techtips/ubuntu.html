@@ -2,133 +2,166 @@
 <html>
 
 <head>
-    <meta http-equiv="content-type" content="text/html;
+  <meta http-equiv="content-type" content="text/html;
       charset=windows-1252">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link type="text/css" href="../css/blog.css" media="all" rel="stylesheet">
-    <title>Tech Tips</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type="text/css" href="../css/blog.css" media="all" rel="stylesheet">
+  <title>Tech Tips</title>
 </head>
 
 <body>
-    <div class="header">
-        <table id="headerline_table">
-            <tr>
-                <td width="200">
-                    <a href="../index.html"><img src="../images/home.png" alt="home" height="60"></a>
-                    <a href="../techtips/index.html"><img src="../images/techtips.png" alt="scroll" height="60"></a>
-                    <a href="../techtips/ubuntu.html"><img src="../images/ubuntu.png" alt="git" height="60"></a>
-                </td>
-                <td id="headerline_cell">
-                    <h2>Ubuntu</h2>
-                </td>
-            </tr>
-        </table>
+  <div class="header">
+    <table id="headerline_table">
+      <tr>
+        <td width="200">
+          <a href="../index.html"><img src="../images/home.png" alt="home" height="60"></a>
+          <a href="../techtips/index.html"><img src="../images/techtips.png" alt="scroll" height="60"></a>
+          <a href="../techtips/ubuntu.html"><img src="../images/ubuntu.png" alt="git" height="60"></a>
+        </td>
+        <td id="headerline_cell">
+          <h2>Ubuntu</h2>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="row">
+    <div class="leftcolumn">
+
+      <div class="card">
+        <h4>snap update status</h4>
+        What is snap downloading, and how much more will it download?<br>
+        <div class="code">
+          snap changes
+        </div>
+        will list the update status:<br>
+        <div class="code">Status Spawn Ready Summary<br>
+          91 Error yesterday at 18:04 CST yesterday at 18:07 CST Auto-refresh snaps "code", "firefox"<br>
+          92 Doing today at 19:14 CST - Auto-refresh snaps "code", "libreoffice"
+        </div>
+        <br>
+        <div class="code">
+          snap watch 92
+        </div>
+        will show the progress of the individual update.<br>
+
+        <a href="https://askubuntu.com/questions/1144822/how-to-know-what-snapd-is-downloading-and-when-will-it-finish">
+          https://askubuntu.com/questions/1144822/how-to-know-what-snapd-is-downloading-and-when-will-it-finish</a><br>
+      </div>
+
+      <div class="card">
+        <h4>snap storage space</h4>
+        snap packages can use a lot of storage space on your computer.<br>
+
+        snap keeps multiple older versions of packages.<br>
+        For example, view the contents of
+        <div class="code">
+          /var/lib/snapd/snaps
+        </div>
+        <p>
+          To limit the number of kept old versions of packages, run
+        <div class="code">
+          sudo snap set system refresh.retain=2
+        </div>
+        </p>
+
+        <p> To remove unnecessary packages, create a script with the following content:
+        <div class="code">
+          #!/bin/bash<br>
+          #Removes old revisions of snaps<br>
+          #CLOSE ALL SNAPS BEFORE RUNNING THIS<br>
+          set -eu<br>
+          LANG=en_US.UTF-8 snap list --all | awk '/disabled/{print $1, $3}' |<br>
+          while read snapname revision; do<br>
+          snap remove "$snapname" --revision="$revision"<br>
+          done<br>
+          <br>
+        </div>
+        and run it.
+        </p>
+
+
+        <a href="https://www.debugpoint.com/clean-up-snap/">https://www.debugpoint.com/clean-up-snap/ </a><br>
+
+      </div>
+
+
+      <div class="card">
+        <h4>Using Systemd</h4>
+        <a href="https://dev.to/alexanderalemayhu/run-deno-apps-via-systemd-on-linux-1ok2">
+          https://dev.to/alexanderalemayhu/run-deno-apps-via-systemd-on-linux-1ok2</a><br>
+
+        <div class="code">sudo touch /etc/systemd/system/denoapp_01.service</div>
+
+        Copy and modify the contents as shown on the web site.<br>
+        <br>
+        This command will make the app automatically start on boot:<br>
+        <div class="code">sudo systemctl enable denoapp_01</div>
+        This command will make the app start right now:<br>
+        <div class="code">sudo systemctl start denoapp_01</div>
+
+        Monitor status:<br>
+        <div class="code">sudo systemctl status denoapp_01</div>
+
+        View journal log:<br>
+        <div class="code">sudo journalctl -u denoapp_01</div>
+
+        It took a bit of tweaking until it actually ran.<br><br>
+
+        One of the reason for not running was that the lock file deno.lock conflicted with the source code,<br>
+        Simply deleting the file solved the problem.<br><br>
+
+        Here is the working service file:<br>
+        <div class="code">
+          [Unit]<br>
+          Description=deno_fresh_01 - deno example<br>
+          Documentation=https://github.com/atmelino<br>
+          After=network.target<br>
+          <br>
+          [Service]<br>
+          Type=simple<br>
+          User=atmelino<br>
+          WorkingDirectory=/home/atmelino/github/learn/deno/deno_Fresh/deno_fresh_01<br>
+          ExecStart=/usr/local/bin/deno run --allow-env --allow-read --allow-write --allow-net --allow-run
+          main.ts<br>
+          <br>
+          Restart=on-failure<br>
+          <br>
+          [Install]<br>
+          WantedBy=multi-user.target<br>
+        </div>
+        </p>
+      </div>
+
+
+      <div class="card">
+        <h3>Follow Me</h3>
+        <a href=""> </a><br>
+      </div>
+
+
     </div>
 
-    <div class="row">
-        <div class="leftcolumn">
+    <div class="rightcolumn">
 
-            <div class="card">
-                <h4>Project Web Sites</h4>
-                <p>
-                </p>
-            </div>
+      <div class="card">
+        <h3>Category</h3>
 
-            <div class="card">
-                <h4>snap update status</h4>
-                What is snap downloading, and how much more will it download?<br>
-                <div class="code">
-                    snap changes
-                </div>
-                will list the update status:<br>
-                <div class="code">Status Spawn Ready Summary<br>
-                    91 Error yesterday at 18:04 CST yesterday at 18:07 CST Auto-refresh snaps "code", "firefox"<br>
-                    92 Doing today at 19:14 CST - Auto-refresh snaps "code", "libreoffice"
-                </div>
-                <br>
-                <div class="code">
-                    snap watch 92
-                </div>
-                will show the progress of the individual update.<br>
-
-                <a
-                    href="https://askubuntu.com/questions/1144822/how-to-know-what-snapd-is-downloading-and-when-will-it-finish">
-                    https://askubuntu.com/questions/1144822/how-to-know-what-snapd-is-downloading-and-when-will-it-finish</a><br>
-            </div>
-
-
-            <div class="card">
-                <h4>Using Systemd</h4>
-                <a href="https://dev.to/alexanderalemayhu/run-deno-apps-via-systemd-on-linux-1ok2">
-                    https://dev.to/alexanderalemayhu/run-deno-apps-via-systemd-on-linux-1ok2</a><br>
-
-                <div class="code">sudo touch /etc/systemd/system/denoapp_01.service</div>
-
-                Copy and modify the contents as shown on the web site.<br>
-                <br>
-                This command will make the app automatically start on boot:<br>
-                <div class="code">sudo systemctl enable denoapp_01</div>
-                This command will make the app start right now:<br>
-                <div class="code">sudo systemctl start denoapp_01</div>
-
-                Monitor status:<br>
-                <div class="code">sudo systemctl status denoapp_01</div>
-
-                View journal log:<br>
-                <div class="code">sudo journalctl -u denoapp_01</div>
-
-                It took a bit of tweaking until it actually ran.<br><br>
-
-                One of the reason for not running was that the lock file deno.lock conflicted with the source code,<br>
-                Simply deleting the file solved the problem.<br><br>
-
-                Here is the working service file:<br>
-                <div class="code">
-                    [Unit]<br>
-                    Description=deno_fresh_01 - deno example<br>
-                    Documentation=https://github.com/atmelino<br>
-                    After=network.target<br>
-                    <br>
-                    [Service]<br>
-                    Type=simple<br>
-                    User=atmelino<br>
-                    WorkingDirectory=/home/atmelino/github/learn/deno/deno_Fresh/deno_fresh_01<br>
-                    ExecStart=/usr/local/bin/deno run --allow-env --allow-read --allow-write --allow-net --allow-run
-                    main.ts<br>
-                    <br>
-                    Restart=on-failure<br>
-                    <br>
-                    [Install]<br>
-                    WantedBy=multi-user.target<br>
-                </div>
-                </p>
-            </div>
-
-
-
-
-        </div>
-
-        <div class="rightcolumn">
-
-            <div class="card">
-                <h3>Category</h3>
-
-                <h4>git Usage</h4>
-                <h4>Single Board Computers</h4>
-            </div>
+        <h4>git Usage</h4>
+        <h4>Single Board Computers</h4>
+      </div>
 
       <div class="card">
         <h3>Follow Me</h3>
         <a href="https://discord.gg/3Y4HDpkY"><img src="../images/discord.png" alt="discord" height="30"></a>
       </div>
-        </div>
+    </div>
 
-    </div>
-    <div class="footer">
-        <h3>July 2023
-        </h3>
-    </div>
+  </div>
+  <div class="footer">
+    <h3>July 2023
+    </h3>
+  </div>
 </body>
 
 </html>
