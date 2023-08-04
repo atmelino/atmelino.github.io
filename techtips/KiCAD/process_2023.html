@@ -36,6 +36,11 @@
 
         pcb2gcode is a command line tool to convert gerber files to CNCC gcode.<br>
 
+        There is a GUI called pcb2gcodeGUI<br>
+        but it hasn't been updated in years,<br>
+        and I tried to build it, but got error because of qmake.<br>
+
+
         <a href="https://github.com/pcb2gcode/pcb2gcode">
           https://github.com/pcb2gcode/pcb2gcode
         </a><br>
@@ -51,6 +56,10 @@
 
         <p>
           Installing the latest version:<br>
+
+          <a href="https://github.com/pcb2gcode/pcb2gcode#installation-from-git-latest-development-version">
+            https://github.com/pcb2gcode/pcb2gcode#installation-from-git-latest-development-version
+          </a><br>
 
         <div class="code">
           sudo apt-get install build-essential automake autoconf autoconf-archive libtool libboost-program-options-dev
@@ -70,16 +79,17 @@
         <div class="code">
           ./configure
         </div>
-        This step causes error <br>
-        checking for libgerbv >= 2.1.0... no
-        configure: error: Package requirements (libgerbv >= 2.1.0) were not met:
 
-        Requested 'libgerbv >= 2.1.0' but version of libgerbv is
+        <p>
+          This step causes error: <br>
+          checking for libgerbv >= 2.1.0... no<br>
+          configure: error: Package requirements (libgerbv >= 2.1.0) were not met:<br>
+          Requested 'libgerbv >= 2.1.0' but version of libgerbv is<br>
+          <br>
 
-
-        Edit the file
+          To fix, Edit the file<br>
         <div class="code">
-          /usr/lib/x86_64-linux-gnu/pkgconfig/libgerbv.pc
+          sudo nano /usr/lib/x86_64-linux-gnu/pkgconfig/libgerbv.pc
         </div>
         and change the line
         <div class="code">
@@ -88,12 +98,17 @@
         to
         <div class="code">
           Version: 2.7
-
         </div>
+        Then run again<br>
+        <div class="code">
+          ./configure
+        </div>
+        <a
+          href="https://stackoverflow.com/questions/72567917/pcb2gcode-fails-install-in-arch-due-to-gerbv-version-not-being-detected">
+          https://stackoverflow.com/questions/72567917/pcb2gcode-fails-install-in-arch-due-to-gerbv-version-not-being-detected
+        </a><br>
 
-
-
-        https://stackoverflow.com/questions/72567917/pcb2gcode-fails-install-in-arch-due-to-gerbv-version-not-being-detected
+        </p>
 
         <div class="code">
           make
@@ -102,21 +117,26 @@
         <div class="code">
           sudo make install
         </div>
+        </p>
 
+        <p>
+          Easiest way to use pcb2gcode is to put a file named millproject into the same folder where the gerber files
+          are,
+          and simply call
+        <div class="code">
+          pcb2gcode
+        </div>
+
+        Example for content:
+        <a href="https://reprap.org/wiki/PCB_Milling">
+          https://reprap.org/wiki/PCB_Milling
+        </a><br>
 
         </p>
 
 
 
 
-
-
-        <a href="https://reprap.org/wiki/PCB_Milling">
-          https://reprap.org/wiki/PCB_Milling
-        </a><br>
-
-
-        pcb2gcodeGUI tried to make, but error because of qmake.<br>
 
 
         <h5>FlatCAM</h5>
@@ -172,7 +192,9 @@
 
 
         https://hobbycnc.com/kicad-flatcam-isolation-route-pcbs/
+        <a href=""></a><br>
         https://hobbycnc.com/pc_board_isolation_routing/
+        <a href=""></a><br>
 
         <a href=""></a><br>
       </div>
