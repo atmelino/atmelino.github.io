@@ -32,35 +32,73 @@
       <div class="card">
         <h4>Converting gerber files to gcode</h4>
 
-pcb2gcode can be installed via apt (version )
+        <h5>pcb2gcode</h5>
+        pcb2gcode can be installed via apt<br>
+        version : pcb2gcode 1.1.4<br>
 
-pcb2gcode 1.1.4
-
-
-but it is command line.
-
-
-pcb2gcodeGUI tried to make, but error because of qmake.
+        but it is command line.<br>
 
 
+        pcb2gcodeGUI tried to make, but error because of qmake.<br>
+
+
+        <h5>FlatCAM</h5>
+
+        <a href="http://flatcam.org/">http://flatcam.org/</a><br>
+
+        installation<br>
+
+
+        Don't use
+
+        <div class="code">
+          git clone https://bitbucket.org/jpcgt/flatcam
+        </div>
+
+        because this version does not work with Ubuntu 22.04<br>
+        it requires python3-pyqt4 and others which are not availabe and will cause install to fail.<br>
 
 
 
-
-        http://flatcam.org/
-
-        http://flatcam.org/discussion
-
-        https://bitbucket.org/marius_stanciu/flatcam_beta/src/Beta/
+        Instead, get the current Beta.<br>
 
 
+        The post on<br>
+        <a href="http://flatcam.org/discussion">http://flatcam.org/discussion</a><br>
+        Leads to<br>
+
+        <a href="https://bitbucket.org/marius_stanciu/flatcam_beta/src/Beta/">
+          https://bitbucket.org/marius_stanciu/flatcam_beta/src/Beta/
+        </a><br>
+
+        Clicking on "Clone" gives<br>
+        <div class="code">
+          git clone https://bitbucket.org/marius_stanciu/flatcam_beta.git
+        </div>
+
+        make setup_ubuntu.sh executable.<br>
+
+        run
+        <div class="code">
+          setup_ubuntu.sh
+        </div>
 
 
+        Then run
+        <div class="code">
+          python3 FlatCAM.py
+        </div>
 
       </div>
 
 
+
+      <div class="card">
+        <a href=""></a><br>
+      </div>
+
     </div>
+
     <div class="rightcolumn">
 
       <div class="card">
