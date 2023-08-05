@@ -66,6 +66,26 @@
 
 
       <div class="card">
+        <h4>Export Gerber files from PCB Editor</h4>
+
+        Go To File -> Fabrication Outputs -> Gerbers (.gbr)
+
+        <p>
+          <img src="images/gerber_plot_01.png" alt="gerber_plot_01" width="600">
+        </p>
+
+        Click on Generate Drill Files...
+        <p>
+          <img src="images/gerber_drill_01.png" alt="gerber_drill_01" width="600">
+        </p>
+
+
+      </div>
+
+
+
+
+      <div class="card">
         <h4>Converting gerber files to gcode</h4>
 
         <h5>pcb2gcode</h5>
@@ -163,6 +183,22 @@
           pcb2gcode
         </div>
 
+        <p>
+          Contents of millproject file<br>
+          Important!<br>
+          The G81 command is for a drill cycle where you state the Z-axis once and then only list the X and Y movement<br>
+          implying that for each X and Y line, a Z-axis lowering will happen.<br>
+          GRBL controllers do not support this command, and the bit will just move around withouht lowering the Z-axis.<br>
+          Therefore, disable the G81 option
+        <div class="code">
+          # Drill options<br>
+          nog81=true<br>
+
+        </div>
+        </p>
+
+
+
         Example for content:
         <a href="https://reprap.org/wiki/PCB_Milling">
           https://reprap.org/wiki/PCB_Milling
@@ -223,25 +259,6 @@
         </div>
 
       </div>
-
-
-      <div class="card">
-        <h4>Export Gerber files from PCB Editor</h4>
-
-        Go To File -> Fabrication Outputs -> Gerbers (.gbr)
-
-        <p>
-          <img src="images/gerber_plot_01.png" alt="gerber_plot_01" width="600">
-        </p>
-        
-        Click on Generate Drill Files...
-        <p>
-          <img src="images/gerber_drill_01.png" alt="gerber_drill_01" width="600">
-        </p>
-
-
-      </div>
-
 
 
 
