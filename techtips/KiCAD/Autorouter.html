@@ -34,29 +34,44 @@
         <a href="https://github.com/freerouting/freerouting">
           https://github.com/freerouting/freerouting
         </a><br>
-
-
+        <p>
+          freerouting is a Java application.<br>
+        </p>
         <h4>Java version</h4>
         <p>
           freerouting requires java version > 16
-        <div class="code">
-          sudo apt install default-jre
-        </div>
-        installs version 11<br>
+        <p>
+          <bold>Note:</bold> it has to be version 17 of Java for the KiCAD plugin to work correctly.
+        </p>
 
-        however
-
+        <p>
         <div class="code">
-          sudo apt install openjdk-19-jre-headless # version 19.0.2+7-0ubuntu3~22.04
+          sudo apt install openjdk-17-jre
         </div>
-        installs version 19
+        installs version 17<br>
+        </p>
+
+        <p>
+          To verify that you are running the correct version, run
+        <div class="code">
+          java -version
+        </div>
+        </p>
+
+        <p>
+          If you have multiple Java versions installed on your system, you can set the default Java version by running
+        <div class="code">
+          sudo update-alternatives --config java
+        </div>
         </p>
 
         <h4>KiCAD freerouting plugin</h4>
         <p>
-          KiCAD freerouting plugin fails,<br>
-          error message<br>
-          <img src="images/freerouting_error.png" alt="hello World">
+          In the KiCAD main window,<br>
+          go to Tools -> Plugin and Content Manager.<br>
+
+
+          <img src="images/freerouting_plugin.png" alt="freerouting_plugin" width="500">
         </p>
 
         <h4>Standalone version</h4>
