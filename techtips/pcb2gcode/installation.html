@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type="text/css" href="../../css/blog.css" media="all" rel="stylesheet">
+  <title></title>
+</head>
+
+<body>
+
+  <div class="header">
+    <table id="headerline_table">
+      <tr>
+        <td width="200">
+          <a href="../../index.html"><img src="../../images/home.png" alt="home" height="60"></a>
+          <a href="../../techtips/index.html"><img src="../../images/techtips.png" alt="scroll" height="60"></a>
+          <a href="../../techtips/pcb2gcode/index.html"><img src="../../images/pcb2gcode.png" alt="pcb2gcode"
+              height="60"></a>
+        </td>
+        <td id="headerline_cell">
+          <h2>Installation</h2>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="row">
+    <div class="leftcolumn">
+
+      <div class="card">
+
+
+        <h5>pcb2gcode</h5>
+
+        pcb2gcode is a command line tool to convert gerber files to CNCC gcode.<br>
+
+        There is a GUI called pcb2gcodeGUI<br>
+        but it hasn't been updated in years,<br>
+        and I tried to build it, but got error because of qmake.<br>
+
+
+        <a href="https://github.com/pcb2gcode/pcb2gcode">
+          https://github.com/pcb2gcode/pcb2gcode
+        </a><br>
+
+        <p>
+          pcb2gcode can be installed via apt<br>
+        <div class="code">
+          sudo apt install pcb2gcode
+        </div>
+        but it is very outdated:<br>
+        version : pcb2gcode 1.1.4<br>
+        </p>
+
+        <p>
+          Installing the latest version:<br>
+
+          <a href="https://github.com/pcb2gcode/pcb2gcode#installation-from-git-latest-development-version">
+            https://github.com/pcb2gcode/pcb2gcode#installation-from-git-latest-development-version
+          </a><br>
+
+        <div class="code">
+          sudo apt-get install build-essential automake autoconf autoconf-archive libtool libboost-program-options-dev
+          libgtkmm-2.4-dev gerbv git librsvg2-dev
+        </div>
+        <div class="code">
+          git clone https://github.com/pcb2gcode/pcb2gcode.git
+        </div>
+        <div class="code">
+          cd pcb2gcode
+        </div>
+
+        <div class="code">
+          autoreconf -fvi
+        </div>
+
+        <div class="code">
+          ./configure
+        </div>
+
+        <p>
+          This step causes error: <br>
+          checking for libgerbv >= 2.1.0... no<br>
+          configure: error: Package requirements (libgerbv >= 2.1.0) were not met:<br>
+          Requested 'libgerbv >= 2.1.0' but version of libgerbv is<br>
+          <br>
+
+          To fix, Edit the file<br>
+        <div class="code">
+          sudo nano /usr/lib/x86_64-linux-gnu/pkgconfig/libgerbv.pc
+        </div>
+        and change the line
+        <div class="code">
+          Version:
+        </div>
+        to
+        <div class="code">
+          Version: 2.7
+        </div>
+        Then run again<br>
+        <div class="code">
+          ./configure
+        </div>
+        <a
+          href="https://stackoverflow.com/questions/72567917/pcb2gcode-fails-install-in-arch-due-to-gerbv-version-not-being-detected">
+          https://stackoverflow.com/questions/72567917/pcb2gcode-fails-install-in-arch-due-to-gerbv-version-not-being-detected
+        </a><br>
+
+        </p>
+
+        <div class="code">
+          make
+        </div>
+
+        <div class="code">
+          sudo make install
+        </div>
+        </p>
+
+        This will put the pcb2gcode executable into a path where it can be found when called.
+
+      </div>
+
+      <div class="card">
+        <a href=""></a><br>
+      </div>
+
+
+    </div>
+    <div class="rightcolumn">
+
+      <div class="card">
+        <h4>Category</h4>
+        <a href="installation.html">Installation</a><br>
+        <a href="usage.html">Usage</a><br>
+      </div>
+
+      <div class="card">
+        <h3>Follow Me</h3>
+        <a href="https://discord.gg/3Y4HDpkY"><img src="../../images/discord.png" alt="discord" height="30"></a>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="footer">
+    <h3>Modified July 2023</h3>
+  </div>
+</body>
+
+</html>
