@@ -32,6 +32,23 @@
 
 
       <div class="card">
+        <h4>Process</h4>
+
+        The process of creating a PCB with a CNC mill includes the following steps:
+
+        <ul>
+          <li>Design a circuit with the KiCAD Schematics editor</li>
+          <li>Design the board layout with the KiCAD PCB editor</li>
+          <li>Route the traces, possibly with an Autorouter (freerouting)</li>
+          <li>Export the Gerber files from the PCB editor</li>
+          <li>Generate the gcode for the isolation milling and the drill holes with pcb2gcode</li>
+          <li>Autolevel the physical board with cnc.js</li>
+          <li>Create the traces by isolation milling with cnc.js</li>
+          <li>Drill the holes with cnc.js</li>
+        </ul>
+      </div>
+
+      <div class="card">
         <h4>Board Layout with PCB Editor</h4>
 
         Isolation milling depends upon the possible precision that can be achieved with a given CNC machine, routing
@@ -160,7 +177,7 @@
         <h5>Drill Sizes</h5>
         To reduce the number of tool changes, find the component with the largest
         pin diameter and use a drill that is a bit larger,<br>
-        For example<br>
+        For example<br><br>
 
         <table>
           <tr>
@@ -185,13 +202,8 @@
           </tr>
         </table>
 
-        drill Holes
-
-        tool change:
-        remove v bit, insert drill bit
-
-        zero out the drill bit
-
+        To drill the holes, change the tool by removing the milling bit and inserting the drill bit.
+        Make sure to zero out the drill bit before starting the drilling.
 
       </div>
 
