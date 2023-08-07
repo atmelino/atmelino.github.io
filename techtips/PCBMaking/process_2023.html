@@ -135,38 +135,55 @@
 
       <div class="card">
         <h4>Drill Holes</h4>
-        through hole PCB_Milling
+        <p> The following applies to through-hole components.
+        </p>
+        <h5>Pre-Drilling</h5>
+        You may get better results in creating drill holes by putting a small indent
+        with the milling bit on the point where a drill will be used later:
+        <p>
+          <td><img src="images/predrill.png" alt="predrill" width=""></td>
+        </p>
 
-        predrill
-
-        millproject set to z=-0.05
-
+        Run pcb2gcode with the following parameter in the millproject file:
+        <div class="code">
+          #predrill<br>
+          zdrill=-0.05000
+        </div>
+        <p>
+          Run the gcode with the resulting drill gcode file.
+        </p>
+        <p>
+          Don't forget to apply the saved autolevel results to this gcode file before running it.
+        </p>
 
 
         <h5>Drill Sizes</h5>
-        <p>
-          IC Socket
-        <p>
-          <img src="images/IC_socket.png" alt="IC_socket" width="">
-        </p>
-        measured leg wide side 0.56 mm
-        </p>
-        <p>
-          blue trim pot
-        <p>
-          <img src="images/IC_socket.png" alt="IC_socket" width="">
-        </p>
-        measured leg wide side 0.45 mm
-        </p>
-        <p>
-          DIP switch
-        <p>
-          <img src="images/IC_socket.png" alt="IC_socket" width="">
-        </p>
-        measured leg wide side 0.58 mm
-        </p>
+        To reduce the number of tool changes, find the component with the largest
+        pin diameter and use a drill that is a bit larger,<br>
+        For example<br>
 
-
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Image</th>
+            <th>measured size</th>
+          </tr>
+          <tr>
+            <td>blue trim pot</td>
+            <td><img src="images/bluetrimpot.png" alt="bluetrimpot" width="50"></td>
+            <td>0.45 mm</td>
+          </tr>
+          <tr>
+            <td>IC Socket</td>
+            <td><img src="images/IC_socket.png" alt="IC_socket" width="50"></td>
+            <td>0.56 mm</td>
+          </tr>
+          <tr>
+            <td>DIP switch</td>
+            <td><img src="images/dipswitch.png" alt="dipswitch" width="50"></td>
+            <td>0.58 mm</td>
+          </tr>
+        </table>
 
         drill Holes
 
