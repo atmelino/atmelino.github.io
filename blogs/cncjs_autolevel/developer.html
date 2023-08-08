@@ -190,13 +190,21 @@
 
       <div class="card">
         <h3>Adding the AutoLevel widget</h3>
-
+        <p>
+          In File
+        <div class="data">
+          package.json
+        </div>
+        (in the root folder of the project)
         Add the lines
         <div class="code">
+          "dependencies": {<br>
+          ..<br>
           "numeral": "^2.0.6",<br>
           "react-table": "^6.8.6",
+          ..
         </div>
-        to package.json in the root folder of the project.<br>
+        </p>
 
         the command<br>
         <div class="code">
@@ -206,8 +214,14 @@
 
         <p>
           in file containers/Workspace/Widget.jsx<br>
-          add line import AutoLevelWidget from 'app/widgets/AutoLevel';<br>
-          in function getWidgetByName, add 'autolevel': AutoLevelWidget,<br>
+          add line
+        <div class="code">
+          import AutoLevelWidget from 'app/widgets/AutoLevel';<br>
+        </div>
+        in function getWidgetByName, add
+        <div class="code">
+          'autolevel': AutoLevelWidget,<br>
+        </div>
         </p>
         <p>
           in file containers/Workspace/WidgetManager/WidgetManager.jsx<br>
@@ -222,55 +236,45 @@
         </p>
 
 
-
-
-
-        The result from probing is captured in GrblController.js:<br>
+        The result from probing is captured in
+        <div class="data">
+          src/server/controllers/Grbl/GrblController.js
+        </div>
+        :<br>
 
         <div class="code">
-          this.runner.on("parameters", (res) => {
-          // // atmelino
-          log.error("parameters: " + JSON.stringify(res));
-          const probingData = {
-          type: "probing",
-          printed: false,
-          result: res.value,
-          };
-          //this.emit('serialport:read', 'parameters');
-          this.emit("serialport:read", probingData);
-          this.emit("serialport:read", res.raw);
-          });
-
+          this.runner.on("parameters", (res) => {<br>
+          const probingData = {<br>
+          type: "probing",<br>
+          printed: false,<br>
+          result: res.value,<br>
+          };<br>
+          this.emit("serialport:read", probingData);<br>
+          this.emit("serialport:read", res.raw);<br>
+          });<br>
         </div>
 
 
         The event that is emitted from GrblController.js is received in AutoLevel/index.jsx:<br>
         <div class="code">
-          controllerEvents = {
-          'serialport:read': (received) => {
-          if (received.type === 'probing') {
-          // atmelino
-          log.info('AutoLevel/index.jsx probing received through serialport:read');
-          log.info('AutoLevel/index.jsx received=' + JSON.stringify(received));
-          const modified = {
-          type: received.type,
-          printed: false,
-          result:
-          {
-          result: received.result.result,
-          x: Number(received.result.x),
-          y: Number(received.result.y),
-          z: Number(received.result.z )
-          }
-
-          };
-          log.info('AutoLevel/index.jsx modified=' + JSON.stringify(modified));
-
-          this.setState({ probingData: modified });
-          }
-          //const { opt } = received;
+          controllerEvents = {<br>
+          'serialport:read': (received) => {<br>
+          if (received.type === 'probing') {<br>
+          const modified = {<br>
+          type: received.type,<br>
+          printed: false,<br>
+          result:<br>
+          {<br>
+          result: received.result.result,<br>
+          x: Number(received.result.x),<br>
+          y: Number(received.result.y),<br>
+          z: Number(received.result.z )<br>
+          }<br>
+          <br>
+          };<br>
+          this.setState({ probingData: modified });<br>
+          }<br>
           },
-
         </div>
 
       </div>
@@ -317,7 +321,8 @@
   </div>
   </div>
   <div class="footer">
-    <h3>Modified July 2023</h3>  </div>
+    <h3>Modified July 2023</h3>
+  </div>
 </body>
 
 </html>
