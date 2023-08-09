@@ -48,6 +48,13 @@ body {
   border-radius: 5px;
 }
 
+.innercard {
+  background-color: rgb(219, 228, 228);
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
 /* Clear floats after the columns */
 .row:after {
   content: "";
@@ -71,8 +78,6 @@ body {
     padding: 0;
   }
 }
-
-
 
 .code {
   background-color: rgb(224, 224, 228);

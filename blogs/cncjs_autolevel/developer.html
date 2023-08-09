@@ -190,91 +190,116 @@
 
       <div class="card">
         <h3>Adding the AutoLevel widget</h3>
-        <p>
-          In File
-        <div class="data">
-          package.json
-        </div>
-        (in the root folder of the project)
-        Add the lines
-        <div class="code">
-          "dependencies": {<br>
-          ..<br>
-          "numeral": "^2.0.6",<br>
-          "react-table": "^6.8.6",
-          ..
-        </div>
-        </p>
 
-        the command<br>
-        <div class="code">
-          yarn
-        </div>
-        has to be run again to install the additional node modules.<br>
+        <h5>File modifications and commands</h5>
 
-        <p>
-          in file containers/Workspace/Widget.jsx<br>
-          add line
-        <div class="code">
-          import AutoLevelWidget from 'app/widgets/AutoLevel';<br>
+        <div class="innercard">
+          <span class="data">
+            package.json
+          </span>(in the root folder of the project): Add the following lines to dependencies
+          <div class="code">
+            "dependencies": {<br>
+            ..<br>
+            "numeral": "^2.0.6",<br>
+            "react-table": "^6.8.6",
+            ..
+          </div>
         </div>
-        in function getWidgetByName, add
-        <div class="code">
-          'autolevel': AutoLevelWidget,<br>
+
+        <div class="innercard">
+          Install the additional node modules by running the command
+          <div class="code">
+            yarn
+          </div>
         </div>
-        </p>
-        <p>
-          in file containers/Workspace/WidgetManager/WidgetManager.jsx<br>
-          in function widgetList, duplicate array element from laser to autolevel<br>
-        </p>
-        <p>
-          in file store/defaultState.js<br>
+
+        <div class="innercard">
+          <span class="data">
+            src/app/containers/Workspace/Widget.jsx
+          </span>: add line
+          <div class="code">
+            import AutoLevelWidget from 'app/widgets/AutoLevel';<br>
+          </div>
+          in function getWidgetByName, add
+          <div class="code">
+            'autolevel': AutoLevelWidget,<br>
+          </div>
+        </div>
+
+        <div class="innercard">
+          <span class="data">
+            src/app/containers/Workspace/WidgetManager/WidgetManager.jsx
+          </span><br>
+          in function widgetList,
+          clone the array element named laser and rename it to autolevel, fill in the constants<br>
+        </div>
+
+        <div class="innercard">
+          <span class="data">
+            src/app/store/defaultState.js
+          </span>
+          <br>
           add 'AutoLevel' to secondary widgets<br>
           copy laser section under
           'widgets: {'
-          and rename to autolevel
-        </p>
-
-
-        The result from probing is captured in
-        <div class="data">
-          src/server/controllers/Grbl/GrblController.js
-        </div>
-        :<br>
-
-        <div class="code">
-          this.runner.on("parameters", (res) => {<br>
-          const probingData = {<br>
-          type: "probing",<br>
-          printed: false,<br>
-          result: res.value,<br>
-          };<br>
-          this.emit("serialport:read", probingData);<br>
-          this.emit("serialport:read", res.raw);<br>
-          });<br>
+          and rename to autolevel<br>
         </div>
 
+        <div class="innercard">
+          <span class="data">
+            src/server/controllers/Grbl/GrblController.js
+          </span>:Modify the section<br>
 
-        The event that is emitted from GrblController.js is received in AutoLevel/index.jsx:<br>
-        <div class="code">
-          controllerEvents = {<br>
-          'serialport:read': (received) => {<br>
-          if (received.type === 'probing') {<br>
-          const modified = {<br>
-          type: received.type,<br>
-          printed: false,<br>
-          result:<br>
-          {<br>
-          result: received.result.result,<br>
-          x: Number(received.result.x),<br>
-          y: Number(received.result.y),<br>
-          z: Number(received.result.z )<br>
-          }<br>
-          <br>
-          };<br>
-          this.setState({ probingData: modified });<br>
-          }<br>
-          },
+          <div class="code">
+            this.runner.on('parameters', (res) => {<br>
+            this.emit('serialport:read', res.raw);<br>
+            });
+          </div>
+          to
+          <div class="code">
+            this.runner.on("parameters", (res) => {<br>
+            const probingData = {<br>
+            type: "probing",<br>
+            printed: false,<br>
+            result: res.value,<br>
+            };<br>
+            this.emit("serialport:read", probingData);<br>
+            this.emit("serialport:read", res.raw);<br>
+            });<br>
+          </div>
+          This is where the result from probing is captured.
+        </div>
+
+        <div class="innercard">
+          <span class="data">
+            src/app/widgets/AutoLevel/AutoLevel.jsx
+          </span> contains the code that receives the event that was emitted from GrblController.js <br>
+          <div class="code">
+            controllerEvents = {<br>
+            'serialport:read': (received) => {<br>
+            if (received.type === 'probing') {<br>
+            const modified = {<br>
+            type: received.type,<br>
+            printed: false,<br>
+            result:<br>
+            {<br>
+            result: received.result.result,<br>
+            x: Number(received.result.x),<br>
+            y: Number(received.result.y),<br>
+            z: Number(received.result.z )<br>
+            }<br>
+            <br>
+            };<br>
+            this.setState({ probingData: modified });<br>
+            }<br>
+            },
+          </div>
+        </div>
+        <div class="innercard">
+
+          The folder <span class="data">
+            src/app/widgets/AutoLevel
+          </span> contains the files with the code for the new widget.<br>
         </div>
 
       </div>
