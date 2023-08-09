@@ -36,17 +36,17 @@
           npm run start-prod
         </div>
         leads to error during compile<br>
-        <div class="code">
+        <div class="output">
           Error: error:0308010C:digital envelope routines::unsupported<br>
           at new Hash (node:internal/crypto/hash:71:19)<br>
         </div>
         and when opening URL<br>
-        <div class="code">
+        <div class="output">
           Error: Failed to lookup view "index.hbs" in views directories "/media/data/github/cncjs/dist/cncjs/app" or
           "/media/data/github/cncjs/dist/cncjs/server/views"
         </div>
         Noticed that in the ouput, it said:<br>
-        <div class="code">
+        <div class="output">
           Node.js v19.2.0
         </div>
         so used<br>
@@ -75,12 +75,12 @@
         <h4>Modifying the code </h4>
 
         The file ./package.json as well as ./src/package.json contain the line <br>
-        <div class="code">
+        <div class="output">
           "version": "1.10.1",
         </div>
 
         When I change this line to
-        <div class="code">
+        <div class="output">
           "version": "1.10.1-AL",
         </div>
 
@@ -97,7 +97,7 @@
         and the change was not reflected in the app running in the browser, even after reloading. <br>
 
         Checking the file <br>
-        <div class="code">
+        <div class="data">
           ./dist/cncjs/package.json
         </div>
         shows that the original line is still in the package.json file.
@@ -105,7 +105,7 @@
         However:<br>
 
         the file ./package.json contains a scripts section, and this section contains the line<br>
-        <div class="code">
+        <div class="output">
           "build": "yarn run build-prod",
         </div>
         Running <br>
@@ -114,7 +114,7 @@
         </div>
         causes the project to be rebuilt.<br>
         Now the file
-        <div class="code">
+        <div class="data">
           ./dist/cncjs/package.json
         </div>
         is changed to the new version string,<br>
@@ -169,7 +169,7 @@
         </div>
         </p>
         The files are (without language translation files):<br>
-        <div class="code">
+        <div class="data">
           containers/Workspace/WidgetManager/WidgetManager.jsx<br>
           containers/Workspace/Widget.jsx<br>
           store/defaultState.js <br>
@@ -366,10 +366,125 @@
 
         Example:
 
-        <div class="code">
+        <div class="data">
           AutoLevel.jsx
-          state{"minimized":false,"isFullscreen":false,"canClick":true,"port":"/dev/ttyACM0","controller":{"type":"Grbl","settings":{"version":"1.1g","parameters":{},"settings":{"$0":"10","$1":"25","$2":"0","$3":"0","$4":"0","$5":"0","$6":"0","$10":"1","$11":"0.010","$12":"0.002","$13":"0","$20":"0","$21":"0","$22":"0","$23":"0","$24":"25.000","$25":"500.000","$26":"250","$27":"1.000","$30":"1000","$31":"0","$32":"0","$100":"250.000","$101":"250.000","$102":"250.000","$110":"1000.000","$111":"1000.000","$112":"500.000","$120":"10.000","$121":"10.000","$122":"10.000","$130":"200.000","$131":"200.000","$132":"200.000"}},"state":{"status":{"activeState":"Idle","mpos":{"x":"0.000","y":"0.000","z":"0.000"},"wpos":{"x":"7.000","y":"7.000","z":"0.000"},"ov":[100,100,100],"subState":0,"wco":{"x":"-7.000","y":"-7.000","z":"0.000"},"feedrate":0,"spindle":0},"parserstate":{"modal":{"motion":"G0","wcs":"G54","plane":"G17","units":"G21","distance":"G90","feedrate":"G94","spindle":"M5","coolant":"M9"},"tool":"0","feedrate":"0","spindle":"0"}}},"modal":{"name":"widgets/AutoLevel:MODAL_NONE","params":{}},"startX":5,"endX":75,"startY":5,"endY":65,"stepX":10,"stepY":10,"feedXY":300,"feedZ":20,"depth":3,"height":2,"probingObj":[],"probingMatrix":[],"ALgcode":[],"units":"mm","machinePosition":{"x":"0.000","y":"0.000","z":"0.000"},"workPosition":{"x":"7.000","y":"7.000","z":"0.000"},"customDistance":null}
-        </div>
+          state {<br>
+          "minimized": false,<br>
+          "isFullscreen": false,<br>
+          "canClick": true,<br>
+          "port": "/dev/ttyACM0",<br>
+          "controller": {<br>
+          "type": "Grbl",<br>
+          "settings": {<br>
+          "version": "1.1g",<br>
+          "parameters": {},<br>
+          "settings": {<br>
+          "$0": "10",<br>
+          "$1": "25",<br>
+          "$2": "0",<br>
+          "$3": "0",<br>
+          "$4": "0",<br>
+          "$5": "0",<br>
+          "$6": "0",<br>
+          "$10": "1",<br>
+          "$11": "0.010",<br>
+          "$12": "0.002",<br>
+          "$13": "0",<br>
+          "$20": "0",<br>
+          "$21": "0",<br>
+          "$22": "0",<br>
+          "$23": "0",<br>
+          "$24": "25.000",<br>
+          "$25": "500.000",<br>
+          "$26": "250",<br>
+          "$27": "1.000",<br>
+          "$30": "1000",<br>
+          "$31": "0",<br>
+          "$32": "0",<br>
+          "$100": "250.000",<br>
+          "$101": "250.000",<br>
+          "$102": "250.000",<br>
+          "$110": "1000.000",<br>
+          "$111": "1000.000",<br>
+          "$112": "500.000",<br>
+          "$120": "10.000",<br>
+          "$121": "10.000",<br>
+          "$122": "10.000",<br>
+          "$130": "200.000",<br>
+          "$131": "200.000",<br>
+          "$132": "200.000"<br>
+          }<br>
+          },<br>
+          "state": {<br>
+          "status": {<br>
+          "activeState": "Idle",<br>
+          "mpos": {<br>
+          "x": "0.000",<br>
+          "y": "0.000",<br>
+          "z": "0.000"<br>
+          },<br>
+          "wpos": {<br>
+          "x": "7.000",<br>
+          "y": "7.000",<br>
+          "z": "0.000"<br>
+          },<br>
+          "ov": [100, 100, 100],<br>
+          "subState": 0,<br>
+          "wco": {<br>
+          "x": "-7.000",<br>
+          "y": "-7.000",<br>
+          "z": "0.000"<br>
+          },<br>
+          "feedrate": 0,<br>
+          "spindle": 0<br>
+          },<br>
+          "parserstate": {<br>
+          "modal": {<br>
+          "motion": "G0",<br>
+          "wcs": "G54",<br>
+          "plane": "G17",<br>
+          "units": "G21",<br>
+          "distance": "G90",<br>
+          "feedrate": "G94",<br>
+          "spindle": "M5",<br>
+          "coolant": "M9"<br>
+          },<br>
+          "tool": "0",<br>
+          "feedrate": "0",<br>
+          "spindle": "0"<br>
+          }<br>
+          }<br>
+          },<br>
+          "modal": {<br>
+          "name": "widgets/AutoLevel:MODAL_NONE",<br>
+          "params": {}<br>
+          },<br>
+          "startX": 5,<br>
+          "endX": 75,<br>
+          "startY": 5,<br>
+          "endY": 65,<br>
+          "stepX": 10,<br>
+          "stepY": 10,<br>
+          "feedXY": 300,<br>
+          "feedZ": 20,<br>
+          "depth": 3,<br>
+          "height": 2,<br>
+          "probingObj": [],<br>
+          "probingMatrix": [],<br>
+          "ALgcode": [],<br>
+          "units": "mm",<br>
+          "machinePosition": {<br>
+          "x": "0.000",<br>
+          "y": "0.000",<br>
+          "z": "0.000"<br>
+          },<br>
+          "workPosition": {<br>
+          "x": "7.000",<br>
+          "y": "7.000",<br>
+          "z": "0.000"<br>
+          },<br>
+          "customDistance": null<br>
+          } </div>
 
         We are using
         <div class="code">
@@ -422,7 +537,8 @@
   </div>
   </div>
   <div class="footer">
-    <h3>Modified July 2023</h3>  </div>
+    <h3>Modified July 2023</h3>
+  </div>
 </body>
 
 </html>

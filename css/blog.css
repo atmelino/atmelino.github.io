@@ -90,6 +90,16 @@ body {
 }
 
 .data {
+  background-color: rgb(245, 241, 228);
+  border: 1px solid rgb(32, 27, 38);
+  border-radius: 4px;
+  padding: 4px 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace
+}
+
+.file {
   background-color: rgb(246, 236, 203);
   border: 1px solid rgb(32, 27, 38);
   border-radius: 4px;
