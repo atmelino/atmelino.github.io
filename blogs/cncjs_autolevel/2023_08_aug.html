@@ -41,28 +41,50 @@
         </a><br>
 
         <h4>Step 1: Fork</h4>
-
         Forked cncjs as https://github.com/atmelino/cncjs_1_10_3_fork_AL<br>
         <a href="https://github.com/atmelino/cncjs_1_10_3_fork_AL">
           https://github.com/atmelino/cncjs_1_10_3_fork_AL</a><br>
-
         <div class="code">
           git clone git@github.com:atmelino/cncjs_1_10_3_fork_AL.git
         </div>
-
         <div class="code">
           cd cncjs_1_10_3_fork_AL/
         </div>
-
         <div class="code">
           git remote add upstream git://github.com/cncjs/cncjs_1_10_3_fork_AL.git
         </div>
 
-
-
         <h4>Step 2: Branch</h4>
         Create a feature branch and before starting:<br>
-        
+        <div class="code">
+          git checkout -b autolevelwidget -t origin/master
+        </div>
+
+        <h4>Step 3: Install</h4>
+        Make sure to use node version 14<br>
+        <div class="code">
+          nvm use 14
+        </div>
+        Run yarn to install the dependencies in the local node_modules folder:
+        <div class="code">
+          yarn
+        </div>
+        Run
+        <div class="code">
+          yarn build
+        </div>
+        to build the app.
+
+        <h4>Step 5: Rebase</h4>
+        Use git rebase (not git merge) to sync your work from time to time.
+
+        <div class="code">
+          git fetch upstream
+        </div>
+        <div class="code">
+          git rebase upstream/master
+        </div>
+
 
 
         <a href=""> </a><br>
