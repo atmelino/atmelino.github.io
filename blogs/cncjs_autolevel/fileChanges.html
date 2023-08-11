@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type="text/css" href="../../css/blog.css" media="all" rel="stylesheet">
+  <title></title>
+</head>
+
+<body>
+
+  <div class="header">
+    <table id="headerline_table">
+      <tr>
+        <td width="200">
+          <a href="../../index.html"><img src="../../images/home.png" alt="home" height="60"></a>
+          <a href="../../blogs/index.html"><img src="../../images/scroll.png" alt="scroll" height="60"></a>
+          <a href="../../blogs/cncjs_autolevel/index.html"><img src="../../images/cncjs.png" alt="deno" height="60"></a>
+        </td>
+        <td>
+          <h2>File Changes</h2>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="row">
+    <div class="leftcolumn">
+
+      <div class="card">
+        <p>
+          The following changes were made to cncjs version 1.10.3 in order to add the autolevel widget:
+        </p>
+        <div class="innercard">
+          <span class="data">
+            package.json
+          </span>(in the root folder of the project): Add the following lines to dependencies
+          <div class="code">
+            "dependencies": {<br>
+            ..<br>
+            "numeral": "^2.0.6",<br>
+            "react-table": "^6.8.6",
+            ..
+          </div>
+        </div>
+
+        <div class="innercard">
+          Install the additional node modules by running the command
+          <div class="code">
+            yarn
+          </div>
+        </div>
+
+        <div class="innercard">
+          <span class="data">
+            src/app/containers/Workspace/Widget.jsx
+          </span><br>
+          add line
+          <div class="code">
+            import AutoLevelWidget from 'app/widgets/AutoLevel';<br>
+          </div>
+          in function getWidgetByName, add
+          <div class="code">
+            'autolevel': AutoLevelWidget,<br>
+          </div>
+        </div>
+
+        <div class="innercard">
+          <span class="data">
+            src/app/containers/Workspace/WidgetManager/WidgetManager.jsx
+          </span><br>
+          in array widgetList, add
+          <div class="code">
+            widgetList = [ etc.<br>
+            {<br>
+            id: 'autolevel',<br>
+            caption: i18n._('AutoLevel Widget'),<br>
+            details: i18n._('This widget lets you probe a grid for autolevelling a PCB.'),<br>
+            visible: true,<br>
+            disabled: false<br>
+            }<br>
+          </div>
+
+
+        </div>
+
+        <div class="innercard">
+          <span class="data">
+            src/app/store/defaultState.js
+          </span>
+          <br>
+          add 'autoLevel' to secondary widgets<br>
+          <div class="code">
+            workspace: { etc.<br>
+            secondary: { etc. <br>
+            widgets: [<br>
+            'axes', 'gcode', 'macro', 'probe', 'spindle', 'laser', 'autolevel'<br>
+            ] <br>
+          </div>
+
+          under 'widgets: {' add
+          <div class="code">
+            widgets: {<br>
+            autolevel: {<br>
+            minimized: false,<br>
+            },
+          </div>
+        </div>
+
+        <div class="innercard">
+          <span class="data">
+            src/server/controllers/Grbl/GrblController.js
+          </span>:Modify the section<br>
+
+          <div class="code">
+            this.runner.on('parameters', (res) => {<br>
+            this.emit('serialport:read', res.raw);<br>
+            });
+          </div>
+          to
+          <div class="code">
+            this.runner.on("parameters", (res) => {<br>
+            const probingData = {<br>
+            type: "probing",<br>
+            printed: false,<br>
+            result: res.value,<br>
+            };<br>
+            this.emit("serialport:read", probingData);<br>
+            this.emit("serialport:read", res.raw);<br>
+            });<br>
+          </div>
+          This is where the result from probing is captured.
+        </div>
+
+        <div class="innercard">
+          Add the folder <span class="data">
+            src/app/widgets/AutoLevel
+          </span><br>
+          It contains the files with the code for the new widget.<br>
+        </div>
+
+        <div class="innercard">
+          <span class="data">
+            src/app/widgets/AutoLevel/AutoLevel.jsx
+          </span> contains the code that receives the event that was emitted from GrblController.js <br>
+          <div class="code">
+            controllerEvents = {<br>
+            'serialport:read': (received) => {<br>
+            if (received.type === 'probing') {<br>
+            const modified = {<br>
+            type: received.type,<br>
+            printed: false,<br>
+            result:<br>
+            {<br>
+            result: received.result.result,<br>
+            x: Number(received.result.x),<br>
+            y: Number(received.result.y),<br>
+            z: Number(received.result.z )<br>
+            }<br>
+            <br>
+            };<br>
+            this.setState({ probingData: modified });<br>
+            }<br>
+            },
+          </div>
+        </div>
+
+
+      </div>
+
+
+
+      <div class="card">
+        <a href=""> </a><br>
+      </div>
+
+    </div>
+    <div class="rightcolumn">
+      <div class="card">
+        <h3>Posts</h3>
+        <a href="2018_11_nov.html">
+          2018_11_nov.html</a><br>
+        <a href="2020_03_march_01.html">
+          2020_03_march_01.html</a><br>
+        <a href="2022_12_dec_01.html">
+          2022_12_dec_01.html</a><br>
+        <a href="2022_12_dec_02.html">
+          2022_12_dec_02.html</a><br>
+        <a href="2023_03_mar.html">
+          2023_03_mar.html</a><br>
+        <a href="2023_07_jul.html">
+          2023_07_jul.html</a><br>
+        <a href="2023_08_aug.html">
+          2023_08_aug.html</a><br>
+        <br>
+        <a href="description.html">
+          description.html</a><br>
+        <a href="developer.html">
+          developer.html</a><br>
+        <a href="fileChanges.html">
+          fileChanges.html</a><br>
+        <a href="debug_output.html">
+          debug_output.html</a><br>
+        <a href="faq.html">
+          faq.html</a><br>
+        <a href="software.html">
+          software.html</a><br>
+      </div>
+
+
+      <div class="card">
+        <h3>Follow Me</h3>
+        <a href="https://discord.gg/3Y4HDpkY"><img src="../../images/discord.png" alt="discord" height="30"></a>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="footer">
+    <h3>Modified July 2023</h3>
+  </div>
+</body>
+
+</html>
