@@ -184,6 +184,30 @@
           git commit -m 'Added a new feature that does x because y'
         </div>
 
+        When trying to push new code to github, an error appears.<br>
+        Running<br>
+        <div class="code">
+          yarn eslint-debug
+        </div>
+        displays a number of errors.<br>
+
+        <p>
+          Every time I change a jsx file, eslint complains about double quotes.<br>
+          <a
+            href="https://stackoverflow.com/questions/29312957/how-to-tell-eslint-that-you-prefer-single-quotes-around-your-strings">
+            https://stackoverflow.com/questions/29312957/how-to-tell-eslint-that-you-prefer-single-quotes-around-your-strings
+          </a><br>
+
+          Adding this to rules in ./.eslintrc.js fixes it:<br>
+        <div class="code">
+          rules: {<br>
+          "quotes": [1, "double", {<br>
+          "avoidEscape": false,<br>
+          "allowTemplateLiterals": true,<br>
+          }],<br>
+        </div>
+        </p>
+
         <h4>Step 7: Push to the branch</h4>
         <div class="code">
           git push origin autolevelwidget
