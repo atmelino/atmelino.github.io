@@ -32,7 +32,7 @@
       <div class="card">
         <h2>August 09, 2023</h2>
 
-        <h3> Forking cncjs for integration of autolevel</h3>
+        <h3> Forking cncjs for integration of autolevel (failed)</h3>
 
         Instructions for Contributing to cncjs are described here:<br>
 
@@ -41,23 +41,28 @@
         </a><br>
 
         <h4>Step 1: Fork</h4>
-        Forked cncjs as https://github.com/atmelino/cncjs_1_10_3_fork_AL<br>
-        <a href="https://github.com/atmelino/cncjs_1_10_3_fork_AL">
-          https://github.com/atmelino/cncjs_1_10_3_fork_AL</a><br>
+        Forked cncjs as https://github.com/atmelino/cncjs<br>
+        <a href="https://github.com/atmelino/cncjs">
+          https://github.com/atmelino/cncjs</a><br>
         <div class="code">
-          git clone git@github.com:atmelino/cncjs_1_10_3_fork_AL.git
+          git clone git@github.com:atmelino/cncjs.git
         </div>
         <div class="code">
-          cd cncjs_1_10_3_fork_AL/
+          cd cncjs
         </div>
         <div class="code">
-          git remote add upstream git://github.com/cncjs/cncjs_1_10_3_fork_AL.git
+          git remote add upstream git://github.com/cncjs/cncjs.git
         </div>
 
         <h4>Step 2: Branch</h4>
         Create a feature branch and before starting:<br>
         <div class="code">
           git checkout -b autolevelwidget -t origin/master
+        </div>
+        Output:
+        <div class="output">
+          Branch 'autolevelwidget' set up to track remote branch 'master' from 'origin'.<br>
+          Switched to a new branch 'autolevelwidget'
         </div>
 
         <h4>Step 3: Install</h4>
@@ -76,38 +81,125 @@
         <div class="code">
           git fetch upstream
         </div>
-        <div class="code">
-          git rebase upstream/master
+
+        This command fails with the message
+        <div class="output">
+          fatal: unable to connect to github.com:<br>
+          github.com[0: 140.82.112.4]: errno=Connection timed out
         </div>
 
-        <h4>Step 6: Build</h4>
+        Did not continue with the following steps:
+
+        <div class="innercard">
+          <div class="code">
+            git rebase upstream/master
+          </div>
+
+          <h4>Step 6: Build</h4>
+          Run
+          <div class="code">
+            yarn build
+          </div>
+          to build the app.
+
+          <h4>Step 7: Push</h4>
+          <div class="code">
+            git push origin autolevelwidget
+          </div>
+
+
+          <h4>Pull Request</h4>
+          When ready to request having your code integrated into cncjs, make a new pull request<br>
+
+          Go to
+          <a href="https://github.com/atmelino/cncjs">
+            https://github.com/atmelino/cncjs</a><br>
+          and select your feature branch. Click on the New pull request button and fill out the form.
+        </div>
+        <a href=""> </a><br>
+      </div>
+
+
+      <div class="card">
+        <h2>August 10, 2023</h2>
+        <h3> Forking cncjs for integration of autolevel</h3>
+
+
+        <a href="https://github.com/oslabs-beta/d3no-data/blob/main/CONTRIBUTING.md">
+          https://github.com/oslabs-beta/d3no-data/blob/main/CONTRIBUTING.md </a><br>
+
+        <h4>Step 1: Fork</h4>
+        Go to<br>
+        <a href="https://github.com/cncjs/cncjs">https://github.com/cncjs/cncjs </a><br>
+        <p>
+          Create a new fork<br>
+          <img src="images/fork_01.png" alt="fork_01" width=""> <br>
+        </p>
+        results in new repository<br>
+        <a href="https://github.com/atmelino/cncjs">
+          https://github.com/atmelino/cncjs</a><br>
+
+        <h4>Step 2: Branch</h4>
+        <p>
+          Create a new branch<br>
+          <img src="images/autolevelwidgetbranch.png" alt="autolevelwidgetbranch" width=""> <br>
+        </p>
+
+        <h4>Step 3: Clone the new Branch</h4>
+        Open a terminal on your local computer.<br>
+        <div class="code">
+          git clone -b autolevelwidget https://github.com/atmelino/cncjs.git
+        </div>
+        <div class="code">
+          cd cncjs
+        </div>
+        Check to make sure we are working on the new branch
+        <div class="code">
+          git branch
+        </div>
+        Should result in
+        <div class="output">
+          * autolevelwidget
+        </div>
+
+        <h4>Step 4: Install</h4>
+        Make sure to use node version 14<br>
+        <div class="code">
+          nvm use 14
+        </div>
+        Run yarn to install the dependencies in the local node_modules folder:
+        <div class="code">
+          yarn
+        </div>
+
+        <h4>Step 5: Build</h4>
         Run
         <div class="code">
           yarn build
         </div>
         to build the app.
 
-        <h4>Step 7: Push</h4>
+        <h4>Step 6: Commit your changes</h4>
+        <div class="code">
+          git commit -m 'Added a new feature that does x because y'
+        </div>
+
+        <h4>Step 7: Push to the branch</h4>
         <div class="code">
           git push origin autolevelwidget
         </div>
 
-
-        <h4>Pull Request</h4>
+        <h4>Step : Open a Pull Request</h4>
         When ready to request having your code integrated into cncjs, make a new pull request<br>
 
-        Go to
-        <a href="https://github.com/atmelino/cncjs_1_10_3_fork_AL">
-          https://github.com/atmelino/cncjs_1_10_3_fork_AL</a><br>
-        and select your feature branch. Click on the New pull request button and fill out the form.
+        <a
+          href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request">
+          https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
+        </a><br>
 
 
 
-
-
-        <a href=""> </a><br>
       </div>
-
 
       <div class="card">
         <h2>Date</h2>
