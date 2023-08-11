@@ -189,9 +189,7 @@
 
 
       <div class="card">
-        <h3>Adding the AutoLevel widget</h3>
-
-        <h5>File modifications and commands</h5>
+        <h3>File modifications</h3>
 
         <div class="innercard">
           <span class="data">
@@ -230,8 +228,19 @@
           <span class="data">
             src/app/containers/Workspace/WidgetManager/WidgetManager.jsx
           </span><br>
-          in function widgetList,
-          clone the array element named laser and rename it to autolevel, fill in the constants<br>
+          in array widgetList, add
+          <div class="code">
+            widgetList = [ etc.<br>
+            {<br>
+            id: 'autolevel',<br>
+            caption: i18n._('AutoLevel Widget'),<br>
+            details: i18n._('This widget lets you probe a grid for autolevelling a PCB.'),<br>
+            visible: true,<br>
+            disabled: false<br>
+            }<br>
+          </div>
+
+
         </div>
 
         <div class="innercard">
@@ -239,10 +248,22 @@
             src/app/store/defaultState.js
           </span>
           <br>
-          add 'AutoLevel' to secondary widgets<br>
-          copy laser section under
-          'widgets: {'
-          and rename to autolevel<br>
+          add 'autoLevel' to secondary widgets<br>
+          <div class="code">
+            workspace: { etc.<br>
+            secondary: { etc. <br>
+            widgets: [<br>
+            'axes', 'gcode', 'macro', 'probe', 'spindle', 'laser', 'autolevel'<br>
+            ] <br>
+          </div>
+
+          under 'widgets: {' add
+          <div class="code">
+            widgets: {<br>
+            autolevel: {<br>
+            minimized: false,<br>
+            },
+          </div>
         </div>
 
         <div class="innercard">
@@ -271,6 +292,13 @@
         </div>
 
         <div class="innercard">
+          Add the folder <span class="data">
+            src/app/widgets/AutoLevel
+          </span><br>
+          It contains the files with the code for the new widget.<br>
+        </div>
+
+        <div class="innercard">
           <span class="data">
             src/app/widgets/AutoLevel/AutoLevel.jsx
           </span> contains the code that receives the event that was emitted from GrblController.js <br>
@@ -295,12 +323,7 @@
             },
           </div>
         </div>
-        <div class="innercard">
 
-          The folder <span class="data">
-            src/app/widgets/AutoLevel
-          </span> contains the files with the code for the new widget.<br>
-        </div>
 
       </div>
 
