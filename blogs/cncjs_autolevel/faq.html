@@ -53,11 +53,22 @@
         </div>
         <div class="answer2">
           Starting with version 1.10.0, The package manager has been changed from NPM to Yarn<br>
-          <a href="https://github.com/cncjs/cncjs/releases"> https://github.com/cncjs/cncjs/releases</a><br>
-          run
+          <p>
+            <a href="https://github.com/cncjs/cncjs/releases"> https://github.com/cncjs/cncjs/releases</a><br>
+          </p>
+          Make sure to use node version 14. If you use nvm:<br>
+          <div class="code">
+            nvm use 14
+          </div>
+          Run
           <div class="code">
             yarn
           </div>
+          to install the dependencies, then run
+          <div class="code">
+            yarn build
+          </div>
+          to build the app.
         </div>
       </div>
 
@@ -81,7 +92,7 @@
           open a browser at <br>
           <a href="http://127.0.1.1:8000"> http://127.0.1.1:8000</a><br>
 
-          </div>
+        </div>
 
       </div>
 
@@ -127,7 +138,8 @@
   </div>
   </div>
   <div class="footer">
-    <h3>Modified July 2023</h3>  </div>
+    <h3>Modified July 2023</h3>
+  </div>
 </body>
 
 </html>
