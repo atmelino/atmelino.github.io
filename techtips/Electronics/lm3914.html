@@ -34,12 +34,97 @@
         <img src="images/LM3914-Internal-Circuit.png" alt="LM3914-Internal-Circuit" width="500">
         <img src="images/LM3914_KiCAD.png" alt="LM3914_KiCAD" height="">
 
+        <h3>Pins</h3>
+        <table>
+          <tr>
+            <th>Number</th>
+            <th>Symbol</th>
+            <th>Name</th>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>RLO</td>
+            <td>Divider (low end)</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>SIG</td>
+            <td>Signal Input</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>RHI</td>
+            <td>Divider (high end)</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>REFOUT</td>
+            <td>Reference Output</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>REFADJ</td>
+            <td>Reference Adjust</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>MODE</td>
+            <td>Mode Select</td>
+          </tr>
+
+        </table>
+        <h4>Operating Principle</h4>
+        <p> The chip contains a voltage divider with a comparator at each resistor. <br>
+          The SIG input signal goes to the - side of each comparator.<br>
+          The RHI input goes to the + side of each comparator.
+        </p>
+        <h4>REFADJ and REFOUT</h4>
+        The chip provides a stable voltage of 1.25 Volt between REFADJ and REFOUT.<br>
+        In the simplest configuration:
+
+        <table style="vertical-align: top;width: 100%;">
+          <tr>
+            <td style="vertical-align: top;">
+              <img src="images/LM3914_simple_01.png" alt="LM3914_simple_01" width="300">
+            </td>
+            <td style="vertical-align: center;">
+              <ul>
+                <li> REFADJ is ground and RLO is connected to ground</li>
+                <li> REFOUT to RHI</li>
+              </ul>
+              so that 
+              <ul>
+                <li> the low end of the reference is connected to the low end of the divider</li>
+                <li> the high end of the reference (1.25 V) is connected to the high end of the divider </li>
+              </ul>
+                  </td>
+          </tr>
+        </table>
+        Thus making the voltage range of the circuit 0 V to 1.25 V.
+
+
         <h4>RLO</h4>
         If we want the lowest measured voltage to be 0V, connect pin 4 to ground.<br>
         If we want the lowest measured voltage to be higher than 0V, connect pin 4 to a voltage divider.<br>
 
+      </div>
+
+
+      <div class="card">
+        <h3>Circuit: Voltmeter from 0 V to 5.1 V</h3>
+        
+
 
       </div>
+
+
+      <div class="card">
+        <h3>Circuit: Voltmeter from 0 V to variable 5.1 V to 10.1 V</h3>
+        <a href="https://www.electroschematics.com/robot-battery-meter/">
+          https://www.electroschematics.com/robot-battery-meter/</a><br>
+
+      </div>
+
 
       <div class="card">
         <a href=""></a><br>
