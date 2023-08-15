@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html;
       charset=windows-1252">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link type="text/css" href="../../css/blog.css" media="all" rel="stylesheet">
+  <link type="text/css" href="../../../css/blog.css" media="all" rel="stylesheet">
   <title></title>
 </head>
 
@@ -15,13 +15,13 @@
     <table id="headerline_table">
       <tr>
         <td width="200">
-          <a href="../../index.html"><img src="../../images/home.png" alt="home" height="60"></a>
-          <a href="../../techtips/index.html"><img src="../../images/techtips.png" alt="scroll" height="60"></a>
-          <a href="../../techtips/Electronics/index.html"><img src="../../images/electronics_PCB.png" alt="Electronics"
-              height="60"></a>
+          <a href="../../../index.html"><img src="../../../images/home.png" alt="home" height="60"></a>
+          <a href="../../../techtips/index.html"><img src="../../../images/techtips.png" alt="scroll" height="60"></a>
+          <a href="../../../techtips/Electronics/index.html"><img src="../../../images/electronics_PCB.png"
+              alt="Electronics" height="60"></a>
         </td>
         <td id="headerline_cell">
-          <h2>LM3914</h2>
+          <h2>LM3914 Description</h2>
         </td>
       </tr>
     </table>
@@ -33,6 +33,11 @@
       <div class="card">
         <img src="images/LM3914-Internal-Circuit.png" alt="LM3914-Internal-Circuit" width="500">
         <img src="images/LM3914_KiCAD.png" alt="LM3914_KiCAD" height="">
+        <h3>Operating Principle</h3>
+        <p> The chip contains a voltage divider with a comparator at each resistor.<br>
+          The points between the resistors of the voltage divider go to the + side of each comparator<br>
+          The input signal goes to the - side of each comparator.
+        </p>
 
         <h3>Pins</h3>
         <table>
@@ -71,15 +76,29 @@
             <td>MODE</td>
             <td>Mode Select</td>
           </tr>
-
         </table>
-        <h4>Operating Principle</h4>
-        <p> The chip contains a voltage divider with a comparator at each resistor. <br>
-          The SIG input signal goes to the - side of each comparator.<br>
-          The RHI input goes to the + side of each comparator.
-        </p>
         <h4>REFADJ and REFOUT</h4>
         The chip provides a stable voltage of 1.25 Volt between REFADJ and REFOUT.<br>
+
+        <h4>RLO</h4>
+        The RLO input goes to the low end of the voltage divider.<br>
+        If we want the lowest measured voltage to be 0V, connect pin 4 to ground.<br>
+        If we want the lowest measured voltage to be higher than 0V, connect pin 4 to a voltage divider.<br>
+
+        <h4>RHI</h4>
+        The RHI input goes to the high end of the voltage divider.
+
+
+        <h4>SIG</h4>
+        The SIG input signal goes to the - side of each comparator.<br>
+
+
+      </div>
+
+
+
+      <div class="card">
+
         In the simplest configuration:
 
         <table style="vertical-align: top;width: 100%;">
@@ -90,40 +109,19 @@
             <td style="vertical-align: center;">
               <ul>
                 <li> REFADJ is ground and RLO is connected to ground</li>
-                <li> REFOUT to RHI</li>
+                <li> REFOUT is connected to RHI</li>
               </ul>
-              so that 
+              so that
               <ul>
                 <li> the low end of the reference is connected to the low end of the divider</li>
                 <li> the high end of the reference (1.25 V) is connected to the high end of the divider </li>
               </ul>
-                  </td>
+            </td>
           </tr>
         </table>
         Thus making the voltage range of the circuit 0 V to 1.25 V.
-
-
-        <h4>RLO</h4>
-        If we want the lowest measured voltage to be 0V, connect pin 4 to ground.<br>
-        If we want the lowest measured voltage to be higher than 0V, connect pin 4 to a voltage divider.<br>
-
       </div>
 
-
-      <div class="card">
-        <h3>Circuit: Voltmeter from 0 V to 5.1 V</h3>
-        
-
-
-      </div>
-
-
-      <div class="card">
-        <h3>Circuit: Voltmeter from 0 V to variable 5.1 V to 10.1 V</h3>
-        <a href="https://www.electroschematics.com/robot-battery-meter/">
-          https://www.electroschematics.com/robot-battery-meter/</a><br>
-
-      </div>
 
 
       <div class="card">
@@ -136,11 +134,15 @@
 
       <div class="card">
         <h4>Category</h4>
+        <a href="description.html">Description</a><br>
+        <a href="circuit_01.html">circuit_01</a><br>
+        <a href="circuit_02.html">circuit_02</a><br>
+        <a href="circuit_03.html">circuit_03</a><br>
       </div>
 
       <div class="card">
         <h3>Follow Me</h3>
-        <a href="https://discord.gg/3Y4HDpkY"><img src="../../images/discord.png" alt="discord" height="30"></a>
+        <a href="https://discord.gg/3Y4HDpkY"><img src="../../../images/discord.png" alt="discord" height="30"></a>
       </div>
     </div>
   </div>
