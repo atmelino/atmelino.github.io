@@ -44,25 +44,35 @@
         To generate a voltage between 0 V and 1.2 V, we use a voltage divider with<br>
         <ul>
           <li>R1=4.7K &#8486;</li>
-          <li>R3=680 &#8486;</li>
+          <li>R2=680 &#8486;</li>
         </ul>
 
 
         The resulting voltage at the connection between R1 and R3 is<br>
         <div class="code">
-          U= R3 /(R1+R3) * 5V = 680/(680+4700) = 0.126 * 5V
+          U= R2 /(R1+R2) * 5V = 680/(680+4700) = 0.126 * 5V
         </div>
         <div class="code">
-          U=  0.632 V
+          U= 0.632 V
         </div>
-        <p>
-          We need a resistor between RHI and ground to control the LED brightness.
-        </p>
         <img src="images/circuit_01_schem.jpg" alt="circuit_01_schem" width="600">
 
 
         <img src="images/circuit_01_pic.jpg" alt="circuit_01_pic" width="600">
 
+
+
+        <h4>Brightness Control</h4>
+        <p>
+          To increase the LED brightness, we can add a resistor R3 between RHI and ground.
+        </p>
+        <img src="images/circuit_01_brightness_up.jpg" alt="circuit_01_brightness_up" width="600">
+
+        <p>
+          To reduce the LED brightness, we can add a resistor R4 between the +5V rail and the positive side of the bar
+          display.
+        </p>
+        <img src="images/circuit_01_brightness_down.jpg" alt="circuit_01_brightness_down" width="600">
 
 
       </div>
