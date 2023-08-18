@@ -36,9 +36,38 @@
         <p>
           In this circuit, we will add a potentiometer to the circuit_01.<br>
           It will allow us to vary the input voltage at SIG between 0 V and 1.2 V<br>
-
         </p>
         <img src="images/circuit_02.png" alt="circuit_02" width="600">
+
+        <p>
+          We have to make sure that the voltage at the SIG input does not exceed 1.2 V.<br>
+
+          The voltage at the point between R1 ad R_POT is at maximum when the potentiometer is at the maximum value.<br>
+
+          In that case:
+        <div class="code">
+          U_SIG= R_POT /(R1+R_POT) * 5V
+        </div>
+        which leads to the equation for the minimal R1:
+        <div class="code">
+          R1 = R_POT * (5V - U_SIG)/U_SIG
+        </div>
+        With the desired
+        <div class="code">
+          U_SIG= 1.2V
+        </div>
+        and easily available trimpot of value
+        <div class="code">
+          R_POT= 1K&#8486;
+        </div>
+        gives a minimum value for R1
+        <div class="code">
+          R1> 3.16K&#8486;
+        </div>
+        
+
+
+        </p>
 
       </div>
 
