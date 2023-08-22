@@ -17,8 +17,8 @@
         <td width="200">
           <a href="../../../index.html"><img src="../../../images/home.png" alt="home" height="60"></a>
           <a href="../../../techtips/index.html"><img src="../../../images/techtips.png" alt="scroll" height="60"></a>
-          <a href="../../../techtips/Electronics/index.html"><img src="../../../images/electronics_PCB.png" alt="Electronics"
-              height="60"></a>
+          <a href="../../../techtips/Electronics/index.html"><img src="../../../images/electronics_PCB.png"
+              alt="Electronics" height="60"></a>
         </td>
         <td id="headerline_cell">
           <h2>LM3914 circuit_03</h2>
@@ -31,20 +31,48 @@
     <div class="leftcolumn">
 
       <div class="card">
-        <h3>Circuit: Voltmeter from 0 V to 5 V</h3>
-        
-        
-        <img src="images/circuit_03.png" alt="circuit_03" width="600">
+        <h3>Circuit: Voltmeter from 0 V to 12 V</h3>
+
+
+        <img src="images/circuit_03_schem.jpg" alt="circuit_03_schem" width="600">
+
+        <p>
+          The voltmeter circuit functions basically the same way as circuit_01:
+        </p>
+        <ul>
+          <li>When the voltage at SIG is 0 V, then all LED's are off.</li>
+          <li>When the voltage at SIG is 1.2 V, then all LED's are on.</li>
+        </ul>
+
+        <p>We have to make sure that when the voltage at the top of the voltage divider is 12 V,<br>
+          the voltage at the point between R1 and R2 is 1.2 V.
+        </p>
+
+        <p>When we choose R2 to be 1K &#8486;
+          The resulting voltage at the point between R1 and R2 is<br>
+        <div class="code">
+          U= R2 /(R1+R2) * 12V = 1000/(1000+R1) * 12V
+        </div>
+        and we want U to be
+        <div class="code">
+          U= 1.2 V
+        </div>
+        This leads to a value for R2 of
+        <div class="code">
+          R2= 9K &#8486;
+        </div>
+        We can choose a more readily available value that is larger, for example 10K &#8486;,<br>
+        but not smaller.
+
+        </p>
+
+
+
+
 
       </div>
 
 
-      <div class="card">
-        <h3>Circuit: Voltmeter from 0 V to variable 5.1 V to 10.1 V</h3>
-        <a href="https://www.electroschematics.com/robot-battery-meter/">
-          https://www.electroschematics.com/robot-battery-meter/</a><br>
-
-      </div>
 
 
       <div class="card">
