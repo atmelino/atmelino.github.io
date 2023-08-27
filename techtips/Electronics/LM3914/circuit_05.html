@@ -21,7 +21,7 @@
               alt="Electronics" height="60"></a>
         </td>
         <td id="headerline_cell">
-          <h2>LM3914 circuit_03</h2>
+          <h2>LM3914 circuit_05</h2>
         </td>
       </tr>
     </table>
@@ -31,44 +31,14 @@
     <div class="leftcolumn">
 
       <div class="card">
-        <h3>Circuit 03: Variable Input from 0 to 1.25 V</h3>
-        <img src="images/circuit_03_schem.jpg" alt="circuit_03_schem" width="600">
+        <h3>Circuit 05: Voltmeter, Variable Range</h3>
+        <img src="images/circuit_05_schem.jpg" alt="circuit_05_schem" width="600">
 
         <p>
-          In this circuit, we will add a potentiometer to the circuit_01.<br>
-          It will allow us to vary the input voltage at SIG between 0 V and 1.25 V<br>
+          In this circuit<br>
         </p>
-
-        <p>
-          We have to make sure that the voltage at the SIG input does not exceed 1.25 V.<br>
-
-          The voltage at the point between R1 ad R_POT is at maximum when the potentiometer is at the maximum value.<br>
-
-          In that case:
-        <div class="code">
-          U_SIG= R_POT /(R1+R_POT) * 5V
-        </div>
-        which leads to the equation for the minimal R1:
-        <div class="code">
-          R1 = R_POT * (5V - U_SIG)/U_SIG
-        </div>
-        With the desired
-        <div class="code">
-          U_SIG= 1.2V
-        </div>
-        and easily available trimpot of value
-        <div class="code">
-          R_POT= 1K&#8486;
-        </div>
-        gives a minimum value for R1
-        <div class="code">
-          R1> 3.16K&#8486;
-        </div>
-
-
-        </p>
-
       </div>
+
 
 
       <div class="card">
