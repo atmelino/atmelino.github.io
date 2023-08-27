@@ -55,6 +55,10 @@ body {
   border-radius: 5px;
 }
 
+.preserve{
+  white-space: pre-line; 
+}
+
 /* Clear floats after the columns */
 .row:after {
   content: "";
