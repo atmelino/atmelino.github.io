@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <script language="JavaScript" type="text/javascript" src="jquery-3.3.1.min.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <link type="text/css" href="../css/blog.css" media="all" rel="stylesheet">
+  <title>atmelino's page</title>
+
+  <script>
+    $(document).ready(function () {
+      $("button").click(function () {
+        $("h2").hide();
+      });
+      $("#includedContent").load("rightColumn.html");
+
+    });
+
+
+    // $(function(){
+    //   $("#includedContent").load("rightColumn.html");
+    // });
+  </script>
+</head>
+
+<body>
+  <div class="header">
+    <table id="headerline_table">
+      <tr>
+        <td width="160"><a href="../index.html"><img src="../images/home.png" alt="home" height="60"></a>
+        <td>
+          <h2>Column Load </h2>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+
+  <div class="row">
+    <div class="leftcolumn">
+
+      <div class="card">
+
+        content to load ->
+        <div id="includedContent"></div>
+        -- content to load
+
+
+
+        <h2>This will hide me</h2>
+
+
+        <button>Click me</button>
+
+        <a href=""></a><br>
+      </div>
+
+
+    </div>
+
+    <div class=" rightcolumn">
+
+      <div class="card">
+        <h2>About Me</h2>
+        <p><img src="../images/sunflower_02.jpg" alt="Arduino" width="150" height="150"><br>
+          <a href="https://github.com/atmelino">https://github.com/atmelino</a><br>
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Content </h2>
+        <h4><a href="blogs/index.html"> Blogs</a></h4>
+        <h4><a href="techtips/index.html"> Tech Tips</a></h4>
+        <h4><a href="cncjsAL/index.html">cncjs AutoLevel</a></h4>
+      </div>
+
+      <div class="card">
+        <h2>Site </h2>
+        <a href="attributions.html"> attributions</a><br>
+        <a href="maintenance.html"> maintenance</a><br>
+      </div>
+
+      <div class="card">
+        <h3>Follow Me</h3>
+        <a href="https://discord.gg/F7KQySEW"><img src="../images/discord.png" alt="discord" height="30"></a>
+      </div>
+
+    </div>
+
+  </div>
+  </div>
+  <div class="footer">
+    <h3>Modified July 2023</h3>
+  </div>
+
+</body>
+
+</html>

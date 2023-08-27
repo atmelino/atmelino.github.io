@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#includedContent").load("rightColumn.html");
+
+      $("button").click(function () {
+        $("h2").hide();
+      });
+    });
+  </script>
+</head>
+
+<body>
+
+  <h2>This will hide me</h2>
+  <p>
+    content to load ->
+  <div id="includedContent"></div>
+  -- content to load
+  </p>
+  <button>Click me</button>
+
+
+  <div id="b-placeholder">
+
+  </div>
+
+  <script>
+    $(function () {
+      $("#b-placeholder").load("rightColumn.html");
+    });
+  </script>
+
+</body>
+
+</html>
