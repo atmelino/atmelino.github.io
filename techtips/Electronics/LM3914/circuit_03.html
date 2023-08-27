@@ -31,48 +31,44 @@
     <div class="leftcolumn">
 
       <div class="card">
-        <h3>Circuit: Voltmeter from 0 V to 12 V</h3>
-
-
+        <h3>Circuit 03: Variable Input 0 - 1.25 V</h3>
         <img src="images/circuit_03_schem.jpg" alt="circuit_03_schem" width="600">
 
         <p>
-          The voltmeter circuit functions basically the same way as circuit_01:
-        </p>
-        <ul>
-          <li>When the voltage at SIG is 0 V, then all LED's are off.</li>
-          <li>When the voltage at SIG is 1.2 V, then all LED's are on.</li>
-        </ul>
-
-        <p>We have to make sure that when the voltage at the top of the voltage divider is 12 V,<br>
-          the voltage at the point between R1 and R2 is 1.2 V.
+          In this circuit, we will add a potentiometer to the circuit_01.<br>
+          It will allow us to vary the input voltage at SIG between 0 V and 1.25 V<br>
         </p>
 
-        <p>When we choose R2 to be 1K &#8486;
-          The resulting voltage at the point between R1 and R2 is<br>
+        <p>
+          We have to make sure that the voltage at the SIG input does not exceed 1.25 V.<br>
+
+          The voltage at the point between R1 ad R_POT is at maximum when the potentiometer is at the maximum value.<br>
+
+          In that case:
         <div class="code">
-          U= R2 /(R1+R2) * 12V = 1000/(1000+R1) * 12V
+          U_SIG= R_POT /(R1+R_POT) * 5V
         </div>
-        and we want U to be
+        which leads to the equation for the minimal R1:
         <div class="code">
-          U= 1.2 V
+          R1 = R_POT * (5V - U_SIG)/U_SIG
         </div>
-        This leads to a value for R2 of
+        With the desired
         <div class="code">
-          R2= 9K &#8486;
+          U_SIG= 1.2V
         </div>
-        We can choose a more readily available value that is larger, for example 10K &#8486;,<br>
-        but not smaller.
+        and easily available trimpot of value
+        <div class="code">
+          R_POT= 1K&#8486;
+        </div>
+        gives a minimum value for R1
+        <div class="code">
+          R1> 3.16K&#8486;
+        </div>
+      
 
         </p>
-
-
-
-
 
       </div>
-
-
 
 
       <div class="card">
@@ -88,8 +84,8 @@
         <a href="index.html">Index</a><br>
         <a href="description.html">Description</a><br>
         <a href="module.html">Breadboard Module</a><br>
-        <a href="circuit_01.html">circuit_01</a><br>
         <a href="brightness.html">Brightness</a><br>
+        <a href="circuit_01.html">circuit_01</a><br>
         <a href="circuit_02.html">circuit_02</a><br>
         <a href="circuit_03.html">circuit_03</a><br>
         <a href="circuit_04.html">circuit_04</a><br>
