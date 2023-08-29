@@ -55,7 +55,7 @@ body {
   border-radius: 5px;
 }
 
-.preserve{
+.preserve_line{
   white-space: pre-line; 
 }
 
@@ -91,6 +91,17 @@ body {
   margin-top: 5px;
   margin-bottom: 5px;
   font-family: Consolas, "Liberation Mono", Courier, monospace
+}
+
+.code_new {
+  background-color: rgb(224, 224, 228);
+  border: 1px solid rgb(32, 27, 38);
+  border-radius: 4px;
+  padding: 4px 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  white-space: pre; 
 }
 
 .data {
