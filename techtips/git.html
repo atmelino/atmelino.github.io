@@ -29,6 +29,45 @@
     <div class="leftcolumn">
 
 
+      <div class="card">
+        <h2>Authentication new</h2>
+
+        New Authentication methods:<br>
+
+        <a href="https://github.com/git-ecosystem/git-credential-manager/blob/main/docs/credstores.md">
+          https://github.com/git-ecosystem/git-credential-manager/blob/main/docs/credstores.md </a><br>
+
+
+        <a href="https://github.com/git-ecosystem/git-credential-manager/blob/main/docs/usage.md">
+          https://github.com/git-ecosystem/git-credential-manager/blob/main/docs/usage.md </a><br>
+
+
+
+        I ran<br>
+        <div class="code">
+          git config --global credential.credentialStore secretservice<br>
+        </div>
+        When I run
+        <div class="code">
+          git push
+        </div>
+        I get error
+        <div class="code_new  ">
+          fatal: Failed to open secret service session [0x13]
+          fatal: No such secret item at path: /org/freedesktop/secrets/collection/login/5
+          Username for 'https://github.com':
+        </div>
+
+
+
+        <div class="code">
+          git credential-manager github login
+        </div>
+
+
+      </div>
+
+
 
       <div class="card">
         <h4>Kepping you email address private</h4>
@@ -107,7 +146,9 @@
           github no longer allows this method, instead we can use a credential manager.</p>
         <p>preparation for using credential manager<br>
 
-          https://github.com/git-ecosystem/git-credential-manager/blob/release/docs/install.md
+
+          <a href="https://github.com/git-ecosystem/git-credential-manager/blob/release/docs/install.md">
+            https://github.com/git-ecosystem/git-credential-manager/blob/release/docs/install.md </a><br>
 
         </p>
         <div class="code">
@@ -171,10 +212,12 @@
           href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request">
           https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
         </a><br>
-
-
       </div>
 
+      <div class="card">
+
+        <a href=""> </a><br>
+      </div>
 
 
     </div>
