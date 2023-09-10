@@ -50,6 +50,34 @@ fatal: Authentication failed for 'https://github.com/atmelino/atmelino.github.io
 
 
 
+        New Authentication methods:<br>
+
+        <a href="https://github.com/git-ecosystem/git-credential-manager/blob/main/docs/credstores.md">
+          https://github.com/git-ecosystem/git-credential-manager/blob/main/docs/credstores.md </a><br>
+
+
+        <a href="https://github.com/git-ecosystem/git-credential-manager/blob/main/docs/usage.md">
+          https://github.com/git-ecosystem/git-credential-manager/blob/main/docs/usage.md </a><br>
+
+        I ran<br>
+        <div class="code">
+          git config --global credential.credentialStore secretservice<br>
+        </div>
+        When I run
+        <div class="code">
+          git push
+        </div>
+        I get error
+        <div class="code_new  ">
+          fatal: Failed to open secret service session [0x13]
+          fatal: No such secret item at path: /org/freedesktop/secrets/collection/login/5
+          Username for 'https://github.com':
+        </div>
+
+        <div class="code">
+          git credential-manager github login
+        </div>
+
       </div>
 
 
