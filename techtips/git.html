@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" >
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link type="text/css" href="../css/blog.css" media="all" rel="stylesheet">
   <title>Tech Tips</title>
@@ -29,142 +29,198 @@
 
 
       <div class="card_new">
-        <h2>Authentication new 2023-09-09</h2>
+        <h2>Getting Started: git and Ubuntu 22.04 </h2>
+        completely fresh Ubuntu 22.04
+        <div class="code">
+          sudo apt install git
+        </div>
+        <div class="code">
+          git clone https://github.com/atmelino/atmelino.github.io.git
+        </div>
+        <div class="code">
+          git push
+        </div>
+        get error:
 
-		completely fresh Ubuntu 22.04
+        <div class="output">
+          Username for 'https://github.com': atmelino
+          Password for 'https://atmelino@github.com':
+          remote: Support for password authentication was removed on August 13, 2021.
+          remote: Please see
+          https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls
+          for information on currently recommended modes of authentication.
+          fatal: Authentication failed for 'https://github.com/atmelino/atmelino.github.io.git/'
+        </div>
+        go to recommended link
+        <a
+          href="https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls">
+          https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls
+        </a><br>
+        says:
+        When Git prompts you for your password, enter your personal access token. Alternatively, you can use a
+        credential helper like Git Credential Manager. Password-based authentication for Git has been removed in favor
+        of more secure authentication methods. For more information, see
+        <a
+          href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens">
+          "Managing your personal access tokens."</a><br>
 
-<div class="code">
-		sudo apt install git
-</div>
-		git clone https://github.com/atmelino/atmelino.github.io.git
+        Following the link, we see section on generating classic token.
+        <a
+          href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic">
+          https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic
+        </a><br>
+        Process:
+        Logged into github
+        <a href="https://github.com/">https://github.com/ </a><br>
+        click on your profile photo and choose Settings
+        <img src="images/token_01.jpg" alt="token_01" width="200">
+        Then
+        Developer settings.
+        Personal access tokens, choose classic token
 
-		git push
-		
-		get error:
+        Note: I already had a token, but cannot recall it on web page
 
-Username for 'https://github.com': atmelino
-Password for 'https://atmelino@github.com': 
-remote: Support for password authentication was removed on August 13, 2021.
-remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
-fatal: Authentication failed for 'https://github.com/atmelino/atmelino.github.io.git/'
+        So generate a new token and copy it to the clipboard
+        <img src="images/token_02.jpg" alt="token_02" width="500">
 
-go to 
+        Also on page
+        <a
+          href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens">
+          https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
+        </a><br>
+        under
 
-https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls
+        <a
+          href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#using-a-personal-access-token-on-the-command-line">
+          https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#using-a-personal-access-token-on-the-command-line
+        </a><br>
+        it says
+        Instead of manually entering your personal access token for every HTTPS Git operation,
+        you can cache your personal access token with a Git client.
+        Git will temporarily store your credentials in memory until an expiry interval has passed.
+        You can also store the token in a plain text file that Git can read before every request.
+        For more information, see
+        <a
+          href="https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git">
+          "Caching your GitHub credentials in Git."
+        </a><br>
+        Following the link:
 
-says under Check personal token:
+        Under Install GitHub CLI on macOS, Windows, or Linux.
+        link goes to
 
-https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
-Settings
-Developer settings.
-Personal access tokens,
+        <a href="https://github.com/cli/cli#installation">
+          https://github.com/cli/cli#installation
+        </a><br>
+        Linux & BSD
+        gh is available via:
+        our Debian and RPM repositories;
+        link goes to
+        <a href="https://github.com/cli/cli/blob/trunk/docs/install_linux.md">
+          https://github.com/cli/cli/blob/trunk/docs/install_linux.md
+        </a><br>
+        So Run
+        <div class="code">
+          type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
+          curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd
+          of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+          && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+          && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg]
+          https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+          && sudo apt update \
+          && sudo apt install gh -y
+        </div>
+        Back to
+        <a
+          href="https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git">
+          https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git
+        </a><br>
+        under
+        <a
+          href="https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git#github-cli">
+          https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git#github-cli
+        </a><br>
+        it says
+        In the command line, enter gh auth login, then follow the prompts.
+        When prompted for your preferred protocol for Git operations, select HTTPS.
+        When asked if you would like to authenticate to Git with your GitHub credentials, enter Y.
 
-classic token
-I have a classic token with no expiration
-but can not recall it on web page
+        So run
+        <div class="code">
+          gh auth login
+        </div>
+        Using the previously generated classic token, get
+        <div class="output">
+          ? What account do you want to log into? GitHub.com
+          ? What is your preferred protocol for Git operations? HTTPS
+          ? Authenticate Git with your GitHub credentials? Yes
+          ? How would you like to authenticate GitHub CLI? Paste an authentication token
+          Tip: you can generate a Personal Access Token here https://github.com/settings/tokens
+          The minimum required scopes are 'repo', 'read:org', 'workflow'.
+          ? Paste your authentication token: ****************************************
+          - gh config set -h github.com git_protocol https
+          Configured git protocol
+          Logged in as atmelino
+          </div>
 
- generate new token and copy to clipboard
- 
-  https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#using-a-personal-access-token-on-the-command-line
- says
- Once you have a personal access token, you can enter it instead of your password when performing Git operations over HTTPS.
- 
- tried to enter token instead of password but didn't work.
- 
- on this page,
- Instead of manually entering your personal access token for every HTTPS Git operation, 
- you can cache your personal access token with a Git client. 
- Git will temporarily store your credentials in memory until an expiry interval has passed. 
- You can also store the token in a plain text file that Git can read before every request. 
- For more information, see "Caching your GitHub credentials in Git." 
- 
- link goes to 
-https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git
+        Now try development cycle
+        <div class="code_new">
+          git add --all
+        </div>
+        works
 
-Under Install GitHub CLI on macOS, Windows, or Linux.
-link goes to 
- https://github.com/cli/cli#installation
- 
-  Linux & BSD
+        <div class="code">
+          git commit -m "update"
+        </div>
+        causes error
+        <div class="output">
+          Author identity unknown
 
-gh is available via:
+          *** Please tell me who you are.
 
-    our Debian and RPM repositories;
- 
-     
-link goes to
-https://github.com/cli/cli/blob/trunk/docs/install_linux.md
- 
- 
- 
- Back to
-https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git
+          Run
 
-In the command line, enter gh auth login, then follow the prompts.
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
 
-    When prompted for your preferred protocol for Git operations, select HTTPS.
-    When asked if you would like to authenticate to Git with your GitHub credentials, enter Y.
+          to set your account's default identity.
+          Omit --global to set the identity only in this repository.
 
-run
-gh auth login
+          fatal: unable to auto-detect email address (got 'tmeng12@hi7.(none)')
+        </div>
 
-     
-? What account do you want to log into? GitHub.com
-? What is your preferred protocol for Git operations? HTTPS
-? Authenticate Git with your GitHub credentials? Yes
-? How would you like to authenticate GitHub CLI? Paste an authentication token
-Tip: you can generate a Personal Access Token here https://github.com/settings/tokens
-The minimum required scopes are 'repo', 'read:org', 'workflow'.
-? Paste your authentication token: ****************************************
-- gh config set -h github.com git_protocol https
- Configured git protocol
- Logged in as atmelino
- 
-Now try development cycle
+        did
+        <div class="code_new">
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+        </div>
+        now
+        <div class="code_new">
+          git commit -m "update"
+        </div> works
 
-git add --all
-
-works
-
-git commit -m "update"
-
-causes error
-
-Author identity unknown
-
-*** Please tell me who you are.
-
-Run
-
-  git config --global user.email "you@example.com"
-  git config --global user.name "Your Name"
-
-to set your account's default identity.
-Omit --global to set the identity only in this repository.
-
-fatal: unable to auto-detect email address (got 'tmeng12@hi7.(none)')  
-did 
- git config --global user.email "you@example.com"
-  git config --global user.name "Your Name"
-    
-    
-now git commit -m "update" works
-
-and
-git commit -m "update"
-
-works as well.
-
-
-
-
-
-
-
-
+        and
+        <div class="code_new">
+          git push -u origin main
+        </div>
+        works as well.
       </div>
 
 
+
+
+      <div class="card">
+
+        <a
+          href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#using-a-personal-access-token-on-the-command-line">
+          https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#using-a-personal-access-token-on-the-command-line
+        </a><br>
+        says
+        Once you have a personal access token, you can enter it instead of your password when performing Git operations
+        over HTTPS.
+
+        tried to enter token instead of password but didn't work.
+      </div>
 
       <div class="card">
         <h2>Authentication new</h2>
