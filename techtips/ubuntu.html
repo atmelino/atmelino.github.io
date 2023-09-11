@@ -32,9 +32,9 @@
       <div class="card">
         <h4>GRUB setup</h4>
 
-        <a href="https://help.ubuntu.com/community/Grub2/Setup"> 
+        <a href="https://help.ubuntu.com/community/Grub2/Setup">
           https://help.ubuntu.com/community/Grub2/Setup</a><br>
-        
+
         <a href="https://launchpad.net/grub-customizer">
           https://launchpad.net/grub-customizer </a><br>
 
@@ -43,16 +43,18 @@
           sudo apt-get update
           sudo apt install grub-customizer
         </div>
-
+        If you have multiple Ubuntu OS partitions, run grub-customizer on the most recently installed one.
       </div>
 
 
 
       <div class="card_new">
         <h4>Virtualbox installation</h4>
+        On Gigabyte B450M motherboard with AMD Ryzen 5 3600
         Install Virtualbox from Ubuntu software center
 
         Create VM for Ubuntu 22.04
+
 
         start: get error
         AMD-V is disabled in the BIOS (or by the host OS) (VERR_SVM_DISABLED).
@@ -137,7 +139,24 @@
 
         <a href="https://www.debugpoint.com/clean-up-snap/">https://www.debugpoint.com/clean-up-snap/ </a><br>
 
+
       </div>
+
+      <div class="card">
+        <h4>snap automatic updates</h4>
+        To prevent snap from updating packages automatically:<br>
+        <div class="code">
+          snap refresh --hold
+        </div>
+        To turn automatic updates back on:<br>
+        <div class="code">
+          snap refresh --unhold
+        </div>
+
+        <a href="https://ubuntuhandbook.org/index.php/2022/11/turn-off-automatic-updates-snap-apps/">
+          https://ubuntuhandbook.org/index.php/2022/11/turn-off-automatic-updates-snap-apps/ </a><br>
+      </div>
+
 
 
       <div class="card">
@@ -224,8 +243,6 @@
       <div class="card">
         <h3>Category</h3>
 
-        <h4>git Usage</h4>
-        <h4>Single Board Computers</h4>
       </div>
 
       <div class="card">
