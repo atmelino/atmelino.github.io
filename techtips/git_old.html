@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type="text/css" href="../css/blog.css" media="all" rel="stylesheet">
+  <title>Tech Tips</title>
+</head>
+
+<body>
+  <div class="header">
+    <table id="headerline_table">
+      <tr>
+        <td width="200">
+          <a href="../index.html"><img src="../images/home.png" alt="home" height="60"></a>
+          <a href="../techtips/index.html"><img src="../images/techtips.png" alt="scroll" height="60"></a>
+          <a href="../techtips/git.html"><img src="../images/git.png" alt="git" height="60"></a>
+        </td>
+        <td id="headerline_cell">
+          <h2>git Usage</h2>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="row">
+    <div class="leftcolumn">
+
+
+
+      <div class="card">
+        <h2>github and Ubuntu 22.04 </h2>
+        <p>
+          github does not permit authentication via passwords, but we can use a classic token.<br>
+          <a
+            href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic">
+            https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic
+          </a><br>
+        </p>
+        Note: I already had a token, but it cannot be recalled on the web page, so generated a new token.
+        <br>
+        <div class="innercard">
+          Create a new classic token:<br>
+          Log into github
+          <a href="https://github.com/">https://github.com/ </a><br>
+          click on your profile photo and choose Settings
+          <p>
+            <img src="images/token_01.jpg" alt="token_01" width="200">
+          </p>
+
+          Click on Developer settings.<br>
+          Click on Personal access tokens, choose classic token<br>
+          Click on Generate new token and choose Generate new token (classic)
+          Choose a name, expiration, and scope, and click on Generate token<br>
+          <p>
+            <img src="images/token_02.jpg" alt="token_02" width="500">
+          </p>
+          and copy it to the clipboard or save it elsewhere.
+        </div>
+        <div class="innercard">
+          Install GitHub CLI<br>
+          <a
+            href="https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git">
+            "Caching your GitHub credentials in Git."
+          </a><br>
+          <a href="https://github.com/cli/cli/blob/trunk/docs/install_linux.md">
+            https://github.com/cli/cli/blob/trunk/docs/install_linux.md
+          </a><br>
+
+          Install curl
+          <div class="code">
+            sudo apt install curl
+          </div>
+          Run
+          <div class="code">
+            type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)<br>
+            curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd
+            of=/usr/share/keyrings/githubcli-archive-keyring.gpg \<br>
+            && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \<br>
+            && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg]
+            https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+            \<br>
+            && sudo apt update \<br>
+            && sudo apt install gh -y
+          </div>
+        </div>
+
+        <div class="innercard">
+          Run GitHub CLI<br>
+          <div class="code">
+            gh auth login
+          </div>
+          Using the previously generated classic token, get
+          <div class="output">
+            <p class="preserve_line">
+              ? What account do you want to log into? GitHub.com
+              ? What is your preferred protocol for Git operations? HTTPS
+              ? Authenticate Git with your GitHub credentials? Yes
+              ? How would you like to authenticate GitHub CLI? Paste an authentication token
+              Tip: you can generate a Personal Access Token here https://github.com/settings/tokens
+              The minimum required scopes are 'repo', 'read:org', 'workflow'.
+              ? Paste your authentication token: ****************************************
+              - gh config set -h github.com git_protocol https
+              Configured git protocol
+              Logged in as atmelino
+            </p>
+          </div>
+        </div>
+
+        <div class="innercard">
+          Install git<br>
+          <div class="code">
+            sudo apt install git
+          </div>
+
+          Run
+          <div class="code">
+
+            git config --global user.email "you@example.com"<br>
+            git config --global user.name "Your Name"
+          </div>
+          to set your account's default identity.
+
+        </div>
+
+        <div class="innercard">
+          Test development cycle<br>
+
+          <div class="code">
+            git clone https://github.com/atmelino/atmelino.github.io.git
+          </div>
+
+          Edit a file<br>
+          Run
+          <div class="code_new">
+            git add --all
+          </div>
+          <div class="code_new">
+            git commit -m "update"
+          </div>
+          <div class="code_new">
+            git push -u origin main
+          </div>
+
+
+        </div>
+
+
+
+
+        <div class="card_new">
+          <h2>Getting Started: git and Ubuntu 22.04 </h2>
+          completely fresh Ubuntu 22.04
+          <div class="code">
+            sudo apt install git
+          </div>
+          <div class="code">
+            git clone https://github.com/atmelino/atmelino.github.io.git
+          </div>
+          <div class="code">
+            git push
+          </div>
+          get error:
+
+          <div class="output">
+            Username for 'https://github.com': atmelino
+            Password for 'https://atmelino@github.com':
+            remote: Support for password authentication was removed on August 13, 2021.
+            remote: Please see
+            https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls
+            for information on currently recommended modes of authentication.
+            fatal: Authentication failed for 'https://github.com/atmelino/atmelino.github.io.git/'
+          </div>
+          go to recommended link
+          <a
+            href="https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls">
+            https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls
+          </a><br>
+          says:
+          When Git prompts you for your password, enter your personal access token. Alternatively, you can use a
+          credential helper like Git Credential Manager. Password-based authentication for Git has been removed in favor
+          of more secure authentication methods. For more information, see
+          <a
+            href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens">
+            "Managing your personal access tokens."</a><br>
+
+          Following the link, we see section on generating classic token.
+          <a
+            href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic">
+            https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic
+          </a><br>
+          Process:
+          Logged into github
+          <a href="https://github.com/">https://github.com/ </a><br>
+          click on your profile photo and choose Settings
+          <img src="images/token_01.jpg" alt="token_01" width="200">
+          Then
+          Developer settings.
+          Personal access tokens, choose classic token
+
+          Note: I already had a token, but cannot recall it on web page
+
+          So generate a new token and copy it to the clipboard
+          <img src="images/token_02.jpg" alt="token_02" width="500">
+
+          Also on page
+          <a
+            href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens">
+            https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
+          </a><br>
+          under
+
+          <a
+            href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#using-a-personal-access-token-on-the-command-line">
+            https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#using-a-personal-access-token-on-the-command-line
+          </a><br>
+          it says
+          Instead of manually entering your personal access token for every HTTPS Git operation,
+          you can cache your personal access token with a Git client.
+          Git will temporarily store your credentials in memory until an expiry interval has passed.
+          You can also store the token in a plain text file that Git can read before every request.
+          For more information, see
+          <a
+            href="https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git">
+            "Caching your GitHub credentials in Git."
+          </a><br>
+          Following the link:
+
+          Under Install GitHub CLI on macOS, Windows, or Linux.
+          link goes to
+
+          <a href="https://github.com/cli/cli#installation">
+            https://github.com/cli/cli#installation
+          </a><br>
+          Linux & BSD
+          gh is available via:
+          our Debian and RPM repositories;
+          link goes to
+          <a href="https://github.com/cli/cli/blob/trunk/docs/install_linux.md">
+            https://github.com/cli/cli/blob/trunk/docs/install_linux.md
+          </a><br>
+          So Run
+          <div class="code">
+            type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
+            curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd
+            of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+            && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+            && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg]
+            https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+            \
+            && sudo apt update \
+            && sudo apt install gh -y
+          </div>
+          Back to
+          <a
+            href="https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git">
+            https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git
+          </a><br>
+          under
+          <a
+            href="https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git#github-cli">
+            https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git#github-cli
+          </a><br>
+          it says
+          In the command line, enter gh auth login, then follow the prompts.
+          When prompted for your preferred protocol for Git operations, select HTTPS.
+          When asked if you would like to authenticate to Git with your GitHub credentials, enter Y.
+
+          So run
+          <div class="code">
+            gh auth login
+          </div>
+          Using the previously generated classic token, get
+          <div class="output">
+            ? What account do you want to log into? GitHub.com
+            ? What is your preferred protocol for Git operations? HTTPS
+            ? Authenticate Git with your GitHub credentials? Yes
+            ? How would you like to authenticate GitHub CLI? Paste an authentication token
+            Tip: you can generate a Personal Access Token here https://github.com/settings/tokens
+            The minimum required scopes are 'repo', 'read:org', 'workflow'.
+            ? Paste your authentication token: ****************************************
+            - gh config set -h github.com git_protocol https
+            Configured git protocol
+            Logged in as atmelino
+          </div>
+
+          Now try development cycle
+          <div class="code_new">
+            git add --all
+          </div>
+          works
+
+          <div class="code">
+            git commit -m "update"
+          </div>
+          causes error
+          <div class="output">
+            Author identity unknown
+
+            *** Please tell me who you are.
+
+            Run
+
+            git config --global user.email "you@example.com"
+            git config --global user.name "Your Name"
+
+            to set your account's default identity.
+            Omit --global to set the identity only in this repository.
+
+            fatal: unable to auto-detect email address (got 'tmeng12@hi7.(none)')
+          </div>
+
+          did
+          <div class="code_new">
+            git config --global user.email "you@example.com"
+            git config --global user.name "Your Name"
+          </div>
+          now
+          <div class="code_new">
+            git commit -m "update"
+          </div> works
+
+          and
+          <div class="code_new">
+            git push -u origin main
+          </div>
+          works as well.
+        </div>
+
+
+
+
+        <div class="card">
+
+          <a
+            href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#using-a-personal-access-token-on-the-command-line">
+            https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#using-a-personal-access-token-on-the-command-line
+          </a><br>
+          says
+          Once you have a personal access token, you can enter it instead of your password when performing Git
+          operations
+          over HTTPS.
+
+          tried to enter token instead of password but didn't work.
+        </div>
+
+        <div class="card">
+          <h2>Authentication new</h2>
+
+          New Authentication methods:<br>
+
+          <a href="https://github.com/git-ecosystem/git-credential-manager/blob/main/docs/credstores.md">
+            https://github.com/git-ecosystem/git-credential-manager/blob/main/docs/credstores.md </a><br>
+
+
+          <a href="https://github.com/git-ecosystem/git-credential-manager/blob/main/docs/usage.md">
+            https://github.com/git-ecosystem/git-credential-manager/blob/main/docs/usage.md </a><br>
+
+          I ran<br>
+          <div class="code">
+            git config --global credential.credentialStore secretservice<br>
+          </div>
+          When I run
+          <div class="code">
+            git push
+          </div>
+          I get error
+          <div class="code_new  ">
+            fatal: Failed to open secret service session [0x13]
+            fatal: No such secret item at path: /org/freedesktop/secrets/collection/login/5
+            Username for 'https://github.com':
+          </div>
+
+          <div class="code">
+            git credential-manager github login
+          </div>
+
+        </div>
+
+
+
+        <div class="card">
+          <h4>Kepping you email address private</h4>
+          <a
+            href="https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address">
+            https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address
+          </a><br>
+
+          On the github web site:<br>
+          In Settings -> Emails<br>
+          Select
+          <div class="output">
+            Keep my email addresses private
+          </div>
+
+          <p>
+            <img src="images/git_email_private.png" alt="git_email_private" width=""> <br>
+          </p>
+
+        </div>
+
+        <div class="card">
+          <h4>Create new repository</h4>
+          Log in to github.<br>
+          Create new repository<br>
+          Make sure to init as recommended.<br>
+          Click on Code button and copy repository link.<br>
+
+          <div class="code">
+            git clone [paste copied text here]
+          </div>
+
+          <h4>Working with local repository</h4>
+          <h5>Upload changed code to github</h5>
+
+          <div class="code">
+            git add --all<br><br>
+
+            git commit -m "update"<br><br>
+
+            git push -u origin main<br>
+          </div>
+          <br>
+          <h5> Update local repository from github</h5>
+          <div class="code">
+            git pull
+          </div>
+          <br>
+
+          <h5> Undo local changes</h5>
+          Check status<br>
+          <div class="code">
+            git status
+          </div>
+          If the message is<br>
+          <div class="code">
+            Changes not staged for commit:
+          </div>
+          run<br>
+          <div class="code">
+            git restore *
+          </div>
+
+          and check status again, should say<br>
+
+          <div class="code">
+            Your branch is up to date with 'origin/main'.
+          </div>
+        </div>
+
+
+        <div class="card">
+          <h2>Authentication</h2>
+          <p>Authentication for git could be done in the past by entering user name and password in the command
+            line.
+            github no longer allows this method, instead we can use a credential manager.</p>
+          <p>preparation for using credential manager<br>
+
+
+            <a href="https://github.com/git-ecosystem/git-credential-manager/blob/release/docs/install.md">
+              https://github.com/git-ecosystem/git-credential-manager/blob/release/docs/install.md </a><br>
+
+          </p>
+          <div class="code">
+            git config --global credential.credentialStore secretservice<br>
+          </div>
+          <p><a
+              href="https://techoverflow.net/2021/09/19/how-to-fix-git-credential-manager-core-git-fatal-no-credential-backing-store-has-been-selected/">https://techoverflow.net/2021/09/19/how-to-fix-git-credential-manager-core-git-fatal-no-credential-backing-store-has-been-selected/</a><br>
+          </p>
+          <p><br>
+            now, when running
+
+          <div class="code_new">
+            git push -u origin main
+          </div>
+
+          <img src="../images/git-credential-manager.png" alt="git
+                      credential manager" width="422" height="369"> <br>
+          </p>
+          <p>Click on Token and enter the token generated in the
+            previous step.<br>
+            Now git push will work without entering the credentials.<br>
+          </p>
+        </div>
+
+
+        <div class="card">
+          <h2>Collaboration via Branches</h2>
+
+          <p>
+            <a
+              href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">https://docs.github.com/en/get-started/quickstart/fork-a-repo</a><br>
+          </p>
+
+
+          <h3>Example: Contributing to d3nodata</h3>
+          working on a branch of D3NO DATA<br>
+          <a href="https://github.com/oslabs-beta/d3no-data/blob/main/CONTRIBUTING.md">
+            https://github.com/oslabs-beta/d3no-data/blob/main/CONTRIBUTING.md
+          </a><br>
+
+          <ul>
+            <li>fork the d3nodata repository</li>
+            <li>create a branch that we will be working on</li>
+            <img src="../images/git_branch.png" alt="git branch" height="300">&nbsp;<br>
+            <li>clone the branch that we are working on:<br>
+              <div class="code">
+                git clone -b livechart https://github.com/atmelino/d3no-data.git
+              </div>
+            </li>
+            How do I know which branch I have on my computer?<br>
+            <div class="code">
+              git branch
+            </div>
+            results in<br>
+            <div class="code">
+              * livechart
+            </div>
+            <a href="https://www.atlassian.com/git/tutorials/using-branches">
+              https://www.atlassian.com/git/tutorials/using-branches
+            </a><br>
+            <li>every commit and push will now update the livechart branch on github.</li>
+          </ul>
+
+          <h4>Adding the new feature to the main branch</h4>
+          <a
+            href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request">
+            https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
+          </a><br>
+        </div>
+
+        <div class="card">
+
+          <a href=""> </a><br>
+        </div>
+
+
+      </div>
+
+      <div class="rightcolumn">
+
+        <div class="card">
+          <h3>Category</h3>
+
+          <h4>git Usage</h4>
+          <h4>Single Board Computers</h4>
+        </div>
+
+        <div class="card">
+          <h3>Follow Me</h3>
+          <a href="https://discord.gg/F7KQySEW"><img src="../images/discord.png" alt="discord" height="30"></a>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer">
+      <h3>July 2023
+      </h3>
+    </div>
+</body>
+
+</html>
