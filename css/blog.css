@@ -214,6 +214,29 @@ body {
   /*margin-bottom: 5px;*/
 }
 
+
+.plain_table {
+  /* font-family: Arial, Helvetica, sans-serif; */
+  width: 100%;
+  border: 1px solid black;
+}
+
+.plain_row {
+  /* font-family: Arial, Helvetica, sans-serif; */
+  width: 100%;
+  border: 1px solid black;
+}
+
+.plain_cell {
+  /* font-family: Arial, Helvetica, sans-serif; */
+  /* width: 100%; */
+  border: 1px solid black;
+}
+
+
+
+
+
 #headerline_table {
   font-family: Arial, Helvetica, sans-serif;
   width: 100%;
@@ -245,4 +268,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   width: 33%;
   border: 1px solid black;
+}
+
+a, u {
+  text-decoration: none;
 }
