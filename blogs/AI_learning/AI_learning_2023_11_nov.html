@@ -21,7 +21,7 @@
               height="60"></a>
         </td>
         <td>
-          <h2>AI learning blog</h2>
+          <h2>AI learning blog November 2023 </h2>
         </td>
       </tr>
     </table>
@@ -32,42 +32,45 @@
     <div class="leftcolumn">
 
       <div class="card">
+        <h2>November 4, 2023</h2>
 
-        <table style="width:100%">
-          <tr>
-            <td style="width:50%">
-              <h2>2023</h2>
-              <a href="AI_learning_2023_02_feb.html">
-                AI_learning_2023_02_feb.html</a><br>
-              <a href="AI_learning_2023_03_mar.html">
-                AI_learning_2023_03_mar.html</a><br>
-              <a href="AI_learning_2023_07_jul.html">
-                AI_learning_2023_07_jul.html</a><br>
-              <a href="AI_learning_2023_10_oct.html">
-                AI_learning_2023_10_oct.html</a><br>
-              <a href="AI_learning_2023_11_nov.html">
-                AI_learning_2023_11_nov.html</a><br>
-
-            </td>
-            <td style="width:50%">
-              <a href="AKcourse.html">
-                AK Course</a><br>
-
-
-
-            </td>
-          </tr>
-        </table>
-
+        class Neuron contains parameter
+        <div class="code">
+          self.nonlin = nonlin
+        </div>
+        <p>
+          The function
+        <div class="code">
+          def __call__(self, x):
+        </div>
+        will first calculate and create a new Value act:
+        <div class="code">
+          act = sum((wi * xi for wi, xi in zip(self.w, x)), self.b)
+        </div>
+        </p>
+        <p>
+          Depending on the whether nonlin is False or True:
+        <ul>
+          <li>If nonlin is False:</li>
+          __call__ will return this Value if nonlin is False.
+          <li>If nonlin is True:</li>
+          __call__ will create another new Value act.relu() and return that new Value
+        </ul>
+        </p>
 
 
-
-
-
-
-
-
+        <div class="code">
+          return act.relu() if self.nonlin else act
+        </div>
+        <a href=""> </a><br>
       </div>
+
+
+      <div class="card">
+        <h2>Date</h2>
+        <a href=""> </a><br>
+      </div>
+
 
     </div>
 
@@ -78,8 +81,6 @@
           AI_learning_2023_02_feb.html</a><br>
         <a href="AI_learning_2023_03_mar.html">
           AI_learning_2023_03_mar.html</a><br>
-        <a href="AI_learning_2023_07_jul.html">
-          AI_learning_2023_07_jul.html</a><br>
         <br>
       </div>
 
@@ -91,7 +92,9 @@
     </div>
 
 
+
   </div>
+
   <div class="footer">
     <h3>Modified July 2023</h3>
   </div>
