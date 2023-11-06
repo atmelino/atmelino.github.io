@@ -63,13 +63,52 @@
 
         nonlin=False:
         <p>
-          <img src="images/relu_01.jpg" alt="scroll" width="450">
+          <img src="images/relu_01.jpg" alt="relu_01" width="450">
         </p>
         nonlin=True:
         <p>
-          <img src="images/relu_02.jpg" alt="scroll" width="750">
+          <img src="images/relu_02.jpg" alt="relu_02" width="750">
+        </p>
+        <a href=""> </a><br>
+      </div>
+
+
+      <div class="card">
+        <h2>November 5, 2023</h2>
+        <h3>Multiplication and Gradient</h3>
+        The gradient of each operand is the data of the other operand times the gradient of the following Value<br>
+        Here, the total gradient of the weight is<br>
+        7*7=49
+        <p>
+          <img src="images/backward_02.jpg" alt="backward_01" width="800">
         </p>
 
+
+
+        When a Value has multiple operations, then the contributions of each gradient are added.<br>
+        For example, if the operations are multiplications:
+        <div class="code">
+          def _backward():<br>
+          self.grad += other.data * out.grad<br>
+          other.grad += self.data * out.grad<br>
+        </div>
+
+        Here, the total gradient of the input is the sum of the products of
+        the weights with the gradients of the following Values<br>
+        <div class="data">
+          0.3*1 + 0.5*1 = 0.8
+        </div>
+        <p>
+          <img src="images/backward_01.jpg" alt="backward_01" width="800">
+        </p>
+        Here, the total gradient of the input is the sum of the products of
+        the weights with the gradients of the following Values<br>
+        <div class="data">
+          0.2 * 0.8 + 0.3 * 0.4 = 0.16 + 0.12 = 0.28
+        </div>
+        <p>
+          <img src="images/backward_03.jpg" alt="backward_03" width="800">
+        </p>
 
 
         <a href=""> </a><br>
