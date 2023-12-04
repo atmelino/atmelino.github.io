@@ -21,7 +21,7 @@
               height="60"></a>
         </td>
         <td>
-          <h2>AI learning blog</h2>
+          <h2>AI learning blog December 2023 </h2>
         </td>
       </tr>
     </table>
@@ -32,44 +32,45 @@
     <div class="leftcolumn">
 
       <div class="card">
+        <h2>December 3, 2023</h2>
+        Fixed a bug in optimization loop:<br>
+        In initial development, I used
+        <div class="code">
+          activation = model(xinput)
+        </div>
+        as the performance parameter, to keep the structure simple.<br>
+        However, this does not work for optimization because it tends to want to go to negative infinity.<br>
+        <br>
+        After verifying that everything works, I moved to a quadratic performance index
+        <div class="code">
+          loss = (activation - target) * (activation - target)
+        </div>
+        or initially for simplicity
+        <div class="code">
+          loss = activation * activation
+        </div>
+        where target is zero.
 
-        <table style="width:100%">
-          <tr>
-            <td style="width:50%">
-              <h2>2023</h2>
-              <a href="AI_learning_2023_02_feb.html">
-                AI_learning_2023_02_feb.html</a><br>
-              <a href="AI_learning_2023_03_mar.html">
-                AI_learning_2023_03_mar.html</a><br>
-              <a href="AI_learning_2023_07_jul.html">
-                AI_learning_2023_07_jul.html</a><br>
-              <a href="AI_learning_2023_10_oct.html">
-                AI_learning_2023_10_oct.html</a><br>
-              <a href="AI_learning_2023_11_nov.html">
-                AI_learning_2023_11_nov.html</a><br>
-              <a href="AI_learning_2023_12_dec.html">
-                AI_learning_2023_12_dec.html</a><br>
+        However, I forgot to also change
+        <div class="code">
+          activation.backward()
+        </div>
+        to
+        <div class="code">
+          loss.backward()
+        </div>
 
-            </td>
-            <td style="width:50%">
-              <a href="AKcourse.html">
-                AK Course</a><br>
+        After fixing that, optimization worked.
 
-
-
-            </td>
-          </tr>
-        </table>
-
-
-
-
-
-
-
-
-
+        <a href=""> </a><br>
       </div>
+
+
+      <div class="card">
+        <h2>Date</h2>
+        <a href=""> </a><br>
+      </div>
+
 
     </div>
 
@@ -80,8 +81,6 @@
           AI_learning_2023_02_feb.html</a><br>
         <a href="AI_learning_2023_03_mar.html">
           AI_learning_2023_03_mar.html</a><br>
-        <a href="AI_learning_2023_07_jul.html">
-          AI_learning_2023_07_jul.html</a><br>
         <br>
       </div>
 
@@ -93,7 +92,9 @@
     </div>
 
 
+
   </div>
+
   <div class="footer">
     <h3>Modified July 2023</h3>
   </div>
