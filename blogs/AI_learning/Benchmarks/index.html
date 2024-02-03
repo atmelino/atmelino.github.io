@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type="text/css" href="../../../css/blog.css" media="all" rel="stylesheet">
+  <title></title>
+</head>
+
+<body>
+
+  <div class="header">
+    <table id="headerline_table">
+      <tr>
+        <td width="200">
+          <a href="../../../index.html"><img src="../../../images/home.png" alt="home" height="60"></a>
+          <a href="../../../blogs/index.html"><img src="../../../images/scroll.png" alt="scroll" height="60"></a>
+          <a href="../../../blogs/AI_learning/index.html"><img src="../../../images/AI_01.png" alt="AI Learning"
+              height="60"></a>
+        </td>
+        <td>
+          <h2>Benchmarks</h2>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+
+  <div class="row">
+    <div class="leftcolumn">
+
+      <div class="card">
+        <h2>Python AIBenchmark</h2>
+        <a href="https://pypi.org/project/ai-benchmark/">https://pypi.org/project/ai-benchmark/ </a><br>
+        The proposed program
+        <div class="code">
+          from ai_benchmark import AIBenchmark<br>
+          benchmark = AIBenchmark()<br> results=benchmark.run()
+        </div>
+        crashes due to error
+        <div class="output">
+          AttributeError: module 'numpy' has no attribute 'warnings'. Did you mean: 'hanning'?
+        </div>
+        workaround:<br>
+        In source file
+        <div class="code">
+          ai_benchmark/utils.py
+        </div>
+        change
+        <div class="code">
+          import numpy as np
+        </div>
+        to
+        <div class="code">
+          import warnings<br>
+          import numpy as np<br>
+          np.warnings = warnings
+        </div>
+        (Brave AI generated answer)
+
+      </div>
+
+
+
+      <div class="card">
+        <h2></h2>
+        <a href=""> </a><br>
+      </div>
+
+    </div>
+
+
+
+
+    <div class="rightcolumn">
+      <div class="card">
+        <br>
+      </div>
+
+      <div class="card">
+        <h3>Follow Me</h3>
+        <a href="https://discord.gg/F7KQySEW"><img src="../../images/discord.png" alt="discord" height="30"></a>
+      </div>
+
+    </div>
+
+
+  </div>
+  <div class="footer">
+    <h3>Modified July 2023</h3>
+  </div>
+</body>
+
+</html>
