@@ -21,7 +21,7 @@
               height="60"></a>
         </td>
         <td>
-          <h2>Benchmarks</h2>
+          <h2>tensorflow</h2>
         </td>
       </tr>
     </table>
@@ -32,41 +32,9 @@
     <div class="leftcolumn">
 
       <div class="card">
-        <h2>Python AIBenchmark</h2>
-        <a href="https://pypi.org/project/ai-benchmark/">https://pypi.org/project/ai-benchmark/ </a><br>
-
-        <p>
-          Comparison Table<br>
-          <a href="https://ai-benchmark.com/ranking_cpus_and_gpus_detailed.html">
-            https://ai-benchmark.com/ranking_cpus_and_gpus_detailed.html</a><br>
-        </p>
-
-        The proposed program
-        <div class="code">
-          from ai_benchmark import AIBenchmark<br>
-          benchmark = AIBenchmark()<br> results=benchmark.run()
-        </div>
-        crashes due to error
-        <div class="output">
-          AttributeError: module 'numpy' has no attribute 'warnings'. Did you mean: 'hanning'?
-        </div>
-        workaround:<br>
-        In source file
-        <div class="code">
-          ai_benchmark/utils.py
-        </div>
-        change
-        <div class="code">
-          import numpy as np
-        </div>
-        to
-        <div class="code">
-          import warnings<br>
-          import numpy as np<br>
-          np.warnings = warnings
-        </div>
-        (Brave AI generated answer)
-
+        <h2>Tutorial</h2>
+        <a href="https://www.tensorflow.org/tutorials/">
+          https://www.tensorflow.org/tutorials/ </a><br>
       </div>
 
 
