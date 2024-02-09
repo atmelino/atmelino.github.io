@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type="text/css" href="../../../css/blog.css" media="all" rel="stylesheet">
+  <title></title>
+</head>
+
+<body>
+
+  <div class="header">
+    <table id="headerline_table">
+      <tr>
+        <td width="200">
+          <a href="../../../index.html"><img src="../../../images/home.png" alt="home" height="60"></a>
+          <a href="../../../blogs/index.html"><img src="../../../images/scroll.png" alt="scroll" height="60"></a>
+          <a href="../../../blogs/AI_learning/index.html"><img src="../../../images/AI_01.png" alt="AI Learning"
+              height="60"></a>
+        </td>
+        <td>
+          <h2>Jeff Heaton Class</h2>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+
+  <div class="row">
+    <div class="leftcolumn">
+
+
+      <div class="card">
+        <img src="images/jeffheaton.jpg" alt="jh" height="100">
+      </div>
+
+      <div class="card">
+        <h2>Install tensorflow, keras, python in Ubuntu</h2>
+        <a href="https://www.youtube.com/watch?v=dj-Jntz-74g">
+          https://www.youtube.com/watch?v=dj-Jntz-74g </a><br>
+        <br>
+
+        Instructions here:<br>
+        <a href="https://github.com/jeffheaton/t81_558_deep_learning/tree/master/install">
+          https://github.com/jeffheaton/t81_558_deep_learning/tree/master/install </a><br>
+        <br>
+
+        Instructions from<br>
+        <a href="https://github.com/jeffheaton/t81_558_deep_learning/blob/master/install/manual_setup.ipynb">
+          https://github.com/jeffheaton/t81_558_deep_learning/blob/master/install/manual_setup.ipynb </a><br>
+        <br>
+
+        <h5>Install miniconda</h5>
+        <a href="https://docs.anaconda.com/free/miniconda/">
+          https://docs.anaconda.com/free/miniconda/ </a><br>
+
+        <div class="code">
+          mkdir -p ~/miniconda3<br>
+          wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh<br>
+          bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3<br>
+          rm -rf ~/miniconda3/miniconda.sh<br>
+          ~/miniconda3/bin/conda init bash<br>
+        </div>
+
+        <h5>First create a specific environment for conda</h5>
+
+        cheatsheet at<br>
+
+        <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/index.html">
+          https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/index.html </a><br>
+
+        <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/cheatsheet.html">
+          https://docs.conda.io/projects/conda/en/latest/user-guide/cheatsheet.html </a><br>
+        says:<br>
+        <div class="output">
+          activate environment<br>
+          (do this before installing packages)
+        </div>
+        so perhaps packages will installed in each environment separately?<br>
+
+
+        <div class="code">
+          conda create -y --name tensorflow python=3.6
+        </div>
+        Then activate this environment before installing packages!<br>
+        <div class="code">
+          conda activate tensorflow
+        </div>
+
+        <br>
+
+        <h5>Install necessary packages</h5>
+        <div class="code">
+          conda install -y jupyter
+        </div>
+        <div class="code">
+          conda install -y scipy<br>
+          pip install --exists-action i --upgrade pandas<br>
+          pip install --exists-action i --upgrade pandas-datareader<br>
+          pip install --exists-action i --upgrade matplotlib<br>
+          pip install --exists-action i --upgrade pillow<br>
+          pip install --exists-action i --upgrade tqdm<br>
+          pip install --exists-action i --upgrade requests<br>
+          pip install --exists-action i --upgrade h5py<br>
+          pip install --exists-action i --upgrade pyyaml<br>
+          pip install --exists-action i --upgrade tensorflow_hub<br>
+          pip install --exists-action i --upgrade bayesian-optimization<br>
+          pip install --exists-action i --upgrade spacy<br>
+          pip install --exists-action i --upgrade gensim<br>
+          pip install --exists-action i --upgrade flask<br>
+          pip install --exists-action i --upgrade boto3<br>
+          pip install --exists-action i --upgrade gym<br>
+          pip install --exists-action i --upgrade tensorflow==2.0.0-beta1<br>
+          pip install --exists-action i --upgrade keras-rl2 --user<br>
+          conda update -y --all
+        </div>
+
+      </div>
+
+
+
+
+      <div class="card">
+        <h2></h2>
+        <a href=""> </a><br>
+      </div>
+
+    </div>
+
+
+
+
+    <div class="rightcolumn">
+      <div class="card">
+        <br>
+      </div>
+
+      <div class="card">
+        <h3>Follow Me</h3>
+        <a href="https://discord.gg/F7KQySEW"><img src="../../images/discord.png" alt="discord" height="30"></a>
+      </div>
+
+    </div>
+
+
+  </div>
+  <div class="footer">
+    <h3>Modified July 2023</h3>
+  </div>
+</body>
+
+</html>
