@@ -92,9 +92,32 @@
       <div class="card">
         <h2>Feb 05, 2024</h2>
         Installed Nvidia GeForce 3050.<br>
+        Ubuntu 22.04.3 didn't boot.<br>
+        Booted in recoveryu mode and installed driver 535.<br>
+        System boots now but only in low res.<br>
+        No other resolutions are offered.<br>
+
+        <a
+          href="https://forums.developer.nvidia.com/t/ubuntu-20-04-lts-nvidia-geforce-rtx-3050-ti-driver-never-loads-or-runs/241269">
+          https://forums.developer.nvidia.com/t/ubuntu-20-04-lts-nvidia-geforce-rtx-3050-ti-driver-never-loads-or-runs/241269
+        </a><br>
 
 
-        <a href=""> </a><br>
+        <div class="code">
+          nvidia-settings
+        </div>
+        <div class="output">
+          ERROR: NVIDIA driver is not loaded
+        </div>
+        <div class="code">
+          nvidia-smi
+        </div>
+        <div class="output">
+          NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver. Make sure that the latest NVIDIA
+          driver is installed and running.
+        </div>
+
+
       </div>
 
 
