@@ -41,45 +41,120 @@
         TensorFlow basics <br>
         <a href="https://www.tensorflow.org/guide/basics"> https://www.tensorflow.org/guide/basics</a><br>
 
-
       </div>
+
       <div class="card">
-        <h2>Ubuntu Install tensorflow</h2>
+        <h2>Ubuntu Install tensorflow method 1</h2>
 
         Using Ubuntu 22.04.3<br>
         <br>
 
-
-
-        Both instructions from<br>
-        <a href="https://youtu.be/dj-Jntz-74g?si=5o0p8qjOFJLg8pX5">
-          https://youtu.be/dj-Jntz-74g?si=5o0p8qjOFJLg8pX5 </a><br>
-        <a href="https://github.com/jeffheaton/t81_558_deep_learning/tree/master/install">
-          https://github.com/jeffheaton/t81_558_deep_learning/tree/master/install
-        </a><br>
-        do not work:
-        <ul>
-          <li>manual_setup.ipynb</li>
-          <li>tensorflow-install-march-2023.ipynb</li>
-        </ul>
-
-        The instructions from <br>
+        Instructions from <br>
         <a href="https://pypi.org/project/ai-benchmark/">
           https://pypi.org/project/ai-benchmark/ </a><br>
-        work:<br>
+        <br>
         <div class="code">
           pip install tensorflow<br>
           pip install ai-benchmark<br>
         </div>
         There is a problem with a warning related to numpy, which can be resolved by<br>
-        
-         
-          <a href="https://atmelino.github.io/blogs/AI_learning/Benchmarks/index.html">
-            https://atmelino.github.io/blogs/AI_learning/Benchmarks/index.html </a><br>
+
+        <a href="https://atmelino.github.io/blogs/AI_learning/Benchmarks/index.html">
+          https://atmelino.github.io/blogs/AI_learning/Benchmarks/index.html </a><br>
+
+        Program
+        <div class="code">
+          from ai_benchmark import AIBenchmark<br>
+          results = AIBenchmark().run()
+        </div>
+        works<br>
+
+        Program
+        <div class="code">
+          # What version of Python do you have?<br>
+          import sys<br>
+          <br>
+          import tensorflow.keras<br>
+          import pandas as pd<br>
+          import sklearn as sk<br>
+          import tensorflow as tf<br>
+          <br>
+          print(f"Tensor Flow Version: {tf.__version__}")<br>
+          print(f"Keras Version: {tensorflow.keras.__version__}")<br>
+          print()<br>
+          print(f"Python {sys.version}")<br>
+          print(f"Pandas {pd.__version__}")<br>
+          print(f"Scikit-Learn {sk.__version__}")<br>
+          print("GPU is", "available" if tf.test.is_gpu_available() else "NOT AVAILABLE")<br>
+        </div>
+        causes error
+        <div class="output">
+          AttributeError: module 'tensorflow.keras' has no attribute '__version__'
+        </div>
+
+        <br>
+      </div>
+
+      <div class="card">
+        <h2>Ubuntu Install tensorflow method 2</h2>
+
+        Instructions from<br>
+        <a href="https://youtu.be/dj-Jntz-74g?si=5o0p8qjOFJLg8pX5">
+          https://youtu.be/dj-Jntz-74g?si=5o0p8qjOFJLg8pX5 </a><br>
+        <a href="https://github.com/jeffheaton/t81_558_deep_learning/tree/master/install">
+          https://github.com/jeffheaton/t81_558_deep_learning/tree/master/install
+        </a><br>
+
+        <h5>Using manual_setup.ipynb</h5>
+
+
+
+        <h5>Using tensorflow-install-march-2023.ipynb</h5>
+        Program
+        <div class="code">
+          # What version of Python do you have?<br>
+          import sys<br>
+          <br>
+          import tensorflow.keras<br>
+          import pandas as pd<br>
+          import sklearn as sk<br>
+          import tensorflow as tf<br>
+          <br>
+          print(f"Tensor Flow Version: {tf.__version__}")<br>
+          print(f"Keras Version: {tensorflow.keras.__version__}")<br>
+          print()<br>
+          print(f"Python {sys.version}")<br>
+          print(f"Pandas {pd.__version__}")<br>
+          print(f"Scikit-Learn {sk.__version__}")<br>
+          print("GPU is", "available" if tf.test.is_gpu_available() else "NOT AVAILABLE")<br>
+        </div>
+        causes error
+        <div class="output">
+
+        </div>
+
+
+
+
 
 
       </div>
 
+
+      <div class="card">
+        <h2>Ubuntu GPU CUDA support</h2>
+        <a href="https://pypi.org/project/ai-benchmark/">
+          https://pypi.org/project/ai-benchmark/
+        </a><br>
+        Note 2: For running the benchmark on Nvidia GPUs, NVIDIA CUDA and cuDNN libraries should be installed first.
+        Please find detailed instructions here.<br>
+        links to<br>
+
+        <a href="https://www.tensorflow.org/install/gpu">
+          https://www.tensorflow.org/install/gpu </a><br>
+
+
+      </div>
 
 
 

@@ -49,45 +49,59 @@
 
         Instructions from<br>
 
-        https://github.com/jeffheaton/t81_558_deep_learning/blob/master/install/tensorflow-install-march-2023.ipynb
 
+        <a
+          href="https://github.com/jeffheaton/t81_558_deep_learning/blob/master/install/tensorflow-install-march-2023.ipynb">
+          https://github.com/jeffheaton/t81_558_deep_learning/blob/master/install/tensorflow-install-march-2023.ipynb
+        </a><br>
+        <br>
 
-        curl https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o Miniconda3-latest-Linux-x86_64.sh
-        bash Miniconda3-latest-Linux-x86_64.sh
+        <div class="code">
+          curl https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o
+          Miniconda3-latest-Linux-x86_64.sh<br>
+          bash Miniconda3-latest-Linux-x86_64.sh
+          conda install -y jupyter<br>
+          wget https://raw.githubusercontent.com/jeffheaton/t81_558_deep_learning/master/tools.yml
+        </div>
 
-
-        conda install -y jupyter
-
-        wget https://raw.githubusercontent.com/jeffheaton/t81_558_deep_learning/master/tools.yml
-
-        edit tools.yml
+        edit tools.yml<br>
 
         change - cudnn=8.6.0.163 to - cudnn=8.8.0.121
 
-
-        conda env create -f tools.yml --name tensorflow
-
-
+        <div class="code">
+          conda env create -f tools.yml --name tensorflow
+        </div>
 
         Pip subprocess error:
         ERROR: Could not find a version that satisfies the requirement tensorflow (from versions: none)
         ERROR: No matching distribution found for tensorflow
 
-        failed
+        failed<br>
 
         Install pips manually:
 
 
-        conda activate tensorflow
-        pip install --exists-action i --upgrade gym
-        pip install --exists-action i --upgrade bayesian-optimization
-        pip install --exists-action i --upgrade kaggle
+        <div class="code">
+          conda activate tensorflow
+        </div>
 
+        <div class="code">
+          pip install --exists-action i --upgrade gym<br>
+          pip install --exists-action i --upgrade bayesian-optimization<br>
+          pip install --exists-action i --upgrade kaggle
+        </div>
 
-        python3 -m pip install --upgrade
-        https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.12.0-py3-none-any.whl
+        <div class="code">
+          python3 -m pip install --upgrade
+          https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.12.0-py3-none-any.whl
+        </div>
+        <br>
         from
-        https://stackoverflow.com/questions/38896424/tensorflow-not-found-using-pip
+        <br>
+
+        <a href="https://stackoverflow.com/questions/38896424/tensorflow-not-found-using-pip">
+          https://stackoverflow.com/questions/38896424/tensorflow-not-found-using-pip
+        </a><br>
 
 
 
@@ -135,21 +149,51 @@
         </div>
 
 
+        .bashrc before this command:<br>
+        <div class="code">
+          # >>> conda initialize >>>
+          # !! Contents within this block are managed by 'conda init' !!
+          __conda_setup="$('/home/tmeng12/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+          if [ $? -eq 0 ]; then
+          eval "$__conda_setup"
+          else
+          if [ -f "/home/tmeng12/miniconda3/etc/profile.d/conda.sh" ]; then
+          . "/home/tmeng12/miniconda3/etc/profile.d/conda.sh"
+          else
+          export PATH="/home/tmeng12/miniconda3/bin:$PATH"
+          fi
+          fi
+          unset __conda_setup
+          # conda initialize
+        </div>
 
-        # >>> conda initialize >>>
-        # !! Contents within this block are managed by 'conda init' !!
-        __conda_setup="$('/home/tmeng12/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-        if [ $? -eq 0 ]; then
-        eval "$__conda_setup"
-        else
-        if [ -f "/home/tmeng12/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/tmeng12/miniconda3/etc/profile.d/conda.sh"
-        else
-        export PATH="/home/tmeng12/miniconda3/bin:$PATH"
-        fi
-        fi
-        unset __conda_setup
-        # <<< conda initialize <<< <a href=""> </a><br>
+        .bashrc after this command:<br>
+        <div class="code">
+          # >>> conda initialize >>>
+          # !! Contents within this block are managed by 'conda init' !!
+          __conda_setup="$('/home/tmeng12/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+          if [ $? -eq 0 ]; then
+          eval "$__conda_setup"
+          else
+          if [ -f "/home/tmeng12/miniconda3/etc/profile.d/conda.sh" ]; then
+          . "/home/tmeng12/miniconda3/etc/profile.d/conda.sh"
+          else
+          export PATH="/home/tmeng12/miniconda3/bin:$PATH"
+          fi
+          fi
+          unset __conda_setup
+          # conda initialize
+        </div>
+
+        No change, but when I open a new terminal, the prefix (base) is no longer there,
+        and
+        <div class="code">
+          python --version
+        </div>
+        shows a different version.
+
+
+        <a href=""> </a><br>
       </div>
 
       <div class="card">
