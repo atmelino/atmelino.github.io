@@ -44,56 +44,11 @@
       </div>
 
       <div class="card">
-        <h2>Ubuntu Install tensorflow method 1</h2>
-
+        <h2>Installation</h2>
         Using Ubuntu 22.04.3<br>
-        <br>
 
-        Instructions from <br>
-        <a href="https://pypi.org/project/ai-benchmark/">
-          https://pypi.org/project/ai-benchmark/ </a><br>
-        <br>
-        <div class="code">
-          pip install tensorflow<br>
-          pip install ai-benchmark<br>
-        </div>
-        There is a problem with a warning related to numpy, which can be resolved by<br>
-
-        <a href="https://atmelino.github.io/blogs/AI_learning/Benchmarks/index.html">
-          https://atmelino.github.io/blogs/AI_learning/Benchmarks/index.html </a><br>
-
-        Program
-        <div class="code">
-          from ai_benchmark import AIBenchmark<br>
-          results = AIBenchmark().run()
-        </div>
-        works<br>
-
-        Program
-        <div class="code">
-          # What version of Python do you have?<br>
-          import sys<br>
-          <br>
-          import tensorflow.keras<br>
-          import pandas as pd<br>
-          import sklearn as sk<br>
-          import tensorflow as tf<br>
-          <br>
-          print(f"Tensor Flow Version: {tf.__version__}")<br>
-          print(f"Keras Version: {tensorflow.keras.__version__}")<br>
-          print()<br>
-          print(f"Python {sys.version}")<br>
-          print(f"Pandas {pd.__version__}")<br>
-          print(f"Scikit-Learn {sk.__version__}")<br>
-          print("GPU is", "available" if tf.test.is_gpu_available() else "NOT AVAILABLE")<br>
-        </div>
-        causes error
-        <div class="output">
-          AttributeError: module 'tensorflow.keras' has no attribute '__version__'
-        </div>
-
-        <br>
       </div>
+
 
       <div class="card">
         <h2>Ubuntu Install tensorflow method 2</h2>
