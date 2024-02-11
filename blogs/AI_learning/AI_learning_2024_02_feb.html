@@ -231,14 +231,174 @@
           pip install --exists-action i --upgrade keras-rl2 --user<br>
           conda update -y --all
         </div>
+        <h5>Run program</h5>
+        <div class="code">
+          # What version of Python do you have?<br>
+          import sys<br>
+          <br>
+          import tensorflow.keras<br>
+          import pandas as pd<br>
+          import sklearn as sk<br>
+          import tensorflow as tf<br>
+          <br>
+          print(f"Tensor Flow Version: {tf.__version__}")<br>
+          print(f"Keras Version: {tensorflow.keras.__version__}")<br>
+          print()<br>
+          print(f"Python {sys.version}")<br>
+          print(f"Pandas {pd.__version__}")<br>
+          print(f"Scikit-Learn {sk.__version__}")<br>
+          print("GPU is", "available" if tf.test.is_gpu_available() else "NOT AVAILABLE")<br>
+        </div>
         causes error
+        <div class="output">
+        </div>
       </div>
 
       <div class="card">
-        <h2>Feb 08, 2024 part 1</h2>
+        <h2>Feb 08, 2024 part 2</h2>
         <h5>Jeff Heaton install, second attempt</h5>
 
+        <h5>Install tensorflow, keras, python in Ubuntu</h5>
+        <a href="https://www.youtube.com/watch?v=dj-Jntz-74g">
+          https://www.youtube.com/watch?v=dj-Jntz-74g </a><br>
+        <br>
 
+        Instructions here:<br>
+        <a href="https://github.com/jeffheaton/t81_558_deep_learning/tree/master/install">
+          https://github.com/jeffheaton/t81_558_deep_learning/tree/master/install </a><br>
+        <br>
+
+        Instructions from<br>
+
+
+        <a
+          href="https://github.com/jeffheaton/t81_558_deep_learning/blob/master/install/tensorflow-install-march-2023.ipynb">
+          https://github.com/jeffheaton/t81_558_deep_learning/blob/master/install/tensorflow-install-march-2023.ipynb
+        </a><br>
+        <br>
+
+        <div class="code">
+          curl https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o
+          Miniconda3-latest-Linux-x86_64.sh<br>
+          bash Miniconda3-latest-Linux-x86_64.sh
+          conda install -y jupyter<br>
+          wget https://raw.githubusercontent.com/jeffheaton/t81_558_deep_learning/master/tools.yml
+        </div>
+
+        edit tools.yml<br>
+
+        change - cudnn=8.6.0.163 to - cudnn=8.8.0.121
+
+        <div class="code">
+          conda env create -f tools.yml --name tensorflow
+        </div>
+
+        Pip subprocess error:
+        ERROR: Could not find a version that satisfies the requirement tensorflow (from versions: none)
+        ERROR: No matching distribution found for tensorflow
+
+        failed<br>
+
+        Install pips manually:
+
+
+        <div class="code">
+          conda activate tensorflow
+        </div>
+
+        <div class="code">
+          pip install --exists-action i --upgrade gym<br>
+          pip install --exists-action i --upgrade bayesian-optimization<br>
+          pip install --exists-action i --upgrade kaggle
+        </div>
+
+        <div class="code">
+          python3 -m pip install --upgrade
+          https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.12.0-py3-none-any.whl
+        </div>
+        <br>
+        from
+        <br>
+
+        <a href="https://stackoverflow.com/questions/38896424/tensorflow-not-found-using-pip">
+          https://stackoverflow.com/questions/38896424/tensorflow-not-found-using-pip
+        </a><br>
+        <h5>Run program</h5>
+        <div class="code">
+          # What version of Python do you have?<br>
+          import sys<br>
+          <br>
+          import tensorflow.keras<br>
+          import pandas as pd<br>
+          import sklearn as sk<br>
+          import tensorflow as tf<br>
+          <br>
+          print(f"Tensor Flow Version: {tf.__version__}")<br>
+          print(f"Keras Version: {tensorflow.keras.__version__}")<br>
+          print()<br>
+          print(f"Python {sys.version}")<br>
+          print(f"Pandas {pd.__version__}")<br>
+          print(f"Scikit-Learn {sk.__version__}")<br>
+          print("GPU is", "available" if tf.test.is_gpu_available() else "NOT AVAILABLE")<br>
+        </div>
+        still causes error
+        <div class="output">
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Feb 09, 2024 </h2>
+
+        deactivate conda from auto_activate_base in bash<br>
+        <br>
+        <div class="code">
+          conda config --set auto_activate_base false
+        </div>
+
+        This does not modify .bashrc.<br>
+
+        .bashrc before this command:<br>
+        <div class="code">
+          # >>> conda initialize >>>
+          # !! Contents within this block are managed by 'conda init' !!
+          __conda_setup="$('/home/tmeng12/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+          if [ $? -eq 0 ]; then
+          eval "$__conda_setup"
+          else
+          if [ -f "/home/tmeng12/miniconda3/etc/profile.d/conda.sh" ]; then
+          . "/home/tmeng12/miniconda3/etc/profile.d/conda.sh"
+          else
+          export PATH="/home/tmeng12/miniconda3/bin:$PATH"
+          fi
+          fi
+          unset __conda_setup
+          # conda initialize
+        </div>
+
+        .bashrc after this command:<br>
+        <div class="code">
+          # >>> conda initialize >>>
+          # !! Contents within this block are managed by 'conda init' !!
+          __conda_setup="$('/home/tmeng12/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+          if [ $? -eq 0 ]; then
+          eval "$__conda_setup"
+          else
+          if [ -f "/home/tmeng12/miniconda3/etc/profile.d/conda.sh" ]; then
+          . "/home/tmeng12/miniconda3/etc/profile.d/conda.sh"
+          else
+          export PATH="/home/tmeng12/miniconda3/bin:$PATH"
+          fi
+          fi
+          unset __conda_setup
+          # conda initialize
+        </div>
+
+        No change, but when I open a new terminal, the prefix (base) is no longer there,
+        and
+        <div class="code">
+          python --version
+        </div>
+        shows a different version.
 
       </div>
 
@@ -308,8 +468,50 @@
         <h2>Feb 10, 2024 part 2</h2>
 
         <h5>Some conda experiments</h5>
+        <p>
+          Which version of python is used when auto_activate_base is false?<br>
+        <div class="code">
+          conda config --set auto_activate_base false
+        </div>
+        <div class="code">
+          python3 --version
+        </div>
+        <div class="output">
+          Python 3.10.12
+        </div>
+        </p>  
+        <p>
+          Which version of python is used when auto_activate_base is true?<br>
+        <div class="code">
+          conda config --set auto_activate_base true
+        </div>
+        Start new terminal to enact
+        <div class="code">
+          python3 --version
+        </div>
+        <div class="output">
+          Python 3.11.5
+        </div>
+        </p>
 
+        <p>
+          Specifying the python version for a specific environment<br>
+        <div class="code">
+          conda create -y --name test01 python=3.6
+        </div>
+        downloads python-3.6.13<br>
 
+        Then activate this environment<br>
+        <div class="code">
+          conda activate test01
+        </div>
+        <div class="code">
+          python3 --version
+        </div>
+        <div class="output">
+          Python 3.6.13 :: Anaconda, Inc.
+        </div>
+        </p>
         <a href=""> </a><br>
       </div>
 

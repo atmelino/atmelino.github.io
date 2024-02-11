@@ -30,8 +30,68 @@
   <div class="row">
     <div class="leftcolumn">
 
+
       <div class="card">
-        <h2>where does miniconda store the pythojn packages?</h2>
+        <h2>Anaconda vs. miniconda</h2>
+        Conda is the package manager (e.g. conda list displays all installed packages in the environment),
+        whereas Anaconda and Miniconda are distributions<br>
+
+        <a href="https://stackoverflow.com/questions/45421163/anaconda-vs-miniconda ">
+          https://stackoverflow.com/questions/45421163/anaconda-vs-miniconda
+        </a><br>
+      </div>
+
+      <div class="card">
+        <h2>Installation</h2>
+        <a href="https://docs.anaconda.com/free/miniconda/">
+          https://docs.anaconda.com/free/miniconda/ </a><br>
+
+        <div class="code">
+          mkdir -p ~/miniconda3<br>
+          wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh<br>
+          bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3<br>
+          rm -rf ~/miniconda3/miniconda.sh<br>
+          ~/miniconda3/bin/conda init bash<br>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Usage</h2>
+
+        <h5>First create a specific environment for conda</h5>
+
+        <div class="code">
+          conda create -y --name tensorflow python=3.6
+        </div>
+        Then activate this environment before installing packages!<br>
+        <div class="code">
+          conda activate tensorflow
+        </div>
+
+        cheatsheet at<br>
+
+        <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/index.html">
+          https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/index.html </a><br>
+
+        <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/cheatsheet.html">
+          https://docs.conda.io/projects/conda/en/latest/user-guide/cheatsheet.html </a><br>
+        says:<br>
+        <div class="output">
+          activate environment<br>
+          (do this before installing packages)
+        </div>
+        so perhaps packages will installed in each environment separately?<br>
+
+
+
+
+        <a href=""></a><br>
+      </div>
+
+
+
+      <div class="card">
+        <h2>where does miniconda store the python packages?</h2>
 
         When the environment is set to (base),<br>
         and miniconda is installed in ~/miniconda<br>
@@ -46,6 +106,49 @@
       </div>
 
 
+      <div class="card">
+        <h2>Conda and bash</h2>
+        If you'd prefer that conda's base environment not be activated on startup,
+        run the following command when conda is activated:
+        <div class="code">
+          conda config --set auto_activate_base false
+        </div>
+
+        This does not modify .bashrc.
+
+
+        <a href=""> </a><br>
+      </div>
+
+
+      <div class="card">
+        <h2>Remove miniconda:</h2>
+        <a href="https://stackoverflow.com/questions/29596350/how-to-uninstall-mini-conda-python">
+          https://stackoverflow.com/questions/29596350/how-to-uninstall-mini-conda-python
+        </a><br>
+
+        Use the answer that starts with<br>
+        "The proper way to fully uninstall conda (Anaconda / Miniconda):"<br>
+        <div class="code">
+          conda activate your_conda_env_name
+          conda install anaconda-clean
+          anaconda-clean # add `--yes` to avoid being prompted to delete each one
+        </div>
+        <div class="code">
+          rm -rf ~/miniconda3
+        </div>
+
+        <p>
+          Edit ~/.bashrc<br>
+          Remove the section that conda added
+        </p>
+
+        <div class="code">
+          rm -rf ~/.anaconda_backup
+        </div>
+
+
+      </div>
 
       <div class="card">
         <h2></h2>
