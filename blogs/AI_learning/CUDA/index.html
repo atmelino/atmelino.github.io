@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type="text/css" href="../../../css/blog.css" media="all" rel="stylesheet">
+  <title></title>
+</head>
+
+<body>
+
+  <div class="header">
+    <table id="headerline_table">
+      <tr>
+        <td width="200">
+          <a href="../../../index.html"><img src="../../../images/home.png" alt="home" height="60"></a>
+          <a href="../../../blogs/index.html"><img src="../../../images/scroll.png" alt="scroll" height="60"></a>
+          <a href="../../../blogs/AI_learning/index.html"><img src="../../../images/AI_01.png" alt="AI Learning"
+              height="60"></a>
+        </td>
+        <td>
+          <h2>CUDA</h2>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+
+  <div class="row">
+    <div class="leftcolumn">
+
+
+
+
+      <div class="card">
+        <h2>Installation</h2>
+        <a href="https://youtu.be/8i3BiWa5AZ4?feature=shared">
+          https://youtu.be/8i3BiWa5AZ4?feature=shared </a><br>
+        <br>
+        <a href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html">
+          https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html
+        </a><br>
+
+        <h3>Pre-installation Actions </h3>
+
+        Verify the system has a CUDA-capable GPU.<br>
+        <div class="code">
+          lspci | grep -i nvidia
+        </div>
+        Verify the system is running a supported version of Linux.<br>
+        <div class="code">
+          uname -m && cat /etc/*release
+        </div>
+
+        Verify the system has gcc installed.<br>
+        <div class="code">
+          gcc --version
+        </div>
+        Verify the system has the correct kernel headers and development packages installed.<br>
+        <div class="code">
+          uname -r
+        </div>
+        <div class="output">
+          6.5.0-17-generic
+        </div>
+        <div class="code">
+          $ sudo apt list linux-headers-$(uname -r)
+        </div>
+        <div class="output">
+          linux-headers-6.5.0-17-generic/jammy-updates,jammy-security,now 6.5.0-17.17~22.04.1 amd64
+          [installed,automatic]
+        </div>
+
+        <a
+          href="https://docs.vmware.com/en/VMware-Carbon-Black-Cloud/services/cbc-sensor-installation-guide/GUID-55FEB6E4-B300-4323-A6F9-8AAFA2139001.html">
+          https://docs.vmware.com/en/VMware-Carbon-Black-Cloud/services/cbc-sensor-installation-guide/GUID-55FEB6E4-B300-4323-A6F9-8AAFA2139001.html
+        </a><br>
+
+
+        Download the NVIDIA CUDA Toolkit.<br>
+
+        <a href="https://developer.nvidia.com/cuda-downloads">
+          https://developer.nvidia.com/cuda-downloads </a><br>
+
+        <div class="code">
+          wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-ubuntu2204.pin<br>
+          sudo mv cuda-ubuntu2204.pin /etc/apt/preferences.d/cuda-repository-pin-600<br>
+          wget
+          https://developer.download.nvidia.com/compute/cuda/12.3.2/local_installers/cuda-repo-ubuntu2204-12-3-local_12.3.2-545.23.08-1_amd64.deb<br>
+          sudo dpkg -i cuda-repo-ubuntu2204-12-3-local_12.3.2-545.23.08-1_amd64.deb<br>
+          sudo cp /var/cuda-repo-ubuntu2204-12-3-local/cuda-*-keyring.gpg /usr/share/keyrings/<br>
+          sudo apt-get update<br>
+          sudo apt-get -y install cuda-toolkit-12-3
+        </div>
+        Handle conflicting installation methods.
+        <br>
+        <br>
+        <br>
+        Back to<br>
+        <a
+          href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#common-installation-instructions-for-ubuntu">
+          https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#common-installation-instructions-for-ubuntu
+        </a><br>
+
+        <div class="code">
+          sudo reboot
+        </div>
+
+
+        <h3>Post-installation Actions</h3>
+
+        <a href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#post-installation-actions">
+          https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#post-installation-actions
+        </a><br>
+
+        Add the required lines for path to .bashrc<br>
+        Actually, the nvidia web site still says cuda-12.2<br>
+        but looking in<br>
+        <div class="data">
+          usr/local/bin
+        </div>
+        we see that we just installed cuda-12.3<br>
+        so probably the correct lines will be
+
+        <div class="code">
+          export PATH=/usr/local/cuda-12.3/bin${PATH:+:${PATH}}<br>
+          export LD_LIBRARY_PATH=/usr/local/cuda-12.3/lib64 ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+        </div>
+
+
+
+
+        <h3>Verifying the Installation</h3>
+
+
+        <a href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#verify-the-installation">
+          https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#verify-the-installation </a><br>
+
+        <div class="code">
+          cat /proc/driver/nvidia/version
+        </div>
+
+        Run Test Examples:<br>
+
+        <a href="https://github.com/nvidia/cuda-samples">
+          https://github.com/nvidia/cuda-samples </a><br>
+
+        download, open terminal in folder, call<br>
+        <div class="code">
+          make
+        </div>
+        Run executable.<br><br>
+        Matrix Multiply works:<br>
+        <div class="output">
+          [Matrix Multiply Using CUDA] - Starting...<br>
+          GPU Device 0: "Ampere" with compute capability 8.6<br>
+          <br>
+          MatrixA(320,320), MatrixB(640,320)<br>
+          Computing result using CUDA Kernel...<br>
+          done<br>
+          Performance= 626.38 GFlop/s, Time= 0.209 msec, Size= 131072000 Ops, WorkgroupSize= 1024 threads/block<br>
+          Checking computed result for correctness: Result = PASS<br>
+          <br>
+          NOTE: The CUDA Samples are not meant for performance measurements. Results may vary when GPU Boost is
+          enabled.<br>
+        </div>
+
+
+      </div>
+
+
+      <div class="card">
+        <h2></h2>
+        <a href=""> </a><br>
+      </div>
+
+    </div>
+
+
+
+
+    <div class="rightcolumn">
+      <div class="card">
+        <br>
+      </div>
+
+      <div class="card">
+        <h3>Follow Me</h3>
+        <a href="https://discord.gg/F7KQySEW"><img src="../../images/discord.png" alt="discord" height="30"></a>
+      </div>
+
+    </div>
+
+
+  </div>
+  <div class="footer">
+    <h3>Modified July 2023</h3>
+  </div>
+</body>
+
+</html>
