@@ -93,7 +93,7 @@
         <h2>Feb 05, 2024</h2>
         Installed Nvidia GeForce 3050.<br>
         Ubuntu 22.04.3 didn't boot.<br>
-        Booted in recoveryu mode and installed driver 535.<br>
+        Booted in recovery mode and installed driver 535.<br>
         System boots now but only in low res.<br>
         No other resolutions are offered.<br>
 
@@ -119,12 +119,10 @@
 
         Is secure boot/UEFI enabled?<br>
         Gigabyte motherboard manual<br>
-        CSM Support
-        Enables or disables UEFI CSM (Compatibility Support Module) to support a legacy PC boot process.
-        Enabled  Enables UEFI CSM. (Default)
-        Disabled  Disables UEFI CSM and supports UEFI BIOS boot process only.
-
-
+        CSM Support<br>
+        Enables or disables UEFI CSM (Compatibility Support Module) to support a legacy PC boot process.<br>
+        Enabled  Enables UEFI CSM. (Default)<br>
+        Disabled  Disables UEFI CSM and supports UEFI BIOS boot process only.<br>
 
         <h5>try reinstall drivers</h5>
         https://forums.developer.nvidia.com/t/nvidia-driver-535-54-03-on-ubuntu-22-04-2-lts-and-4070-ti-not-working/259995/3
@@ -133,6 +131,22 @@
           sudo apt-get remove --purge nvidia-*
         </div>
 
+        <h4>Solution</h4>
+        <p> The cause of the problem was that Ubuntu was still configured to run with the previous graphics card
+          that I replaced with the 3050 card.
+          Completely reinstalling Ubuntu WITH the 3050 card installed in the PC solved the problem.<br>
+        </p>
+
+
+        A complication arose because the fresh install chose the noveau Nvidia driver, and after reboot, the system
+        froze.<br>
+
+        I rebooted into recovery mode (an option in the grub menu)<br>
+        and installed the 525 version driver from the "Additional Drivers" program.<br>
+
+        <p>
+        After reboot, nvidia-smi and nvidia-settings worked.
+      </p>
       </div>
 
 
