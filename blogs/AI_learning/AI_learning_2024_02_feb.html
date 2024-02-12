@@ -479,7 +479,7 @@
         <div class="output">
           Python 3.10.12
         </div>
-        </p>  
+        </p>
         <p>
           Which version of python is used when auto_activate_base is true?<br>
         <div class="code">
@@ -514,6 +514,43 @@
         </p>
         <a href=""> </a><br>
       </div>
+
+      <div class="card">
+        <h2>Feb 10, 2024 part 3</h2>
+        Running jh program again.<br>
+        still get error
+        <div class="output">
+          AttributeError: module 'tensorflow.keras' has no attribute '__version__'
+        </div>
+
+        Cause may be that tensorflow version is too new!<br>
+        <br>
+        output from<br>
+
+
+        <div class="code">
+          import tensorflow as tf<br>
+          print("TensorFlow version:", tf.__version__)
+        </div>
+        is
+        <div class="output">
+          TensorFlow version: 2.15.0
+        </div>
+
+        "If the TensorFlow version is 2.14 or above, then unfortunately tf.keras.__version__ is undefined."<br>
+        <a href="https://stackoverflow.com/questions/46086030/how-to-check-which-version-of-keras-is-installed">
+          https://stackoverflow.com/questions/46086030/how-to-check-which-version-of-keras-is-installed
+        </a><br>
+        <br>
+        Try<br>
+        <div class="code">
+          conda install tensorflow=2.1.0
+        </div>
+
+        And this resolves the issue.  
+
+      </div>
+
 
       <div class="card">
         <h2>Date</h2>
