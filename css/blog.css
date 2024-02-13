@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
 }
@@ -33,13 +32,13 @@ body {
   padding-left: 20px;
 }
 
-  /*  image box*/
+/*  image box*/
 .imagebox {
-    background-color: rgb(229, 228, 215);
-    width: 100%;
-    padding: 5px;
-  }
-    
+  background-color: rgb(229, 228, 215);
+  width: 100%;
+  padding: 5px;
+}
+
 /* Add a card effect for articles */
 .card {
   background-color: white;
@@ -53,7 +52,16 @@ body {
   padding: 20px;
   margin-top: 20px;
   border-radius: 5px;
-    white-space: pre-line; 
+  white-space: pre-line;
+}
+
+.card_new_mono {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  white-space: pre-line;
+  font-family: monospace, monospace;
 }
 
 .innercard {
@@ -63,8 +71,8 @@ body {
   border-radius: 5px;
 }
 
-.preserve_line{
-  white-space: pre-line; 
+.preserve_line {
+  white-space: pre-line;
 }
 
 /* Clear floats after the columns */
@@ -84,6 +92,7 @@ body {
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) {
+
   .leftcolumn,
   .rightcolumn {
     width: 100%;
@@ -109,7 +118,7 @@ body {
   margin-top: 5px;
   margin-bottom: 5px;
   font-family: Consolas, "Liberation Mono", Courier, monospace;
-  white-space: pre; 
+  white-space: pre;
 }
 
 .data {
@@ -150,7 +159,7 @@ body {
   margin-top: 5px;
   margin-bottom: 5px;
   font-family: Consolas, "Liberation Mono", Courier, monospace;
-  white-space: pre-line; 
+  white-space: pre-line;
 }
 
 .flexbox {
@@ -177,14 +186,19 @@ body {
   width: 100%;
 }
 
-#filenames td, #filenames th {
+#filenames td,
+#filenames th {
   border: 1px solid #ddd;
   padding: 8px;
 }
 
-#filenames tr:nth-child(even){background-color: #f2f2f2;}
+#filenames tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
 
-#filenames tr:hover {background-color: #ddd;}
+#filenames tr:hover {
+  background-color: #ddd;
+}
 
 #filenames th {
   padding-top: 12px;
@@ -194,22 +208,22 @@ body {
   color: white;
 }
 
-.question{
+.question {
   background: #f1eae3;
   margin-top: 10px;
 }
 
-.answer{
+.answer {
   background: #daefe3;
   margin-bottom: 5px;
 }
 
-.question2{
+.question2 {
   background: #f1eae3;
   /*margin-top: 10px;*/
 }
 
-.answer2{
+.answer2 {
   /*background: #daefe3;*/
   /*margin-bottom: 5px;*/
 }
@@ -270,6 +284,7 @@ body {
   border: 1px solid black;
 }
 
-a, u {
+a,
+u {
   text-decoration: none;
 }
