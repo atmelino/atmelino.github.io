@@ -45,6 +45,30 @@
         <br>
       </div>
 
+
+      <div class="card">
+        <h2>Tool and Package Versions</h2>
+        <p>
+          Creating a defined environment and veryfying that all the notebooks work
+        </p>
+        <div class="code">
+          conda create -n jh_class python=3.10
+        </div>
+        Then activate this environment before installing packages!<br>
+        <div class="code">
+          conda activate jh_class
+        </div>
+
+        Install specific packages:<br>
+
+        <div class="code">
+          pip install tensorflow==2.15.0
+        </div>
+
+        <a href=""> </a><br>
+      </div>
+
+
       <div class="card">
         <h2>Class </h2>
         To continue the class:<br>
@@ -53,13 +77,11 @@
           cd ~/github/learn/ai/jheaton/t81_558_deep_learning
         </div>
         <div class="code">
-          conda activate jh_tensorflow
+          conda activate jh_class
         </div>
         <div class="code">
           jupyter notebook
         </div>
-
-
         <a href=""> </a><br>
       </div>
 
@@ -145,7 +167,7 @@
         t81_558_class_01_1_overview.ipynb calls tensorflow.keras.__version<br>
         However, this attribute was deprecated after tensorflow 2.13.0,<br>
         so leads to an error.<br>
-        
+
         <a href="https://stackoverflow.com/questions/46086030/how-to-check-which-version-of-keras-is-installed">
           https://stackoverflow.com/questions/46086030/how-to-check-which-version-of-keras-is-installed </a><br>
 

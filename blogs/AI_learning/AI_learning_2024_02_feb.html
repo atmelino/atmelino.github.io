@@ -522,12 +522,9 @@
         <div class="output">
           AttributeError: module 'tensorflow.keras' has no attribute '__version__'
         </div>
-
         Cause may be that tensorflow version is too new!<br>
         <br>
         output from<br>
-
-
         <div class="code">
           import tensorflow as tf<br>
           print("TensorFlow version:", tf.__version__)
@@ -546,11 +543,38 @@
         <div class="code">
           conda install tensorflow=2.1.0
         </div>
-
-        And this resolves the issue.  
-
+        And this resolves the issue.
       </div>
 
+
+      <div class="card">
+        <h2>Feb 14, 2024</h2>
+        Trying to setup a procedure to create an environment where the version of each tools
+
+        It seems that when you follow this procedure:<br>
+        Create a named conda environment<br>
+        <div class="code">
+          conda create -n my_env python=3.10
+        </div>
+        and activate this environment<br>
+        <div class="code">
+          conda activate my_env
+        </div>
+        and install a python package by using<br>
+        <div class="code">
+          conda install tensorflow=2.11.0
+        </div>
+        that this guarantees that in this environment, the correct package version will be used<br>
+        when starting a program
+        <div class="code">
+          python3 info.py
+        </div>
+
+        Test:<br>
+
+
+        <a href=""> </a><br>
+      </div>
 
       <div class="card">
         <h2>Date</h2>
