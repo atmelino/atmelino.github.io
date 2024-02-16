@@ -581,14 +581,44 @@
         I don't have tensorflow installed in this conda environment.<br>
         When I run a program that imports tensorflow,<br>
         the program appears to try to load tensorflow from a different location,<br>
-        in this case from<br>
-<div class="code">
-  import tensorflow.keras
-  File "~/.local/lib/python3.10/site-packages/tensorflow/__init__.py", line 40, in <module>
+        revealed by an error message:<br>
+        <div class="code">
+          import tensorflow.keras<br>
+          File "/home/user/.local/lib/python3.10/site-packages/tensorflow/__init__.py", line 40, in <module>
+        </div>
+        <p>
+          Even after installing tensorflow version 2.12.0 in this conda environment,<br>
+          running the program<br>
+        <div class="code">
+          python3 -c 'import tensorflow as tf; print("Tensor Flow Version:"); print(tf.__version__)'
+        </div>
+        results in the output
+        <div class="output">
+          Tensor Flow Version:<br>
+          2.15.0
+        </div>
+        </p>
 
-</div>
-revealed by an error message<br>
+        <p>
+          How do I make sure that the package version that I want is being used?
+        </p>
 
+
+        <p>
+          When I remove the folder<br>
+        <div class="code">
+          /home/user/.local/lib/python3.10/site-packages
+        </div>
+        and run the program again, then the output is<br>
+        <div class="output">
+          Tensor Flow Version:<br>
+          2.12.0
+        </div>
+
+
+
+
+        </p>
 
         <a href=""> </a><br>
       </div>
