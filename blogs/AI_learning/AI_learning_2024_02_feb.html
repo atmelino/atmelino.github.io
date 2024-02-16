@@ -361,14 +361,14 @@
         <div class="code">
           # >>> conda initialize >>>
           # !! Contents within this block are managed by 'conda init' !!
-          __conda_setup="$('/home/tmeng12/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+          __conda_setup="$('/home/user/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
           if [ $? -eq 0 ]; then
           eval "$__conda_setup"
           else
-          if [ -f "/home/tmeng12/miniconda3/etc/profile.d/conda.sh" ]; then
-          . "/home/tmeng12/miniconda3/etc/profile.d/conda.sh"
+          if [ -f "/home/user/miniconda3/etc/profile.d/conda.sh" ]; then
+          . "/home/user/miniconda3/etc/profile.d/conda.sh"
           else
-          export PATH="/home/tmeng12/miniconda3/bin:$PATH"
+          export PATH="/home/user/miniconda3/bin:$PATH"
           fi
           fi
           unset __conda_setup
@@ -379,14 +379,14 @@
         <div class="code">
           # >>> conda initialize >>>
           # !! Contents within this block are managed by 'conda init' !!
-          __conda_setup="$('/home/tmeng12/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+          __conda_setup="$('/home/user/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
           if [ $? -eq 0 ]; then
           eval "$__conda_setup"
           else
-          if [ -f "/home/tmeng12/miniconda3/etc/profile.d/conda.sh" ]; then
-          . "/home/tmeng12/miniconda3/etc/profile.d/conda.sh"
+          if [ -f "/home/user/miniconda3/etc/profile.d/conda.sh" ]; then
+          . "/home/user/miniconda3/etc/profile.d/conda.sh"
           else
-          export PATH="/home/tmeng12/miniconda3/bin:$PATH"
+          export PATH="/home/user/miniconda3/bin:$PATH"
           fi
           fi
           unset __conda_setup
@@ -571,6 +571,23 @@
         </div>
 
         Test:<br>
+        <a href=""> </a><br>
+      </div>
+
+      <div class="card">
+        <h2>Feb 15, 2024</h2>
+        Observation:<br>
+        In a new conda environment, named jh_class,<br>
+        I don't have tensorflow installed in this conda environment.<br>
+        When I run a program that imports tensorflow,<br>
+        the program appears to try to load tensorflow from a different location,<br>
+        in this case from<br>
+<div class="code">
+  import tensorflow.keras
+  File "~/.local/lib/python3.10/site-packages/tensorflow/__init__.py", line 40, in <module>
+
+</div>
+revealed by an error message<br>
 
 
         <a href=""> </a><br>
