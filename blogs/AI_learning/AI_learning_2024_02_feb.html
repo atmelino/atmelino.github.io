@@ -620,7 +620,7 @@
 
 
       <div class="card">
-        <h2>Feb 16, 2024</h2>
+        <h2>Feb 16, 2024 part 1</h2>
 
         with tensorflow 2.12.0, the keras version works, but the backprop example gives error<br>
         <div class="output">
@@ -641,25 +641,73 @@
         </a><br>
 
         <p>
-          <h5>pip installer</h5>
-          Remember that pip installed tensorflow version 2.15.0?<br>
+        <h5>pip installer</h5>
+        Remember that pip installed tensorflow version 2.15.0?<br>
 
-          Where does pip install packages from?<br>
-          pip is installing the packages from PyPi<br>
+        Where does pip install packages from?<br>
+        pip is installing the packages from PyPi<br>
 
-          <a href="https://stackoverflow.com/questions/49633385/where-does-pip-install-packages-from">
-            https://stackoverflow.com/questions/49633385/where-does-pip-install-packages-from </a><br>
-          <br>
-          <a href="https://pypi.org/"> https://pypi.org/</a><br>
-          And indeed, on pypi tensorflow is version 2.15.0.<br>
+        <a href="https://stackoverflow.com/questions/49633385/where-does-pip-install-packages-from">
+          https://stackoverflow.com/questions/49633385/where-does-pip-install-packages-from </a><br>
+        <br>
+        <a href="https://pypi.org/"> https://pypi.org/</a><br>
+        And indeed, on pypi tensorflow is version 2.15.0.<br>
 
-          <a href="https://pypi.org/project/tensorflow/">https://pypi.org/project/tensorflow/ </a><br>
+        <a href="https://pypi.org/project/tensorflow/">https://pypi.org/project/tensorflow/ </a><br>
 
         </p>
         <a href=""> </a><br>
       </div>
 
+      <div class="card">
+        <h2>Feb 16, 2024 part 2</h2>
 
+        <p>
+          The backprop example<br>
+          t81_558_class_04_4_backprop<br>
+          works in the environment<br>
+          jh_tensorflow<br>
+          where the versions are<br>
+        <div class="data">
+          Tensor Flow Version: 2.1.0<br>
+          Python 3.7.16 (default, Jan 17 2023, 22:20:44) [GCC 11.2.0]<br>
+          Pandas 1.3.5<br>
+          Scikit-Learn 1.0.2<br>
+        </div>
+        </p>
+
+        <p>
+          The backprop example<br>
+          t81_558_class_04_4_backprop<br>
+          fails in the environment<br>
+          jh_class<br>
+          where the versions are<br>
+        <div class="data">
+          Tensor Flow Version: 2.12.0<br>
+          Python 3.10.13 (main, Sep 11 2023, 13:21:10) [GCC 11.2.0]<br>
+          Pandas 2.1.4<br>
+          Scikit-Learn 1.3.0<br>
+        </div>
+        <br>
+        and in the environment jh_class_02<br>
+        where the versions are<br>
+        <div class="data">
+          Tensor Flow Version: 2.15.0<br>
+          Python 3.10.13 | packaged by conda-forge | (main, Dec 23 2023, 15:36:39) [GCC 12.3.0]<br>
+          Pandas 2.2.0<br>
+          Scikit-Learn 1.4.1.post1<br>
+        </div>
+        with the error message<br>
+        <div class="output">
+          ValueError: Failed to convert a NumPy array to a Tensor (Unsupported object type float).
+        </div>
+
+
+        </p>
+
+
+
+      </div>
 
 
       <div class="card">
