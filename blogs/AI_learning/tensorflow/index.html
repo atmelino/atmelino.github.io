@@ -60,18 +60,61 @@
 
       <div class="card">
         <h2>Ubuntu GPU CUDA support</h2>
-        <a href="https://pypi.org/project/ai-benchmark/">
-          https://pypi.org/project/ai-benchmark/
-        </a><br>
-        Note 2: For running the benchmark on Nvidia GPUs, NVIDIA CUDA and cuDNN libraries should be installed first.
-        Please find detailed instructions here.<br>
-        links to<br>
 
         <a href="https://www.tensorflow.org/install/gpu">
           https://www.tensorflow.org/install/gpu </a><br>
 
+
+        create conda environment<br>
+        <div class="code">
+          conda create -n test01 python=3.10
+        </div>
+
+        activate<br>
+        <div class="code">
+          conda activate test01
+        </div>
+
+        Install CUDA-enabled tensorflow
+        <div class="code">
+          conda install tensorflow[and-cuda]
+        </div>
+
+        install CUDA<br>
+
+        <a href="../CUDA/index.html">../CUDA/index.html </a><br>
+
+        Install cuDNN<br>
+
+        <a href="../CUDnn/index.html"> ../CUDnn/index.html</a><br>
+
+
+        Verify that GPU is available to tensorflow<br>
+        <div class="code">
+          python3 -c 'import tensorflow as tf; print("Num GPUs Available: ", len(tf.config.list_physical_devices("GPU")))'  
+        </div>
+
       </div>
 
+
+
+      <div class="card">
+        <h2>Ubuntu GPU docker</h2>
+
+
+        <a href="https://www.tensorflow.org/install/docker">https://www.tensorflow.org/install/docker </a><br>
+
+        <a href="https://www.tensorflow.org/install/source#docker_linux_builds">
+          https://www.tensorflow.org/install/source#docker_linux_builds</a><br>
+
+
+        <a href="https://www.tensorflow.org/install/source#gpu_support_2">
+          https://www.tensorflow.org/install/source#gpu_support_2</a><br>
+        "Docker is the easiest way to build GPU support for TensorFlow since the host machine only requires the NVIDIA®
+        driver (the NVIDIA® CUDA® Toolkit doesn't have to be installed). "
+
+        <a href=""> </a><br>
+      </div>
 
 
       <div class="card">

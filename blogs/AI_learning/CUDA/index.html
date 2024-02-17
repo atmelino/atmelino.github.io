@@ -58,6 +58,16 @@
         <div class="code">
           gcc --version
         </div>
+
+
+        If not:<br>
+
+        <div class="code">
+          sudo apt-get install build-essential
+        </div>
+
+
+
         Verify the system has the correct kernel headers and development packages installed.<br>
         <div class="code">
           uname -r
@@ -66,7 +76,7 @@
           6.5.0-17-generic
         </div>
         <div class="code">
-          $ sudo apt list linux-headers-$(uname -r)
+          sudo apt list linux-headers-$(uname -r)
         </div>
         <div class="output">
           linux-headers-6.5.0-17-generic/jammy-updates,jammy-security,now 6.5.0-17.17~22.04.1 amd64
@@ -119,7 +129,7 @@
         Actually, the nvidia web site still says cuda-12.2<br>
         but looking in<br>
         <div class="data">
-          usr/local/bin
+          ls /usr/local
         </div>
         we see that we just installed cuda-12.3<br>
         so probably the correct lines will be
@@ -129,7 +139,11 @@
           export LD_LIBRARY_PATH=/usr/local/cuda-12.3/lib64 ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
         </div>
 
-
+        Closa terminal and open new terminal<br>
+        Verify with<br>
+        <div class="code">
+          echo $PATH
+        </div>
 
 
         <h3>Verifying the Installation</h3>
