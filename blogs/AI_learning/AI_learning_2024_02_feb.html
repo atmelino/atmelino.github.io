@@ -614,14 +614,53 @@
           Tensor Flow Version:<br>
           2.12.0
         </div>
-
-
-
-
         </p>
-
         <a href=""> </a><br>
       </div>
+
+
+      <div class="card">
+        <h2>Feb 16, 2024</h2>
+
+        with tensorflow 2.12.0, the keras version works, but the backprop example gives error<br>
+        <div class="output">
+          ValueError: Failed to convert a NumPy array to a Tensor (Unsupported object type float).
+        </div>
+
+        Will it work with tensoflow 2.15.0?<br>
+
+        Anaconda itself only offers tensorflow up to version 2.12.0, so <br>
+        we can use conda-forge to get version 2.15.0<br>
+        <div class="code">
+          conda install -c conda-forge tensorflow=2.15.0
+        </div>
+
+        <a
+          href="https://stackoverflow.com/questions/39857289/should-conda-or-conda-forge-be-used-for-python-environments">
+          https://stackoverflow.com/questions/39857289/should-conda-or-conda-forge-be-used-for-python-environments
+        </a><br>
+
+        <p>
+          <h5>pip installer</h5>
+          Remember that pip installed tensorflow version 2.15.0?<br>
+
+          Where does pip install packages from?<br>
+          pip is installing the packages from PyPi<br>
+
+          <a href="https://stackoverflow.com/questions/49633385/where-does-pip-install-packages-from">
+            https://stackoverflow.com/questions/49633385/where-does-pip-install-packages-from </a><br>
+          <br>
+          <a href="https://pypi.org/"> https://pypi.org/</a><br>
+          And indeed, on pypi tensorflow is version 2.15.0.<br>
+
+          <a href="https://pypi.org/project/tensorflow/">https://pypi.org/project/tensorflow/ </a><br>
+
+        </p>
+        <a href=""> </a><br>
+      </div>
+
+
+
 
       <div class="card">
         <h2>Date</h2>
