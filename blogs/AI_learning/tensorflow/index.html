@@ -91,8 +91,87 @@
 
         Verify that GPU is available to tensorflow<br>
         <div class="code">
-          python3 -c 'import tensorflow as tf; print("Num GPUs Available: ", len(tf.config.list_physical_devices("GPU")))'  
+          python3 -c 'import tensorflow as tf; print("Num GPUs Available: ",
+          len(tf.config.list_physical_devices("GPU")))'
         </div>
+
+
+        2024-02-17<br>
+        GPU is not seen<br>
+
+        output is much shorter than on working system<br>
+        2024-02-17 15:15:30.117592: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is
+        optimized to use available CPU instructions in performance-critical operations.
+        To enable the following instructions: SSE4.1 SSE4.2 AVX AVX2 FMA, in other operations, rebuild TensorFlow with
+        the appropriate compiler flags.
+        []
+
+        in Vscode, got error
+        bash: export: `:/usr/local/cuda-12.3/lib64': not a valid identifier
+        removed space from
+        export LD_LIBRARY_PATH=/usr/local/cuda-12.3/lib64 ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+        https://www.reddit.com/r/JetsonNano/comments/135mlue/bash_export_usrlocalcudalib64_is_not_a_valid/?rdt=65230
+        now library path command givs no error, but GPU still not seen.
+        observation:
+        conda list
+
+        shows no cuda packages.
+
+
+        However,
+
+        <div class="code">
+          conda create -n test02 python=3.10
+        </div>
+
+        activate<br>
+        <div class="code">
+          conda activate test02
+        </div>
+
+        Install CUDA-enabled tensorflow
+        <div class="code">
+          conda install -c conda-forge tensorflow=2.15.0
+        </div>
+
+        Now output of
+        <div class="code">
+          python3 -c 'import tensorflow as tf; print("Num GPUs Available: ",
+          len(tf.config.list_physical_devices("GPU")))'
+        </div>
+        is
+        2024-02-17 15:26:36.755517: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register
+        cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+        2024-02-17 15:26:36.755559: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register
+        cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+        2024-02-17 15:26:36.756412: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register
+        cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+        2024-02-17 15:26:36.761468: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is
+        optimized to use available CPU instructions in performance-critical operations.
+        To enable the following instructions: SSE4.1 SSE4.2 AVX AVX2 FMA, in other operations, rebuild TensorFlow with
+        the appropriate compiler flags.
+        2024-02-17 15:26:37.843365: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA
+        node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node
+        zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+        2024-02-17 15:26:37.938638: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA
+        node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node
+        zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+        2024-02-17 15:26:37.938885: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA
+        node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node
+        zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+        Num GPUs Available: 1
+
+        and
+        conda list shows cuda packages.
+
+        Maybe order of installation?
+
+        Install CUDnn first and then tensorflow? Or is it tensorflow 2.15?
+        Also, note that I installed tensorflow without the [cuda] stuff,
+        and it still works
+
+
+
 
       </div>
 
