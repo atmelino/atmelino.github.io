@@ -79,10 +79,43 @@
 
         <a href="../CUDA/index.html">../CUDA/index.html </a><br>
 
-        <h5>Step 2 - Install cuDNN</h5>
+        <h5>Step 3 - Install cuDNN</h5>
 
         <a href="../CUDnn/index.html"> ../CUDnn/index.html</a><br>
 
+        <h5>Step 4 - Install Miniconda</h5>
+
+        <a href="../../../techtips/anaconda/index.html">../../../techtips/anaconda/index.html</a><br>
+
+        <h5>Step 5 - create conda environment</h5>
+
+        <div class="code">
+          conda create -n test01 python=3.10
+        </div>
+
+        activate<br>
+        <div class="code">
+          conda activate test01
+        </div>
+
+        <h5>Step 6 - Install CUDA-enabled tensorflow</h5>
+
+        <div class="code">
+          conda install -c conda-forge tensorflow=2.15.0
+        </div>
+
+        Check to make sure that the CUDA packages were installed<br>
+
+        <div class="code">
+          conda list
+        </div>
+
+        <h5>Step 7 - Verify that tensorflow sees the GPU(s)</h5>
+
+        <div class="code">
+          python3 -c 'import tensorflow as tf; print("Num GPUs Available: ",
+          len(tf.config.list_physical_devices("GPU")))'
+        </div>
 
 
 
