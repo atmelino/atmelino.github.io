@@ -136,8 +136,11 @@
 
         <div class="code">
           export PATH=/usr/local/cuda-12.3/bin${PATH:+:${PATH}}<br>
-          export LD_LIBRARY_PATH=/usr/local/cuda-12.3/lib64 ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+          export LD_LIBRARY_PATH=/usr/local/cuda-12.3/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
         </div>
+
+        Note that there is no space after lib64 which could occur if you concatenate the two lines incorectly<br>
+        <br>
 
         Closa terminal and open new terminal<br>
         Verify with<br>
