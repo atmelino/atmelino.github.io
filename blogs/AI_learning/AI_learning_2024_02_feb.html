@@ -885,13 +885,85 @@
         Install CUDnn first and then tensorflow? Or is it tensorflow 2.15?<br>
         Also, note that I installed tensorflow without the [cuda] stuff,<br>
         and it still works<br>
-
-
-
-
-
       </div>
 
+
+      <div class="card">
+        <h2>Feb 28, 2024</h2>
+
+        <h5>Keras Example: Simple TensorFlow Regression: MPG</h5>
+
+        mpg dataset is in file auto-mpg.csv:<br>
+        <br>
+        <table cellspacing="0" border="0">
+          <colgroup span="6" width="90"></colgroup>
+          <tr>
+            <td height="21" align="right">mpg</td>
+            <td align="right">cylinders</td>
+            <td align="right">displacement</td>
+            <td align="right">horsepower</td>
+            <td align="right">weight</td>
+            <td align="right">acceleration</td>
+            <td align="right">year</td>
+            <td align="right">origin</td>
+            <td align="right">name</td>
+          </tr>
+          <tr>
+            <td height="21" align="right" sdval="18" sdnum="1033;">18</td>
+            <td align="right" sdval="8" sdnum="1033;">8</td>
+            <td align="right" sdval="307" sdnum="1033;">307</td>
+            <td align="right" sdval="130" sdnum="1033;">130</td>
+            <td align="right" sdval="3504" sdnum="1033;">3504</td>
+            <td align="right" sdval="12" sdnum="1033;">12</td>
+            <td align="right" sdval="70" sdnum="1033;">70</td>
+            <td align="right" sdval="1" sdnum="1033;">1</td>
+            <td align="right">chevrolet chevelle malibu</td>
+          </tr>
+          <tr>
+            <td height="21" align="right" sdval="15" sdnum="1033;">15</td>
+            <td align="right" sdval="8" sdnum="1033;">8</td>
+            <td align="right" sdval="350" sdnum="1033;">350</td>
+            <td align="right" sdval="165" sdnum="1033;">165</td>
+            <td align="right" sdval="3693" sdnum="1033;">3693</td>
+            <td align="right" sdval="11.5" sdnum="1033;">11.5</td>
+            <td align="right" sdval="70" sdnum="1033;">70</td>
+            <td align="right" sdval="1" sdnum="1033;">1</td>
+            <td align="right">buick skylark 320</td>
+          </tr>
+          <tr>
+            <td height="21" align="right" sdval="18" sdnum="1033;">18</td>
+            <td align="right" sdval="8" sdnum="1033;">8</td>
+            <td align="right" sdval="318" sdnum="1033;">318</td>
+            <td align="right" sdval="150" sdnum="1033;">150</td>
+            <td align="right" sdval="3436" sdnum="1033;">3436</td>
+            <td align="right" sdval="11" sdnum="1033;">11</td>
+            <td align="right" sdval="70" sdnum="1033;">70</td>
+            <td align="right" sdval="1" sdnum="1033;">1</td>
+            <td align="right">plymouth satellite</td>
+          </tr>
+        </table>
+        The data are read into a Pandas DataFrame named df.<br><br>
+        The name column is extraced into the variable named cars.<br><br>
+        The dataframe is copied into two numpy arrays:<br>
+        - x containing 'cylinders', 'displacement', 'horsepower', 'weight', 'acceleration', 'year', 'origin'<br>
+        - y containing mpg values<br>
+        <br>
+        A neural network model is created<br><br>
+        The neural network parameters are set to<br>
+        <div class="code">
+          model.compile(loss='mean_squared_error', optimizer='adam')
+        </div>
+        Then the mpg data are fitted to the
+        <div class="code">
+          model.fit(x,y,verbose=2,epochs=100)
+        </div>
+
+        Explanation model.compile and model.fit:<br>
+
+        <a href="https://www.youtube.com/watch?v=VCrIBJ9rkmg">https://www.youtube.com/watch?v=VCrIBJ9rkmg </a><br>
+
+        <a href=""> </a><br>
+      </div>
 
       <div class="card">
         <h2>Date</h2>
