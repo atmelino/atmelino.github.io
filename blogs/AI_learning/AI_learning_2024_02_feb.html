@@ -892,7 +892,7 @@
         <h2>Feb 28, 2024</h2>
 
         <h5>Keras Example: Simple TensorFlow Regression: MPG</h5>
-
+        from Jeff Heaton class<br><br>
         mpg dataset is in file auto-mpg.csv:<br>
         <br>
         <table cellspacing="0" border="0">
@@ -958,15 +958,6 @@
           model.fit(x,y,verbose=2,epochs=100)
         </div>
 
-        <h5>Explanation model.compile and model.fit</h5>
-        "[AI] Understanding the parameters of model.compile() and model.fit() in Tensorflow Keras"<br>
-        <a href="https://www.youtube.com/watch?v=VCrIBJ9rkmg">https://www.youtube.com/watch?v=VCrIBJ9rkmg </a><br>
-        Badri Adhikari <br>
-        Goal: take blood pressure as input and generate age as prediction output.<br><br>
-
-        "Linear regression with two input variables using tensorflow keras"<br>
-        <a href="https://www.youtube.com/watch?v=IOaif62O06k"> https://www.youtube.com/watch?v=IOaif62O06k</a><br>
-        Badri Adhikari <br>
 
 
       </div>
@@ -974,7 +965,14 @@
       <div class="card">
         <h2>Feb 29, 2024</h2>
 
+        <h4>Other keras regression examples</h4>
+        "[AI] Understanding the parameters of model.compile() and model.fit() in Tensorflow Keras"<br>
+        <a href="https://www.youtube.com/watch?v=VCrIBJ9rkmg">https://www.youtube.com/watch?v=VCrIBJ9rkmg </a><br>
+        Badri Adhikari <br>
         <h5>Keras regression example</h5>
+        Goal: take blood pressure as input and generate age as prediction output.<br>
+        Does not work with these input data<br>
+        <br>
         Input data:<br>
         <table cellspacing="0" border="0">
           <colgroup width="41"></colgroup>
@@ -1013,13 +1011,33 @@
           </tr>
         </table>
 
-        <img src="images/keras_01.png" alt="keras_01" height="300">
+        <img src="images/keras_01.png" alt="keras_01" height="300"><br>
+
+        Code:<br>
         <div class="code">
-          model.fit(bp,age,verbose=0,epochs=100)
+          model = Sequential()<br>
+          model.add(Dense(1, input_dim=1, activation='linear'))<br>
+          model.compile(loss='mse', optimizer='rmsprop',metrics='mae')<br>
+          model.fit(bp,age,verbose=0,epochs=1000)<br>
+        </div>
+        <br>
+        Output:<br>
+        <div class="output">
+          1. blood pressure: 82, age: 10, predicted age: [-28.06324]<br>
+          2. blood pressure: 83, age: 15, predicted age: [-28.41769]<br>
+          3. blood pressure: 85, age: 22, predicted age: [-29.12659]<br>
+          4. blood pressure: 89, age: 31, predicted age: [-30.544395]<br>
+          5. blood pressure: 92, age: 45, predicted age: [-31.60775]<br>
+          6. blood pressure: 93, age: 47, predicted age: [-31.962204]<br>
+          7. blood pressure: 95, age: 52, predicted age: [-32.671104]<br>
         </div>
 
 
 
+        <h5>more regression examples</h5>
+        "Linear regression with two input variables using tensorflow keras"<br>
+        <a href="https://www.youtube.com/watch?v=IOaif62O06k"> https://www.youtube.com/watch?v=IOaif62O06k</a><br>
+        Badri Adhikari <br>
 
         <a href=""> </a><br>
       </div>

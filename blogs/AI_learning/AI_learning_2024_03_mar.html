@@ -42,21 +42,160 @@
         OpenCV University <br>
 
         <a href="https://opencv.org/university/">https://opencv.org/university/ </a><br>
+
+
+        <h5>TensorFlow Bootcamp Example</h5>
+        works<br><br>
+
+        Input:<br>
+        Boston Housing Data<br>
+        reduced to number of rooms column<br>
+        <br>
+        Code:<br>
+        <div class="code">
+          model = Sequential()<br>
+          model.add(Dense(units=1, input_shape=(1,)))<br>
+          model.compile(optimizer=tf.keras.optimizers.RMSprop(learning_rate=0.005), loss="mse")<br>
+          history = model.fit(
+          X_train_1d,
+          y_train,
+          batch_size=16,
+          epochs=101,
+          # epochs=10,
+          validation_split=0.3,
+          verbose=0
+          )
+        </div>
+        Output: <br>
+        <div class="output">
+          Predicted price of a home with 3 rooms: $11.4K<br>
+          Predicted price of a home with 4 rooms: $14.7K<br>
+          Predicted price of a home with 5 rooms: $18.0K<br>
+          Predicted price of a home with 6 rooms: $21.4K<br>
+          Predicted price of a home with 7 rooms: $24.7K<br>
+        </div>
+        <br>
+        <h5>TensorFlow Bootcamp setting with bp - age data</h5>
+        does not work<br><br>
+        Input:<br>
+        <table cellspacing="0" border="0">
+          <colgroup width="41"></colgroup>
+          <colgroup width="75"></colgroup>
+          <tr>
+            <td height="21" align="left">age</td>
+            <td align="left">blood pressure</td>
+          </tr>
+          <tr>
+            <td height="21" align="right" sdval="10" sdnum="1033;">10</td>
+            <td align="right" sdval="82" sdnum="1033;">82</td>
+          </tr>
+          <tr>
+            <td height="21" align="right" sdval="22" sdnum="1033;">22</td>
+            <td align="right" sdval="85" sdnum="1033;">85</td>
+          </tr>
+          <tr>
+            <td height="21" align="right" sdval="31" sdnum="1033;">31</td>
+            <td align="right" sdval="89" sdnum="1033;">89</td>
+          </tr>
+          <tr>
+            <td height="21" align="right" sdval="45" sdnum="1033;">45</td>
+            <td align="right" sdval="92" sdnum="1033;">92</td>
+          </tr>
+          <tr>
+            <td height="21" align="right" sdval="52" sdnum="1033;">52</td>
+            <td align="right" sdval="95" sdnum="1033;">95</td>
+          </tr>
+          <tr>
+            <td height="21" align="right" sdval="61" sdnum="1033;">61</td>
+            <td align="right" sdval="97" sdnum="1033;">97</td>
+          </tr>
+          <tr>
+            <td height="21" align="right" sdval="72" sdnum="1033;">72</td>
+            <td align="right" sdval="98" sdnum="1033;">98</td>
+          </tr>
+        </table>
+
+        Code:<br>
+        <div class="code">
+          model = Sequential()<br>
+          model.add(Dense(units=1, input_shape=(1,)))<br>
+          model.compile(optimizer=tf.keras.optimizers.RMSprop(learning_rate=0.005), loss="mse")<br>
+
+          history = model.fit(
+          bp,
+          age,
+          batch_size=5,
+          epochs=100,
+          # epochs=10,
+          validation_split=0.3,
+          verbose=0
+          )
+        </div>
+
+        Output:<br>
+        Sometimes gives negative prediction values<br>
+        <div class="output">
+          Predicted age of a person with 80 blood pressure: [-48.579433]<br>
+          Predicted age of a person with 90 blood pressure: [-54.777733]<br>
+          Predicted age of a person with 100 blood pressure: [-60.976032]<br>
+        </div>
+
+
+
+
       </div>
 
 
 
       <div class="card">
-        <h2>Date</h2>
+        <h2>Mar 02, 2024</h2>
+
+        <h5>more regression examples</h5>
+
         "Basic regression: Predict fuel efficiency "<br>
         <a href="https://www.tensorflow.org/tutorials/keras/regression">
           https://www.tensorflow.org/tutorials/keras/regression </a><br>
-        <br>  
+        <br>
 
         "Linear Regression In Neural Network With Tensorflow 2.0"<br>
         <a href="https://www.youtube.com/watch?v=XZ4zLgxhgtk">
           https://www.youtube.com/watch?v=XZ4zLgxhgtk </a><br>
         Pathshala<br>
+
+
+        <h5>Pathshala code</h5>
+        works<br>
+
+        Input:<br>
+        <div class="data">
+          x y<br>
+          0 1 4<br>
+          1 2 6<br>
+          2 3 8<br>
+          3 4 10<br>
+          4 5 12<br>
+          5 6 14<br>
+          6 7 16<br>
+          7 8 18<br>
+          8 9 20<br>
+        </div>
+        <br>
+        Code:<br>
+        <div class="code">
+          model=Sequential()<br>
+          model.add(Dense(1,input_shape=(1,)))<br>
+          model.compile(optimizer='sgd', loss="mean_absolute_error")<br>
+          model.fit(x,y,epochs=100,verbose=0)<br>
+        </div>
+        Output:<br>
+        <div class="output">
+          Input: 1 prediction: [2.9726133]<br>
+          Input: 2 prediction: [5.1563377]<br>
+          Input: 3 prediction: [7.3400626]<br>
+          Input: 4 prediction: [22.626135]<br>
+        </div>
+        <h5>bp and age with Pathshala code</h5>
+
 
 
       </div>
