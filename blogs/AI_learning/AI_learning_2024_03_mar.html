@@ -314,9 +314,53 @@
         <div class="code">
           nomic login [token]
         </div>
-
-
         Follow the instructions to obtain your access token.
+      </div>
+
+      <div class="card">
+        <h2>Mar 11, 2024</h2>
+
+        <h5>ROC Curve</h5>
+        ROC curve - explained<br>
+        by TileStats<br>
+        <a href="https://www.youtube.com/watch?v=LpdTtX4WsiM">
+          https://www.youtube.com/watch?v=LpdTtX4WsiM
+        </a><br>
+        <p>
+          <img src="images/roc_curve_01.jpg" alt="roc_curve_01" width="600">
+        </p>
+        <p>
+          <img src="images/roc_curve_02.jpg" alt="roc_curve_02" width="600">
+        </p>
+
+        <h5>How to generate an ROC curve</h5>
+        We have a set of items, and each item is classified as either positive or negative.<br>
+        <br>
+        There is a distinction between the real positive or negative, and the diagnosed positive or negative.<br>
+        <br>
+        For each item, a value is measured and assigned a continuous variable.<br>
+        <br>
+        A cut-off value is determined, such that every item with a value below the cut-off is diagnosed as negative,
+        and every item with a value above the cut-off is diagnosed as positive.<br>
+        <br>
+        There will be true positives, false positives, true negatives, and false negatives.<br>
+        <br>
+        For the ROC curve, we vary the cut-off value from the lowest to the highest of the possible  range. <br>
+        <br>
+        For each cut-off value, we count:
+        <ul>
+          <li>TP - number of true positives</li>
+          <li>FP - number of false positives</li>
+          <li>TN - number of true negatives</li>
+          <li>FN - number of false negatives</li>
+        </ul>
+        Example:<br>
+        <p>
+          <img src="images/roc_curve_03.jpg" alt="roc_curve_03" width="600">
+        </p>
+
+
+
 
 
       </div>
