@@ -318,7 +318,7 @@
       </div>
 
       <div class="card">
-        <h2>Mar 11, 2024</h2>
+        <h2>Mar 11, 2024 part 1</h2>
 
         <h5>ROC Curve</h5>
         ROC curve - explained<br>
@@ -371,15 +371,52 @@
         <p>
           <img src="images/roc_curve_05.jpg" alt="roc_curve_05" width="300">
         </p>
+      </div>
 
 
+
+      <div class="card">
+        <h2>Mar 11, 2024 part 2</h2>
+        Getting error again, despite using tensflow version 2.15.0:<br>
+        <div class="output">
+          ValueError: Failed to convert a NumPy array to a Tensor (Unsupported object type float).
+        </div>
+        Solution:<br>
+        <a
+          href="https://stackoverflow.com/questions/58636087/tensorflow-valueerror-failed-to-convert-a-numpy-array-to-a-tensor-unsupporte">
+          https://stackoverflow.com/questions/58636087/tensorflow-valueerror-failed-to-convert-a-numpy-array-to-a-tensor-unsupporte
+        </a><br>
+
+        <div class="code">
+          x_train = np.asarray(x_train).astype(np.float32)<br>
+          y_train = np.asarray(y_train).astype(np.float32)<br>
+          x_test = np.asarray(x_test).astype(np.float32)<br>
+          y_test = np.asarray(y_test).astype(np.float32)<br>
+        </div>
+
+        <br>
+        <br>
+        Interesting:<br>
+        The code splits training and test data according to<br>
+        <div class="code">
+          x_train, x_test, y_train, y_test = train_test_split( x, y, test_size=0.25, random_state=42)
+        </div>
+        Print x_test[0:10] starts with<br>
+        <div class="data">
+          x_test [[ 0.7720559 -0.68284637 0.83903146 3.6320686
+        </div>
+        (This is after converting data to zscore)<br><br>
+        Printing the whole dataframe shows that x_test starts at id 1860 out of 2000:<br>
+
+        <div class="data">
+          1860 1861 0.772056 -0.682846 0.839031 3.632069
+        </div>
 
 
 
 
 
       </div>
-
 
 
       <div class="card">
