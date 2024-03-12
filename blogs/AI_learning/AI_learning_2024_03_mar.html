@@ -403,55 +403,72 @@
         </div>
         Print x_test[0:10] starts with<br>
         <div class="data">
-          x_test [[ 0.7720559 -0.68284637 0.83903146 3.6320686
+          x_test<br>
+          [[ 0.7720559 -0.68284637 0.83903146 3.6320686 ..<br>
+          [-0.05720153 1.4147578 1.8865114 14.458124 ..<br>
+          [ 0.36275634 -0.8710929 -0.20844851 10.160343 ..<br>
+          [ 0.2674291  -0.70973873 -1.2559285   3.8224766 ..<br>
+          [ 1.1742831   1.7285022  -1.2559285  12.227631  ..<br>
         </div>
         (This is after converting data to zscore)<br><br>
-        Printing the whole dataframe shows that x_test starts at id 1860 out of 2000:<br>
+        Printing the whole dataframe shows that the x_test values are at id's:<br>
 
         <div class="data">
           1860 1861 0.772056 -0.682846 0.839031 3.632069
+          353 354 -0.057202 1.414758 1.886511 14.458125
+          1333 1334 0.362756 -0.871093 -0.208449 10.160344
+        </div>
+
+        The according product values are<br>
+        <div class="data">
+          a b c d e f g
+          1860 False False True False False False False
+          353 False True False False False False False
+          1333 False True False False False False False
+        </div>
+        in other words, c b b <br><br>
+        and y_test shows as<br>
+        <div class="data">
+          y_test<br>
+          [[0. 0. 1. 0. 0. 0. 0.]<br>
+           [0. 1. 0. 0. 0. 0. 0.]<br>
+           [0. 1. 0. 0. 0. 0. 0.]<br>
+           [0. 1. 0. 0. 0. 0. 0.]<br>
+           [0. 0. 0. 1. 0. 0. 0.]<br>
+        </div>
+        <div class="card">
+          <h2>Date</h2>
+          <a href=""> </a><br>
         </div>
 
 
+      </div>
 
+      <div class="rightcolumn">
+        <div class="card">
+          <h3>Posts by Date</h3>
+          <a href="AI_learning_2023_02_feb.html">
+            AI_learning_2023_02_feb.html</a><br>
+          <a href="AI_learning_2023_03_mar.html">
+            AI_learning_2023_03_mar.html</a><br>
+          <br>
+        </div>
 
+        <div class="card">
+          <h3>Follow Me</h3>
+          <a href="https://discord.gg/F7KQySEW"><img src="../../images/discord.png" alt="discord" height="30"></a>
+        </div>
 
       </div>
 
-
-      <div class="card">
-        <h2>Date</h2>
-        <a href=""> </a><br>
-      </div>
 
 
     </div>
 
-    <div class="rightcolumn">
-      <div class="card">
-        <h3>Posts by Date</h3>
-        <a href="AI_learning_2023_02_feb.html">
-          AI_learning_2023_02_feb.html</a><br>
-        <a href="AI_learning_2023_03_mar.html">
-          AI_learning_2023_03_mar.html</a><br>
-        <br>
-      </div>
 
-      <div class="card">
-        <h3>Follow Me</h3>
-        <a href="https://discord.gg/F7KQySEW"><img src="../../images/discord.png" alt="discord" height="30"></a>
-      </div>
-
+    <div class="footer">
+      <h3>Modified July 2023</h3>
     </div>
-
-
-
-  </div>
-
-
-  <div class="footer">
-    <h3>Modified July 2023</h3>
-  </div>
 </body>
 
 </html>
