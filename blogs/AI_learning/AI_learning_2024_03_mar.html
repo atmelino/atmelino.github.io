@@ -345,7 +345,7 @@
         <br>
         There will be true positives, false positives, true negatives, and false negatives.<br>
         <br>
-        For the ROC curve, we vary the cut-off value from the lowest to the highest of the possible  range. <br>
+        For the ROC curve, we vary the cut-off value from the lowest to the highest of the possible range. <br>
         <br>
         For each cut-off value, we count:
         <ul>
@@ -358,6 +358,21 @@
         <p>
           <img src="images/roc_curve_03.jpg" alt="roc_curve_03" width="600">
         </p>
+        For each cut-off value, we calculate:
+        <ul>
+          <li>sensitivity=TP/(TP+FN)</li>
+          <li>specificity=TN/(TN+FP)</li>
+        </ul>
+        and enter the calculated values in a table:<br>
+        <p>
+          <img src="images/roc_curve_04.jpg" alt="roc_curve_04" width="300">
+        </p>
+        We plot the ROC curve with Specificity on the x-axis and Sensitivity on the y-axis<br>
+        <p>
+          <img src="images/roc_curve_05.jpg" alt="roc_curve_05" width="300">
+        </p>
+
+
 
 
 
