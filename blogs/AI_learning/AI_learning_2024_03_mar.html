@@ -407,8 +407,8 @@
           [[ 0.7720559 -0.68284637 0.83903146 3.6320686 ..<br>
           [-0.05720153 1.4147578 1.8865114 14.458124 ..<br>
           [ 0.36275634 -0.8710929 -0.20844851 10.160343 ..<br>
-          [ 0.2674291  -0.70973873 -1.2559285   3.8224766 ..<br>
-          [ 1.1742831   1.7285022  -1.2559285  12.227631  ..<br>
+          [ 0.2674291 -0.70973873 -1.2559285 3.8224766 ..<br>
+          [ 1.1742831 1.7285022 -1.2559285 12.227631 ..<br>
         </div>
         (This is after converting data to zscore)<br><br>
         Printing the whole dataframe shows that the x_test values are at id's:<br>
@@ -431,11 +431,89 @@
         <div class="data">
           y_test<br>
           [[0. 0. 1. 0. 0. 0. 0.]<br>
-           [0. 1. 0. 0. 0. 0. 0.]<br>
-           [0. 1. 0. 0. 0. 0. 0.]<br>
-           [0. 1. 0. 0. 0. 0. 0.]<br>
-           [0. 0. 0. 1. 0. 0. 0.]<br>
+          [0. 1. 0. 0. 0. 0. 0.]<br>
+          [0. 1. 0. 0. 0. 0. 0.]<br>
+          [0. 1. 0. 0. 0. 0. 0.]<br>
+          [0. 0. 0. 1. 0. 0. 0.]<br>
         </div>
+
+        <div class="card">
+          <h2>Mar 12, 2024</h2>
+          By default, the train_test_split function shuffles the matrices when generating the train and test data.<br>
+          However, it offers the option to not shuffle the data:<br>
+          <div class="code">
+            train_test_split(y, shuffle=False)
+          </div>
+          <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html">
+            https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html
+          </a><br>
+          <br>
+          When applying this option to the jh-simple-dataset data, the test data end up being at id 1500:<br>
+          <br>
+          Printing the whole dataframe:<br>
+
+          <div class="data">
+            1500 1501 0.920177 0.195637 -0.208449 5.264137 .. c <br>
+            1501 1502 -1.729662 -1.014519 -1.255928 3.632069 .. a <br>
+            1502 1503 0.726135 -0.413923 -0.208449 6.624195 .. c <br>
+            1503 1504 0.154570 -0.996591 -1.255928 11.112384 .. b <br>
+            1504 1505 -2.855161 1.208583 1.886511 5.372942 .. a <br>
+          </div>
+
+          Printing the test data:<br>
+          <div class="data">
+            x_test<br>
+            [[0.9201767396007892 0.19563745517432052 -0.20844851356517272 5.264137437365784<br>
+            [-1.729661903633492 -1.0145188576178745 -1.255928481229357 3.632068718682892<br>
+            [0.7261354766498689 -0.4139227616395259 -0.20844851356517272 6.62419470293486<br>
+            [0.15457040128417068 -0.9965906159468789 -1.255928481229357 11.112383679312812<br>
+            [-2.855160995051586 1.2085831095855653 1.8865114217631958 5.37294201861131<br>
+          </div>
+
+          The y_test data have the True in the correct positions<br>
+          given that y_test is the product column starting at id=1500:<br>
+          [c,a,c,b,a]<br>
+          <div class="data">
+            y_test<br>
+            [[False False True False False False False]<br>
+            [ True False False False False False False]<br>
+            [False False True False False False False]<br>
+            [False True False False False False False]<br>
+            [ True False False False False False False]<br>
+          </div>
+          <br>
+          This confirms, for a sample, that the product test data are the correct values.
+          <br>
+          The predicted values are<br>
+          <div class="data">
+            predicted values<br>
+            [[0. 0.415 0.582 0.001 0.001 0. 0. ]<br>
+            [0.591 0.087 0.001 0. 0.034 0.24 0.047]<br>
+            [0. 0.395 0.594 0.006 0.005 0. 0. ]<br>
+            [0. 0.718 0.27 0. 0.01 0.001 0. ]<br>
+            [0.743 0.043 0. 0. 0.01 0.189 0.015]<br>
+          </div>
+
+          or in argmax form:<br>
+          <div class="data">
+            [2 0 2 1 0]
+          </div>
+          So the highest probability for the product is<br>
+          [c,a,c,b,a]<br>
+          <br>
+          <br>
+          Showing a few more lines and comparing predicted and true values:<br>
+          <div class="data">
+            predicted vs true values<br>
+            [2 0 2 1 0 1 3 1 0 2 1 1 2 0 1 0 1 1 1 1 1 1 1 1 1 2 3 1 0 0 2 1 1 1 2 <br>
+            [2 0 2 1 0 2 3 1 0 3 5 1 2 0 1 0 1 1 2 1 4 1 1 5 1 2 3 1 0 0 2 1 1 1 1<br>
+          </div>
+          So there are a few incorrect predictions.<br>
+
+        </div>
+
+
+
         <div class="card">
           <h2>Date</h2>
           <a href=""> </a><br>
