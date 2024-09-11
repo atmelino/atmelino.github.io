@@ -252,6 +252,42 @@
 
 
       <div class="card">
+        <h4>wcd usage</h4>
+        wcd is an ncd clone for graphical change directory functionality in the command line.<br><br>
+
+        wcd appears to not work as described, however it can be used with the following workarounds.<br>
+
+        <h5>Installation</h5>
+        <div class="code">
+          sudo apt install wcd
+        </div>
+        Copy this block to the end of .bashrc:<br>
+        <div class="code_new">
+          wcd ()
+          {
+          &lt;PATH>/wcd.exe "$@"
+          . ${WCDHOME:-${HOME}}/bin/wcd.go
+          }
+        </div>
+
+        <h5>Scan directory tree, other than home</h5>
+        <div class="code">
+          wcd.exec -S /mnt/mymedia
+        </div>
+        <h5>Choose the desired new path</h5>
+        <div class="code">
+          wcd.exec -g -Tc
+        </div>
+
+        <h5>change to the new path</h5>
+        <div class="code">
+          wcd
+        </div>
+
+        <a href=""> </a><br>
+      </div>
+
+      <div class="card">
         <h4></h4>
         <a href=""> </a><br>
       </div>
