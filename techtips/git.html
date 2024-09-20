@@ -262,6 +262,48 @@
       </div>
 
       <div class="card">
+        <h2>gh update error</h2>
+
+        <div class="code">
+          sudo apt update
+        </div>
+
+        <h5>Error messages</h5>
+        <div class="code">
+          Err:3 https://cli.github.com/packages stable InRelease
+          The following signatures were invalid: EXPKEYSIG 23F3D4EA75716059 GitHub CLI &lt;opensource+cli@github.com>
+        </div>
+
+        <div class="code">
+          W: An error occurred during the signature verification. The repository is not updated and the previous index
+          files will be used. GPG error: https://cli.github.com/packages stable InRelease: The following signatures were
+          invalid: EXPKEYSIG 23F3D4EA75716059 GitHub CLI &lt;opensource+cli@github.com>
+        </div>
+
+        <div class="code">
+          W: Failed to fetch https://cli.github.com/packages/dists/stable/InRelease The following signatures were
+          invalid: EXPKEYSIG 23F3D4EA75716059 GitHub CLI &lt;opensource+cli@github.com>
+        </div>
+
+        <h5>Solution</h5>
+
+        <div class="code">
+          (type -p wget >/dev/null || (sudo apt update && sudo apt-get install wget -y)) && sudo mkdir -p -m 755
+          /etc/apt/keyrings && wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo tee
+          /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null && sudo chmod go+r
+          /etc/apt/keyrings/githubcli-archive-keyring.gpg && echo "deb [arch=$(dpkg --print-architecture)
+          signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo
+          tee /etc/apt/sources.list.d/github-cli.list > /dev/null && sudo apt update && sudo apt install gh -y
+        </div>
+
+        <a
+          href="https://github.com/cli/cli/blob/34d7ef7a0efb07b5be163d971c97df0c64655abd/docs/install_linux.md#debian-ubuntu-linux-raspberry-pi-os-apt">
+          https://github.com/cli/cli/blob/34d7ef7a0efb07b5be163d971c97df0c64655abd/docs/install_linux.md#debian-ubuntu-linux-raspberry-pi-os-apt
+        </a><br>
+      </div>
+
+
+      <div class="card">
 
         <a href=""> </a><br>
       </div>
