@@ -53,6 +53,27 @@
         <a href="https://www.youtube.com/watch?v=hHPioSUfOOc">https://www.youtube.com/watch?v=hHPioSUfOOc</a><br>
       </div>
 
+      <div class="card">
+        <h2>Unsupported object type float Error</h2>
+        Getting error again, despite using tensorflow version 2.15.0:<br>
+        <div class="output">
+          ValueError: Failed to convert a NumPy array to a Tensor (Unsupported object type float).
+        </div>
+        Solution:<br>
+
+        <div class="code">
+          x_train = np.asarray(x_train).astype(np.float32)<br>
+          y_train = np.asarray(y_train).astype(np.float32)<br>
+          x_test = np.asarray(x_test).astype(np.float32)<br>
+          y_test = np.asarray(y_test).astype(np.float32)<br>
+        </div>
+
+        <a
+          href="https://stackoverflow.com/questions/58636087/tensorflow-valueerror-failed-to-convert-a-numpy-array-to-a-tensor-unsupporte">
+          https://stackoverflow.com/questions/58636087/tensorflow-valueerror-failed-to-convert-a-numpy-array-to-a-tensor-unsupporte
+        </a><br>
+      </div>
+
 
       <div class="card">
         <h2></h2>
