@@ -41,9 +41,130 @@
           href="https://scikit-learn.org/stable/auto_examples/model_selection/plot_cv_indices.html#sphx-glr-auto-examples-model-selection-plot-cv-indices-py">
           https://scikit-learn.org/stable/auto_examples/model_selection/plot_cv_indices.html#sphx-glr-auto-examples-model-selection-plot-cv-indices-py
         </a><br>
-        <a href="https://stats.stackexchange.com/questions/49540/understanding-stratified-cross-validation"> 
+        <a href="https://stats.stackexchange.com/questions/49540/understanding-stratified-cross-validation">
           https://stats.stackexchange.com/questions/49540/understanding-stratified-cross-validation
         </a><br>
+
+      </div>
+
+      <div class="card">
+        <h2>October 13, 2024</h2>
+
+        <h5>Stratified K-Fold Demonstration</h5>
+
+        The source file named "pr_class_05_2_kfold_B.py" is a modification of the file from the J. Heaton class.<br><br>
+
+        It is intended to demonstrate how stratified K-Fold works.<br><br>
+
+        The input file is based on the "jh-simple-dataset.csv" file, however I sorted the rows by the product column and
+        am using the modified file named "jh-simple-dataset_sorted.csv" as the imput.<br><br>
+
+        As a result, the input file now has the following structure, considering the value of the product
+        column:<br><br>
+
+        <table cellspacing="0" border="1">
+          <colgroup span="3" width="107"></colgroup>
+          <tr>
+            <td height="21" align="left" data-sheets-value="{   product}">product</td>
+            <td align="left" data-sheets-value="{   counts}">counts</td>
+            <td align="left" data-sheets-value="{   percent}">percent</td>
+          </tr>
+          <tr>
+            <td height="21" align="left" data-sheets-value="{   a}">a</td>
+            <td align="right" sdval="130">130</td>
+            <td align="right" sdval="6.5" data-sheets-value="{  6}">6.50</td>
+          </tr>
+          <tr>
+            <td height="21" align="left" data-sheets-value="{   b}">b</td>
+            <td align="right" sdval="963">963</td>
+            <td align="right" sdval="48.15" data-sheets-value="{  48}">48.15</td>
+          </tr>
+          <tr>
+            <td height="21" align="left" data-sheets-value="{   c}">c</td>
+            <td align="right" sdval="738">738</td>
+            <td align="right" sdval="36.9" data-sheets-value="{  36}">36.90</td>
+          </tr>
+          <tr>
+            <td height="21" align="left" data-sheets-value="{   d}">d</td>
+            <td align="right" sdval="59">59</td>
+            <td align="right" sdval="2.95" data-sheets-value="{  2}">2.95</td>
+          </tr>
+          <tr>
+            <td height="21" align="left" data-sheets-value="{   e}">e</td>
+            <td align="right" sdval="30">30</td>
+            <td align="right" sdval="1.5" data-sheets-value="{  1}">1.50</td>
+          </tr>
+          <tr>
+            <td height="21" align="left" data-sheets-value="{   f}">f</td>
+            <td align="right" sdval="72">72</td>
+            <td align="right" sdval="3.6" data-sheets-value="{  3}">3.60</td>
+          </tr>
+          <tr>
+            <td height="21" align="left" data-sheets-value="{   g}">g</td>
+            <td align="right" sdval="8">8</td>
+            <td align="right" sdval="0.4" data-sheets-value="{  0}">.40</td>
+          </tr>
+        </table>
+        <br>
+        So we can see that if we applied a K-Fold split with a K-Fold size of 500, then the first fold would only
+        contain rows with a product value of a or b.<br><br>
+        The goal of using a stratified K-Fold is to have folds within which the percentage of y-values is approximately
+        the same as in the original input data.<br><br>
+
+        Using the command for a 5 split stratified K-Fold
+
+        <div class="code">
+          kf = StratifiedKFold(5, shuffle=True, random_state=42)
+        </div>
+        we get the following distribution for the first fold:<br><br>
+
+
+
+        <table cellspacing="0" border="1">
+          <colgroup span="3" width="107"></colgroup>
+          <tr>
+            <td height="21" align="left" data-sheets-value="{ : product}">product</td>
+            <td align="left" data-sheets-value="{ : counts}">counts</td>
+            <td align="left" data-sheets-value="{ : perc}">perc</td>
+          </tr>
+          <tr>
+            <td height="21" align="left" data-sheets-value="{ : a}">a</td>
+            <td align="right" sdval="26" sdnum="1033;">26</td>
+            <td align="right" sdval="6.5" sdnum="1033;">6.5</td>
+          </tr>
+          <tr>
+            <td height="21" align="left" data-sheets-value="{ : b}">b</td>
+            <td align="right" sdval="193" sdnum="1033;">193</td>
+            <td align="right" sdval="48.25" sdnum="1033;">48.25</td>
+          </tr>
+          <tr>
+            <td height="21" align="left" data-sheets-value="{ : c}">c</td>
+            <td align="right" sdval="148" sdnum="1033;">148</td>
+            <td align="right" sdval="37" sdnum="1033;">37</td>
+          </tr>
+          <tr>
+            <td height="21" align="left" data-sheets-value="{ : d}">d</td>
+            <td align="right" sdval="11" sdnum="1033;">11</td>
+            <td align="right" sdval="2.75" sdnum="1033;">2.75</td>
+          </tr>
+          <tr>
+            <td height="21" align="left" data-sheets-value="{ : e}">e</td>
+            <td align="right" sdval="6" sdnum="1033;">6</td>
+            <td align="right" sdval="1.5" sdnum="1033;">1.5</td>
+          </tr>
+          <tr>
+            <td height="21" align="left" data-sheets-value="{ : f}">f</td>
+            <td align="right" sdval="15" sdnum="1033;">15</td>
+            <td align="right" sdval="3.75" sdnum="1033;">3.75</td>
+          </tr>
+          <tr>
+            <td height="21" align="left" data-sheets-value="{ : g}">g</td>
+            <td align="right" sdval="1" sdnum="1033;">1</td>
+            <td align="right" sdval="0.25" sdnum="1033;">0.25</td>
+          </tr>
+        </table>
+        <br>
+        So unlike a simple K-Fold, we now have the desired distribution characteristics.
 
 
       </div>
