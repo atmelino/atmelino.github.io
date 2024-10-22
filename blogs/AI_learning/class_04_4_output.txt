@@ -1,0 +1,62 @@
+
+
+Using 100 rows                                                                                                                                                          
+                                                                                                                                                                        
+Rows used= 100 ,   Set score (RMSE)= 8.291678                                                                                                                           
+Using 200 rows                                                                                                                                                          
+                                                                                                                                                                        
+Rows used= 200 ,   Set score (RMSE)= 3.0896573                                                                                                                          
+Using 300 rows                                                                                                                                                          
+                                                                                                                                                                        
+Rows used= 300 ,   Set score (RMSE)= 3.4111423                                                                                                                          
+Using 400 rows                                                                                                                                                          
+                                                                                                                                                                        
+Rows used= 400 ,   Set score (RMSE)= 1.860746                                                                                                                           
+Using 500 rows                                                                                                                                                          
+                                                                                                                                                                        
+Rows used= 500 ,   Set score (RMSE)= 1.7870979                                                                                                                          
+Using 600 rows                                                                                                                                                          
+                                                                                                                                                                        
+Rows used= 600 ,   Set score (RMSE)= 1.1496775                                                                                                                          
+Using 700 rows                                                                                                                                                          
+                                                                                                                                                                        
+Rows used= 700 ,   Set score (RMSE)= 1.1223685
+Using 800 rows
+
+Rows used= 800 ,   Set score (RMSE)= 0.7381431
+Using 900 rows
+
+Rows used= 900 ,   Set score (RMSE)= 0.82538354
+Using 1000 rows
+
+Rows used= 1000 ,   Set score (RMSE)= 0.76459485
+Using 1100 rows
+
+Rows used= 1100 ,   Set score (RMSE)= 0.71326923
+Using 1200 rows
+
+Rows used= 1200 ,   Set score (RMSE)= 0.65034246
+Using 1300 rows
+
+Rows used= 1300 ,   Set score (RMSE)= 0.7576859
+Using 1400 rows
+
+Rows used= 1400 ,   Set score (RMSE)= 0.6532627
+Using 1500 rows
+
+Rows used= 1500 ,   Set score (RMSE)= 0.5971322
+Using 1600 rows
+
+Rows used= 1600 ,   Set score (RMSE)= 0.63570356
+Using 1700 rows
+
+Rows used= 1700 ,   Set score (RMSE)= 0.61027265
+Using 1800 rows
+
+Rows used= 1800 ,   Set score (RMSE)= 0.5669824
+Using 1900 rows
+
+Rows used= 1900 ,   Set score (RMSE)= 0.6588954
+Using 2000 rows
+
+Rows used= 2000 ,   Set score (RMSE)= 0.5561944
