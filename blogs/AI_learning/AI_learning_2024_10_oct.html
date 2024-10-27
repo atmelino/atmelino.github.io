@@ -218,9 +218,69 @@
           10 54.965900
         </div>
 
+        <a href=""> </a><br>
+      </div>
+
+      <div class="card">
+        <h2>October 27, 2024</h2>
+        <h5>Part 5.2, section "Training with both a Cross-Validation and a Holdout Set"</h5>
+        The performance of the training is measured by taking the RMSE (square root of mean_squared_error)
+        of the differences between prediction and test data.<br>
+        <br>
+        The typical RMSE for a fold in the example seems to be around 0.6<br>
+        <br>
+        However, I have seen an RMSE for the holdout set of around 24 which is very high.<br>
+
+        Even in J. Heaton's jupyter notebook, he gets an RMSE of around 24 for fold number 5 as well as the holdout set.
+        <br><br>
+
+
+        <a href="https://github.com/jeffheaton/t81_558_deep_learning/blob/master/t81_558_class_05_2_kfold.ipynb">
+          https://github.com/jeffheaton/t81_558_deep_learning/blob/master/t81_558_class_05_2_kfold.ipynb </a><br>
+
+        <div class="code_new">
+          Fold #1
+          Fold score (RMSE): 0.544195299216696
+          Fold #2
+          Fold score (RMSE): 0.48070599342910353
+          Fold #3
+          Fold score (RMSE): 0.7034584765928998
+          Fold #4
+          Fold score (RMSE): 0.5397141785190473
+          Fold #5
+          Fold score (RMSE): 24.126205213080077
+          Cross-validated score (RMSE): 10.801732731207947
+          Holdout score (RMSE): 24.097657947297677
+        </div>
+
+        I have seen similar results, however today I got a run with much better results (without changing the code):
+        <div class="code_new">
+          Fold #1
+          12/12 [==============================] - 0s 513us/step
+          Fold score (RMSE): 0.7567204236984253
+          Fold #2
+          12/12 [==============================] - 0s 513us/step
+          Fold score (RMSE): 0.5426404476165771
+          Fold #3
+          12/12 [==============================] - 0s 486us/step
+          Fold score (RMSE): 1.0122915506362915
+          Fold #4
+          12/12 [==============================] - 0s 499us/step
+          Fold score (RMSE): 0.648369312286377
+          Fold #5
+          12/12 [==============================] - 0s 512us/step
+          Fold score (RMSE): 0.5357717871665955
+
+          Cross-validated score (RMSE): 0.7210066914558411
+          7/7 [==============================] - 0s 486us/step
+          Holdout score (RMSE): 0.4387000294433415
+        </div>
+        I don't know what causes the results to be so different between random runs, when all the external conditions
+        seem to be the same.
 
         <a href=""> </a><br>
       </div>
+
 
       <div class="card">
         <h2>Date</h2>
