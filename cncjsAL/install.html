@@ -54,7 +54,7 @@
         cncjs 1.10.3 will not run with the latest node version, but it will run with node version 14.<br>
         The node version manager nvm allows to choose the node version.<br>
         <div class="code">
-          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
         </div>
         <p>log out and back in so that .bash_rc is run</p>
         <p>List available versions:</p>
@@ -148,8 +148,9 @@
         Solution: add our user to the group:<br>
 
         <div class="code">
-          sudo usermod -a -G dialout user
+          sudo usermod -a -G dialout [user]
         </div>
+        with [user] being your user name.<br>
         <p>
           To put the change into effect:<br><br>
           logging out and back in should theoretically work,<br>
