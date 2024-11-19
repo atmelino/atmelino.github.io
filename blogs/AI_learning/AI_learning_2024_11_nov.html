@@ -30,8 +30,6 @@
   <div class="row">
     <div class="leftcolumn">
 
-
-
       <div class="card">
         <h2>November 18, 2024</h2>
 
@@ -83,6 +81,31 @@
         <div class="code">
           model.add(Dropout(0.5))
         </div>
+      </div>
+
+      <div class="card">
+        <h2>November 19, 2024</h2>
+
+        Original code causes error<br>
+
+        <div class="output">
+          AttributeError: 'DataFrame' object has no attribute 'append'. Did you mean: '_append'?
+        </div>
+
+        in line<br>
+        <div class="code">
+          oos_y.append(y_test)
+        </div>
+        Problem was:<br>
+        I didn't indent the code correctly, the code after
+        <div class="code">
+          # Build the oos prediction list and calculate the error.
+        </div>
+        was indented and as such part of the for loop.<br><br>
+        After moving the code block to the front, it worked.
+
+
+        <a href=""> </a><br>
       </div>
 
       <div class="card">
