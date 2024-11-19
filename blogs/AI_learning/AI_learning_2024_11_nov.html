@@ -42,12 +42,43 @@
         <div class="code">
           model.add(Dense(25, activation='relu',activity_regularizer=regularizers.l1(1e-4)))
         </div>
-
-
-
       </div>
 
 
+
+      <div class="card">
+        <h2>Date</h2>
+
+        <h5> Regression vs Classification</h5>
+
+        <p>
+          Regression is used when the prediciton applies to a numerical value.<br>
+          In the examples, J. Heaton uses the data from jh-simple-dataset.csv<br>
+          and the prediction is made for the age column:<br>
+
+        <div class="code">
+          y = df['age'].values
+        </div>
+        </p>
+
+        <p>
+          Classification us used when the prediction applies to a set of discrete values.<br>
+          In the examples, J. Heaton uses the data from jh-simple-dataset.csv<br>
+          and the prediction is made for the age column:<br>
+
+        <div class="code">
+          dummies = pd.get_dummies(df['product']) # Classification<br>
+          products = dummies.columns<br>
+          y = dummies.values
+        </div>
+        </p>
+
+
+
+
+
+        <a href=""> </a><br>
+      </div>
 
       <div class="card">
         <h2>Date</h2>
