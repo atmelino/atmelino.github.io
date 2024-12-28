@@ -144,6 +144,47 @@
 
       </div>
 
+      <div class="card">
+        <h2>December 28, 2024</h2>
+
+        <h5>Validation data used in model.fit function</h5>
+
+        The preparation before model training in the model.fit function includes a step where the available data are
+        split into training data and verification data.
+
+        In some examples up to chapter 6.2, the model.fit function is called with the training data, and afterwards the
+        model.predict function is called in order to find the accuracy of the trained model.
+        <br>
+        A typical output shows a loss value:
+
+        <div class="code">
+          10/10 [==============================] - 6s 486ms/step - loss: 1.0254
+        </div>
+        <br>
+        In other examples such as in chapter 3.4, the model.fit function is called with the train data as well as the
+        validation data.
+        <br>
+        A typical output shows a loss value:
+        <div class="code">
+          112/112 - 0s - loss: 1.1940 - val_loss: 1.1126 </div>
+        <br>
+
+        In the resnet example in chapter 6.3, the model.fit function is called with the train data as well as the
+        validation data.
+
+        <br>
+
+        Here, a typical output shows a loss value as well as a validation loss value:
+
+        <div class="code">
+          250/250 [==============================] - 70s 256ms/step - loss: 73.1411 - rmse: 8.5523 - val_loss: 701.4966
+          - val_rmse: 26.4858
+        </div>
+
+
+        <a href=""> </a><br>
+      </div>
+
 
 
 
