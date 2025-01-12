@@ -53,7 +53,7 @@
       </div>
 
 
-      
+
       <div class="card">
         <h2>January 5, 2025</h2>
 
@@ -61,6 +61,38 @@
         <a href="https://machinelearningmastery.com/display-deep-learning-model-training-history-in-keras/">
           https://machinelearningmastery.com/display-deep-learning-model-training-history-in-keras/ </a><br>
       </div>
+
+
+
+
+      <div class="card">
+        <h2>January 11, 2025</h2>
+
+        J. Heaton class chapter 6.4, flipping the image. <br><br>
+
+        <div class="code">
+          ImageDataGenerator(horizontal_flip=True, vertical_flip=True)
+        </div>
+        is passed into a function, and then it's flow function is called.<br>
+        <div class="code">
+          it = gen.flow(samples, batch_size=1)
+        </div>
+
+        The it object has a next() method<br> which is called to generate flipped images<br>
+        <div class="code">
+          for i in range(4):<br>
+          batch = it.next()
+          </div>
+
+
+        <a
+          href="https://www.analyticsvidhya.com/blog/2020/08/image-augmentation-on-the-fly-using-keras-imagedatagenerator/">
+          https://www.analyticsvidhya.com/blog/2020/08/image-augmentation-on-the-fly-using-keras-imagedatagenerator/
+        </a><br>
+      </div>
+
+
+
 
 
 
