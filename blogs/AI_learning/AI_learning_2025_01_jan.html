@@ -31,9 +31,6 @@
     <div class="leftcolumn">
 
 
-
-
-
       <div class="card">
         <h2>January 1, 2025</h2>
         Deep Convolutional Neural Networks<br>
@@ -49,10 +46,7 @@
         ResNet50 Transfer Learning CIFAR-10 Beginner<br>
         <a href="https://www.kaggle.com/code/kutaykutlu/resnet50-transfer-learning-cifar-10-beginner">
           https://www.kaggle.com/code/kutaykutlu/resnet50-transfer-learning-cifar-10-beginner </a><br>
-
       </div>
-
-
 
       <div class="card">
         <h2>January 5, 2025</h2>
@@ -61,9 +55,6 @@
         <a href="https://machinelearningmastery.com/display-deep-learning-model-training-history-in-keras/">
           https://machinelearningmastery.com/display-deep-learning-model-training-history-in-keras/ </a><br>
       </div>
-
-
-
 
       <div class="card">
         <h2>January 11, 2025</h2>
@@ -78,13 +69,11 @@
           it = gen.flow(samples, batch_size=1)
         </div>
 
-        The it object has a next() method<br> which is called to generate flipped images<br>
+        The it object has a next() function<br> which is called to generate flipped images<br>
         <div class="code">
           for i in range(4):<br>
           batch = it.next()
-          </div>
-
-
+        </div>
         <a
           href="https://www.analyticsvidhya.com/blog/2020/08/image-augmentation-on-the-fly-using-keras-imagedatagenerator/">
           https://www.analyticsvidhya.com/blog/2020/08/image-augmentation-on-the-fly-using-keras-imagedatagenerator/
@@ -92,16 +81,28 @@
       </div>
 
 
-
-      
-
       <div class="card">
         <h2>January 12, 2025</h2>
 
         Image data augmentation<br>
-        <a href="https://pyimagesearch.com/2019/07/08/keras-imagedatagenerator-and-data-augmentation/"> 
+        <a href="https://pyimagesearch.com/2019/07/08/keras-imagedatagenerator-and-data-augmentation/">
           https://pyimagesearch.com/2019/07/08/keras-imagedatagenerator-and-data-augmentation/
         </a><br>
+        <br><br>
+
+        The sequence of augmentation operations in the next() function will be random or not, <br>
+        depending on whether we give the preceding flow function a seed parameter.<br><br>
+
+        <a href="https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/image/ImageDataGenerator#flow">
+          https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/image/ImageDataGenerator#flow
+        </a><br>
+        <br>
+        Question: Why is the output of my version of the code in J. Heaton class chapter 6.4,
+        flipping the image different from the class notebook, and different in every run?<br>
+        <br>
+        Answer: Because the operations in the next augmentation operation are randomized,
+        and of no seed is given, they will also be different in every run.
+
       </div>
 
 
