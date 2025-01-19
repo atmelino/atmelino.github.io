@@ -86,9 +86,25 @@
           conda install -c conda-forge keras-preprocessing -y<br>
         </div>
         <br>
-        Install software from github repositories:<br>
+        <h5>Installing YOLO</h5>
+        <a href="https://github.com/ultralytics/yolov5">https://github.com/ultralytics/yolov5 </a><br>
+
         <div class="code">
-          git clone https://github.com/NVlabs/stylegan3.git
+          mkdir not_on_github<br>
+          cd not_on_github<br>
+          git clone https://github.com/ultralytics/yolov5<br>
+          cd yolov5<br>
+          pip install -r requirements.txt
+        </div>
+        This will also install PyTorch which will be used in later examples.
+
+        <br>
+        <h5>Installing StyleGAN</h5>
+        <div class="code">
+          mkdir not_on_github<br>
+          cd not_on_github<br>
+          git clone https://github.com/NVlabs/stylegan3.git<br>
+          pip install ninja
         </div>
 
 
