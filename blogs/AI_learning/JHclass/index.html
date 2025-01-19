@@ -47,9 +47,11 @@
 
 
       <div class="card">
-        <h2>Tool and Package Versions - Latest</h2>
+        <h2>Setting up the Python Environment</h2>
         <p>
-          Creating a defined environment and veryfying that all the notebooks work
+          Conda allows us to set up a defined environment with specific versions of the python version as well as
+          of the packages.
+
         </p>
         <div class="code">
           conda create -n jh_class python=3.10
@@ -99,7 +101,7 @@
         This will also install PyTorch which will be used in later examples.
 
         <br>
-        <h5>Installing StyleGAN</h5>
+        <h5>Installing StyleGAN3</h5>
         <div class="code">
           mkdir not_on_github<br>
           cd not_on_github<br>
@@ -109,6 +111,23 @@
 
 
 
+
+        <a href=""> </a><br>
+      </div>
+
+      <div class="card">
+        <h2>conda environment for stylegan2</h2>
+        Module 07_2 uses stylegan2, in the process the manual instructs to remove some packages.<br>
+        In order to preserve the jh_class environment the way it is, we create a separate conda environment 
+        for this module.<br>
+
+        <div class="code">
+          conda create -n stylegan2 python=3.10
+        </div>
+        Then activate this environment before installing packages!<br>
+        <div class="code">
+          conda activate stylegan2
+        </div>
 
         <a href=""> </a><br>
       </div>
@@ -161,8 +180,9 @@
         t81_558_class_06_1_python_images.ipynb.....................| 2024-12-08
         t81_558_class_06_2_cnn.ipynb...............................| 2024-12-27
         t81_558_class_06_3_resnet.ipynb............................| 2024-12-31
-        t81_558_class_06_4_keras_images.ipynb......................| 2024-01-13
-        t81_558_class_06_5_yolo.ipynb..............................| 2024-01-14
+        t81_558_class_06_4_keras_images.ipynb......................| 2025-01-13
+        t81_558_class_06_5_yolo.ipynb..............................| 2025-01-14
+        t81_558_class_07_1_gan_intro...............................| 2025-01-18
         t81_558_class_07_2_train_gan.ipynb.........................|
         t81_558_class_07_3_latent_vector.ipynb.....................|
         t81_558_class_07_4_deoldify.ipynb..........................|
