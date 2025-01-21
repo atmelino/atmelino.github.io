@@ -68,20 +68,24 @@
           conda activate tensorflow
         </div>
 
-        cheatsheet at<br>
-
-        <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/index.html">
-          https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/index.html </a><br>
-
-        <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/cheatsheet.html">
-          https://docs.conda.io/projects/conda/en/latest/user-guide/cheatsheet.html </a><br>
-        says:<br>
-        <div class="output">
-          activate environment<br>
-          (do this before installing packages)
+        Make sure to switch to the according conda environment before installing packages!<br>
+        <br>
+        list all environments and locations
+        <div class="code">
+          conda info --envs
         </div>
-        so perhaps packages will installed in each environment separately?<br>
-
+        <br>
+        delete environment by name<br>
+        <div class="code">
+          conda remove -n ENVNAME --all
+        </div>
+        <p>
+          cheatsheet at<br>
+          <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/index.html">
+            https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/index.html </a><br>
+          <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/cheatsheet.html">
+            https://docs.conda.io/projects/conda/en/latest/user-guide/cheatsheet.html </a><br>
+        </p>
 
 
 
