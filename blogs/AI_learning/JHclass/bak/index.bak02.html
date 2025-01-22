@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type="text/css" href="../../../css/blog.css" media="all" rel="stylesheet">
+  <title></title>
+</head>
+
+<body>
+
+  <div class="header">
+    <table id="headerline_table">
+      <tr>
+        <td width="200">
+          <a href="../../../index.html"><img src="../../../images/home.png" alt="home" height="60"></a>
+          <a href="../../../blogs/index.html"><img src="../../../images/scroll.png" alt="scroll" height="60"></a>
+          <a href="../../../blogs/AI_learning/index.html"><img src="../../../images/AI_01.png" alt="AI Learning"
+              height="60"></a>
+        </td>
+        <td>
+          <h2>Jeff Heaton Class</h2>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+
+  <div class="row">
+    <div class="leftcolumn">
+
+
+      <div class="card">
+        <img src="images/jeffheaton.jpg" alt="jh" height="100">
+      </div>
+
+      <div class="card">
+        <a href="https://www.youtube.com/watch?v=dj-Jntz-74g">
+          https://www.youtube.com/watch?v=dj-Jntz-74g </a><br>
+        <br>
+        <a href="https://github.com/jeffheaton/t81_558_deep_learning/tree/master/install">
+          https://github.com/jeffheaton/t81_558_deep_learning/tree/master/install </a><br>
+        <br>
+      </div>
+
+
+      <div class="card">
+        <h2>Setting up the Python Environment</h2>
+        <p>
+          Conda allows us to set up a defined environment with specific versions of the python version as well as
+          of the packages.
+
+        </p>
+        <div class="code">
+          conda create -n jh_class python=3.10
+        </div>
+        Then activate this environment before installing packages!<br>
+        <div class="code">
+          conda activate jh_class
+        </div>
+
+        Install specific packages:<br>
+
+        <div class="code">
+          conda install -c conda-forge tensorflow=2.15.0 -y<br>
+          conda install -c conda-forge pandas=2.2.0 -y<br>
+          conda install -c conda-forge scikit-learn=1.4.1 -y<br>
+          conda install -c conda-forge matplotlib=3.8.3 -y<br>
+          conda install -c conda-forge ipython=8.21.0 -y<br>
+          conda install -c conda-forge transformers=4.37.2 -y<br>
+          conda install -c conda-forge jupyter=1.0.0 -y<br>
+          conda install -c conda-forge sentencepiece=0.1.99 -y<br>
+          conda install -c conda-forge click=8.0.4 -y<br>
+          
+        </div>
+        <br>
+        This command lists the package versions that are installed in the currently active environment:<br>
+        <div class="code">
+          conda list
+        </div>
+        Result:<br>
+        <a href="versions_cpu.txt"> Computer without GPU</a><br>
+        <a href="versions_gpu.txt"> Computer with GPU</a><br>
+        <br>
+        Install packages (without version number):<br>
+        <div class="code">
+          conda install -c conda-forge imageio -y<br>
+          conda install -c conda-forge keras-preprocessing -y<br>
+        </div>
+        <br>
+        <h5>Installing YOLO</h5>
+        <a href="https://github.com/ultralytics/yolov5">https://github.com/ultralytics/yolov5 </a><br>
+
+        <div class="code">
+          mkdir not_on_github<br>
+          cd not_on_github<br>
+          git clone https://github.com/ultralytics/yolov5<br>
+          cd yolov5<br>
+          pip install -r requirements.txt
+        </div>
+        This will also install PyTorch which will be used in later examples.
+
+        <br>
+        <h5>Installing StyleGAN3</h5>
+        <div class="code">
+          mkdir not_on_github<br>
+          cd not_on_github<br>
+          git clone https://github.com/NVlabs/stylegan3.git<br>
+          pip install ninja
+        </div>
+
+
+
+
+        <a href=""> </a><br>
+      </div>
+
+      <div class="card">
+        <h2>conda environment for stylegan2</h2>
+        <a href="https://github.com/NVlabs/stylegan2"> https://github.com/NVlabs/stylegan2</a><br>
+
+        
+
+        Module 07_2 uses stylegan2, in the process the manual instructs to remove some packages.<br>
+        In order to preserve the jh_class environment the way it is, we create a separate conda environment
+        for this module.<br>
+
+        <div class="code">
+          conda create -n stylegan2 python=3.8
+        </div>
+        <br>
+        Then activate this environment before installing packages!<br>
+        <div class="code">
+          conda activate stylegan2
+        </div>
+        <br>
+        Creating required folders<br>
+        <div class="code">
+          mkdir not_on_github<br>
+          cd not_on_github<br>
+        </div>
+        <h5>Installing StyleGAN2</h5>
+
+        <div class="code">
+          pip uninstall jax jaxlib -y<br>
+          pip install "jax[cuda11_cudnn805]==0.3.10" -f
+          https://storage.googleapis.com/jax-releases/jax_cuda_releases.html<br>
+          pip install torch==1.8.1 torchvision==0.9.1<br>
+          git clone https://github.com/NVlabs/stylegan2-ada-pytorch.git<br>
+          pip install ninja<br>
+          conda install -c conda-forge tensorflow=1.14 -y<br>
+          conda install requests<br>
+          conda install psutil
+
+
+        </div>
+
+
+
+
+
+
+        <a href=""> </a><br>
+      </div>
+
+
+      <div class="card">
+        <h2>Class </h2>
+        To continue the class:<br>
+        Open terminal<br>
+        <div class="code">
+          cd ~/github/learn/ai/jheaton/t81_558_deep_learning
+        </div>
+        <div class="code">
+          conda activate jh_class
+        </div>
+        <div class="code">
+          jupyter notebook
+        </div>
+        <a href=""> </a><br>
+      </div>
+
+
+      <div class="card_new_mono">
+        <h2></h2>
+        t81_558_class_01_1_overview.ipynb..........................| 2024-02-12
+        t81_558_class_01_2_intro_python.ipynb......................| 2024-02-12
+        t81_558_class_01_3_python_collections.ipynb................| 2024-02-13
+        t81_558_class_01_4_python_files.ipynb......................| 2024-02-20
+        t81_558_class_01_5_python_functional.ipynb.................| 2024-02-21
+        t81_558_class_02_1_python_pandas.ipynb.....................| 2024-02-22
+        t81_558_class_02_2_pandas_cat.ipynb........................| 2024-02-24
+        t81_558_class_02_3_pandas_grouping.ipynb...................| 2024-02-25
+        t81_558_class_02_4_pandas_functional.ipynb.................| 2024-02-25
+        t81_558_class_02_5_pandas_features.ipynb...................| 2024-02-26
+        t81_558_class_03_1_neural_net.ipynb........................| 2024-02-26
+        t81_558_class_03_2_keras.ipynb.............................| 2024-03-06
+        t81_558_class_03_3_save_load.ipynb.........................| 2024-03-06
+        t81_558_class_03_4_early_stop.ipynb........................| 2024-03-06
+        t81_558_class_03_5_weights.ipynb...........................| 2024-03-07
+        t81_558_class_04_1_feature_encode.ipynb....................| 2024-03-08
+        t81_558_class_04_2_multi_class.ipynb.......................| 2024-03-12
+        t81_558_class_04_3_regression.ipynb........................| 2024-03-13
+        t81_558_class_04_4_backprop.ipynb..........................| 2024-07-12
+        t81_558_class_04_5_rmse_logloss.ipynb......................| 2024-07-12
+        t81_558_class_05_1_reg_ridge_lasso.ipynb...................| 2024-09-19
+        t81_558_class_05_2_kfold.ipynb.............................| 2024-10-27
+        t81_558_class_05_3_keras_l1_l2.ipynb.......................| 2024-11-18
+        t81_558_class_05_4_dropout.ipynb...........................| 2024-11-19
+        t81_558_class_05_5_bootstrap.ipynb.........................| 2024-12-06
+        t81_558_class_06_1_python_images.ipynb.....................| 2024-12-08
+        t81_558_class_06_2_cnn.ipynb...............................| 2024-12-27
+        t81_558_class_06_3_resnet.ipynb............................| 2024-12-31
+        t81_558_class_06_4_keras_images.ipynb......................| 2025-01-13
+        t81_558_class_06_5_yolo.ipynb..............................| 2025-01-14
+        t81_558_class_07_1_gan_intro...............................| 2025-01-18
+        t81_558_class_07_2_train_gan.ipynb.........................|
+        t81_558_class_07_3_latent_vector.ipynb.....................|
+        t81_558_class_07_4_deoldify.ipynb..........................|
+        t81_558_class_07_5_tabular_synthetic.ipynb.................|
+        t81_558_class_08_1_kaggle_intro.ipynb......................|
+        t81_558_class_08_2_keras_ensembles.ipynb...................|
+        t81_558_class_08_3_keras_hyperparameters.ipynb.............|
+        t81_558_class_08_4_bayesian_hyperparameter_opt.ipynb.......|
+        t81_558_class_08_5_kaggle_project.ipynb....................|
+        t81_558_class_09_1_keras_transfer.ipynb....................|
+        t81_558_class_09_2_keras_xfer_cv.ipynb.....................|
+        t81_558_class_09_3_transfer_nlp.ipynb......................|
+        t81_558_class_09_4_facial_points.ipynb.....................|
+        t81_558_class_09_5_style_transfer.ipynb....................|
+        t81_558_class_10_1_timeseries.ipynb........................|
+        t81_558_class_10_2_lstm.ipynb..............................|
+        t81_558_class_10_3_text_generation.ipynb...................|
+        t81_558_class_10_4_intro_transformers.ipynb................|
+        t81_558_class_10_5_keras_transformers.ipynb................|
+        t81_558_class_11_01_huggingface.ipynb......................|
+        t81_558_class_11_02_tokenizers.ipynb.......................|
+        t81_558_class_11_03_hf_datasets.ipynb......................|
+        t81_558_class_11_04_hf_train.ipynb.........................|
+        t81_558_class_11_05_embedding.ipynb........................|
+        t81_558_class_12_01_ai_gym.ipynb...........................|
+        t81_558_class_12_02_qlearningreinforcement.ipynb...........|
+        t81_558_class_12_03_keras_reinforce.ipynb..................|
+        t81_558_class_12_04_atari.ipynb............................|
+        t81_558_class_12_05_apply_rl.ipynb.........................|
+        t81_558_class_13_01_flask.ipynb............................|
+        t81_558_class_13_02_checkpoint.ipynb.......................|
+        t81_558_class_13_03_web.ipynb..............................|
+        t81_558_class_13_04_retrain.ipynb..........................|
+        t81_558_class_13_05_tpu.ipynb..............................|
+        t81_558_class_14_01_automl.ipynb...........................|
+        t81_558_class_14_02_auto_encode.ipynb......................|
+        t81_558_class_14_03_anomaly.ipynb..........................|
+        t81_558_class_14_04_ids_kdd99.ipynb........................|
+        t81_558_class_14_05_new_tech.ipynb.........................|
+
+      </div>
+
+      <div class="card">
+        <h2>Software version issues</h2>
+
+        Installation in February 2024 installs tensorflow 2.15.0.<br>
+        t81_558_class_01_1_overview.ipynb calls tensorflow.keras.__version<br>
+        However, this attribute was deprecated after tensorflow 2.13.0,<br>
+        so leads to an error.<br>
+
+        <a href="https://stackoverflow.com/questions/46086030/how-to-check-which-version-of-keras-is-installed">
+          https://stackoverflow.com/questions/46086030/how-to-check-which-version-of-keras-is-installed </a><br>
+
+        This can be resolved by running<br>
+        conda install tensorflow=2.1.0<br>
+        in the according environment in which this notebook is run.<br>
+
+        <a href=""> </a><br>
+      </div>
+
+      <div class="card">
+        <h2>Other</h2>
+        The syntax for version numbers in pip is<br>
+
+        pip install tensorflow==2.15.0<br>
+
+        but we don't want to install anything outside of conda,<br>
+        so that we know that we are using the intended versions of our packages.
+        <a href=""> </a><br>
+      </div>
+
+      <div class="card">
+        <h2></h2>
+        <a href=""> </a><br>
+      </div>
+
+    </div>
+
+
+
+
+    <div class="rightcolumn">
+      <div class="card">
+        <br>
+      </div>
+
+      <div class="card">
+        <h3>Follow Me</h3>
+        <a href="https://discord.gg/F7KQySEW"><img src="../../images/discord.png" alt="discord" height="30"></a>
+      </div>
+
+    </div>
+
+
+  </div>
+  <div class="footer">
+    <h3>Modified July 2023</h3>
+  </div>
+</body>
+
+</html>
