@@ -109,14 +109,66 @@
         <br>
         <a href="https://www.youtube.com/watch?v=640ipvR0HhQ"> https://www.youtube.com/watch?v=640ipvR0HhQ</a><br>
 
-
-
       </div>
 
 
+      <div class="card">
+        <h2>class 07_2, train stylegan</h2>
+        the module recommends installing stylegan2 because of resource requirements, however the environment
+        did not work with the RTX 3090 card.<br>
+
+        Trying to run the examples from <br>
+        <a href="https://github.com/NVlabs/stylegan3">https://github.com/NVlabs/stylegan3 </a><br>
+
+        <div class="code">
+          mkdir not_on_github<br>
+          cd not_on_github<br>
+          git clone https://github.com/NVlabs/stylegan3.git<br>
+          cd stylegan3<br>
+          conda env create -f environment.yml<br>
+          conda activate stylegan3<br>
+        </div>
+
+        <h5> Preparing datasets</h5>
+        download the flickrfaces dataset<br>
+
+        <a href="https://github.com/NVlabs/ffhq-dataset/tree/master">
+          https://github.com/NVlabs/ffhq-dataset/tree/master</a><br>
+
+        Running the download script leads to an error:<br>
+        <div class="output">
+          OSError: [Errno Incorrect file size] ffhq-dataset-v2.json
+        </div>
+        Solution:<br>
 
 
 
+
+        <a href="https://github.com/NVlabs/stylegan2-ada/issues/115">
+          https://github.com/NVlabs/stylegan2-ada/issues/115</a><br>
+
+
+        Open a browser at<br>
+
+        <a href="https://drive.usercontent.google.com/download?id=16N0RV4fHI6joBuKbQAoG34V_cQk7vxSA&export=download">
+          https://drive.usercontent.google.com/download?id=16N0RV4fHI6joBuKbQAoG34V_cQk7vxSA&export=download
+        </a><br>
+        download the file.<br>
+        Place the file in the same directory as the script named download_ffhq.py
+        Run the script with<br>
+        <div class="code">
+          python3 download_ffhq.py --json --images
+        </div>
+
+
+
+
+
+        <a href=""> </a><br>
+        <a href=""> </a><br>
+        <a href=""> </a><br>
+        <a href=""> </a><br>
+      </div>
 
 
 

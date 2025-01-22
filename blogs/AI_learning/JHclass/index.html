@@ -73,7 +73,7 @@
           conda install -c conda-forge jupyter=1.0.0 -y<br>
           conda install -c conda-forge sentencepiece=0.1.99 -y<br>
           conda install -c conda-forge click=8.0.4 -y<br>
-          
+
         </div>
         <br>
         This command lists the package versions that are installed in the currently active environment:<br>
@@ -103,7 +103,7 @@
         This will also install PyTorch which will be used in later examples.
 
         <br>
-        <h5>Installing StyleGAN3</h5>
+        <h5>Adding StyleGAN3 to jh_class</h5>
         <div class="code">
           mkdir not_on_github<br>
           cd not_on_github<br>
@@ -111,59 +111,10 @@
           pip install ninja
         </div>
 
-
-
-
         <a href=""> </a><br>
       </div>
 
-      <div class="card">
-        <h2>conda environment for stylegan2</h2>
-        <a href="https://github.com/NVlabs/stylegan2"> https://github.com/NVlabs/stylegan2</a><br>
 
-        
-
-        Module 07_2 uses stylegan2, in the process the manual instructs to remove some packages.<br>
-        In order to preserve the jh_class environment the way it is, we create a separate conda environment
-        for this module.<br>
-
-        <div class="code">
-          conda create -n stylegan2 python=3.8
-        </div>
-        <br>
-        Then activate this environment before installing packages!<br>
-        <div class="code">
-          conda activate stylegan2
-        </div>
-        <br>
-        Creating required folders<br>
-        <div class="code">
-          mkdir not_on_github<br>
-          cd not_on_github<br>
-        </div>
-        <h5>Installing StyleGAN2</h5>
-
-        <div class="code">
-          pip uninstall jax jaxlib -y<br>
-          pip install "jax[cuda11_cudnn805]==0.3.10" -f
-          https://storage.googleapis.com/jax-releases/jax_cuda_releases.html<br>
-          pip install torch==1.8.1 torchvision==0.9.1<br>
-          git clone https://github.com/NVlabs/stylegan2-ada-pytorch.git<br>
-          pip install ninja<br>
-          conda install -c conda-forge tensorflow=1.14 -y<br>
-          conda install requests<br>
-          conda install psutil
-
-
-        </div>
-
-
-
-
-
-
-        <a href=""> </a><br>
-      </div>
 
 
       <div class="card">
