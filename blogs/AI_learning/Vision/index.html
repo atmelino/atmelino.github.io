@@ -113,53 +113,52 @@
 
 
       <div class="card">
-        <h2>class 07_2, train stylegan</h2>
-        the module recommends installing stylegan2 because of resource requirements, however the environment
-        did not work with the RTX 3090 card.<br>
-
-        Trying to run the examples from <br>
+        <h2>class 07_2, Training stylegan3</h2>
+        The class module uses stylegan2, however the environment did not work with the RTX 3090 card.<br><br>
+        Instead, I am using the stylegan3 examples from <br>
         <a href="https://github.com/NVlabs/stylegan3">https://github.com/NVlabs/stylegan3 </a><br>
-
-        <div class="code">
-          mkdir not_on_github<br>
-          cd not_on_github<br>
-          git clone https://github.com/NVlabs/stylegan3.git<br>
-          cd stylegan3<br>
-          conda env create -f environment.yml<br>
-          conda activate stylegan3<br>
-        </div>
 
         <h5> Preparing datasets</h5>
         download the flickrfaces dataset<br>
 
         <a href="https://github.com/NVlabs/ffhq-dataset/tree/master">
-          https://github.com/NVlabs/ffhq-dataset/tree/master</a><br>
+          https://github.com/NVlabs/ffhq-dataset/tree/master</a><br><br>
 
         Running the download script leads to an error:<br>
         <div class="output">
           OSError: [Errno Incorrect file size] ffhq-dataset-v2.json
         </div>
+        <br>
         Solution:<br>
-
-
-
-
         <a href="https://github.com/NVlabs/stylegan2-ada/issues/115">
           https://github.com/NVlabs/stylegan2-ada/issues/115</a><br>
-
-
+        <br>
         Open a browser at<br>
-
         <a href="https://drive.usercontent.google.com/download?id=16N0RV4fHI6joBuKbQAoG34V_cQk7vxSA&export=download">
           https://drive.usercontent.google.com/download?id=16N0RV4fHI6joBuKbQAoG34V_cQk7vxSA&export=download
         </a><br>
-        download the file.<br>
-        Place the file in the same directory as the script named download_ffhq.py
+        Download the file.<br>
+        Place the file in the same directory as the script named download_ffhq.py<br>
         Run the script with<br>
         <div class="code">
           python3 download_ffhq.py --json --images
         </div>
 
+        <h5> Set up environment</h5>
+        Download stylegan3<br>
+        <div class="code">
+          mkdir not_on_github<br>
+          cd not_on_github<br>
+          git clone https://github.com/NVlabs/stylegan3.git<br>
+        </div>
+
+
+        Download packages<br>
+        <div class="code">
+          cd stylegan3<br>
+          conda env create -f environment.yml<br>
+          conda activate stylegan3<br>
+        </div>
 
 
 
