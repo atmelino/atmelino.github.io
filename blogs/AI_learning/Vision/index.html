@@ -150,6 +150,12 @@
           git clone https://github.com/NVlabs/stylegan3.git<br>
         </div>
 
+        Modify environment.yml to prevent numpy version warning:<br>
+        in stylegan3/environment.yml<br>
+        Change numpy line to <br>
+        <div class="code">
+          - numpy=1.22
+        </div>
 
         Download packages<br>
         <div class="code">
@@ -157,10 +163,14 @@
           conda env create -f environment.yml<br>
           conda activate stylegan3<br>
           conda install -c conda-forge psutil -y<br>
-          conda install -c conda-forge tensorboard -y<br>
         </div>
 
-
+        Don't
+        <div class="code">
+          conda install -c conda-forge tensorboard -y<br>
+        </div>
+        because it causes the training to crash with<br>
+        AttributeError: module 'distutils' has no attribute 'version'<br>
 
 
         <a href=""> </a><br>
