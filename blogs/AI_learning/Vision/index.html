@@ -113,9 +113,7 @@
 
 
       <div class="card">
-        <h2>class 07_2, Training stylegan3</h2>
-        The class module uses stylegan2, however the environment did not work with the RTX 3090 card.<br><br>
-        Instead, I am using the stylegan3 examples from <br>
+        <h2>stylegan3</h2>
         <a href="https://github.com/NVlabs/stylegan3">https://github.com/NVlabs/stylegan3 </a><br>
 
         <h5> Preparing datasets</h5>
@@ -158,6 +156,8 @@
           cd stylegan3<br>
           conda env create -f environment.yml<br>
           conda activate stylegan3<br>
+          conda install -c conda-forge psutil -y<br>
+          conda install -c conda-forge tensorboard -y<br>
         </div>
 
 
