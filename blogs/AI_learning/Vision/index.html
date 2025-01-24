@@ -172,6 +172,36 @@
         because it causes the training to crash with<br>
         AttributeError: module 'distutils' has no attribute 'version'<br>
 
+        <p>
+
+          On Ubuntu Server 24.04, after installing as above, when calling train.py, get error<br>
+        <div class="output">
+          Error building extension 'bias_act_plugin'
+        </div>
+        Solution:<br>
+
+        Remove ninja that was installed using the environment.yml file by<br>
+        <div class="code">
+          conda remove ninja
+        </div>
+        This will somehow update a few packages and update pytorch from 1.9.1 to 2.5.1<br>
+        <!-- Then install ninja via pip<br> -->
+        <!-- <div class="code"> -->
+          <!-- pip install ninja -->
+        <!-- </div> -->
+        and install ninja via conda without giving version number<br>
+        <div class="code">
+          conda install -c conda-forge ninja -y<br>
+        </div>
+        <a href="https://stackoverflow.com/questions/75515629/how-to-build-the-bias-act-plugin-extension-for-stylegan3"> 
+          https://stackoverflow.com/questions/75515629/how-to-build-the-bias-act-plugin-extension-for-stylegan3
+        </a><br>
+        <a href=""> </a><br>
+
+        </p>
+
+
+
 
         <a href=""> </a><br>
         <a href=""> </a><br>
