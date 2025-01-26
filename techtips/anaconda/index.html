@@ -70,15 +70,21 @@
 
         Make sure to switch to the according conda environment before installing packages!<br>
         <br>
-        list all environments and locations
+        List all environments and locations
         <div class="code">
           conda info --envs
         </div>
         <br>
-        delete environment by name<br>
+        Delete environment by name<br>
         <div class="code">
           conda remove -n ENVNAME --all
         </div>
+        <br>
+        Install environment from yml file<br>
+        <div class="code">
+          conda env create -f environment.yml<br>
+        </div>
+
         <p>
           cheatsheet at<br>
           <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/index.html">
