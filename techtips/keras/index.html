@@ -44,8 +44,34 @@
       </div>
 
       <div class="card">
-        <h2></h2>
+        <h2>model metrics</h2>
+        The metrics that are available after running model.fit() depend upon the parameters given to
+        model.compile().<br>
+        <div class="code">
+          model.compile(loss="mean_squared_error", optimizer="adam")<br>
+          model.fit(..)<br>
+          print("model.metrics_names",model.metrics_names)
+        </div>
+        <div class="output">
+          model.metrics_names ['loss']
+        </div>
+        <br>
+        <div class="code">
+          model.compile(loss="mean_squared_error", optimizer="adam", metrics=["accuracy"])<br>
+          model.fit(..)<br>
+          print("model.metrics_names",model.metrics_names)
+        </div>
+        <div class="output">
+          model.metrics_names ['loss', 'accuracy']
+        </div>
 
+
+
+        <a href=""></a><br>
+      </div>
+
+      <div class="card">
+        <h2></h2>
         <a href=""></a><br>
       </div>
 
