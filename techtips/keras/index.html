@@ -45,8 +45,14 @@
 
       <div class="card">
         <h2>model metrics</h2>
+
+
+        <a href="https://keras.io/api/metrics/">https://keras.io/api/metrics/</a><br>
+        <br>
+
         The metrics that are available after running model.fit() depend upon the parameters given to
         model.compile().<br>
+        <h5>Regression Problem</h5>
         <div class="code">
           model.compile(loss="mean_squared_error", optimizer="adam")<br>
           model.fit(..)<br>
@@ -57,7 +63,17 @@
         </div>
         <br>
         <div class="code">
-          model.compile(loss="mean_squared_error", optimizer="adam", metrics=["accuracy"])<br>
+          model.compile(loss="mean_squared_error", optimizer="adam", metrics=["RootMeanSquaredError"])
+          model.fit(..)<br>
+          print("model.metrics_names",model.metrics_names)
+        </div>
+        <div class="output">
+          model.metrics_names ['loss', 'root_mean_squared_error']
+        </div>
+        <br>
+        <h5>Classification Problem</h5>
+        <div class="code">
+          model.compile(loss="binary_crossentropy", optimizer="adam", metrics=["accuracy"])
           model.fit(..)<br>
           print("model.metrics_names",model.metrics_names)
         </div>
@@ -66,6 +82,10 @@
         </div>
 
 
+        Note:<br>
+        <br>
+        Accuracy is typically used for classification tasks, whereas Mean Squared Error is more commonly used for
+        regression tasks.
 
         <a href=""></a><br>
       </div>
