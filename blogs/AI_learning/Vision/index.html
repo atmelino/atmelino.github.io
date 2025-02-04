@@ -229,8 +229,67 @@
           conda install -c conda-forge tensorflow=2.15.0 -y
           <br>
         </div>
+        <a href=""> </a><br>
+      </div>
 
 
+
+      <div class="card">
+        <h2>Reproducability</h2>
+        This article describes the design of a simple, 1-dimensional GAN:<br>
+        How to Develop a 1D Generative Adversarial Network From Scratch in Keras<br>
+        <a
+          href="https://machinelearningmastery.com/how-to-develop-a-generative-adversarial-network-for-a-1-dimensional-function-from-scratch-in-keras/">
+          https://machinelearningmastery.com/how-to-develop-a-generative-adversarial-network-for-a-1-dimensional-function-from-scratch-in-keras/
+        </a><br>
+        <br>
+        The real samples are basically represented by pairs of values that lie on a parabola<br>
+
+
+
+
+        <p>
+          Environment:<br>
+          the x-values for the real samples are random.<br><br>
+
+          Observations:<br>
+          Train GAN on computer A, save model to M1.H5, predictions:<br>
+        <div class="code_new">
+          0 1 pred
+          0 0.2 0.00 0.813885
+          1 0.2 0.01 0.822533
+          2 0.2 0.02 0.830599
+          3 0.2 0.03 0.836829
+          4 0.2 0.04 0.842578
+          5 0.2 0.05 0.848162
+          6 0.2 0.06 0.848473
+          7 0.2 0.07 0.841271
+          8 0.2 0.08 0.833794
+          9 0.2 0.09 0.826038
+        </div>
+        copy model M1.H5 to computer B and load it, predictions:<br>
+
+        <div class="code_new">
+        </div>
+        0 1 pred
+        0 0.2 0.00 0.813885
+        1 0.2 0.01 0.822533
+        2 0.2 0.02 0.830599
+        3 0.2 0.03 0.836829
+        4 0.2 0.04 0.842578
+        5 0.2 0.05 0.848162
+        6 0.2 0.06 0.848473
+        7 0.2 0.07 0.841271
+        8 0.2 0.08 0.833794
+        9 0.2 0.09 0.826038
+        </p>
+
+        So the predictions are the same on different computers when the saved model is the same.<br>
+        When the training is repeated with the exact same environment and the model is saved 
+
+
+
+        <a href=""> </a><br>
         <a href=""> </a><br>
       </div>
 
