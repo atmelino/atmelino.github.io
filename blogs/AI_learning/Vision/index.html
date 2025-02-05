@@ -246,14 +246,14 @@
         The real samples are basically represented by pairs of values that lie on a parabola<br>
 
 
-        <img src="../images/plot00019.png" alt="AI plot00019"        height="300">
+        <img src="../images/plot00019.png" alt="AI plot00019" height="300">
 
         <p>
           Environment:<br>
           the x-values for the real samples are random.<br><br>
 
           Observations:<br>
-          Train GAN on computer A, save model to M1.H5, predictions:<br>
+          Train GAN on computer A with original code, save model to M1.h5, predictions:<br>
         <div class="code_new">
           0 1 pred
           0 0.2 0.00 0.813885
@@ -267,7 +267,7 @@
           8 0.2 0.08 0.833794
           9 0.2 0.09 0.826038
         </div>
-        copy model M1.H5 to computer B and load it, predictions:<br>
+        copy model M1.h5 to computer B and load it, predictions:<br>
 
         <div class="code_new">
           0 1 pred
@@ -284,8 +284,46 @@
         </div>
         </p>
 
-        So the predictions are the same on different computers when the saved model is the same.<br>
-        When the training is repeated with the exact same environment and the model is saved
+        So the predictions are the same on different computers when the saved model is the same.<br><br>
+
+        New Training run of GAN on computer A with original code, save model to M2.h5, predictions:<br>
+
+        <div class="code_new">
+          0 1 pred
+          0 0.2 0.00 0.784457
+          1 0.2 0.01 0.792328
+          2 0.2 0.02 0.796565
+          3 0.2 0.03 0.799720
+          4 0.2 0.04 0.802838
+          5 0.2 0.05 0.803929
+          6 0.2 0.06 0.800718
+          7 0.2 0.07 0.797405
+          8 0.2 0.08 0.794052
+          9 0.2 0.09 0.790657
+        </div>
+
+        Loading model M2.h5 on computer B gives the same predictions as on computer A:
+        <div class="code_new">
+          0 1 pred
+          0 0.2 0.00 0.784457
+          1 0.2 0.01 0.792328
+          2 0.2 0.02 0.796565
+          3 0.2 0.03 0.799720
+          4 0.2 0.04 0.802838
+          5 0.2 0.05 0.803929
+          6 0.2 0.06 0.800718
+          7 0.2 0.07 0.797406
+          8 0.2 0.08 0.794052
+          9 0.2 0.09 0.790657
+        </div>
+        Between training runs, the predictions are different.<br><br>
+
+        In the code for generate_real_samples(), the x-values are random. <br>
+        What happens if we use the same x-values in this function?<br>
+
+
+
+
 
 
 
