@@ -81,11 +81,35 @@
           model.metrics_names ['loss', 'accuracy']
         </div>
 
-
         Note:<br>
         <br>
         Accuracy is typically used for classification tasks, whereas Mean Squared Error is more commonly used for
         regression tasks.
+
+        <a href=""></a><br>
+      </div>
+
+
+      <div class="card">
+        <h2>HDF5 Storage</h2>
+        <p>
+          Find out if an H5 file contains a specific node:<br>
+        <div class="code_new">
+          import tables as tb
+
+          try:
+          node.__contains__(node.training_config)
+          print('contains training_config')
+          except tb.NoSuchNodeError:
+          etc.
+        </div>
+        </p>
+
+        Data Types<br>
+        
+        <a href="https://www.pytables.org/usersguide/libref/declarative_classes.html#the-col-class-and-its-descendants">
+          https://www.pytables.org/usersguide/libref/declarative_classes.html#the-col-class-and-its-descendants
+        </a><br>
 
         <a href=""></a><br>
       </div>
