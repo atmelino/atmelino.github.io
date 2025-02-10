@@ -61,34 +61,43 @@
         https://stackoverflow.com/questions/44392634/nosuchnodeerror-when-determine-tables-in-file
 
 
-        <h5>Viewing hdf5 files</h5>
+      </div>
 
-        view groups:
-        <div class="code">
-          h5ls file.h5
-        </div>        
-        <br>
-        view values:
-        <div class="code">
-          h5ls -rd file.h5
-        </div>        
-        <br>
-        <div class="code">
-          h5dump file.h5
-        </div>
-        <br>
-        <a href="https://pypi.org/project/hdf5view/">
-          https://pypi.org/project/hdf5view/
+      <div class="card">
+        <h2>February 9, 2025</h2>
+
+        How does model.evaluate() calculate the accuracy in the Brownlee example?<br>
+        <a
+          href="https://machinelearningmastery.com/how-to-develop-a-generative-adversarial-network-for-a-1-dimensional-function-from-scratch-in-keras/">
+          https://machinelearningmastery.com/how-to-develop-a-generative-adversarial-network-for-a-1-dimensional-function-from-scratch-in-keras/
         </a><br>
-        Install:<br>
+
+        During training, we told the trainer that a real sample has a target value of 1 and a fake sample has a target
+        value of 0.<br>
+        <br>
+        The model.predict value that is fed with the values from a training epoch will return a value p
+        <ul>
+          <li>0 < p < 0.5 for a fake input</li>
+          <li>0.5 < p < 1 for a real input</li>
+        </ul>
+
+        When we feed the model.predict function with the part of input data that are real samples and count the
+        predicted values that are between 0.5 and 1, and divide that number by the number of total real samples in that
+        epoch, we get the accuracy.<br>
+        <p>Example:<br><br>
+          Output for epoch 0<br>
         <div class="code">
-          pip install hdf5view
+          epoch 0 acc_real 0.609 acc_fake 0.172
         </div>
-        Run:<br>
         <div class="code">
-          hdf5view
+          predicted real samples= 39 total real samples= 64 accuracy= 0.609375
         </div>
 
+        </p>
+
+
+
+        <a href=""> </a><br>
       </div>
 
 

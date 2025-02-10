@@ -92,6 +92,35 @@
 
       <div class="card">
         <h2>HDF5 Storage</h2>
+
+        <h5>Viewing hdf5 files</h5>
+
+        view groups:
+        <div class="code">
+          h5ls file.h5
+        </div>
+        <br>
+        view values:
+        <div class="code">
+          h5ls -rd file.h5
+        </div>
+        <br>
+        <div class="code">
+          h5dump file.h5
+        </div>
+        <br>
+        <a href="https://pypi.org/project/hdf5view/">
+          https://pypi.org/project/hdf5view/
+        </a><br>
+        Install:<br>
+        <div class="code">
+          pip install hdf5view
+        </div>
+        Run:<br>
+        <div class="code">
+          hdf5view
+        </div>
+
         <p>
           Find out if an H5 file contains a specific node:<br>
         <div class="code_new">
@@ -106,7 +135,7 @@
         </p>
 
         Data Types<br>
-        
+
         <a href="https://www.pytables.org/usersguide/libref/declarative_classes.html#the-col-class-and-its-descendants">
           https://www.pytables.org/usersguide/libref/declarative_classes.html#the-col-class-and-its-descendants
         </a><br>
