@@ -324,7 +324,7 @@
         At around epoch 400, the real prediction accuracy becomes a steady 1.00 and the fake prediction hovers around
         0.9<br>
         <div class="code_new">
-          epoch   0 acc_real 0.016 acc_fake 0.938
+          epoch 0 acc_real 0.016 acc_fake 0.938
           ..
           epoch 400 acc_real 1.000 acc_fake 0.844
           ..
@@ -337,22 +337,40 @@
           epoch 999 acc_real 1.000 acc_fake 0.859
         </div>
 
-
-
-
-
-
         <h5>non-random x-values</h5>
         In the code for generate_real_samples(), the x-values are random. <br>
         What happens if we use the same x-values in this function?<br>
 
-
-
-
-
-
-
         <a href=""> </a><br>
+      </div>
+
+      <div class="card">
+        <h2>Kaggle State Farm Distracted Driver Detection </h2>
+        <a href="https://www.kaggle.com/competitions/state-farm-distracted-driver-detection/overview">
+          https://www.kaggle.com/competitions/state-farm-distracted-driver-detection/overview </a><br><br>
+
+          Create conda environment<br>
+          <div class="code">
+            conda create -n kaggle_statefarm python=3.10
+          </div>
+  
+          Activate conda environment<br>
+          <div class="code">
+            conda activate kaggle_statefarm<br>
+          </div>
+  
+
+          Install packages<br>
+          <div class="code">
+            pip install ultralytics<br>
+            conda install ipython<br>
+            pip install roboflow<br>
+            from kaggle_secrets import UserSecretsClient<br>
+
+          </div>
+  
+
+
         <a href=""> </a><br>
       </div>
 
