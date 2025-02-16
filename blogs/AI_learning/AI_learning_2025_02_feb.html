@@ -122,18 +122,37 @@
           https://medium.com/@manasnandmohan/data-folder-structure-in-yolo-d335a05f6553 </a><br>
         <br>
 
-        The Statefarm Kaggle example<br>
-        <a href="https://www.kaggle.com/code/sayedgamal99/in-cabin-state-farm-distracted-driver-detection">
-          https://www.kaggle.com/code/sayedgamal99/in-cabin-state-farm-distracted-driver-detection
-        </a><br>
-        uses splitfolders() to generate the fodler structure required by YOLO.<br><br>
-
-
-
         "Split your directory automatically to train, validation & test folders"<br>
         <a href="https://www.kaggle.com/discussions/general/321868">
           https://www.kaggle.com/discussions/general/321868
         </a><br>
+
+        The Statefarm Kaggle example<br>
+        <a href="https://www.kaggle.com/code/sayedgamal99/in-cabin-state-farm-distracted-driver-detection">
+          https://www.kaggle.com/code/sayedgamal99/in-cabin-state-farm-distracted-driver-detection
+        </a><br>
+        uses splitfolders() to generate the folder structure required by YOLO.<br><br>
+
+        The downloaded zip file contains two folders: test and train.<br>
+        The test folder is not used, the train folder contains 0 folders according to classification.<br><br>
+
+        The function splitfolders()
+        <div class="code">
+          splitfolders.ratio(sourcefoldername, output=datasetfoldername, seed=32, ratio=(0.7, 0.15, 0.15))
+        </div>
+        splits the data from train to dataset into three folders, each with its 10 subfolders, according to
+        classification:
+        <br>
+        <img src="images/splitfolders_01.png" alt="splitfolders_01" height="400">
+        <br>
+
+        Organizing folders in this manner allows calling the YOLO train function to find the data<br>
+
+        <div class="code">
+          model = YOLO('yolo11s-cls.pt')<br>
+          model.train(data = datasetfoldername,..)
+        </div>
+
         <a href=""> </a><br>
 
       </div>
