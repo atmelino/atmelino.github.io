@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type="text/css" href="../../css/blog.css" media="all" rel="stylesheet">
+  <title></title>
+</head>
+
+<body>
+
+  <div class="header">
+    <table id="headerline_table">
+      <tr>
+        <td width="200">
+          <a href="../../index.html"><img src="../../images/home.png" alt="home" height="60"></a>
+          <a href="../../techtips/index.html"><img src="../../images/techtips.png" alt="scroll" height="60"></a>
+          <a href="../../techtips/pytorch/index.html"><img src="../../images/pytorch.png" alt="pytorch" height="60"></a>
+        </td>
+        <td id="headerline_cell">
+          <h2>Anaconda</h2>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="row">
+    <div class="leftcolumn">
+
+      <div class="card">
+        <h2>PyTorch and Cuda</h2>
+
+        If CUDA is already installed:<br>
+        What is my CUDA version?<br>
+
+        <div class="code">
+          nvidia-smi
+        </div>
+        returns version 12.2.<br>
+        <br>
+        PyTorch CUDA 12.2 was not available at the time of writing, but the PyTorch CUDA 12.1 version works fine with
+        CUDA v12.2:<br><br>
+        <a href="https://stackoverflow.com/questions/76678846/pytorch-version-for-cuda-12-2">
+          https://stackoverflow.com/questions/76678846/pytorch-version-for-cuda-12-2 </a><br><br>
+
+
+        Accordingly, set the option to 12.1 in the following command:<br>
+
+        <div class="code">
+          conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+        </div>
+        <br>
+        To test:<br>
+        <div class="code">
+          device = torch.device("cuda" if torch.cuda.is_available() else "cpu")<br>
+          print(f"Available Device : {device}")
+        </div>
+
+
+      </div>
+
+
+
+
+    </div>
+    <div class="rightcolumn">
+
+      <div class="card">
+        <h4>Category</h4>
+        <a href="installation.html">Installation</a><br>
+        <a href="usage.html">Usage</a><br>
+      </div>
+
+      <div class="card">
+        <h3>Follow Me</h3>
+        <a href="https://discord.gg/F7KQySEW"><img src="../../images/discord.png" alt="discord" height="30"></a>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="footer">
+    <h3>Modified July 2023</h3>
+  </div>
+</body>
+
+</html>
