@@ -211,8 +211,8 @@
             https://youtu.be/YiX9p8A7LqE?si=Hni41vCqaXtUX0tt </a><br>
           <br>
 
-          <a href="https://youtu.be/YiX9p8A7LqE?si=Hni41vCqaXtUX0tt"><img src="../images/GPUBuyingGuide.png" alt="GPUBuyingGuide"
-              width="800">  </a>
+          <a href="https://youtu.be/YiX9p8A7LqE?si=Hni41vCqaXtUX0tt"><img src="../images/GPUBuyingGuide.png"
+              alt="GPUBuyingGuide" width="800"> </a>
 
           <br>
           Spreadsheet at<br>
@@ -337,6 +337,40 @@
 
         <a href="https://www.amazon.com/ZOTAC-Graphics-IceStorm-Advanced-ZT-D40620F-10M/dp/B0CMJQZQC6/ref=sr_1_5">
           https://www.amazon.com/ZOTAC-Graphics-IceStorm-Advanced-ZT-D40620F-10M/dp/B0CMJQZQC6/ref=sr_1_5 </a><br>
+      </div>
+
+
+      <div class="card">
+        <h2>NVLINK</h2>
+        Is my NVLINK working?<br>
+
+        <div class="code_new">
+          nvidia-smi topo -m
+          GPU0 GPU1 CPU Affinity NUMA Affinity GPU NUMA ID
+          GPU0 X NV4 0-127 0 N/A
+          GPU1 NV4 X 0-127 0 N/A
+        </div>
+
+
+        <div class="code_new">
+
+          nvidia-smi nvlink -s
+          GPU 0: NVIDIA GeForce RTX 3090 (UUID: GPU-f6e3a2a1-9bc5-a557-1991-132f3247a986)
+          Link 0: 14.062 GB/s
+          Link 1: 14.062 GB/s
+          Link 2: 14.062 GB/s
+          Link 3: 14.062 GB/s
+          GPU 1: NVIDIA GeForce RTX 3090 (UUID: GPU-f7ed9067-79b5-7816-86b0-55cf5141323e)
+          Link 0: 14.062 GB/s
+          Link 1: 14.062 GB/s
+          Link 2: 14.062 GB/s
+          Link 3: 14.062 GB/s
+        </div>
+
+
+
+
+        <a href=""> </a><br>
       </div>
 
 
