@@ -120,7 +120,46 @@
         </div>
 
 
-
+        <div class="card">
+          <h2>Prediction</h2>
+          From the example at<br>
+  
+          <a href="https://www.kaggle.com/code/tirdadlajmouraki/transfer-learning-with-pytorch">
+            https://www.kaggle.com/code/tirdadlajmouraki/transfer-learning-with-pytorch
+          </a><br>
+          <br>
+  
+          applied to the example at<br>
+          <a href="https://learn-pytorch.oneoffcoder.com/model-persistence.html">
+            https://learn-pytorch.oneoffcoder.com/model-persistence.html
+          </a><br>
+          <br>
+  
+          <div class="code">
+            val_loader = DataLoader(val_image_folder, batch_size=4, shuffle=False)
+          </div>
+          will provide 4 inputs to the predictor at a time (batch_size=4).<br>
+          <div class="code">
+            outputs = model(inputs)
+          </div>
+          generates the predictions.<br>
+          Since there are three shapes, one of the outputs in the loop will be<br>
+          <div class="code">
+            [-1.1430, 2.0940, -1.7959],<br>
+            [ 0.3532, -0.4959, -0.7845],<br>
+            [ 1.2950, -1.5365, -0.6781],<br>
+            [-0.3655, 1.1077, -1.8694]
+          </div>
+          meaning that the probabilities for the first input are such the the second shape is the most likely.<br>
+          <div class="code">
+            _, predicted = torch.max(outputs.data, 1)
+          </div>
+          sets predicted to the most likely shape in the first batch of 4:<br>
+          <div class="code">
+            [1, 0, 0, 1]
+          </div>
+  
+  
 
 
 
