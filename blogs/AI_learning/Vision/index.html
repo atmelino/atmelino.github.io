@@ -116,35 +116,7 @@
         <h2>stylegan3</h2>
         <a href="https://github.com/NVlabs/stylegan3">https://github.com/NVlabs/stylegan3 </a><br>
 
-        <h5> Preparing datasets</h5>
-        Download the flickrfaces dataset:<br>
-
-        <a href="https://github.com/NVlabs/ffhq-dataset/tree/master">
-          https://github.com/NVlabs/ffhq-dataset/tree/master</a><br><br>
-
-        Running the download script leads to an error:<br>
-        <div class="output">
-          OSError: [Errno Incorrect file size] ffhq-dataset-v2.json
-        </div>
-        <br>
-        Solution:<br>
-        <a href="https://github.com/NVlabs/stylegan2-ada/issues/115">
-          https://github.com/NVlabs/stylegan2-ada/issues/115</a><br>
-        <br>
-        Open a browser at<br>
-        <a href="https://drive.usercontent.google.com/download?id=16N0RV4fHI6joBuKbQAoG34V_cQk7vxSA&export=download">
-          https://drive.usercontent.google.com/download?id=16N0RV4fHI6joBuKbQAoG34V_cQk7vxSA&export=download
-        </a><br>
-        Download the file named ffhq-dataset-v2.json.<br>
-        <br>
-        Place the file ffhq-dataset-v2.json and the script named download_ffhq.py in the same directory <br>
-        <br>
-        Run the script with<br>
-        <div class="code">
-          python3 download_ffhq.py --json --images
-        </div>
-
-        <h5> Set up environment</h5>
+        <h4> Set up Conda Environment</h4>
         Download stylegan3<br>
         <div class="code">
           mkdir local_data<br>
@@ -152,18 +124,27 @@
           git clone https://github.com/NVlabs/stylegan3.git<br>
         </div>
 
-        Modify environment.yml to prevent numpy version warning:<br>
+        <!-- Modify environment.yml to prevent numpy version warning:<br>
         in stylegan3/environment.yml<br>
         Change numpy line to <br>
         <div class="code">
           - numpy=1.22
-        </div>
+        </div> -->
 
         Download packages<br>
         <div class="code">
           cd stylegan3<br>
           conda env create -f environment.yml<br>
           conda activate stylegan3<br>
+        </div>
+
+        To utilize datasets from huggingface:<br>
+        <div class="code">
+          pip install datasets
+        </div>
+
+        This will prevent an error ModuleNotFoundError: No module named 'psutil'        <br>
+        <div class="code">
           conda install -c conda-forge psutil -y<br>
         </div>
 
@@ -201,6 +182,39 @@
         <a href=""> </a><br>
 
         </p>
+
+
+
+
+
+        <h4> Preparing flickrfaces dataset</h4>
+        Download the flickrfaces dataset:<br>
+
+        <a href="https://github.com/NVlabs/ffhq-dataset/tree/master">
+          https://github.com/NVlabs/ffhq-dataset/tree/master</a><br><br>
+
+        Running the download script leads to an error:<br>
+        <div class="output">
+          OSError: [Errno Incorrect file size] ffhq-dataset-v2.json
+        </div>
+        <br>
+        Solution:<br>
+        <a href="https://github.com/NVlabs/stylegan2-ada/issues/115">
+          https://github.com/NVlabs/stylegan2-ada/issues/115</a><br>
+        <br>
+        Open a browser at<br>
+        <a href="https://drive.usercontent.google.com/download?id=16N0RV4fHI6joBuKbQAoG34V_cQk7vxSA&export=download">
+          https://drive.usercontent.google.com/download?id=16N0RV4fHI6joBuKbQAoG34V_cQk7vxSA&export=download
+        </a><br>
+        Download the file named ffhq-dataset-v2.json.<br>
+        <br>
+        Place the file ffhq-dataset-v2.json and the script named download_ffhq.py in the same directory <br>
+        <br>
+        Run the script with<br>
+        <div class="code">
+          python3 download_ffhq.py --json --images
+        </div>
+
       </div>
 
       <div class="card">
@@ -351,25 +365,25 @@
         <a href="https://www.kaggle.com/competitions/state-farm-distracted-driver-detection/overview">
           https://www.kaggle.com/competitions/state-farm-distracted-driver-detection/overview </a><br><br>
 
-          Create conda environment<br>
-          <div class="code">
-            conda create -n kaggle_statefarm python=3.10
-          </div>
-  
-          Activate conda environment<br>
-          <div class="code">
-            conda activate kaggle_statefarm<br>
-          </div>
-  
+        Create conda environment<br>
+        <div class="code">
+          conda create -n kaggle_statefarm python=3.10
+        </div>
 
-          Install packages<br>
-          <div class="code">
-            pip install ultralytics<br>
-            conda install ipython<br>
-            pip install roboflow<br>
+        Activate conda environment<br>
+        <div class="code">
+          conda activate kaggle_statefarm<br>
+        </div>
 
-          </div>
-  
+
+        Install packages<br>
+        <div class="code">
+          pip install ultralytics<br>
+          conda install ipython<br>
+          pip install roboflow<br>
+
+        </div>
+
 
 
         <a href=""> </a><br>
