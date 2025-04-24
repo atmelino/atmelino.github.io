@@ -137,17 +137,23 @@
           conda env create -f environment.yml<br>
           conda activate stylegan3<br>
         </div>
-
+        <br>
         To utilize datasets from huggingface:<br>
         <div class="code">
           pip install datasets
         </div>
-
-        This will prevent an error ModuleNotFoundError: No module named 'psutil'        <br>
+        <br>
+        To prevent the error "ModuleNotFoundError: No module named 'psutil'":" <br>
         <div class="code">
           conda install -c conda-forge psutil -y<br>
         </div>
-
+        <br>
+        To run the Jeff Heaton examples in chapter 7:<br>
+        <div class="code">
+          conda install ipython<br>
+          conda install -c conda-forge jupyter -y
+        </div>
+        <br>
         Don't
         <div class="code">
           conda install -c conda-forge tensorboard -y<br>
@@ -155,8 +161,9 @@
         because it causes the training to crash with<br>
         AttributeError: module 'distutils' has no attribute 'version'<br>
 
-        <p>
 
+
+        <p>
           On Ubuntu Server 24.04, after installing as above, when calling train.py, get error<br>
         <div class="output">
           Error building extension 'bias_act_plugin'
