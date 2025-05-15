@@ -289,20 +289,54 @@
       <div class="card">
         <h2>May 14, 2025</h2>
 
-        The code in the chapter "Biological Response with Neural Network" in module 8 part 2 does nit run, giving the
+        The code in the chapter "Biological Response with Neural Network" in module 8 part 2 does not run, giving the
         error:<br>
         <div class="output">
           ModuleNotFoundError: No module named 'tensorflow.keras.wrappers'
         </div>
 
+        Brave search "ModuleNotFoundError: No module named 'tensorflow.keras.wrappers'",<br>
+        AI recommends two options:<br>
+        <p>
+          "As of TensorFlow 2.15, the wrappers submodule under tensorflow.keras has been removed. To resolve this issue,
+          you can either uninstall the current version of TensorFlow and install an earlier version where the wrappers
+          submodule is still available,"
+        </p>
+        <h5>Attempt 1</h5>
+        <div class="code">
+          pip install scikeras
+        </div>
+        in the existing jh_class environment failed.
+        failed
 
-
+        <h5>Attempt 2</h5>
+        <div class="code">
+          conda create -n ensemble python=3.7
+        </div>
+        <div class="code">
+          conda install -c conda-forge numpy -y<br>
+          conda install -c conda-forge pandas -y<br>
+          conda install -c conda-forge tensorflow -y<br>
+          pip install scikit-learn<br>
+        </div>
+        This works.
 
         <a href=""> </a><br>
       </div>
 
       <div class="card">
-        <h2>Date</h2>
+        <h2>May 15, 2025</h2>
+
+        The jupyter notebook shows a depracation warning, recommending to visit<br>
+
+        <a href="https://adriangb.com/scikeras/stable/migration.html">
+          https://adriangb.com/scikeras/stable/migration.html </a><br>
+
+        <br>
+
+        <a href="https://adriangb.com/scikeras/stable/">
+          https://adriangb.com/scikeras/stable/ </a><br>
+
         <a href=""> </a><br>
       </div>
 
