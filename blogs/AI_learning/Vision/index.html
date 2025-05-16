@@ -42,15 +42,17 @@
         <br>
 
         At the top of the page, a note says:<br>
-        This example uses Keras 3<br>
+        This example uses Keras 3.<br><br>
 
+        we will try to install the most current packages as of December 2024 to run this example<br><br>
+
+        In order to get keras version 3, we need to install a tensorflow version 2.16 or later.<br><br>
       </div>
 
       <div class="card">
         <h2>Python Environment and Package Versions</h2>
-        we will try to install the most current packages as of December 2024 to run this example<br><br>
 
-        In order to get keras version 3, we need to install a tensorflow version 2.16 or later.<br><br>
+        <h4>conda vision environment</h4>
         <p>
           Creating a defined environment
         </p>
@@ -83,13 +85,19 @@
 
 
         <h5>Install yolo5</h5>
-        <a href="https://github.com/ultralytics/yolov5"> https://github.com/ultralytics/yolov5</a><br>
+
+        <a href="https://github.com/ultralytics/yolov5"> https://github.com/ultralytics/yolov5 </a><br>
 
         <div class="code">
+          mkdir local_data<br>
+          cd local_data<br>
           git clone https://github.com/ultralytics/yolov5<br>
           cd yolov5<br>
-          pip install -r requirements.txt
+          pip install -r requirements.txt<br>
+          pip install ninja
         </div>
+        This will also install PyTorch which will be used in later examples.
+
 
 
         <a href=""> </a><br>
@@ -116,7 +124,16 @@
         <h2>stylegan3</h2>
         <a href="https://github.com/NVlabs/stylegan3">https://github.com/NVlabs/stylegan3 </a><br>
 
-        <h4> Set up Conda Environment</h4>
+        <h4> conda environment: stylegan3</h4>
+        <div class="code">
+          mkdir local_data<br>
+          cd local_data<br>
+          git clone https://github.com/NVlabs/stylegan3.git<br>
+          cd stylegan3<br>
+          conda env create -f environment.yml<br>
+          conda install ipython<br>
+        </div>
+
         Download stylegan3<br>
         <div class="code">
           mkdir local_data<br>
@@ -223,38 +240,6 @@
         </div>
 
       </div>
-
-      <div class="card">
-        <h2>tabgan</h2>
-        <a href="https://github.com/Diyago/Tabular-data-generation">
-          https://github.com/Diyago/Tabular-data-generation
-        </a><br>
-        <br>
-        To run the included example:<br><br>
-        Create conda environment<br>
-        <div class="code">
-          conda create -n mytabgan python=3.10
-        </div>
-
-        Activate conda environment<br>
-        <div class="code">
-          conda activate mytabgan<br>
-        </div>
-
-        Install packages<br>
-        <div class="code">
-          conda install -y pandas<br>
-          pip install tabgan<br>
-        </div>
-        <br>
-        To run the J. Heaton code in module 7.2:<br><br>
-        <div class="code">
-          conda install -c conda-forge tensorflow=2.15.0 -y
-          <br>
-        </div>
-        <a href=""> </a><br>
-      </div>
-
 
 
       <div class="card">

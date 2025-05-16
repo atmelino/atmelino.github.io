@@ -51,7 +51,7 @@
           https://www.heatonresearch.com/
         </a><br>
 
-        <a href="https://hub.docker.com/u/heatonresearch"> 
+        <a href="https://hub.docker.com/u/heatonresearch">
           https://hub.docker.com/u/heatonresearch
         </a><br>
 
@@ -59,12 +59,13 @@
 
 
       <div class="card">
-        <h2>Setting up the Python Environment</h2>
+        <h2>Setting up the Python Environments</h2>
         <p>
           Conda allows us to set up a defined environment with specific versions of the python version as well as
           of the packages.
-
         </p>
+        <h4>conda environment: jh_class</h4>
+        This environment works with most of the modules in the class.<br>
         <div class="code">
           conda create -n jh_class python=3.10
         </div>
@@ -103,39 +104,61 @@
           conda install -c conda-forge tensorflow-datasets -y
         </div>
         <br>
-        <h5>Installing YOLO</h5>
-        <a href="https://github.com/ultralytics/yolov5">https://github.com/ultralytics/yolov5 </a><br>
-
-        <div class="code">
-          mkdir local_data<br>
-          cd local_data<br>
-          git clone https://github.com/ultralytics/yolov5<br>
-          cd yolov5<br>
-          pip install -r requirements.txt<br>
-          pip install ninja
-        </div>
-        This will also install PyTorch which will be used in later examples.
 
         <br>
-        <h5>Installing StyleGAN</h5>
-
+        <h4>conda environment: stylegan3</h4>
+        Module 7 Part 7.2<br><br>
         The class module of class 07_2 uses stylegan2, however the environment did not work with the RTX 3090
         card.<br>
         Instead, I am using the stylegan3 examples from <br>
         <a href="https://github.com/NVlabs/stylegan3">https://github.com/NVlabs/stylegan3 </a><br>
-        <div class="code">
-          mkdir local_data<br>
-          cd local_data<br>
-          git clone https://github.com/NVlabs/stylegan3.git<br>
-          cd stylegan3<br>
-          conda env create -f environment.yml<br>
-          conda install ipython<br>
-        </div>
 
-        <h5>Installing tabgan</h5>
+        Details on the stylgan3 environment are on the computer vision page:<br>
+
+        <a href="../Vision/index.html">Computer Vision </a><br>
+
+
+        <h4>conda environment: tabgan</h4>
+        Module 7 Part 7.5<br><br>
         Adding tabgan to jh_class will corrupt the jh_class environment such that the class programs
         will not run any longer,<br><br>
         It is better to create a separate conda environment for the tabgan module 7.5.
+        <br>
+        <a href="https://github.com/Diyago/Tabular-data-generation">
+          https://github.com/Diyago/Tabular-data-generation
+        </a><br>
+        <br>
+        To run the included example:<br><br>
+        Create conda environment<br>
+        <div class="code">
+          conda create -n mytabgan python=3.10
+        </div>
+
+        Activate conda environment<br>
+        <div class="code">
+          conda activate mytabgan<br>
+        </div>
+
+        Install packages<br>
+        <div class="code">
+          conda install -y pandas<br>
+          pip install tabgan<br>
+        </div>
+        <br>
+
+
+        <h4>conda environment: ensemble</h4>
+        Module 8 Part 8.2 - Biological Response with Neural Network<br><br>
+
+        <div class="code">
+          conda create -n ensemble python=3.7
+        </div>
+        <div class="code">
+          conda install -c conda-forge numpy -y<br>
+          conda install -c conda-forge pandas -y<br>
+          conda install -c conda-forge tensorflow -y<br>
+          pip install scikit-learn<br>
+        </div>
 
         <a href=""> </a><br>
       </div>
