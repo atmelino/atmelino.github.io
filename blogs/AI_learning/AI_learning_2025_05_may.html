@@ -338,12 +338,34 @@
           https://adriangb.com/scikeras/stable/ </a><br>
         <br>
 
+
+        <a href=""> </a><br>
+      </div>
+
+
+      <div class="card">
+        <h2>May 16, 2025</h2>
         What does model.predict_proba() do? <br><br>
-        Brave search:<br>
+        Brave search "kera api predict_proba":<br>
         "this function has been deprecated in Tensorflow version 2.6 and later versions of Keras. Instead, you should
         use the predict() function directly to achieve similar results."<br>
+        <br>
+        Where is the source code for the function predict_proba() ?<br><br>
 
-        
+        Open terminal.<br>
+        <div class="code">
+          cd ~/miniconda3/envs/ensemble/lib/python3.7<br>
+          grep -r "def predict_proba("
+        </div>
+        This will list a number of files, such as<br>
+        <div class="output">
+          site-packages/keras/wrappers/scikit_learn.py:<br>
+          def predict_proba(self, x, **kwargs):
+        </div>
+        This is the function that is called when the model is Sequential().<br>
+        <p>
+          The function predict_proba() basically just calls predict().
+        </p>
 
 
 
@@ -351,7 +373,6 @@
 
         <a href=""> </a><br>
       </div>
-
 
       <div class="card">
         <h2>Date</h2>
