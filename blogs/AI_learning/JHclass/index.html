@@ -79,13 +79,20 @@
         <div class="code">
           conda install -c conda-forge tensorflow=2.15.0 -y<br>
           conda install -c conda-forge pandas=2.2.0 -y<br>
-          conda install -c conda-forge scikit-learn=1.4.1 -y<br>
+          conda install -c conda-forge scikit-learn=1.6.1 -y<br>
           conda install -c conda-forge matplotlib=3.8.3 -y<br>
           conda install -c conda-forge ipython=8.21.0 -y<br>
           conda install -c conda-forge transformers=4.37.2 -y<br>
           conda install -c conda-forge jupyter=1.0.0 -y<br>
           conda install -c conda-forge sentencepiece=0.1.99 -y<br>
           conda install -c conda-forge click=8.0.4 -y<br>
+        </div>
+        Install packages (without version number):<br>
+        <div class="code">
+          conda install -c conda-forge imageio -y<br>
+          conda install -c conda-forge keras-preprocessing -y<br>
+          conda install -c conda-forge pydot -y<br>
+          conda install -c conda-forge tensorflow-datasets -y
         </div>
         <br>
         This command lists the package versions that are installed in the currently active environment:<br>
@@ -96,20 +103,10 @@
         <a href="versions_cpu.txt"> Computer without GPU</a><br>
         <a href="versions_gpu.txt"> Computer with GPU</a><br>
         <br>
-        Install packages (without version number):<br>
-        <div class="code">
-          conda install -c conda-forge imageio -y<br>
-          conda install -c conda-forge keras-preprocessing -y<br>
-          conda install -c conda-forge pydot -y<br>
-          conda install -c conda-forge tensorflow-datasets -y
-        </div>
-        <br>
-
-        <br>
         <h4>conda environment: stylegan3</h4>
         Module 7 Part 7.2<br><br>
         The class module of class 07_2 uses stylegan2, however the environment did not work with the RTX 3090
-        card.<br>
+        card.<br><br>
         Instead, I am using the stylegan3 examples from <br>
         <a href="https://github.com/NVlabs/stylegan3">https://github.com/NVlabs/stylegan3 </a><br>
 
