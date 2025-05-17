@@ -366,9 +366,41 @@
         <p>
           The function predict_proba() basically just calls predict().
         </p>
+        <a href=""> </a><br>
+      </div>
 
+      <div class="card">
+        <h2>May 16, 2025</h2>
+        <h3>Structure of class_08_2_keras_ensembles_bio_blend.py</h3>
 
+        <h5>main program</h5>
+        The file bio_train.csv contains the training data.<br>
+        It contains and 3751 rows and 1777 columns.<br>
+        The first column named "activity" is the target.<br>
+        All the other columns are the predictors.<br>
+        <ul>
+          <li>The predictor values are read into the variable x and it is of shape (3751, 1776)</li>
+          <li>The target values are read into the variable y and it is of shape (3751,)</li>
+        </ul>
+        The file bio_test.csv contains the data for which a prediction will be made.<br>
+        It contains and 2501 rows and 1776 columns.<br>
+        Since it is meant for the Kaggle submission, it does not contain the target
+        column ("solution")<br>
+        <ul>
+          <li>The predictor values for the submission are read into the variable x_submit and it is of shape (2501,
+            1776)</li>
+        </ul>
 
+        The blend_ensemble(x, y, x_submit) is called and it returns the variable submit_data which is of shape (2501,
+        2).<br>
+        <br>
+        The values in submit_data are then stretched such that the smallest value becomes 0 and the largest value
+        becomes 1.<br>
+        <br>
+        Finally, an index column and the column 1 (second column) of submit_data are provided with the labels
+        "MoleculeId" and "PredictedProbability" and saved to the submission file named "submit.csv".
+
+        <h5>blend_ensemble() function</h5>
 
 
         <a href=""> </a><br>
