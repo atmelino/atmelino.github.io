@@ -400,23 +400,75 @@
         Finally, an index column and the column 1 (second column) of submit_data are provided with the labels
         "MoleculeId" and "PredictedProbability" and saved to the submission file named "submit.csv".
 
-        <h5>blend_ensemble() function</h5>
-
-
         <a href=""> </a><br>
       </div>
 
       <div class="card">
-        <h2>May 17, 2025</h2>
+        <h2>May 18, 2025</h2>
 
-        <h5>Using KFolds with Ensembles</h5>
+        <h5>blend_ensemble() function</h5>
+        The blend_ensemble() function starts by generating the indices for a stratified KFold.<br>
+        Use<br>
+        <ul>
+          <li>KFold When dealing with a regression problem.</li>
+          <li>StratifiedKFold When dealing with a classification problem.</li>
+        </ul>
 
-        Use of a KFold with a single model:<br>
+        <h5>Use of a Stratified KFold with a single model</h5>
 
-        
+        The function
+        <div class="code">
+          kf.split(x,y)
+        </div>
+        simply generates indices for the elements of the dataset.<br><br>
+
+        Each fold contains the indices of all elements, just in different variations.<br><br>
+        Example:<br>
+        The dataset is
+        <div class="code">
+          x = np.array([[1.1, 1.2], [2.1, 2.2], [3.1, 3.2], [4.1, 4.2], [5.1,5.2], [6.1, 6.2]])<br>
+          y = np.array(["cat", "rabbit", "rabbit", "cat", "rabbit", "cat"])
+        </div>
+        Then the code
+        <div class="code">
+          kf = StratifiedKFold(2)<br>
+          for i, (train_index, test_index) in enumerate(kf.split(x,y)):<br>
+          print() etc.
+        </div>
+
+Fold 0:
+  Train: index=[2 4 5]
+x values=
+ [[3.1 3.2]
+ [5.1 5.2]
+ [6.1 6.2]]
+y values=
+ ['rabbit' 'rabbit' 'cat']
+  Test:  index=[0 1 3]
+x values=
+ [[1.1 1.2]
+ [2.1 2.2]
+ [4.1 4.2]]
+y values=
+ ['cat' 'rabbit' 'cat']
+Fold 1:
+  Train: index=[0 1 3]
+x values=
+ [[1.1 1.2]
+ [2.1 2.2]
+ [4.1 4.2]]
+y values=
+ ['cat' 'rabbit' 'cat']
+  Test:  index=[2 4 5]
+x values=
+ [[3.1 3.2]
+ [5.1 5.2]
+ [6.1 6.2]]
+y values=
+ ['rabbit' 'rabbit' 'cat']
 
 
-
+        <h5>Using Stratified KFolds with Ensembles</h5>
 
 
 
