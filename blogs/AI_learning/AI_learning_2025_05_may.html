@@ -435,37 +435,57 @@
           for i, (train_index, test_index) in enumerate(kf.split(x,y)):<br>
           print() etc.
         </div>
+        produces the following 2 folds:<br>
+        <table style="width:90%">
+          <tr>
+            <th> </th>
+            <th> Fold 0</th>
+            <th> Fold 1</th>
+          </tr>
+          <tr>
+            <td style="width:10%">
+              <br>
+              index<br>
+              x values<br>
+              y values<br><br>
+              <br>
+              index<br>
+              x values<br>
+              y values
+            </td>
+            <td style="width:40%">
+              Train:<br>
+              [2 4 5]<br>
+              [[3.1 3.2]
+              [5.1 5.2]
+              [6.1 6.2]]<br>
+              ['rabbit' 'rabbit' 'cat']<br><br>
+              Test:<br>
+              [0 1 3]<br>
+              [[1.1 1.2]
+              [2.1 2.2]
+              [4.1 4.2]]<br>
+              ['cat' 'rabbit' 'cat']
+            </td>
+            <td style="width:40%">
+              Train:<br>
+              [0 1 3]<br>
+              [[1.1 1.2]
+              [2.1 2.2]
+              [4.1 4.2]]<br>
+              ['cat' 'rabbit' 'cat']<br><br>
+              Test:<br>
+              [2 4 5]<br>
+              [[3.1 3.2]
+              [5.1 5.2]
+              [6.1 6.2]]<br>
+              ['rabbit' 'rabbit' 'cat']
+            </td>
+          </tr>
+        </table>
 
-Fold 0:
-  Train: index=[2 4 5]
-x values=
- [[3.1 3.2]
- [5.1 5.2]
- [6.1 6.2]]
-y values=
- ['rabbit' 'rabbit' 'cat']
-  Test:  index=[0 1 3]
-x values=
- [[1.1 1.2]
- [2.1 2.2]
- [4.1 4.2]]
-y values=
- ['cat' 'rabbit' 'cat']
-Fold 1:
-  Train: index=[0 1 3]
-x values=
- [[1.1 1.2]
- [2.1 2.2]
- [4.1 4.2]]
-y values=
- ['cat' 'rabbit' 'cat']
-  Test:  index=[2 4 5]
-x values=
- [[3.1 3.2]
- [5.1 5.2]
- [6.1 6.2]]
-y values=
- ['rabbit' 'rabbit' 'cat']
+        <img src="images/kfolds1.png" alt="kfolds1" width="700">
+
 
 
         <h5>Using Stratified KFolds with Ensembles</h5>
