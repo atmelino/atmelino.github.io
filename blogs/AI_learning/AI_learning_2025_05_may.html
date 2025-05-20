@@ -486,9 +486,17 @@
 
         <img src="images/kfolds1.png" alt="kfolds1" width="700">
 
-
-
         <h5>Using Stratified KFolds with Ensembles</h5>
+        The blend_ensemble() function receives the parameters x,y, and x_submit and creates a stratified K-Fold with the
+        parameters for the predictors and targets from the file bio_train.csv.
+
+        <div class="code">
+          folds = list(kf.split(x, y))
+        </div>
+        The list() function converts the folds into an array of the folds.<br>
+
+        The program then creates an array of various models.<br>
+        Two new variables dataset_blend_train and dataset_blend_test are created to hold the predictions for later blending.<br>
 
 
 
