@@ -345,13 +345,25 @@
 
       <div class="card">
         <h2>May 16, 2025</h2>
-        What does model.predict_proba() do? <br><br>
-        Brave search "kera api predict_proba":<br>
-        "this function has been deprecated in Tensorflow version 2.6 and later versions of Keras. Instead, you should
-        use the predict() function directly to achieve similar results."<br>
-        <br>
-        Where is the source code for the function predict_proba() ?<br><br>
 
+        <h5>model.predict_proba()</h5>
+        What does model.predict_proba() do? <br>
+        <br>
+        Brave search "proba returns two values":<br>
+        The predict_proba function in scikit-learn returns an array where each row corresponds to a sample and each
+        column corresponds to a class probability. When there are two classes, the function returns a 2-column array,
+        where the first column represents the probability of the sample belonging to the first class, and the second
+        column represents the probability of the sample belonging to the second class.<br>
+        Example:
+        <div class="output">
+          [0.3 0.7 ]<br>
+          [0.68 0.32]<br>
+          [0.47 0.53]
+        </div>
+        For the first sample, the probability for the first class is 30%, and for the second class it is 70%.<br>
+        <br>
+        Where is the source code for the function predict_proba() ?<br>
+        <br>
         Open terminal.<br>
         <div class="code">
           cd ~/miniconda3/envs/ensemble/lib/python3.7<br>
@@ -363,9 +375,13 @@
           def predict_proba(self, x, **kwargs):
         </div>
         This is the function that is called when the model is Sequential().<br>
-        <p>
-          The function predict_proba() basically just calls predict().
-        </p>
+        <br>
+        Deprecation warning<br><br>
+        Brave search "kera api predict_proba":<br>
+        "this function has been deprecated in Tensorflow version 2.6 and later versions of Keras. Instead, you should
+        use the predict() function directly to achieve similar results."<br>
+
+
         <a href=""> </a><br>
       </div>
 
@@ -494,9 +510,41 @@
           folds = list(kf.split(x, y))
         </div>
         The list() function converts the folds into an array of the folds.<br>
-
+        <br>
         The program then creates an array of various models.<br>
-        Two new variables dataset_blend_train and dataset_blend_test are created to hold the predictions for later blending.<br>
+        <br>
+        Two new variables dataset_blend_train and dataset_blend_test are created
+        to hold the predictions for later blending:<br>
+        <br>
+        dataset_blend_train is of shape (3751,7)<br>
+        - 3751 is the number of rows in the training and 7 is the number of models
+        <br><br>
+        dataset_blend_test is of shape (2501,7)<br>
+        - 2501 is the number of rows in the submit data and 7 is the number of models
+
+
+
+        <a href=""> </a><br>
+      </div>
+
+      <div class="card">
+        <h2>May 20, 2025</h2>
+        <h5>blend_ensemble() function continued</h5>
+
+        The code then contains a nested loop:<br>
+        - the outer loop iterates over the 7 models<br>
+        - the inner loop iterates over the 10 folds.<br>
+        <br>
+        The outer loop begins by creating the variable named fold_sums which is of shape (3751,10).<br>
+        The columns of this variable will be filled in the inner loop with values that pertain to the submit
+        dataset.<br><br>
+
+        In the inner loop, the predictors for training and testing are read into the variables x_train and x_test,
+        using the indices of each according fold.<br>
+        Since the number of folds is 10, x_train will have 3376 rows and x_test will have 375 rows.<br>
+        3376+375=3751<br>
+        <br>
+        The target values are read into the variables y_train and y_test in an equivalent manner.<br><br>
 
 
 
