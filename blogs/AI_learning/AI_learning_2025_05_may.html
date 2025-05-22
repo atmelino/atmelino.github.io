@@ -544,10 +544,24 @@
         Since the number of folds is 10, x_train will have 3376 rows and x_test will have 375 rows.<br>
         3376+375=3751<br>
         <br>
-        The target values are read into the variables y_train and y_test in an equivalent manner.<br><br>
+        The target values are read into the variables y_train and y_test in an equivalent manner.<br>
+        <br>
+        Then the model (which is selected in the outer loop from 7 models) is trained.<br>
+        <br>
+        The predictions for x_test are stored in the variable named pred.<br>
+        <br>
 
-        Then the model (which is selected in the outer loop from 7 models) is trained.<br><br>
-        
+        The following line fills up the (3751,7) array named dataset_blend_train with the predictions for each
+        model (j is the loop variable for the models):<br>
+        <div class="code">
+          dataset_blend_train[test, j] = pred[:, 1]
+        </div>
+        Because we are working with 10 folds, we only get 375 values in each fold iteration.<br>
+        (376 values in the first fold because 3751 doesn't divide by ten)<br>
+        <br>
+        Each prediction is placed in the correct row in dataset_blend_train by making use of the indices that are stored
+        in the test variable.<br>
+
 
         <a href=""> </a><br>
       </div>
