@@ -561,7 +561,8 @@
         <br>
         Each prediction is placed in the correct row in dataset_blend_train by making use of the indices that are stored
         in the test variable.<br>
-
+        <br>
+        Simplified Example:<br>
 
         <img src="images/ensemble_folds.png" alt="ensemble_folds" width="800">
         <br>
@@ -603,6 +604,25 @@
         </script>
 
 
+
+        <a href=""> </a><br>
+      </div>
+
+      <div class="card">
+        <h2>May 23, 2025</h2>
+        <h5>blend_ensemble() function continued</h5>
+
+        The model is used again to compute the predictions for the submit dataset.<br>
+        The predicitions are stored in the pred2 variable.<br>
+        For each fold in the current model, the predicitions are saved in the fold_sums variable.<br>
+        <br>
+
+        After the loop for the folds has completed, we end up with a fold_sums variable that contains the predictions
+        for the submit inputs, for each of the ten folds.<br>
+        <br>
+        The code now computes the mean value for each row in the fold_sums variable and stores it in the according
+        column of the dataset_blend_test variable.<br>
+        <br>
 
         <a href=""> </a><br>
       </div>
