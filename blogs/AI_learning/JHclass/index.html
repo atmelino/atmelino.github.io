@@ -287,7 +287,7 @@
 
       <div class="card">
         <h2>Create PDF from jupyter notebook</h2>
-        <h4>Using nbconvert</h4>
+        <h4>Using nbconvert: export to PDF</h4>
         <a href="https://saturncloud.io/blog/how-to-export-jupyter-notebook-by-vscode-in-pdf-format/">
           https://saturncloud.io/blog/how-to-export-jupyter-notebook-by-vscode-in-pdf-format/ </a><br>
         requires TeX<br>
@@ -297,15 +297,24 @@
         <div class="code">
           pip install nbconvert PyPDF2
         </div>
+        <br>
         - Open the notebook in VS Code or Codium<br>
         - press CTRL-SHIFT-P<br>
-        - type Export to PDF<br>
+        - type Export<br>
+        - choose Jupyter: Export to PDF<br>
         <br>
 
-        <h4>Using Html, does not require installing TeX</h4>
-        - File -> Save As Html (in file requester, scroll to HTML)<br>
-        - Open in browser<br>
+        <h4>Using nbconvert: export to Html</h4>
+        Does not require TeX, but sometimes fails<br>
+        <br>
+        - Open the notebook in VS Code or Codium<br>
+        - press CTRL-SHIFT-P<br>
+        - type Export<br>
+        - choose Jupyter: Export to Html<br>
+        - Open Html file in browser<br>
         - Print to PDF
+        <br>
+
 
         <a href=""> </a><br>
       </div>
