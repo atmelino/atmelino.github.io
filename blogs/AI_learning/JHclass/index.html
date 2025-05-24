@@ -287,10 +287,23 @@
 
       <div class="card">
         <h2>Create PDF from jupyter notebook</h2>
-        - Open in VS Code or Codium<br>
-        - Export to PDF<br><br>
-        without install TeX:<br>
-        - Export to Html<br>
+        <h4>Using nbconvert</h4>
+        <a href="https://saturncloud.io/blog/how-to-export-jupyter-notebook-by-vscode-in-pdf-format/">
+          https://saturncloud.io/blog/how-to-export-jupyter-notebook-by-vscode-in-pdf-format/ </a><br>
+        requires TeX<br>
+        <a href="https://nbconvert.readthedocs.io/en/latest/install.html#installing-tex">
+          https://nbconvert.readthedocs.io/en/latest/install.html#installing-tex
+        </a><br>
+        <div class="code">
+          pip install nbconvert PyPDF2
+        </div>
+        - Open the notebook in VS Code or Codium<br>
+        - press CTRL-SHIFT-P<br>
+        - type Export to PDF<br>
+        <br>
+
+        <h4>Using Html, does not require installing TeX</h4>
+        - File -> Save As Html<br>
         - Open in browser<br>
         - Print to PDF
 
