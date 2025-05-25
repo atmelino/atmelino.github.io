@@ -659,6 +659,34 @@
         <a href=""> </a><br>
       </div>
 
+
+
+      <div class="card">
+        <h2>May 24, 2025</h2>
+        Module 8.4, Bayesian Hyperparameter
+        Optimization for Keras<br>
+        <br>
+        Code works on laptop without GPU.<br>
+        On server with GPU and CUDA installed, get error
+        <div class="output">
+          ValueError: Cannot convert '(500, 125.0)' to a shape. Found invalid entry '125.0' of type '<class 'float'>'.
+        </div>
+
+        Changing line
+        <div class="code">
+          neuronCount = neuronCount * neuronShrink
+        </div>
+        to
+        <div class="code">
+          neuronCount = round(neuronCount * neuronShrink)
+        </div>
+        solves the problem.<br>
+
+        <a href=""> </a><br>
+      </div>
+
+
+
       <div class="card">
         <h2>Date</h2>
         <a href=""> </a><br>

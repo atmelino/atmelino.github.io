@@ -61,11 +61,11 @@
         <h5>First create a specific environment for conda</h5>
 
         <div class="code">
-          conda create -y --name tensorflow python=3.6
+          conda create -y --name mytensorflow python=3.6
         </div>
         Then activate this environment before installing packages!<br>
         <div class="code">
-          conda activate tensorflow
+          conda activate mytensorflow
         </div>
 
         Make sure to switch to the according conda environment before installing packages!<br>
@@ -73,6 +73,11 @@
         List all environments and locations
         <div class="code">
           conda info --envs
+        </div>
+        <br>
+        Remove package from environment
+        <div class="code">
+          conda uninstall --name ENVNAME PKGNAME
         </div>
         <br>
         Delete environment by name<br>
@@ -84,6 +89,7 @@
         <div class="code">
           conda env create -f environment.yml<br>
         </div>
+        <br>
         Rename environment
         <div class="code">
           conda rename -n ENVNAME NEWENVNAME
@@ -178,15 +184,16 @@
 
       <div class="card">
         <h2>Create Environment from File</h2>
-        
+
         <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#">
           https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html# </a><br>
-        <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#create-env-file-manually"> 
+        <a
+          href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#create-env-file-manually">
           https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#create-env-file-manually
         </a><br>
         <a href=""> </a><br>
         <a href=""> </a><br>
-      
+
       </div>
 
       <div class="card">
