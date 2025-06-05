@@ -92,9 +92,84 @@
 
         </p>
 
-
-
       </div>
+
+
+
+
+      <div class="card">
+        <h2>Results</h2>
+
+Laptop
+*  TF Version: 2.15.0
+*  Platform: Linux-6.11.0-26-generic-x86_64-with-glibc2.39
+*  CPU: N/A
+*  CPU RAM: 7 GB
+
+2025-06-05 16:35:02.904317: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:388] MLIR V1 optimization pass is not enabled
+1.1 - inference | batch=50, size=224x224: 286 ± 3 ms
+1.2 - training  | batch=50, size=224x224: 1141 ± 5 ms
+Device Inference Score: 2621
+Device Training Score: 2321
+Device AI Score: 4942
+For more information and results, please visit http://ai-benchmark.com/alpha
+
+
+Kaggle 2 x T4
+*  TF Version: 2.18.0
+*  Platform: Linux-6.6.56+-x86_64-with-glibc2.35
+*  CPU: N/A
+*  CPU RAM: 31 GB
+*  GPU/0: Tesla T4
+*  GPU RAM: 13.6 GB
+*  GPU/1: Tesla T4
+*  GPU RAM: 13.6 GB
+*  CUDA Version: 12.5
+*  CUDA Build: V12.5.82
+1/1. MobileNet-V2
+
+I0000 00:00:1749160627.970120      35 gpu_device.cc:2022] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 13942 MB memory:  -> device: 0, name: Tesla T4, pci bus id: 0000:00:04.0, compute capability: 7.5
+I0000 00:00:1749160627.970429      35 gpu_device.cc:2022] Created device /job:localhost/replica:0/task:0/device:GPU:1 with 13942 MB memory:  -> device: 1, name: Tesla T4, pci bus id: 0000:00:05.0, compute capability: 7.5
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1749160629.337123      35 mlir_graph_optimization_pass.cc:401] MLIR V1 optimization pass is not enabled
+I0000 00:00:1749160630.452434     129 cuda_dnn.cc:529] Loaded cuDNN version 90300
+1.1 - inference | batch=50, size=224x224: 74.6 ± 6.2 ms
+1.2 - training  | batch=50, size=224x224: 207 ± 5 ms
+Device Inference Score: 10051
+Device Training Score: 12790
+Device AI Score: 22841
+For more information and results, please visit http://ai-benchmark.com/alpha
+
+
+AI server
+*  TF Version: 2.15.0                                                                                                                                                   
+*  Platform: Linux-6.8.0-60-generic-x86_64-with-glibc2.39                                                                                                               
+*  CPU: N/A                                                                                                                                                             
+*  CPU RAM: 126 GB                                                                                                                                                      
+*  GPU/0: NVIDIA GeForce RTX 3090                                                                                                                                       
+*  GPU RAM: 21.9 GB                                                                                                                                                     
+*  GPU/1: NVIDIA GeForce RTX 3090                                                                                                                                       
+*  GPU RAM: 21.9 GB                                                                                                                                                     
+*  CUDA Version: 12.6                                                                                                                                                   
+*  CUDA Build: V12.6.77  
+
+1/1. MobileNet-V2                                                                                                                                                       
+
+2025-06-05 16:37:08.027947: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:454] Loaded cuDNN version 8907
+1.1 - inference | batch=50, size=224x224: 51.7 ± 1.0 ms
+1.2 - training  | batch=50, size=224x224: 61.8 ± 2.9 ms
+Device Inference Score: 14502
+Device Training Score: 42873
+Device AI Score: 57375
+For more information and results, please visit http://ai-benchmark.com/alpha
+
+
+
+
+
+        <a href=""> </a><br>
+      </div>
+
 
 
       <div class="card">
