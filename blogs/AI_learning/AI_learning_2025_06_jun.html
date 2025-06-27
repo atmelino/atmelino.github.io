@@ -91,10 +91,35 @@
         </a><br>
         <br>
 
+
+        <a
+          href="https://colab.research.google.com/github/tensorflow/datasets/blob/master/docs/overview.ipynb#scrollTo=VZZyuO13fPvk">
+          https://colab.research.google.com/github/tensorflow/datasets/blob/master/docs/overview.ipynb#scrollTo=VZZyuO13fPvk
+        </a><br>
+<br>
         <a href="https://stackoverflow.com/questions/64114707/create-your-own-tfds-load">
           https://stackoverflow.com/questions/64114707/create-your-own-tfds-load
 
         </a><br>
+      </div>
+
+      <div class="card">
+        <h2>June 27, 2025</h2>
+
+        What does train_ds.take(2) do?
+
+        train_ds is one of the return values of
+        <div class="code">
+          (train_ds, val_ds, test_ds), metadata = tfds.load('tf_flowers',<br>
+          data_dir=DATA_PATH,<br>
+          split=['train[:80%]', 'train[80%:90%]', 'train[90%:]'],<br>
+          with_info=True,<br>
+          as_supervised=True,<br>
+          )
+        </div>
+
+
+        <a href=""> </a><br>
       </div>
 
       <div class="card">
