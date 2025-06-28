@@ -96,7 +96,7 @@
           href="https://colab.research.google.com/github/tensorflow/datasets/blob/master/docs/overview.ipynb#scrollTo=VZZyuO13fPvk">
           https://colab.research.google.com/github/tensorflow/datasets/blob/master/docs/overview.ipynb#scrollTo=VZZyuO13fPvk
         </a><br>
-<br>
+        <br>
         <a href="https://stackoverflow.com/questions/64114707/create-your-own-tfds-load">
           https://stackoverflow.com/questions/64114707/create-your-own-tfds-load
 
@@ -110,13 +110,51 @@
 
         train_ds is one of the return values of
         <div class="code">
-          (train_ds, val_ds, test_ds), metadata = tfds.load('tf_flowers',<br>
+          (train_ds, val_ds, test_ds), metadata = tfds.load(<br>
+          'tf_flowers',<br>
           data_dir=DATA_PATH,<br>
           split=['train[:80%]', 'train[80%:90%]', 'train[90%:]'],<br>
           with_info=True,<br>
           as_supervised=True,<br>
           )
         </div>
+
+
+        <h3>Process of loading datasets</h3>
+
+        On the Overview page<br>
+        <a href="https://www.tensorflow.org/datasets/api_docs/python/tfds">
+          https://www.tensorflow.org/datasets/api_docs/python/tfds </a><br>
+        <br>
+        there is a link to a Colab tutorial:<br>
+        <a href="https://colab.research.google.com/github/tensorflow/datasets/blob/master/docs/overview.ipynb">
+          https://colab.research.google.com/github/tensorflow/datasets/blob/master/docs/overview.ipynb
+        </a><br>
+        <br>
+        In the section "Load a dataset":<br>
+        tfds.load() will download the data and save it as tfrecord files.<br>
+        <br>
+        For example, if we set the parameter data_dir to<br>
+        <div class="code">
+          tfds.load(<br>
+          'mnist',<br>
+          data_dir="local_data/tfds",<br>
+        </div>
+
+        the directory local_data/tfds/mnist/3.0.1 will contain the files
+        <div class="output">
+          dataset_info.json<br>
+          features.json<br>
+          image.image.json<br>
+          mnist-test.tfrecord-00000-of-00001<br>
+          mnist-train.tfrecord-00000-of-00001
+        </div>
+
+        <br>
+        TFRecord and tf.train.Example<br>
+        <a href="https://www.tensorflow.org/tutorials/load_data/tfrecord">
+          https://www.tensorflow.org/tutorials/load_data/tfrecord </a><br>
+
 
 
         <a href=""> </a><br>
