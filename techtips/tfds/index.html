@@ -33,18 +33,18 @@
       <div class="card">
         <h3>Project Web Sites</h3>
         <p>
-        <a href="https://www.tensorflow.org/datasets/api_docs/python/tfds">
-          https://www.tensorflow.org/datasets/api_docs/python/tfds
-        </a><br>
-        <br>
-        <a
-          href="https://colab.research.google.com/github/tensorflow/datasets/blob/master/docs/overview.ipynb#scrollTo=VZZyuO13fPvk">
-          https://colab.research.google.com/github/tensorflow/datasets/blob/master/docs/overview.ipynb#scrollTo=VZZyuO13fPvk
-        </a><br>
-        <br>
-        <a href="https://stackoverflow.com/questions/64114707/create-your-own-tfds-load">
-          https://stackoverflow.com/questions/64114707/create-your-own-tfds-load
-        </a><br>
+          <a href="https://www.tensorflow.org/datasets/api_docs/python/tfds">
+            https://www.tensorflow.org/datasets/api_docs/python/tfds
+          </a><br>
+          <br>
+          <a
+            href="https://colab.research.google.com/github/tensorflow/datasets/blob/master/docs/overview.ipynb#scrollTo=VZZyuO13fPvk">
+            https://colab.research.google.com/github/tensorflow/datasets/blob/master/docs/overview.ipynb#scrollTo=VZZyuO13fPvk
+          </a><br>
+          <br>
+          <a href="https://stackoverflow.com/questions/64114707/create-your-own-tfds-load">
+            https://stackoverflow.com/questions/64114707/create-your-own-tfds-load
+          </a><br>
       </div>
 
       <div class="card">
@@ -99,24 +99,75 @@
         <a href="https://www.tensorflow.org/tutorials/load_data/tfrecord">
           https://www.tensorflow.org/tutorials/load_data/tfrecord </a><br>
 
-
-
-
-
-
-
-
-
-
         <a href=""> </a><br>
       </div>
 
       <div class="card">
         <h3>Observations</h3>
 
+        <div class="code">
+          (train_ds, validation_ds), metadata= tfds.load(<br>
+          "cats_vs_dogs",<br>
+          data_dir=DATA_PATH,<br>
+          split=["train[:40%]", "train[40%:50%]"],<br>
+          with_info=True,<br>
+          as_supervised=True,<br>
+          )
+        </div>
 
+        <div class="code">
+          tfds.as_dataframe(train_ds.take(2), metadata)
+        </div>
+        <img src="../images/tfds_01.png" alt="tfds_01" height="80">
 
+        <div class="code">
+          fig = tfds.show_examples(train_ds, metadata)
+        </div>
+        <img src="../images/tfds_02.png" alt="tfds_02" height="80">
 
+        <div class="code">
+          plt.figure(figsize=(10, 10))<br>
+          for i, (image, label) in enumerate(train_ds.take(2)):<br>
+          ax = plt.subplot(3, 3, i + 1)<br>
+          plt.imshow(image)<br>
+          plt.title(int(label))<br>
+          plt.axis("off")
+        </div>
+        <img src="../images/tfds_03.png" alt="tfds_03" height="80">
+
+        <br>
+
+        <table width="100%">
+          <tr colspan="2">Effect of</tr>
+          <tr>
+            <td colspan="2" class="code">
+              size = (150, 150)<br>
+              train_ds = train_ds.map(lambda x, y: (tf.image.resize(x, size), y))<br>
+            </td>
+          </tr>
+          <tr>
+            <th>Before</th>
+            <th>After</th>
+          </tr>
+          <tr>
+            <td colspan="2" class="code">
+              tfds.as_dataframe(train_ds.take(2), metadata)
+            </td>
+          </tr>
+          <tr>
+            <td> <img src="../images/tfds_01.png" alt="tfds_01" height="80"> </td>
+            <td>Stallion</td>
+          </tr>
+          <tr>
+            <td colspan="2" class="code">
+              tfds.as_dataframe(train_ds.take(2), metadata)
+            </td>
+          </tr>
+          <tr>
+            <td> <img src="../images/tfds_01.png" alt="tfds_01" height="80"> </td>
+            <td>Stallion</td>
+          </tr>
+        </table>
 
 
 
