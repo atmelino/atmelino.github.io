@@ -136,15 +136,15 @@
         <img src="../images/tfds_03.png" alt="tfds_03" height="80">
 
         <br>
-
+        <h4>Effect of map function</h4>
+        Function:<br>
+        <div class="code">
+          size = (150, 150)<br>
+          train_ds = train_ds.map(lambda x, y: (tf.image.resize(x, size), y))<br>
+        </div>
+        <br>
+        Image output:<br>
         <table width="100%">
-          <tr colspan="2">Effect of</tr>
-          <tr>
-            <td colspan="2" class="code">
-              size = (150, 150)<br>
-              train_ds = train_ds.map(lambda x, y: (tf.image.resize(x, size), y))<br>
-            </td>
-          </tr>
           <tr>
             <th>Before</th>
             <th>After</th>
@@ -160,11 +160,25 @@
           </tr>
           <tr>
             <td colspan="2" class="code">
-              tfds.as_dataframe(train_ds.take(2), metadata)
+              fig = tfds.show_examples(train_ds, metadata)
             </td>
           </tr>
           <tr>
-            <td> <img src="../images/tfds_01.png" alt="tfds_01" height="80"> </td>
+            <td> <img src="../images/tfds_02.png" alt="tfds_02" height="80"> </td>
+            <td>Stallion</td>
+          </tr>
+          <tr>
+            <td colspan="2" class="code">
+              plt.figure(figsize=(10, 10))<br>
+              for i, (image, label) in enumerate(train_ds.take(2)):<br>
+              ax = plt.subplot(3, 3, i + 1)<br>
+              plt.imshow(image)<br>
+              plt.title(int(label))<br>
+              plt.axis("off")
+            </td>
+          </tr>
+          <tr>
+            <td> <img src="../images/tfds_03.png" alt="tfds_03" height="80"> </td>
             <td>Stallion</td>
           </tr>
         </table>
