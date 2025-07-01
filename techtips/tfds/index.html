@@ -103,48 +103,41 @@
       </div>
 
       <div class="card">
-        <h3>Observations</h3>
+        <h3>Error after map function</h3>
 
+        Several methods of displaying images in a dataset fail after the map function has been applied.<br>
+
+        The problem seems to depend on the size of the dataset.<br>
+        Sizes:
+        <ul>
+          <li>mnist: 22.1 MB</li>
+          <li>cifar10: 133.3 MB</li>
+          <li>tf_flowers: 221.9 MB</li>
+          <li>cats_vs_dogs: 690.1 MB</li>
+        </ul>
+
+        The problem does not occur with the mnist dataset.<br>
+
+        <h4>Example 1: tf_flowers</h4>
+        Dataset loading<br>
         <div class="code">
           (train_ds, validation_ds), metadata= tfds.load(<br>
           "cats_vs_dogs",<br>
           data_dir=DATA_PATH,<br>
           split=["train[:40%]", "train[40%:50%]"],<br>
           with_info=True,<br>
-          as_supervised=True,<br>
-          )
+          as_supervised=True,)<br>
         </div>
-
-        <div class="code">
-          tfds.as_dataframe(train_ds.take(2), metadata)
-        </div>
-        <img src="../images/tfds_01.png" alt="tfds_01" height="80">
-
-        <div class="code">
-          fig = tfds.show_examples(train_ds, metadata)
-        </div>
-        <img src="../images/tfds_02.png" alt="tfds_02" height="80">
-
-        <div class="code">
-          plt.figure(figsize=(10, 10))<br>
-          for i, (image, label) in enumerate(train_ds.take(2)):<br>
-          ax = plt.subplot(3, 3, i + 1)<br>
-          plt.imshow(image)<br>
-          plt.title(int(label))<br>
-          plt.axis("off")
-        </div>
-        <img src="../images/tfds_03.png" alt="tfds_03" height="80">
-
         <br>
-        <h4>Effect of map function</h4>
-        Function:<br>
+        map Function:<br>
         <div class="code">
           size = (150, 150)<br>
           train_ds = train_ds.map(lambda x, y: (tf.image.resize(x, size), y))<br>
         </div>
         <br>
-        Image output:<br>
-        <table width="100%">
+        Image output before and after map function:<br><br>
+
+        <table style="width:100%; table-layout:fixed">
           <tr>
             <th>Before</th>
             <th>After</th>
@@ -155,7 +148,7 @@
             </td>
           </tr>
           <tr>
-            <td> <img src="../images/tfds_01.png" alt="tfds_01" height="80"> </td>
+            <td> <img src="../images/tfds_01.png" alt="tfds_01" height="120"> </td>
             <td> KeyError: ((1, 1, 3), '&lt;f4') </td>
           </tr>
           <tr>
@@ -164,8 +157,8 @@
             </td>
           </tr>
           <tr>
-            <td> <img src="../images/tfds_02.png" alt="tfds_02" height="80"> </td>
-            <td> <img src="../images/tfds_05.png" alt="tfds_05" height="80"><br>
+            <td> <img src="../images/tfds_02.png" alt="tfds_02" height="120"> </td>
+            <td> <img src="../images/tfds_05.png" alt="tfds_05" height="120"><br>
               WARNING:matplotlib.image:Clipping input data to the valid range for imshow with RGB data ([0..1] for
               floats or [0..255] for integers).
           </tr>
@@ -180,8 +173,8 @@
             </td>
           </tr>
           <tr>
-            <td> <img src="../images/tfds_03.png" alt="tfds_03" height="80"> </td>
-            <td> <img src="../images/tfds_06.png" alt="tfds_06" height="80">
+            <td> <img src="../images/tfds_03.png" alt="tfds_03" height="120"> </td>
+            <td> <img src="../images/tfds_06.png" alt="tfds_06" height="120">
               <br>
               WARNING:matplotlib.image:Clipping input data to the valid range for imshow with RGB data ([0..1] for
               floats or [0..255] for integers).
@@ -190,7 +183,39 @@
         </table>
 
 
+        <h4>Example 2: mnist</h4>
 
+
+        <h4>Example 3: cifar10</h4>
+
+        <h4>Example 4: tf_flowers different code</h4>
+        map Function:<br>
+        <div class="code">
+          size = (20, 10)<br>
+          train_ds = train_ds.map(lambda x, y: (tf.image.resize(x, size), y))<br>
+        </div>
+
+        <table style="width:100%; table-layout:fixed">
+          <tr>
+            <th>Before</th>
+            <th>After</th>
+          </tr>
+          <tr>
+            <td colspan="2" class="code">
+              plt.figure(figsize=(150, 150))
+              for i, (image, label) in enumerate(train_ds.take(2)):
+              ax = plt.subplot(3, 3, i + 1)
+              plt.imshow(image)
+              plt.title(int(label))
+              plt.axis("off")
+            </td>
+          </tr>
+          <tr>
+            <td> <img src="../images/tfds_map_flower_before.png" alt="tfds_01" height="120"> </td>
+            <td> <img src="../images/tfds_map_flower_after.png" alt="tfds_01" height="120"> </td>
+            <td> </td>
+          </tr>
+        </table>
 
 
 
