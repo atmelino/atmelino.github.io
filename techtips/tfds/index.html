@@ -17,7 +17,7 @@
         <td width="200">
           <a href="../../index.html"><img src="../../images/home.png" alt="home" height="60"></a>
           <a href="../../techtips/index.html"><img src="../../images/techtips.png" alt="scroll" height="60"></a>
-          <a href="../../techtips/pytorch/index.html"><img src="../../images/pytorch.png" alt="pytorch" height="60"></a>
+          <a href="../../techtips/tfds/index.html"><img src="../../images/tfds.png" alt="tfds" height="60"></a>
         </td>
         <td id="headerline_cell">
           <h2>Tensorflow tfds</h2>
@@ -48,21 +48,6 @@
       </div>
 
       <div class="card">
-        <h3>Understanding tfds</h3>
-
-        What does train_ds.take(2) do?
-
-        train_ds is one of the return values of
-        <div class="code">
-          (train_ds, val_ds, test_ds), metadata = tfds.load(<br>
-          'tf_flowers',<br>
-          data_dir=DATA_PATH,<br>
-          split=['train[:80%]', 'train[80%:90%]', 'train[90%:]'],<br>
-          with_info=True,<br>
-          as_supervised=True,<br>
-          )
-        </div>
-
 
         <h3>Process of loading datasets</h3>
 
@@ -102,123 +87,50 @@
         <a href=""> </a><br>
       </div>
 
+
       <div class="card">
-        <h3>Error after map function</h3>
+        <h2>Understanding tfds take</h2>
 
-        Several methods of displaying images in a dataset fail after the map function has been applied.<br>
+        What does train_ds.take(2) do?<br>
 
-        The problem seems to depend on the size of the dataset.<br>
-        Sizes:
-        <ul>
-          <li>mnist: 22.1 MB</li>
-          <li>cifar10: 133.3 MB</li>
-          <li>tf_flowers: 221.9 MB</li>
-          <li>cats_vs_dogs: 690.1 MB</li>
-        </ul>
-
-        The problem does not occur with the mnist dataset.<br>
-
-        <h4>Example 1: tf_flowers</h4>
-        Dataset loading<br>
+        train_ds is one of the return values of
         <div class="code">
-          (train_ds, validation_ds), metadata= tfds.load(<br>
-          "cats_vs_dogs",<br>
+          (train_ds, val_ds, test_ds), metadata = tfds.load(<br>
+          'tf_flowers',<br>
           data_dir=DATA_PATH,<br>
-          split=["train[:40%]", "train[40%:50%]"],<br>
+          split=['train[:80%]', 'train[80%:90%]', 'train[90%:]'],<br>
           with_info=True,<br>
-          as_supervised=True,)<br>
+          as_supervised=True,<br>
+          )
         </div>
-        <br>
-        map Function:<br>
-        <div class="code">
-          size = (150, 150)<br>
-          train_ds = train_ds.map(lambda x, y: (tf.image.resize(x, size), y))<br>
-        </div>
-        <br>
-        Image output before and after map function:<br><br>
-
-        <table style="width:100%; table-layout:fixed">
-          <tr>
-            <th>Before</th>
-            <th>After</th>
-          </tr>
-          <tr>
-            <td colspan="2" class="code">
-              tfds.as_dataframe(train_ds.take(2), metadata)
-            </td>
-          </tr>
-          <tr>
-            <td> <img src="../images/tfds_01.png" alt="tfds_01" height="120"> </td>
-            <td> KeyError: ((1, 1, 3), '&lt;f4') </td>
-          </tr>
-          <tr>
-            <td colspan="2" class="code">
-              fig = tfds.show_examples(train_ds, metadata)
-            </td>
-          </tr>
-          <tr>
-            <td> <img src="../images/tfds_02.png" alt="tfds_02" height="120"> </td>
-            <td> <img src="../images/tfds_05.png" alt="tfds_05" height="120"><br>
-              WARNING:matplotlib.image:Clipping input data to the valid range for imshow with RGB data ([0..1] for
-              floats or [0..255] for integers).
-          </tr>
-          <tr>
-            <td colspan="2" class="code">
-              plt.figure(figsize=(10, 10))<br>
-              for i, (image, label) in enumerate(train_ds.take(2)):<br>
-              ax = plt.subplot(3, 3, i + 1)<br>
-              plt.imshow(image)<br>
-              plt.title(int(label))<br>
-              plt.axis("off")
-            </td>
-          </tr>
-          <tr>
-            <td> <img src="../images/tfds_03.png" alt="tfds_03" height="120"> </td>
-            <td> <img src="../images/tfds_06.png" alt="tfds_06" height="120">
-              <br>
-              WARNING:matplotlib.image:Clipping input data to the valid range for imshow with RGB data ([0..1] for
-              floats or [0..255] for integers).
-            </td>
-          </tr>
-        </table>
-
-
-        <h4>Example 2: mnist</h4>
-
-
-        <h4>Example 3: cifar10</h4>
-
-        <h4>Example 4: tf_flowers different code</h4>
-        map Function:<br>
-        <div class="code">
-          size = (20, 10)<br>
-          train_ds = train_ds.map(lambda x, y: (tf.image.resize(x, size), y))<br>
-        </div>
-
-        <table style="width:100%; table-layout:fixed">
-          <tr>
-            <th>Before</th>
-            <th>After</th>
-          </tr>
-          <tr>
-            <td colspan="2" class="code">
-              plt.figure(figsize=(10, 10))
-              for i, (image, label) in enumerate(train_ds.take(2)):
-              ax = plt.subplot(3, 3, i + 1)
-              plt.imshow(image)
-              plt.title(int(label))
-              plt.axis("off")
-            </td>
-          </tr>
-          <tr>
-            <td> <img src="../images/tfds_map_flower_before.png" alt="tfds_01" height="120"> </td>
-            <td> <img src="../images/tfds_map_flower_after.png" alt="tfds_01" height="120"> </td>
-          </tr>
-        </table>
-
-
 
         <a href=""> </a><br>
+      </div>
+
+      <div class="card">
+        <h2>Correct Use of map() function and image viewing</h2>
+
+
+        This will cause the RGB values of the images to be out of range:<br>
+        <div class="code">
+          train_ds = train_ds.map(lambda x, y: (tf.image.resize(x, (150,150)), y))
+        </div>
+        Example:<br>
+
+
+        Dividing the RGB values by 255.0 after resizing will allow for viewing the images, for example with
+        mathplotlib<br>
+        <div class="code">
+          train_ds = train_ds.map(lambda x, y: (tf.image.resize(x, (150,150))/ 255.0, y))
+        </div>
+        Example:<br>
+
+        Sources:<br>
+        Brave search "tfds take"<br>
+
+        and<br>
+        <a href="https://tf.wiki/en/appendix/tfds.html">
+          https://tf.wiki/en/appendix/tfds.html </a><br>
       </div>
 
 
