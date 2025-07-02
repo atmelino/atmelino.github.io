@@ -110,12 +110,21 @@
       <div class="card">
         <h2>Correct Use of map() function and image viewing</h2>
 
-
         This will cause the RGB values of the images to be out of range:<br>
         <div class="code">
           train_ds = train_ds.map(lambda x, y: (tf.image.resize(x, (150,150)), y))
         </div>
         Example:<br>
+        <table style="width:100%; table-layout:fixed">
+          <tr>
+            <th>Before</th>
+            <th>After</th>
+          </tr>
+          <tr>
+            <td> <img src="../images/tfds_flower_before.png" alt="tfds_01" height="120"> </td>
+            <td> <img src="../images/tfds_flower_after_incorrect.png" alt="tfds_01" height="120"> </td>
+          </tr>
+        </table>
 
 
         Dividing the RGB values by 255.0 after resizing will allow for viewing the images, for example with
@@ -124,6 +133,18 @@
           train_ds = train_ds.map(lambda x, y: (tf.image.resize(x, (150,150))/ 255.0, y))
         </div>
         Example:<br>
+
+        <table style="width:100%; table-layout:fixed">
+          <tr>
+            <th>Before</th>
+            <th>After</th>
+          </tr>
+          <tr>
+            <td> <img src="../images/tfds_flower_before.png" alt="tfds_01" height="120"> </td>
+            <td> <img src="../images/tfds_flower_after_correct.png" alt="tfds_01" height="120"> </td>
+          </tr>
+        </table>
+
 
         Sources:<br>
         Brave search "tfds take"<br>
