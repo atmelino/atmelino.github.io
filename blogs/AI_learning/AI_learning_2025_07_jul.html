@@ -33,7 +33,7 @@
 
       <div class="card">
         <h2>July 5, 2025</h2>
-
+        <h4>mnist, xception transfer learning, tfds</h4>
         Goal: Use xception network for transfer learning with mnist dataset, loaded with tfds.<br>
         <br>
         Starting point:<br>
@@ -79,6 +79,52 @@
 
 
 
+      <div class="card">
+        <h2>July 7, 2025</h2>
+        <h4>mnist, xception transfer learning, tfds</h4>
+        Attempt: use code from Jeff Heaton class 9.2, replace 'cats_vs_dogs' with 'mnist'
+        <div class="code">
+          (train_ds, validation_ds), metadata= tfds.load(<br>
+          'mnist',
+        </div>
+        Result:<br>
+        <div class="code">
+          model.fit(train_ds, epochs=epochs, validation_data=validation_ds)
+        </div>
+        gives error
+        <div class="output">
+          Input 0 of layer "block1_conv1" is incompatible with the layer: expected axis -1 of input shape to have value
+          3, but received input with shape (None, 150, 150, 1)<br>
+          <br>
+          Call arguments received by layer 'xception' (type Functional):<br>
+          - inputs=tf.Tensor(shape=(None, 150, 150, 1), dtype=float32)<br>
+          - training=False<br>
+          - mask=None
+        </div>
+        This refers to the input of the base_model
+        <div class="code">
+          base_model = keras.applications.Xception(<br>
+          weights="imagenet", # Load weights pre-trained on ImageNet.<br>
+          input_shape=(150, 150, 3),<br>
+          include_top=False,<br>
+          )
+        </div>
+        Details about the mnist dataset:<br>
+        <a href="https://www.tensorflow.org/api_docs/python/tf/keras/datasets/mnist/load_data">
+          https://www.tensorflow.org/api_docs/python/tf/keras/datasets/mnist/load_data </a><br>
+        <br>
+        Note:<br>
+        "grayscale image data with shapes (60000, 28, 28)"<br>
+        "Pixel values range from 0 to 255."
+        <br>
+        <br>
+        When I use the 'cifar10' dataset, no run time error occurs.<br>
+        
+
+
+
+
+      </div>
 
 
 
