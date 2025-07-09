@@ -129,10 +129,76 @@
         <a href="https://forum.freecodecamp.org/t/model-predict-output/470349">
           https://forum.freecodecamp.org/t/model-predict-output/470349
         </a><br>
-
+        <br>
         Brave search:<br>
         "tfds model predict"<br>
         <br>
+        result includes<br>
+        <div class="code">
+          predictions = model.predict(train_ds)
+        </div>
+        did not work until I applied map function with batch function.
+        <br>
+        <br>
+
+
+        Tutorial has example with prediction:<br>
+
+        <a href="https://www.tensorflow.org/tutorials/images/transfer_learning_with_hub">
+          https://www.tensorflow.org/tutorials/images/transfer_learning_with_hub </a><br>
+
+        <br>
+        Tutorial on dataset preparation:<br>
+
+        <a href="https://www.tensorflow.org/tutorials/images/data_augmentation">
+          https://www.tensorflow.org/tutorials/images/data_augmentation
+        </a><br>
+
+
+
+        <br>
+        Blog - Introducing TensorFlow Datasets:<br>
+        <a href="https://blog.tensorflow.org/2019/02/introducing-tensorflow-datasets.html">
+          https://blog.tensorflow.org/2019/02/introducing-tensorflow-datasets.html
+        </a><br>
+
+
+
+        <h4>batch function, tfds, model.fit</h4>
+        Running the example as is from<br>
+        ?<br>
+        <br>
+        gives error
+        <div class="output">
+          ValueError: Input 0 of layer "sequential" is incompatible with the layer: expected shape=(None, 256, 256, 3),
+          found shape=(256, 256, 3)
+        </div>
+        adding the lines
+        <div class="code">
+          batch_size = 32<br>
+          train_dataset = train_dataset.cache().batch(batch_size).prefetch(buffer_size=10)<br>
+          test_dataset = test_dataset.cache().batch(batch_size).prefetch(buffer_size=10)
+        </div>
+        solves the problem.<br>
+        <br>
+        <br>
+        The API documentation for model.fit and model.predict states that both function expect the data in batches:<br>
+
+        <div class="data">
+          batch_size:<br>
+          <br>
+          Integer or None. Number of samples per batch. If unspecified, batch_size will default to 32. Do not specify
+          the
+          batch_size if your data is in the form of dataset, generators, or keras.utils.PyDataset instances (since they
+          generate batches).
+        </div>
+        API documentation for model.fit:<br>
+        <a href="https://www.tensorflow.org/api_docs/python/tf/keras/Model#fit">
+          https://www.tensorflow.org/api_docs/python/tf/keras/Model#fit </a><br>
+        <br>
+        API documentation for model.predict:<br>
+        <a href="https://www.tensorflow.org/api_docs/python/tf/keras/Model#predict">
+          https://www.tensorflow.org/api_docs/python/tf/keras/Model#predict </a><br>
 
 
         <a href=""> </a><br>
