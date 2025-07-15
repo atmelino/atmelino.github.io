@@ -243,7 +243,6 @@
         <h2>July 12, 2025</h2>
 
         Goal:<br>
-
         display dataset image, label, and prediction on one line<br>
         <br>
 
@@ -272,6 +271,24 @@
       </div>
 
 
+
+      <div class="card">
+        <h2>July 15, 2025</h2>
+        Goal:<br>
+        display dataset image, label, and prediction on one line<br>
+        <br>
+        Solution:<br>
+        <br>
+        <div class="code">
+          new_df=tfds.as_dataframe(test_dataset.take(number_of_images), metadata)<br>
+          new_df['predictions'] = allpreds[0:number_of_images]
+        </div>
+        Add a new column to the Pandas dataframe that was created with tfds.as_dataframe.<br>
+        <br>
+
+
+        <a href=""> </a><br>
+      </div>
 
       <div class="card">
         <h2>Date</h2>
