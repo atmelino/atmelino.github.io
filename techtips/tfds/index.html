@@ -92,7 +92,7 @@
         <h2>Understanding tfds take</h2>
 
         What does train_ds.take(2) do?<br>
-
+        <br>
         train_ds is one of the return values of
         <div class="code">
           (train_ds, val_ds, test_ds), metadata = tfds.load(<br>
@@ -103,7 +103,33 @@
           as_supervised=True,<br>
           )
         </div>
+        The take function returns an image and a label:<br>
+        <div class="code">
+          for image,label in train_ds.take(1):<br>
+          print("image.shape=",image.shape," label=",int(label))
+        </div>
+        Output:<br>
+        <div class="output">
+          image.shape= (333, 500, 3) label= 2
+        </div>
 
+        <br>
+
+        If the batch function has been applied, then the take function will return (batch_size * take_parameter)
+        images.<br>
+        <br>
+        Example:<br>
+        <div class="code">
+          batch_size = 32<br>
+          train_dataset = train_dataset.cache().batch(batch_size).prefetch(buffer_size=10)<br>
+          probabilities = model.predict(train_dataset.take(10))<br>
+          predict = np.argmax(probabilities, axis=1)<br>
+          print(predict.shape)
+        </div>
+        Output:<br>
+        <div class="output">
+          (320,)
+        </div>
         <a href=""> </a><br>
       </div>
 
@@ -200,11 +226,6 @@
           plt.title(int(label[0]))<br>
           plt.axis("off")
         </div>
-
-
-
-
-
 
 
         <a href=""> </a><br>
