@@ -292,7 +292,7 @@
       <div class="card">
         <h2>July 18, 2025</h2>
 
-
+        <h4>Adapt model for datasets with different number of labels and color depths</h4>
         The following model
         <div class="code_new">
           model = tf.keras.models.Sequential([
@@ -381,6 +381,41 @@
           </a><br>
 
         </p>
+
+
+        <h4>Adapt transfer model for datasets with different number of labels and color depths</h4>
+
+        Xception model fchollet/jheaton
+
+initially: cats_vs_dogs
+2 labels (binary)
+3 RGB values
+
+TF_Flowers
+5 labels
+3 RGB values
+
+outputs = keras.layers.Dense(1)(x)
+outputs = keras.layers.Dense(5)(x)
+
+
+# model.compile(
+#     optimizer=keras.optimizers.Adam(),
+#     loss=keras.losses.BinaryCrossentropy(from_logits=True), 
+#     metrics=[keras.metrics.BinaryAccuracy()],
+# )
+
+model.compile(
+    # optimizer=tf.keras.optimizers.Adam(0.001),
+    optimizer=tf.keras.optimizers.Adam(),
+    loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+    metrics=[tf.keras.metrics.SparseCategoricalAccuracy()],
+)
+
+
+
+
+
 
 
       </div>
