@@ -33,8 +33,9 @@
 
       <div class="card">
         <h2>July 5, 2025</h2>
-        <h4>mnist, xception transfer learning, tfds</h4>
-        Goal: Use xception network for transfer learning with mnist dataset, loaded with tfds.<br>
+        <h4>Transfer Learning - Xception, tfds, mnist</h4>
+        Goal: Use Xception model for transfer learning with mnist dataset, loaded with tfds, based on code from Chapter
+        9.2 in Jeff Heaton class.<br>
         <br>
         Starting point:<br>
         <ul>
@@ -81,8 +82,10 @@
 
       <div class="card">
         <h2>July 7, 2025</h2>
-        <h4>mnist, xception transfer learning, tfds</h4>
-        Attempt: use code from Jeff Heaton class 9.2, replace 'cats_vs_dogs' with 'mnist'
+        <h4>Transfer Learning - Xception, tfds, mnist</h4>
+        Goal: Use Xception model for transfer learning with mnist dataset, loaded with tfds, based on code from Chapter
+        9.2 in Jeff Heaton class.<br>
+        <br>
         <div class="code">
           (train_ds, validation_ds), metadata= tfds.load(<br>
           'mnist',
@@ -372,51 +375,85 @@
         <a href=""> </a><br>
 
 
-        <p>
-          resource for transfer learning:<br>
-          <br>
-          list of pre-trained models<br>
-          <a href="https://pyimagesearch.com/2017/03/20/imagenet-vggnet-resnet-inception-xception-keras/">
-            https://pyimagesearch.com/2017/03/20/imagenet-vggnet-resnet-inception-xception-keras/
-          </a><br>
-
-        </p>
-
-
         <h4>Adapt transfer model for datasets with different number of labels and color depths</h4>
 
         Xception model fchollet/jheaton
 
-initially: cats_vs_dogs
-2 labels (binary)
-3 RGB values
+        initially: cats_vs_dogs
+        2 labels (binary)
+        3 RGB values
 
-TF_Flowers
-5 labels
-3 RGB values
+        TF_Flowers
+        5 labels
+        3 RGB values
 
-outputs = keras.layers.Dense(1)(x)
-outputs = keras.layers.Dense(5)(x)
-
-
-# model.compile(
-#     optimizer=keras.optimizers.Adam(),
-#     loss=keras.losses.BinaryCrossentropy(from_logits=True), 
-#     metrics=[keras.metrics.BinaryAccuracy()],
-# )
-
-model.compile(
-    # optimizer=tf.keras.optimizers.Adam(0.001),
-    optimizer=tf.keras.optimizers.Adam(),
-    loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
-    metrics=[tf.keras.metrics.SparseCategoricalAccuracy()],
-)
+        outputs = keras.layers.Dense(1)(x)
+        outputs = keras.layers.Dense(5)(x)
 
 
+        # model.compile(
+        # optimizer=keras.optimizers.Adam(),
+        # loss=keras.losses.BinaryCrossentropy(from_logits=True),
+        # metrics=[keras.metrics.BinaryAccuracy()],
+        # )
+
+        model.compile(
+        # optimizer=tf.keras.optimizers.Adam(0.001),
+        optimizer=tf.keras.optimizers.Adam(),
+        loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+        metrics=[tf.keras.metrics.SparseCategoricalAccuracy()],
+        )
 
 
 
 
+        <h4>Transfer Learning - Xception, tfds, mnist</h4>
+        Goal: Use Xception model for transfer learning with mnist dataset, loaded with tfds, based on code from Chapter
+        9.2 in Jeff Heaton class.<br>
+        <br>
+
+        Xception expects RGB images with 3 channels, mnist offers only 1 garylevel channel.<br>
+        <br>
+        Solution:<br>
+        Convert images from gray to color.<br>
+        <br>
+        add this code before the other pre-processing code:<br>
+        <div class="code_new">
+          def reshape_image(image, label):
+          image = tf.reshape(image, (28, 28, 1))
+          return image, label
+
+          train_dataset = train_dataset.map(reshape_image)
+          def convert_to_rgb(image, label):
+          image = tf.image.grayscale_to_rgb(image)
+          return image, label
+
+          train_dataset = train_dataset.map(convert_to_rgb)
+          validation_dataset = validation_dataset.map(convert_to_rgb)
+        </div>
+
+        and change the last model layer to 10 dimensions:<br>
+        <div class="code_new">
+          outputs = keras.layers.Dense(10)(x)
+        </div>
+        Solution found by searching in Brave for<br>
+        "mnist tfds convert to RGB"<br>
+
+        <a href="https://www.tensorflow.org/api_docs/python/tf/image/grayscale_to_rgb">
+          https://www.tensorflow.org/api_docs/python/tf/image/grayscale_to_rgb
+        </a><br>
+
+        <h4>Interesting Links</h4>
+        resource for transfer learning: list of pre-trained models<br>
+        <a href="https://pyimagesearch.com/2017/03/20/imagenet-vggnet-resnet-inception-xception-keras/">
+          https://pyimagesearch.com/2017/03/20/imagenet-vggnet-resnet-inception-xception-keras/
+        </a><br>
+        <br>
+
+
+        Use a GAN to generate colorful mnist numbers:<br>
+        <a href="https://www.wouterbulten.nl/posts/getting-started-with-gans-2-colorful-mnist/">
+          https://www.wouterbulten.nl/posts/getting-started-with-gans-2-colorful-mnist/ </a><br>
 
       </div>
 
