@@ -472,9 +472,26 @@
       <div class="card">
         <h2>July 23, 2025</h2>
         <h4>Loading my own images for prediction with tfds-based model</h4>
-        <a href="https://www.tensorflow.org/datasets/api_docs/python/tfds/folder_dataset/ImageFolder"> 
+        <a href="https://www.tensorflow.org/datasets/api_docs/python/tfds/folder_dataset/ImageFolder">
           https://www.tensorflow.org/datasets/api_docs/python/tfds/folder_dataset/ImageFolder
         </a><br>
+
+
+        works:<br>
+        <div class="code">
+        train_dataset= &lt;_PrefetchDataset element_spec=<br>
+        (TensorSpec(shape=(None, None, 3), dtype=tf.uint8, name=None),<br>
+        TensorSpec(shape=(), dtype=tf.int64, <br>
+        name=None))><br>
+        &lt;/_PrefetchDataset>
+        </div>
+        <br>
+        not:<br>
+        test_dataset= &lt;_PrefetchDataset element_spec={'image': TensorSpec(shape=(None, None, 3), dtype=tf.uint8,
+        name=None), 'image/filename': TensorSpec(shape=(), dtype=tf.string, name=None), 'label': TensorSpec(shape=(),
+        dtype=tf.int64, name=None)}>
+        <br>
+
         <a href=""> </a><br>
       </div>
 
