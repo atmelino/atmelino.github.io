@@ -211,9 +211,6 @@
         <a href=""> </a><br>
       </div>
 
-
-
-
       <div class="card">
         <h2>July 11, 2025</h2>
         How to get all the labels in a tfds dataset into a numpy array?<br>
@@ -225,10 +222,6 @@
         None of the methods I tried worked.<br>
 
 
-
-
-
-
         TensorFlow Image Classification With TF_Flowers Dataset (uses a pre trained model )
         <a
           href="https://medium.com/@nutanbhogendrasharma/tensorflow-image-classification-with-tf-flowers-dataset-e36205deb8fc">
@@ -237,10 +230,6 @@
 
         <a href=""> </a><br>
       </div>
-
-
-
-
 
       <div class="card">
         <h2>July 12, 2025</h2>
@@ -272,8 +261,6 @@
           https://stackoverflow.com/questions/51975699/embedding-image-into-jupyter-notebook-and-exporting-to-html
         </a><br>
       </div>
-
-
 
       <div class="card">
         <h2>July 15, 2025</h2>
@@ -322,9 +309,10 @@
         </a><br>
         <br>
 
-        this model will work with the tfds 'cats_vs_dogs' dataset.
+        This model will work with the tfds 'cats_vs_dogs' dataset.
         <br>
         <br>
+        <h5>mnist dataset</h5>
         When using the model with the tfds mnist dataset, the following consideration have to be taken into account:
         <ul>
           <li>the cats_vs_dogs images have three RGB color channels</li>
@@ -370,54 +358,72 @@
         </div>
         <br>
 
-        <a href=""> </a><br>
-        <a href=""> </a><br>
-        <a href=""> </a><br>
 
+        <h5>tf_flower dataset</h5>
 
-        <h4>Adapt transfer model for datasets with different number of labels and color depths</h4>
+        When using the model with the tfds tf_flower dataset, the following consideration have to be taken into
+        account:<br>
 
-        Xception model fchollet/jheaton
+        <ul>
+          <li>the cats_vs_dogs images have three RGB color channels</li>
+          <li>the images have 5 labels</li>
+        </ul>
+        whereas
+        <ul>
+          <li>the tf_flowers images have three RGB color channels</li>
+          <li>the images have 10 labels</li>
+        </ul>
+        To make the code work with tf_flower images, we have to<br>
+        <br>
 
-        initially: cats_vs_dogs
-        2 labels (binary)
-        3 RGB values
-
-        TF_Flowers
-        5 labels
-        3 RGB values
-
-        outputs = keras.layers.Dense(1)(x)
-        outputs = keras.layers.Dense(5)(x)
-
-
-        # model.compile(
-        # optimizer=keras.optimizers.Adam(),
-        # loss=keras.losses.BinaryCrossentropy(from_logits=True),
-        # metrics=[keras.metrics.BinaryAccuracy()],
-        # )
-
-        model.compile(
-        # optimizer=tf.keras.optimizers.Adam(0.001),
-        optimizer=tf.keras.optimizers.Adam(),
-        loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
-        metrics=[tf.keras.metrics.SparseCategoricalAccuracy()],
-        )
-
-
-
+        - change the last model layer from/to
+        <div class="code_new">
+          outputs = keras.layers.Dense(1)(x)
+        </div>
+        <div class="code_new">
+          outputs = keras.layers.Dense(5)(x)
+        </div>
+        - change the model compile code from
+        <div class="code_new">
+          # model.compile(
+          # optimizer=keras.optimizers.Adam(),
+          # loss=keras.losses.BinaryCrossentropy(from_logits=True),
+          # metrics=[keras.metrics.BinaryAccuracy()],
+          # )
+        </div>
+        <div class="code_new">
+          model.compile(
+          # optimizer=tf.keras.optimizers.Adam(0.001),
+          optimizer=tf.keras.optimizers.Adam(),
+          loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+          metrics=[tf.keras.metrics.SparseCategoricalAccuracy()],
+          )
+        </div>
 
         <h4>Transfer Learning - Xception, tfds, mnist</h4>
+        The transfer learning example code by fchollet and Jeff Heaton uses the pre-trained Xception model<br>
+        <a href="https://keras.io/guides/transfer_learning/">
+          https://keras.io/guides/transfer_learning/
+        </a><br>
+        <a
+          href="https://github.com/jeffheaton/t81_558_deep_learning/blob/master/t81_558_class_09_2_keras_xfer_cv.ipynb">
+          https://github.com/jeffheaton/t81_558_deep_learning/blob/master/t81_558_class_09_2_keras_xfer_cv.ipynb
+        </a><br>
+        <br>
+        This model will work with the tfds 'cats_vs_dogs' dataset.
+        <br>
+        <br>
+
         Goal: Use Xception model for transfer learning with mnist dataset, loaded with tfds, based on code from Chapter
         9.2 in Jeff Heaton class.<br>
         <br>
 
-        Xception expects RGB images with 3 channels, mnist offers only 1 garylevel channel.<br>
+        Xception expects RGB images with 3 channels, mnist offers only 1 graylevel channel.<br>
         <br>
         Solution:<br>
         Convert images from gray to color.<br>
         <br>
-        add this code before the other pre-processing code:<br>
+        Add this code before the other pre-processing code:<br>
         <div class="code_new">
           def reshape_image(image, label):
           image = tf.reshape(image, (28, 28, 1))
@@ -461,7 +467,15 @@
         Papers with Code <br>
         <a href="https://paperswithcode.com/">
           https://paperswithcode.com/ </a><br>
+      </div>
 
+      <div class="card">
+        <h2>July 23, 2025</h2>
+        <h4>Loading my own images for prediction with tfds-based model</h4>
+        <a href="https://www.tensorflow.org/datasets/api_docs/python/tfds/folder_dataset/ImageFolder"> 
+          https://www.tensorflow.org/datasets/api_docs/python/tfds/folder_dataset/ImageFolder
+        </a><br>
+        <a href=""> </a><br>
       </div>
 
       <div class="card">
