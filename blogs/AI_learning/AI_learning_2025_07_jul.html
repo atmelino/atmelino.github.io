@@ -479,17 +479,26 @@
 
         works:<br>
         <div class="code">
-        train_dataset= &lt;_PrefetchDataset element_spec=<br>
-        (TensorSpec(shape=(None, None, 3), dtype=tf.uint8, name=None),<br>
-        TensorSpec(shape=(), dtype=tf.int64, <br>
-        name=None))><br>
-        &lt;/_PrefetchDataset>
+          train_dataset= &lt;_PrefetchDataset<br>
+          element_spec=<br>
+          (<br>
+          TensorSpec(shape=(None, None, 3), dtype=tf.uint8, name=None),<br>
+          TensorSpec(shape=(), dtype=tf.int64, name=None)<br>
+          )><br>
+          &lt;/_PrefetchDataset>
         </div>
         <br>
         not:<br>
-        test_dataset= &lt;_PrefetchDataset element_spec={'image': TensorSpec(shape=(None, None, 3), dtype=tf.uint8,
-        name=None), 'image/filename': TensorSpec(shape=(), dtype=tf.string, name=None), 'label': TensorSpec(shape=(),
-        dtype=tf.int64, name=None)}>
+        <div class="code">
+          test_dataset= &lt;_PrefetchDataset<br>
+          element_spec=<br>
+          {<br>
+          'image': TensorSpec(shape=(None, None, 3), dtype=tf.uint8, name=None),<br>
+          'image/filename': TensorSpec(shape=(), dtype=tf.string, name=None),<br>
+          'label': TensorSpec(shape=(), dtype=tf.int64, name=None)<br>
+          }<br>
+          >
+        </div>
         <br>
 
         <a href=""> </a><br>
