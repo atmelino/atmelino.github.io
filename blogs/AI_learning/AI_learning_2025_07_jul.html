@@ -505,6 +505,61 @@
       </div>
 
       <div class="card">
+        <h2>July 24, 2025</h2>
+
+        <h4>Goal: load my own images for inference with model from tfds dataset</h4>
+
+        Attempt: use tfds.folder_dataset.ImageFolder to load the images into tfds dataset<br>
+        <a href="https://www.tensorflow.org/datasets/api_docs/python/tfds/folder_dataset/ImageFolder">
+          https://www.tensorflow.org/datasets/api_docs/python/tfds/folder_dataset/ImageFolder
+        </a><br>
+        <a href=""> </a><br>
+        The example code works<br>
+        <div class="code">
+          builder = tfds.ImageFolder('path/to/image_dir/')<br>
+          print(builder.info) # num examples, labels... are automatically calculated<br>
+          ds = builder.as_dataset(split='train', shuffle_files=True)<br>
+          tfds.show_examples(ds, builder.info)
+        </div>
+        but when I try to extract images and labels<br>
+        <div class="code">
+          for images, labels in train_dataset.take(1):<br>
+          print(images)
+        </div>
+        I get error<br>
+        <div class="output">
+          ValueError: too many values to unpack (expected 2)
+        </div>
+        However, <br>
+        <div class="code">
+          for images in train_dataset.take(1):<br>
+          print(images)
+        </div>
+        works, the ouput is a dictionary:<br>
+        <div class="output">
+          &#123;<br>
+          'image': &lt;Tensor: shape=(530, 500, 3), dtype=uint8, numpy=array([[[126, 124, 123],.., [170, 166, 160]]],
+          dtype=uint8)>,<br>
+          'image/filename': &lt;Tensor: shape=(), dtype=string,
+          numpy=b'../../../../../local_data/datasets/animals/train/cat/cat_0002.png'>, <br>
+          'label': &lt;Tensor: shape=(), dtype=int64, numpy=0><br>
+          &#125;
+        </div>
+        <br>
+        <br>
+        <br>
+        Helpful?<br>
+        <a href="https://www.tensorflow.org/datasets/api_docs/python/tfds/folder_dataset/write_metadata">
+          https://www.tensorflow.org/datasets/api_docs/python/tfds/folder_dataset/write_metadata
+        </a><br>
+        <a href="https://www.tensorflow.org/datasets/external_tfrecord">
+          https://www.tensorflow.org/datasets/external_tfrecord
+        </a><br>
+
+        <a href=""> </a><br>
+      </div>
+
+      <div class="card">
         <h2>Date</h2>
         <a href=""> </a><br>
       </div>
