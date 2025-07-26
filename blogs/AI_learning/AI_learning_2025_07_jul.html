@@ -471,15 +471,28 @@
 
       <div class="card">
         <h2>July 23, 2025</h2>
-        <h4>Loading my own images for prediction with tfds-based model</h4>
-        <a href="https://www.tensorflow.org/datasets/api_docs/python/tfds/folder_dataset/ImageFolder">
-          https://www.tensorflow.org/datasets/api_docs/python/tfds/folder_dataset/ImageFolder
+        <h4>Goal: load my own images for inference with model from tfds dataset</h4>
+        The code for pre-processing works when the dataset is a tuple.<br>
+        <br>
+        This is the case when loading a dataset as in example at<br>
+        <a href="https://www.tensorflow.org/datasets/keras_example">
+          https://www.tensorflow.org/datasets/keras_example
         </a><br>
-
-
-        works:<br>
         <div class="code">
-          train_dataset= &lt;_PrefetchDataset<br>
+          (ds_train, ds_test), ds_info = tfds.load(<br>
+          'mnist',<br>
+          split=['train', 'test'],<br>
+          shuffle_files=True,<br>
+          as_supervised=True,<br>
+          with_info=True,<br>
+          )
+        </div>
+        Here, the type is a tuple:<br>
+        <div class="code">
+          print(train_ds)
+        </div>
+        <div class="output">
+          test_dataset= &lt;_PrefetchDataset<br>
           element_spec=<br>
           (<br>
           TensorSpec(shape=(None, None, 3), dtype=tf.uint8, name=None),<br>
@@ -488,8 +501,21 @@
           &lt;/_PrefetchDataset>
         </div>
         <br>
-        not:<br>
+        When using the example code from <br>
+        <a href="https://www.tensorflow.org/datasets/api_docs/python/tfds/folder_dataset/ImageFolder">
+          https://www.tensorflow.org/datasets/api_docs/python/tfds/folder_dataset/ImageFolder
+        </a><br>
         <div class="code">
+          ds = builder.as_dataset(<br>
+          split='train',<br>
+          shuffle_files=True<br>
+          )
+        </div>
+        the type is a dictionary, not a tuple:<br>
+        <div class="code">
+          print(train_ds)
+        </div>
+        <div class="output">
           test_dataset= &lt;_PrefetchDataset<br>
           element_spec=<br>
           {<br>
@@ -564,9 +590,41 @@
         <a href="https://www.tensorflow.org/tutorials/load_data/images">
           https://www.tensorflow.org/tutorials/load_data/images
         </a><br>
+        <a href=""> </a><br>
+      </div>
 
-
-
+      <div class="card">
+        <h2>July 26, 2025</h2>
+        <h4>Goal: load my own images for inference with model from tfds dataset</h4>
+        Solution:<br>
+        <br>
+        set the parameter as_supervised to True.<br>
+        <div class="code">
+          (train_dataset, test_dataset)= builder.as_dataset(<br>
+          split=['train', 'test'],<br>
+          shuffle_files=False,<br>
+          as_supervised=True<br>
+          )
+        </div>
+        <br>
+        Documentation at<br>
+        <a href="https://www.tensorflow.org/datasets/api_docs/python/tfds/folder_dataset/ImageFolder">
+          https://www.tensorflow.org/datasets/api_docs/python/tfds/folder_dataset/ImageFolder
+        </a><br>
+        <br>
+        The output types vary depending on the parameters. Examples:<br>
+        # Default parameters: Returns the dict of tf.data.Dataset<br>
+        # With as_supervised: tf.data.Dataset only contains (feature, label) tuples<br>
+        <br>
+        Documentation at<br>
+        <a href="https://www.tensorflow.org/datasets/api_docs/python/tfds/load">
+          https://www.tensorflow.org/datasets/api_docs/python/tfds/load </a><br>
+          <br>
+        as_supervised:<br>
+        bool, if True, the returned tf.data.Dataset will have a 2-tuple structure (input, label) according to
+        builder.info.supervised_keys.<br>
+        If False, the default, the returned tf.data.Dataset will have a dictionary with
+        all the features.
         <a href=""> </a><br>
       </div>
 
