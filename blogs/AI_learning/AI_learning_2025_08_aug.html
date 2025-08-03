@@ -41,7 +41,7 @@
           https://hunterheidenreich.com/posts/intro-to-word-embeddings/ </a><br>
         <br>
         Distributional semantics<br>
-        <a href="https://en.wikipedia.org/wiki/Distributional_semantics"> 
+        <a href="https://en.wikipedia.org/wiki/Distributional_semantics">
           https://en.wikipedia.org/wiki/Distributional_semantics
         </a><br>
         distributional hypothesis: linguistic items with similar distributions have similar meanings.<br>
@@ -63,8 +63,42 @@
         <a href="https://mattmahoney.net/dc/textdata.html">
           https://mattmahoney.net/dc/textdata.html </a><br>
 
-        <a href=""> </a><br>
+        <br>
+        <br>
 
+        <h5>Part 9.3: Transfer Learning for NLP with Keras</h5>
+        The code loads an pretrained embedding model as variable model.<br>
+
+        Then it creates an embedding layer as a Keras layer with the parameters from this model,
+        and that has an output shape of 20.<br>
+        <div class="code">
+          hub_layer = hub.KerasLayer(<br>
+          model,<br>
+          output_shape=[20],<br>
+          input_shape=[],<br>
+          dtype=tf.string,<br>
+          trainable=True<br>
+          )
+        </div>
+
+        The embedding layer can convert each of the reviews into a 20 number vector.<br>
+        For example:<br>
+        <div class="code">
+          print(hub_layer(train_examples[:1]))
+        </div>
+        prints<br>
+        <div class="output">
+          tf.Tensor(
+          [[ <br>
+          1.7657859 -3.882232 3.913424 -1.5557289 -3.3362343 -1.7357956<br>
+          -1.9954445 1.298955 5.081597 -1.1041285 -2.0503852 -0.7267516<br>
+          -0.6567596 0.24436145 -3.7208388 2.0954835 2.2969332 -2.0689783<br>
+          -2.9489715 -1.1315986 <br>
+          ]], shape=(1, 20), dtype=float32)
+        </div>
+        regardless of how many words the input has.
+
+        <a href=""> </a><br>
         <a href=""> </a><br>
       </div>
 
