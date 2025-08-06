@@ -145,6 +145,47 @@
         <br>
         <a href="https://www.tensorflow.org/hub/caching">
           https://www.tensorflow.org/hub/caching </a><br>
+        <br>
+
+
+        <h5>Tutorial: Universal Sentence Encoder</h5>
+
+        <a href="https://www.tensorflow.org/hub/tutorials/semantic_similarity_with_tf_hub_universal_encoder">
+          https://www.tensorflow.org/hub/tutorials/semantic_similarity_with_tf_hub_universal_encoder </a><br>
+        <br>
+        The tutorial compares similarity scores computed using sentence embeddings align with human judgements.<br>
+
+        STS Benchmark<br>
+
+        <a href="http://ixa2.si.ehu.es/stswiki">http://ixa2.si.ehu.es/stswiki </a><br>
+        <br>
+        The benchmark dataset is downloaded:<br>
+        <div class="code">
+          sts_dataset = tf.keras.utils.get_file(<br>
+          fname="Stsbenchmark.tar.gz",<br>
+          origin="http://ixa2.si.ehu.es/stswiki/images/4/48/Stsbenchmark.tar.gz",<br>
+          extract=True)
+        </div>
+        The folder location of the downloaded dataset is at<br>
+        <div class="code">
+          ~/.keras/datasets/stsbenchmark
+        </div>
+        This folder contains a readme.txt.<br>
+        "The benchmark comprises 8628 sentence pairs."<br>
+        <br>
+
+        csv files<br>
+        column headers:<br>
+        genre filename year score sentence1 sentence2<br>
+
+
+
+
+
+
+
+
+
       </div>
 
 
