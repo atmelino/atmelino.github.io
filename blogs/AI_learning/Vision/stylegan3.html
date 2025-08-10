@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type="text/css" href="../../../css/blog.css" media="all" rel="stylesheet">
+  <title></title>
+</head>
+
+<body>
+
+  <div class="header">
+    <table id="headerline_table">
+      <tr>
+        <td width="200">
+          <a href="../../../index.html"><img src="../../../images/home.png" alt="home" height="60"></a>
+          <a href="../../../blogs/index.html"><img src="../../../images/scroll.png" alt="scroll" height="60"></a>
+          <a href="../../../blogs/AI_learning/index.html"><img src="../../../images/AI_01.png" alt="AI Learning"
+              height="60"></a>
+        </td>
+        <td>
+          <h2>Computer Vision - StyleGAN3</h2>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+
+  <div class="row">
+    <div class="leftcolumn">
+
+
+      <div class="card">
+        <h2>stylegan3</h2>
+
+        <a href="https://github.com/NVlabs/stylegan3">https://github.com/NVlabs/stylegan3 </a><br>
+
+        <br>
+        Set up conda environment to run the examples from the github readme.<br>
+        <br>
+        For example, to run<br>
+        <div class="code">
+          # Train StyleGAN2 for FFHQ at 1024x1024 resolution using 8 GPUs.<br>
+          python train.py --outdir=~/training-runs --cfg=stylegan2 --data=~/datasets/ffhq-1024x1024.zip \<br>
+          --gpus=8 --batch=32 --gamma=10 --mirror=1 --aug=noaug
+        </div>
+
+
+        <h4> conda environment: stylegan3</h4>
+        <div class="code">
+          mkdir local_data<br>
+          cd local_data<br>
+          git clone https://github.com/NVlabs/stylegan3.git<br>
+          cd stylegan3<br>
+          conda env create -f environment.yml<br>
+          conda install ipython<br>
+        </div>
+
+        Download stylegan3<br>
+        <div class="code">
+          mkdir local_data<br>
+          cd local_data<br>
+          git clone https://github.com/NVlabs/stylegan3.git<br>
+        </div>
+
+        <!-- Modify environment.yml to prevent numpy version warning:<br>
+        in stylegan3/environment.yml<br>
+        Change numpy line to <br>
+        <div class="code">
+          - numpy=1.22
+        </div> -->
+
+        Download packages<br>
+        <div class="code">
+          cd stylegan3<br>
+          conda env create -f environment.yml<br>
+          conda activate stylegan3<br>
+        </div>
+        <br>
+        To utilize datasets from huggingface:<br>
+        <div class="code">
+          pip install datasets
+        </div>
+        <br>
+        To prevent the error "ModuleNotFoundError: No module named 'psutil'":" <br>
+        <div class="code">
+          conda install -c conda-forge psutil -y<br>
+        </div>
+        <br>
+        To run the Jeff Heaton examples in chapter 7:<br>
+        <div class="code">
+          conda install ipython<br>
+          conda install -c conda-forge jupyter -y
+        </div>
+        <br>
+        Don't
+        <div class="code">
+          conda install -c conda-forge tensorboard -y<br>
+        </div>
+        because it causes the training to crash with<br>
+        AttributeError: module 'distutils' has no attribute 'version'<br>
+
+
+
+        <p>
+          On Ubuntu Server 24.04, after installing as above, when calling train.py, get error<br>
+        <div class="output">
+          Error building extension 'bias_act_plugin'
+        </div>
+        Solution:<br>
+
+        Remove ninja that was installed using the environment.yml file by<br>
+        <div class="code">
+          conda remove ninja
+        </div>
+        This will somehow update a few packages and update pytorch from 1.9.1 to 2.5.1<br>
+        <!-- Then install ninja via pip<br> -->
+        <!-- <div class="code"> -->
+        <!-- pip install ninja -->
+        <!-- </div> -->
+        and install ninja via conda without giving version number<br>
+        <div class="code">
+          conda install -c conda-forge ninja -y<br>
+        </div>
+        <a href="https://stackoverflow.com/questions/75515629/how-to-build-the-bias-act-plugin-extension-for-stylegan3">
+          https://stackoverflow.com/questions/75515629/how-to-build-the-bias-act-plugin-extension-for-stylegan3
+        </a><br>
+        <a href=""> </a><br>
+
+        </p>
+
+
+
+        <h4> Preparing flickrfaces dataset</h4>
+        Download the flickrfaces dataset:<br>
+
+        <a href="https://github.com/NVlabs/ffhq-dataset/tree/master">
+          https://github.com/NVlabs/ffhq-dataset/tree/master</a><br><br>
+
+        Running the download script leads to an error:<br>
+        <div class="output">
+          OSError: [Errno Incorrect file size] ffhq-dataset-v2.json
+        </div>
+        <br>
+        Solution:<br>
+        <a href="https://github.com/NVlabs/stylegan2-ada/issues/115">
+          https://github.com/NVlabs/stylegan2-ada/issues/115</a><br>
+        <br>
+        Open a browser at<br>
+        <a href="https://drive.usercontent.google.com/download?id=16N0RV4fHI6joBuKbQAoG34V_cQk7vxSA&export=download">
+          https://drive.usercontent.google.com/download?id=16N0RV4fHI6joBuKbQAoG34V_cQk7vxSA&export=download
+        </a><br>
+        Download the file named ffhq-dataset-v2.json.<br>
+        <br>
+        Place the file ffhq-dataset-v2.json and the script named download_ffhq.py in the same directory <br>
+        <br>
+        Run the script with<br>
+        <div class="code">
+          python3 download_ffhq.py --json --images
+        </div>
+
+      </div>
+
+
+
+      <div class="card">
+        <h2></h2>
+        <a href=""> </a><br>
+      </div>
+
+    </div>
+
+
+
+
+    <div class="rightcolumn">
+      <div class="card">
+        <br>
+      </div>
+
+      <div class="card">
+        <h3>Follow Me</h3>
+        <a href="https://discord.gg/F7KQySEW"><img src="../../images/discord.png" alt="discord" height="30"></a>
+      </div>
+
+    </div>
+
+
+  </div>
+  <div class="footer">
+    <h3>Modified July 2023</h3>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type="text/css" href="../../../css/blog.css" media="all" rel="stylesheet">
+  <title></title>
+</head>
+
+<body>
+
+  <div class="header">
+    <table id="headerline_table">
+      <tr>
+        <td width="200">
+          <a href="../../../index.html"><img src="../../../images/home.png" alt="home" height="60"></a>
+          <a href="../../../blogs/index.html"><img src="../../../images/scroll.png" alt="scroll" height="60"></a>
+          <a href="../../../blogs/AI_learning/index.html"><img src="../../../images/AI_01.png" alt="AI Learning"
+              height="60"></a>
+        </td>
+        <td>
+          <h2>Computer Vision 1D GAN Example</h2>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+
+  <div class="row">
+    <div class="leftcolumn">
+
+
+
+      <div class="card">
+        <h2>Reproducability</h2>
+        This article describes the design of a simple, 1-dimensional GAN:<br>
+        How to Develop a 1D Generative Adversarial Network From Scratch in Keras<br>
+        <a
+          href="https://machinelearningmastery.com/how-to-develop-a-generative-adversarial-network-for-a-1-dimensional-function-from-scratch-in-keras/">
+          https://machinelearningmastery.com/how-to-develop-a-generative-adversarial-network-for-a-1-dimensional-function-from-scratch-in-keras/
+        </a><br>
+        <br>
+        The real samples are basically represented by pairs of values that lie on a parabola<br>
+
+
+        <img src="../images/plot00019.png" alt="AI plot00019" height="300">
+
+        <p>
+          Environment:<br>
+          the x-values for the real samples are random.<br><br>
+
+          Observations:<br>
+          Train GAN on computer A with original code, save model to M1.h5, predictions:<br>
+        <div class="code_new">
+          0 1 pred
+          0 0.2 0.00 0.813885
+          1 0.2 0.01 0.822533
+          2 0.2 0.02 0.830599
+          3 0.2 0.03 0.836829
+          4 0.2 0.04 0.842578
+          5 0.2 0.05 0.848162
+          6 0.2 0.06 0.848473
+          7 0.2 0.07 0.841271
+          8 0.2 0.08 0.833794
+          9 0.2 0.09 0.826038
+        </div>
+        copy model M1.h5 to computer B and load it, predictions:<br>
+
+        <div class="code_new">
+          0 1 pred
+          0 0.2 0.00 0.813885
+          1 0.2 0.01 0.822533
+          2 0.2 0.02 0.830599
+          3 0.2 0.03 0.836829
+          4 0.2 0.04 0.842578
+          5 0.2 0.05 0.848162
+          6 0.2 0.06 0.848473
+          7 0.2 0.07 0.841271
+          8 0.2 0.08 0.833794
+          9 0.2 0.09 0.826038
+        </div>
+        </p>
+
+        So the predictions are the same on different computers when the saved model is the same.<br><br>
+
+        New Training run of GAN on computer A with original code, save model to M2.h5, predictions:<br>
+
+        <div class="code_new">
+          0 1 pred
+          0 0.2 0.00 0.784457
+          1 0.2 0.01 0.792328
+          2 0.2 0.02 0.796565
+          3 0.2 0.03 0.799720
+          4 0.2 0.04 0.802838
+          5 0.2 0.05 0.803929
+          6 0.2 0.06 0.800718
+          7 0.2 0.07 0.797405
+          8 0.2 0.08 0.794052
+          9 0.2 0.09 0.790657
+        </div>
+
+        Loading model M2.h5 on computer B gives the same predictions as on computer A:
+        <div class="code_new">
+          0 1 pred
+          0 0.2 0.00 0.784457
+          1 0.2 0.01 0.792328
+          2 0.2 0.02 0.796565
+          3 0.2 0.03 0.799720
+          4 0.2 0.04 0.802838
+          5 0.2 0.05 0.803929
+          6 0.2 0.06 0.800718
+          7 0.2 0.07 0.797406
+          8 0.2 0.08 0.794052
+          9 0.2 0.09 0.790657
+        </div>
+        Between training runs, the predictions are different.<br><br>
+
+        <h5>Convergence Behavior</h5>
+        During training, real samples prediction accuracy starts low and fake samples prediction accuracy starts
+        high.<br>
+        At around epoch 400, the real prediction accuracy becomes a steady 1.00 and the fake prediction hovers around
+        0.9<br>
+        <div class="code_new">
+          epoch 0 acc_real 0.016 acc_fake 0.938
+          ..
+          epoch 400 acc_real 1.000 acc_fake 0.844
+          ..
+          epoch 993 acc_real 1.000 acc_fake 0.891
+          epoch 994 acc_real 1.000 acc_fake 0.844
+          epoch 995 acc_real 1.000 acc_fake 0.859
+          epoch 996 acc_real 1.000 acc_fake 0.781
+          epoch 997 acc_real 1.000 acc_fake 0.875
+          epoch 998 acc_real 1.000 acc_fake 0.906
+          epoch 999 acc_real 1.000 acc_fake 0.859
+        </div>
+
+        <h5>non-random x-values</h5>
+        In the code for generate_real_samples(), the x-values are random. <br>
+        What happens if we use the same x-values in this function?<br>
+
+        <a href=""> </a><br>
+      </div>
+
+
+      <div class="card">
+        <h2></h2>
+        <a href=""> </a><br>
+      </div>
+
+    </div>
+
+
+
+
+    <div class="rightcolumn">
+      <div class="card">
+        <br>
+      </div>
+
+      <div class="card">
+        <h3>Follow Me</h3>
+        <a href="https://discord.gg/F7KQySEW"><img src="../../images/discord.png" alt="discord" height="30"></a>
+      </div>
+
+    </div>
+
+
+  </div>
+  <div class="footer">
+    <h3>Modified July 2023</h3>
+  </div>
+</body>
+
+</html>

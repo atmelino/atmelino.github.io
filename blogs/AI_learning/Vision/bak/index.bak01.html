@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type="text/css" href="../../../css/blog.css" media="all" rel="stylesheet">
+  <title></title>
+</head>
+
+<body>
+
+  <div class="header">
+    <table id="headerline_table">
+      <tr>
+        <td width="200">
+          <a href="../../../index.html"><img src="../../../images/home.png" alt="home" height="60"></a>
+          <a href="../../../blogs/index.html"><img src="../../../images/scroll.png" alt="scroll" height="60"></a>
+          <a href="../../../blogs/AI_learning/index.html"><img src="../../../images/AI_01.png" alt="AI Learning"
+              height="60"></a>
+        </td>
+        <td>
+          <h2>Computer Vision</h2>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+
+  <div class="row">
+    <div class="leftcolumn">
+
+
+      <div class="card">
+        <h2>Cat and Dog Example</h2>
+
+        The keras project includes an example for object recognition:<br>
+
+        <a href="https://keras.io/examples/vision/image_classification_from_scratch/">
+          https://keras.io/examples/vision/image_classification_from_scratch/ </a><br>
+        <br>
+
+        At the top of the page, a note says:<br>
+        This example uses Keras 3.<br><br>
+
+        we will try to install the most current packages as of December 2024 to run this example<br><br>
+
+        In order to get keras version 3, we need to install a tensorflow version 2.16 or later.<br><br>
+      </div>
+
+      <div class="card">
+        <h2>Python Environment and Package Versions</h2>
+
+        <h4>conda vision environment</h4>
+        <p>
+          Creating a defined environment
+        </p>
+        <div class="code">
+          conda create -n vision python=3.10
+        </div>
+        Then activate this environment before installing packages!<br>
+        <div class="code">
+          conda activate vision
+        </div>
+
+        Install specific packages:<br>
+
+        <div class="code">
+          conda install -c conda-forge tensorflow=2.17.0 -y<br>
+          conda install -c conda-forge matplotlib=3.10.0 -y<br>
+          conda install -c conda-forge pandas=2.2.3 -y<br>
+          conda install -c conda-forge progress<br>
+          conda install -c conda-forge pydot -y<br>
+          conda install -c conda-forge tensorflow-datasets -y
+        </div>
+
+
+        <p>Notes:<br>
+          When I install python version 3.13.1, then conda will not let me install tensorflow 2.17.<br>
+          (Error LibMambaUnsatisfiableError: Encountered problems while solving:
+          - nothing provides __cuda needed by tensorflow-2.17.0 )<br>
+          However, python 3.10 works with tensorflow 2.17
+        </p>
+
+
+        <h5>Install yolo5</h5>
+
+        <a href="https://github.com/ultralytics/yolov5"> https://github.com/ultralytics/yolov5 </a><br>
+
+        <div class="code">
+          mkdir local_data<br>
+          cd local_data<br>
+          git clone https://github.com/ultralytics/yolov5<br>
+          cd yolov5<br>
+          pip install -r requirements.txt<br>
+          pip install ninja
+        </div>
+        This will also install PyTorch which will be used in later examples.
+        <a href=""> </a><br>
+      </div>
+
+      <div class="card">
+        <h2>Cifar10 dataset</h2>
+
+        <a href="https://www.cs.toronto.edu/~kriz/cifar.html"> https://www.cs.toronto.edu/~kriz/cifar.html</a><br>
+
+
+        How to load and visualize CIFAR 10 dataset using TensorFlow Keras?<br>
+        <a href="https://www.binarystudy.com/2024/07/how-to-load-and-visualize-cifar-10-using-tensorflow-keras.html">
+          https://www.binarystudy.com/2024/07/how-to-load-and-visualize-cifar-10-using-tensorflow-keras.html
+        </a><br>
+        <br>
+        <a href="https://www.youtube.com/watch?v=640ipvR0HhQ"> https://www.youtube.com/watch?v=640ipvR0HhQ</a><br>
+
+      </div>
+
+      <div class="card">
+        <h2>stylegan2</h2>
+
+        The video generation part of the code of Jeff Heaton's class_09_4_facial_points requires that PyTorch and OpenCV
+        are installed.<br>
+        <br>
+
+        <div class="code">
+          conda create -n stylegan2 python=3.13
+        </div>
+        Then activate this environment before installing packages!<br>
+        <div class="code">
+          conda activate stylegan2
+        </div>
+        Install packages:<br>
+        <div class="code">
+          conda install -c conda-forge pytorch torchvision torchaudio -y<br>
+        </div>
+        pip installs:<br>
+        <div class="code">
+          pip install https://github.com/podgorskiy/dnnlib/releases/download/0.0.1/dnnlib-0.0.1-py3-none-any.whl<br>
+          pip install requests<br>
+          pip install imageio<br>
+          pip install tqdm
+        </div>
+
+
+
+        <a href=""> </a><br>
+      </div>
+
+
+
+
+      <div class="card">
+        <h2>stylegan3</h2>
+
+
+
+        <a href="https://github.com/NVlabs/stylegan3">https://github.com/NVlabs/stylegan3 </a><br>
+
+        <h4> conda environment: stylegan3</h4>
+        <div class="code">
+          mkdir local_data<br>
+          cd local_data<br>
+          git clone https://github.com/NVlabs/stylegan3.git<br>
+          cd stylegan3<br>
+          conda env create -f environment.yml<br>
+          conda install ipython<br>
+        </div>
+
+        Download stylegan3<br>
+        <div class="code">
+          mkdir local_data<br>
+          cd local_data<br>
+          git clone https://github.com/NVlabs/stylegan3.git<br>
+        </div>
+
+        <!-- Modify environment.yml to prevent numpy version warning:<br>
+        in stylegan3/environment.yml<br>
+        Change numpy line to <br>
+        <div class="code">
+          - numpy=1.22
+        </div> -->
+
+        Download packages<br>
+        <div class="code">
+          cd stylegan3<br>
+          conda env create -f environment.yml<br>
+          conda activate stylegan3<br>
+        </div>
+        <br>
+        To utilize datasets from huggingface:<br>
+        <div class="code">
+          pip install datasets
+        </div>
+        <br>
+        To prevent the error "ModuleNotFoundError: No module named 'psutil'":" <br>
+        <div class="code">
+          conda install -c conda-forge psutil -y<br>
+        </div>
+        <br>
+        To run the Jeff Heaton examples in chapter 7:<br>
+        <div class="code">
+          conda install ipython<br>
+          conda install -c conda-forge jupyter -y
+        </div>
+        <br>
+        Don't
+        <div class="code">
+          conda install -c conda-forge tensorboard -y<br>
+        </div>
+        because it causes the training to crash with<br>
+        AttributeError: module 'distutils' has no attribute 'version'<br>
+
+
+
+        <p>
+          On Ubuntu Server 24.04, after installing as above, when calling train.py, get error<br>
+        <div class="output">
+          Error building extension 'bias_act_plugin'
+        </div>
+        Solution:<br>
+
+        Remove ninja that was installed using the environment.yml file by<br>
+        <div class="code">
+          conda remove ninja
+        </div>
+        This will somehow update a few packages and update pytorch from 1.9.1 to 2.5.1<br>
+        <!-- Then install ninja via pip<br> -->
+        <!-- <div class="code"> -->
+        <!-- pip install ninja -->
+        <!-- </div> -->
+        and install ninja via conda without giving version number<br>
+        <div class="code">
+          conda install -c conda-forge ninja -y<br>
+        </div>
+        <a href="https://stackoverflow.com/questions/75515629/how-to-build-the-bias-act-plugin-extension-for-stylegan3">
+          https://stackoverflow.com/questions/75515629/how-to-build-the-bias-act-plugin-extension-for-stylegan3
+        </a><br>
+        <a href=""> </a><br>
+
+        </p>
+
+
+
+
+
+        <h4> Preparing flickrfaces dataset</h4>
+        Download the flickrfaces dataset:<br>
+
+        <a href="https://github.com/NVlabs/ffhq-dataset/tree/master">
+          https://github.com/NVlabs/ffhq-dataset/tree/master</a><br><br>
+
+        Running the download script leads to an error:<br>
+        <div class="output">
+          OSError: [Errno Incorrect file size] ffhq-dataset-v2.json
+        </div>
+        <br>
+        Solution:<br>
+        <a href="https://github.com/NVlabs/stylegan2-ada/issues/115">
+          https://github.com/NVlabs/stylegan2-ada/issues/115</a><br>
+        <br>
+        Open a browser at<br>
+        <a href="https://drive.usercontent.google.com/download?id=16N0RV4fHI6joBuKbQAoG34V_cQk7vxSA&export=download">
+          https://drive.usercontent.google.com/download?id=16N0RV4fHI6joBuKbQAoG34V_cQk7vxSA&export=download
+        </a><br>
+        Download the file named ffhq-dataset-v2.json.<br>
+        <br>
+        Place the file ffhq-dataset-v2.json and the script named download_ffhq.py in the same directory <br>
+        <br>
+        Run the script with<br>
+        <div class="code">
+          python3 download_ffhq.py --json --images
+        </div>
+
+      </div>
+
+
+      <div class="card">
+        <h2>Reproducability</h2>
+        This article describes the design of a simple, 1-dimensional GAN:<br>
+        How to Develop a 1D Generative Adversarial Network From Scratch in Keras<br>
+        <a
+          href="https://machinelearningmastery.com/how-to-develop-a-generative-adversarial-network-for-a-1-dimensional-function-from-scratch-in-keras/">
+          https://machinelearningmastery.com/how-to-develop-a-generative-adversarial-network-for-a-1-dimensional-function-from-scratch-in-keras/
+        </a><br>
+        <br>
+        The real samples are basically represented by pairs of values that lie on a parabola<br>
+
+
+        <img src="../images/plot00019.png" alt="AI plot00019" height="300">
+
+        <p>
+          Environment:<br>
+          the x-values for the real samples are random.<br><br>
+
+          Observations:<br>
+          Train GAN on computer A with original code, save model to M1.h5, predictions:<br>
+        <div class="code_new">
+          0 1 pred
+          0 0.2 0.00 0.813885
+          1 0.2 0.01 0.822533
+          2 0.2 0.02 0.830599
+          3 0.2 0.03 0.836829
+          4 0.2 0.04 0.842578
+          5 0.2 0.05 0.848162
+          6 0.2 0.06 0.848473
+          7 0.2 0.07 0.841271
+          8 0.2 0.08 0.833794
+          9 0.2 0.09 0.826038
+        </div>
+        copy model M1.h5 to computer B and load it, predictions:<br>
+
+        <div class="code_new">
+          0 1 pred
+          0 0.2 0.00 0.813885
+          1 0.2 0.01 0.822533
+          2 0.2 0.02 0.830599
+          3 0.2 0.03 0.836829
+          4 0.2 0.04 0.842578
+          5 0.2 0.05 0.848162
+          6 0.2 0.06 0.848473
+          7 0.2 0.07 0.841271
+          8 0.2 0.08 0.833794
+          9 0.2 0.09 0.826038
+        </div>
+        </p>
+
+        So the predictions are the same on different computers when the saved model is the same.<br><br>
+
+        New Training run of GAN on computer A with original code, save model to M2.h5, predictions:<br>
+
+        <div class="code_new">
+          0 1 pred
+          0 0.2 0.00 0.784457
+          1 0.2 0.01 0.792328
+          2 0.2 0.02 0.796565
+          3 0.2 0.03 0.799720
+          4 0.2 0.04 0.802838
+          5 0.2 0.05 0.803929
+          6 0.2 0.06 0.800718
+          7 0.2 0.07 0.797405
+          8 0.2 0.08 0.794052
+          9 0.2 0.09 0.790657
+        </div>
+
+        Loading model M2.h5 on computer B gives the same predictions as on computer A:
+        <div class="code_new">
+          0 1 pred
+          0 0.2 0.00 0.784457
+          1 0.2 0.01 0.792328
+          2 0.2 0.02 0.796565
+          3 0.2 0.03 0.799720
+          4 0.2 0.04 0.802838
+          5 0.2 0.05 0.803929
+          6 0.2 0.06 0.800718
+          7 0.2 0.07 0.797406
+          8 0.2 0.08 0.794052
+          9 0.2 0.09 0.790657
+        </div>
+        Between training runs, the predictions are different.<br><br>
+
+        <h5>Convergence Behavior</h5>
+        During training, real samples prediction accuracy starts low and fake samples prediction accuracy starts
+        high.<br>
+        At around epoch 400, the real prediction accuracy becomes a steady 1.00 and the fake prediction hovers around
+        0.9<br>
+        <div class="code_new">
+          epoch 0 acc_real 0.016 acc_fake 0.938
+          ..
+          epoch 400 acc_real 1.000 acc_fake 0.844
+          ..
+          epoch 993 acc_real 1.000 acc_fake 0.891
+          epoch 994 acc_real 1.000 acc_fake 0.844
+          epoch 995 acc_real 1.000 acc_fake 0.859
+          epoch 996 acc_real 1.000 acc_fake 0.781
+          epoch 997 acc_real 1.000 acc_fake 0.875
+          epoch 998 acc_real 1.000 acc_fake 0.906
+          epoch 999 acc_real 1.000 acc_fake 0.859
+        </div>
+
+        <h5>non-random x-values</h5>
+        In the code for generate_real_samples(), the x-values are random. <br>
+        What happens if we use the same x-values in this function?<br>
+
+        <a href=""> </a><br>
+      </div>
+
+      <div class="card">
+        <h2>Kaggle State Farm Distracted Driver Detection </h2>
+        <a href="https://www.kaggle.com/competitions/state-farm-distracted-driver-detection/overview">
+          https://www.kaggle.com/competitions/state-farm-distracted-driver-detection/overview </a><br><br>
+
+        Create conda environment<br>
+        <div class="code">
+          conda create -n kaggle_statefarm python=3.10
+        </div>
+
+        Activate conda environment<br>
+        <div class="code">
+          conda activate kaggle_statefarm<br>
+        </div>
+
+
+        Install packages<br>
+        <div class="code">
+          pip install ultralytics<br>
+          conda install ipython<br>
+          pip install roboflow<br>
+
+        </div>
+
+
+
+        <a href=""> </a><br>
+      </div>
+
+
+
+      <div class="card">
+        <h2></h2>
+        <a href=""> </a><br>
+      </div>
+
+    </div>
+
+
+
+
+    <div class="rightcolumn">
+      <div class="card">
+        <br>
+      </div>
+
+      <div class="card">
+        <h3>Follow Me</h3>
+        <a href="https://discord.gg/F7KQySEW"><img src="../../images/discord.png" alt="discord" height="30"></a>
+      </div>
+
+    </div>
+
+
+  </div>
+  <div class="footer">
+    <h3>Modified July 2023</h3>
+  </div>
+</body>
+
+</html>
