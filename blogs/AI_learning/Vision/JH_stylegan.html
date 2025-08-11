@@ -21,7 +21,7 @@
               height="60"></a>
         </td>
         <td>
-          <h2>Computer Vision - Jeff Heaton StyleGAN2</h2>
+          <h2>Computer Vision - Jeff Heaton StyleGAN</h2>
         </td>
       </tr>
     </table>
@@ -33,37 +33,54 @@
 
 
       <div class="card">
-        <h2>stylegan2</h2>
+        <h2>Jeff Heaton Class</h2>
 
-        https://github.com/NVlabs/stylegan2-ada
+        Attempts to create a conda environment that satisfies the requirements of StyleGAN2 have been unsuccessful.<br>
+        <br>
+        However, the use of StyleGAN3 has worked.<br>
+        <br>
+        The following examples run with StyleGAN3:<br>
+        <br>
+        - class_07_1_gan_intro<br>
+        - class_07_1_gan_intro_latent<br>
+        - class_07_2_train_gan<br>
 
-        https://github.com/jeffheaton/present/issues/4
-        Use python 3.7, clone the stylegan2 repo and copy dnnlib in the
-        /lib/site-packages/ folder of your env.
-        Last but not least, pip install ffmpeg.
 
+        <br>
 
-        <a href=""> </a><br>
-      </div>
+        Use the instructions from <a href="stylegan3.html"> stylegan3.html</a><br>
+        to install StyleGAN3.<br>
+        <br>
 
-
-      <div class="card">
-        <h2>how to run JH code</h2>
-
-        class_07_1_gan_intro_latent<br>
-        The line<br>
+        When running python code such as <br>
+        <div class="code">
+          python3 class_07_1_gan_intro.py
+        </div>
+        Make sure the code contains the line<br>
         <div class="code">
           sys.path.insert(0, "../../../../local_data/packages/stylegan3")
         </div>
-        will allow python to find dnnlib and legacy.<br>
+        This will allow python to find dnnlib and legacy.<br>
+        Otherwise, you will get an "import not found" error.
+
+
+        <h5>Unverified attempts to use StyleGAN2</h5>
+
+
+        <a href="https://github.com/NVlabs/stylegan2-ada">
+          https://github.com/NVlabs/stylegan2-ada </a><br>
+        <br>
+
+        <a href="https://github.com/jeffheaton/present/issues/4">
+          https://github.com/jeffheaton/present/issues/4 </a><br>
+        <br>
+        "Use python 3.7, clone the stylegan2 repo and copy dnnlib in the
+        /lib/site-packages/ folder of your env.
+        Last but not least, pip install ffmpeg.""
 
 
         <a href=""> </a><br>
       </div>
-
-
-
-
 
 
       <div class="card">
