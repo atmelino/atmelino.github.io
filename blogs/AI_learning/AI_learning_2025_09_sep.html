@@ -54,6 +54,34 @@
 
 
       <div class="card">
+        <h2>September 8, 2025</h2>
+        How does the code for Neural style transfer generate the combined image?<br>
+        <br>
+        <a href="https://keras.io/examples/generative/neural_style_transfer">
+          https://keras.io/examples/generative/neural_style_transfer </a><br>
+        <br>
+        At the beginning of the code, the variable combination_image is loaded with the data from the base image.<br>
+        <div class="code">
+          combination_image = tf.Variable(preprocess_image(base_image_path))
+        </div>
+        <br>
+        The loop for the optimization contains a call apply gradients:<br>
+        <br>
+        <div class="code">
+          optimizer.apply_gradients([(grads, combination_image)])
+        </div>
+
+        <a href="https://keras.io/api/optimizers/">https://keras.io/api/optimizers/ </a><br>
+        <a href="https://keras.io/api/optimizers/#applygradients-method"> 
+          https://keras.io/api/optimizers/#applygradients-method
+        </a><br>
+
+
+
+        <a href=""> </a><br>
+      </div>
+
+      <div class="card">
         <h2>Date</h2>
 
         <a href=""> </a><br>
