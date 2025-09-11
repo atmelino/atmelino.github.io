@@ -106,11 +106,46 @@
         <br>
         This proves that this is the line that modifies the combination image.<br>
         <br>
-        
+
+        <a href=""> </a><br>
+      </div>
+
+      <div class="card">
+        <h2>September 11, 2025</h2>
+        These two lines in the optimization loop make up the generation of the combined image:<br>
+
+        <div class="code">
+          loss, grads = compute_loss_and_grads( combination_image, base_image, style_reference_image )<br>
+          optimizer.apply_gradients([(grads, combination_image)])
+        </div>
+        <br>
+        The first statement computes the gradients that point in the direction of a reduction in loss.<br>
+        For this, the tf.GradientTape() function is used.<br>
+        <br>
+        Then, with the second statement, we move to a new point in the combination_image space going in the direction of
+        a lower loss.<br>
+        <br>
+        In the next iteration, the new value of combination_image serves as an input for the next gradient generation,
+        thus creating a loop that leads to a minimum.<br>
+        <br>
+        <br>
+        What does tf.GradientTape() do?<br>
+        <br>
+
+
+
+
+
+        We can work our way back from these statements in order to understand the rest of the algorithm.<br>
+        <br>
+
 
 
         <a href=""> </a><br>
       </div>
+
+
+
 
       <div class="card">
         <h2>Date</h2>
