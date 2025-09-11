@@ -76,7 +76,6 @@
           https://keras.io/api/optimizers/#applygradients-method
         </a><br>
 
-
         <a href=""> </a><br>
       </div>
 
@@ -88,11 +87,27 @@
           feature_extractor = keras.Model(inputs=model.inputs, outputs=outputs_dict)
         </div>
 
-
         Model class in keras:<br>
         <a href="https://keras.io/api/models/model/#model-class">
           https://keras.io/api/models/model/#model-class
         </a><br>
+
+        <a href=""> </a><br>
+      </div>
+
+      <div class="card">
+        <h2>September 10, 2025</h2>
+        Observations:<br>
+        if we remove the line
+        <div class="code">
+          optimizer.apply_gradients([(grads, combination_image)])
+        </div>
+        then the loss remains constant throughout the loop, and the combination image remains the same.<br>
+        <br>
+        This proves that this is the line that modifies the combination image.<br>
+        <br>
+        
+
 
         <a href=""> </a><br>
       </div>
