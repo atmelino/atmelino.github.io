@@ -146,18 +146,9 @@
         </div>
         <br>
 
-
         What is the purpose of the Tensorflow Gradient Tape?<br>
         <a href="https://stackoverflow.com/questions/53953099/what-is-the-purpose-of-the-tensorflow-gradient-tape">
           https://stackoverflow.com/questions/53953099/what-is-the-purpose-of-the-tensorflow-gradient-tape </a><br>
-
-        <br>
-        tf.GradientTape in TensorFlow<br>
-        <a href="https://www.geeksforgeeks.org/deep-learning/tf-gradienttape-in-tensorflow/">
-          https://www.geeksforgeeks.org/deep-learning/tf-gradienttape-in-tensorflow/
-        </a><br>
-
-
 
         <a href=""> </a><br>
       </div>
@@ -165,13 +156,36 @@
 
 
       <div class="card">
-        <h2>September 11, 2025</h2>
+        <h2>September 12, 2025</h2>
 
         Neural Transfer Using PyTorch<br>
         <a href="https://docs.pytorch.org/tutorials/advanced/neural_style_tutorial.html#style-loss">
           https://docs.pytorch.org/tutorials/advanced/neural_style_tutorial.html#style-loss
         </a><br>
+        <br>
 
+        tf.GradientTape in TensorFlow<br>
+        <a href="https://www.geeksforgeeks.org/deep-learning/tf-gradienttape-in-tensorflow/">
+          https://www.geeksforgeeks.org/deep-learning/tf-gradienttape-in-tensorflow/
+        </a><br>
+        <br>
+        Simple example computing the derivative of x^2<br>
+        <div class="code">
+          scalar = tf.Variable(3.0)<br>
+          with tf.GradientTape() as tape:<br>
+          &nbsp y = scalar**2<br>
+          dy_dx = tape.gradient(y, scalar)
+        </div>
+        tape.gradient computes the gradient (derivative) of y with respect to scalar.<br>
+        <br>
+        fchollet style transfer example:<br>
+        <div class="code">
+          with tf.GradientTape() as tape:<br>
+          &nbsp loss = compute_loss(combination_image, base_image, style_reference_image)<br>
+          grads = tape.gradient(loss, combination_image)<br>
+          optimizer.apply_gradients([(grads, combination_image)])
+        </div>
+        tape.gradient computes the gradient of loss with respect to combination_image.<br>
 
 
         <a href=""> </a><br>
