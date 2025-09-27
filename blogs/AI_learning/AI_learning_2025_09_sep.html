@@ -287,7 +287,20 @@
         The variables x_train and x_test contain the images of 28 by 28 pixels.<br>
         The value of the array element at (i,j) is the gray-scale value of the pixel coordinate (i,j)<br>
         <br>
-         
+        As a result, the shape of x_train is<br>
+        <div class="code">
+          print(x_train.shape)
+        </div>
+        <div class="output">
+          (60000, 28, 28)
+        </div>
+        <br>
+        The training code works with a dense 1-dimensional model.<br>
+        Therefore, the images data arrays are flattened into a 1-dimensional array:<br>
+        <div class="code">
+          x_train = np.reshape(x_train, (-1, 784))
+        </div>
+
 
 
         <a href=""> </a><br>
