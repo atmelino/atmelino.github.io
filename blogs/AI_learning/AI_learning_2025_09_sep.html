@@ -259,8 +259,39 @@
 
 
       <div class="card">
-        <h2>September 23, 2025</h2>
+        <h2>September 26, 2025</h2>
+
+        Writing a training loop from scratch in TensorFlow<br>
+        <a href="https://keras.io/guides/writing_a_custom_training_loop_in_tensorflow/">
+          https://keras.io/guides/writing_a_custom_training_loop_in_tensorflow/
+        </a><br>
+        <br>
+        The mnist dataset consists of 70,000 images and labels. <br>
+        The images are hand-written numbers, and the labels are the correct associated numbers.<br>
+
+        <a href="https://keras.io/api/datasets/mnist/">
+          https://keras.io/api/datasets/mnist/ </a><br>
+        <br>
+        The line<br>
+        <div class="code">
+          (x_train, y_train), (x_test, y_test) = keras.datasets.mnist.load_data()
+        </div>
+        returns<br>
+        - 60,000 images and correct classifications into the variables x_train and y_train<br>
+        - 10,000 images and correct classifications into the variables x_test, y_test<br>
+        <br>
+        (x_train, y_train) are to be used for training<br>
+        (x_test, y_test) are to be used for validation<br>
+        <br>
+
+        The variables x_train and x_test contain the images of 28 by 28 pixels.<br>
+        The value of the array element at (i,j) is the gray-scale value of the pixel coordinate (i,j)<br>
+        <br>
+         
+
+
         <a href=""> </a><br>
+
       </div>
 
 
