@@ -32,8 +32,6 @@
     <div class="leftcolumn">
 
 
-
-
       <div class="card">
         <h2>Installation</h2>
         <a href="https://youtu.be/8i3BiWa5AZ4?feature=shared">
@@ -192,6 +190,30 @@
         </div>
 
       </div>
+
+      <div class="card">
+        <h2>NUMA error message with tensorflow</h2>
+
+        When running a python program in tensorflow with the GPU's installed, I get the message:<br>
+
+        <div class="output">
+          successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so
+          returning NUMA node zero.
+        </div>
+        Workaround:<br>
+        (from Brave search)<br>
+        <a href="https://gist.github.com/zrruziev/b93e1292bf2ee39284f834ec7397ee9f">
+          https://gist.github.com/zrruziev/b93e1292bf2ee39284f834ec7397ee9f </a><br>
+
+        <div class="code">
+          #!/bin/bash<br>
+          for pci_id in $(lspci -D | grep -i "nvidia" | awk '{print $1}'); do<br>
+          echo 0 | sudo tee -a "/sys/bus/pci/devices/$pci_id/numa_node"<br>
+          done
+        </div>
+        <a href=""> </a><br>
+      </div>
+
 
 
       <div class="card">
