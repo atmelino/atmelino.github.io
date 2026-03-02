@@ -57,12 +57,37 @@
         </div>
         each value in a dataset is divided by the total sum of all values in that dataset. This results in a normalized
         list where the sum of the new values equals 1.<br>
-        <br>
+
+        <h5>temperature parameter</h5>
         What does the temperature parameter in the language prediction do?<br>
+        It varies the chances of characters with lower probabilities to be selected.<br>
+        <ul>
+          <li>
+            If the temperature is less than 1:<br>
+            characters with lower probability than the one with the highest will be made even less likely to be
+            selected.<br>
+          </li>
+          <li>
+            If the temperature is 1:<br>
+            no change.
+          </li>
+          <li>
+            If the temperature is greater than 1:
+            characters with lower probability than the one with the highest will be made more likely to be
+          </li>
+        </ul>
+
+        The sample() function receives the predictions of each character as a probability.<br>
+        <img src="images/LSTM_temperature_00.png" alt="LSTM_temperature_00" width="800"><br>
+        The character of index 1 has a probability of 73% and the character of index 12 has a probability of 15%.<br>
+        The ratio p(1)/p(12) is 4.8.<br>
         <br>
-
-
-
+        temperature=0.5:<br>
+        <img src="images/LSTM_temperature_01.png" alt="LSTM_temperature_01" width="800"><br>
+        The character of index 1 has a probability of 95% and the character of index 12 has a probability of 4%.<br>
+        The ratio p(1)/p(12) is 23.4<br>
+        That means that the likelihood of character 1 being selected has been increased.<br>
+        <br>
 
 
         <a href=""> </a><br>
