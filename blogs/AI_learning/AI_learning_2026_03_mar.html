@@ -37,21 +37,24 @@
         J. Heaton class_10_3_text_generation<br>
         <br>
 
-        The example turns a piece of text into sequences of maxlen (in this case 40) characters, and the correct value
-        for each sequence (y in the training) is the subsequent characted for each sequence.<br>
+        The example in chapter 10.3 uses an LSTM network to generate text.
+
+        The code first turns a piece of text into sequences of maxlen (in this case 40) characters, 
+        and the the subsequent character for each sequence is used as the y value for the training.
         <br>
 
         In the inference/prediction phase, a sequence of characters is fed into the trained model, and the output is an
         array of probabilities for each of the characters that were present in the original text.<br>
         <br>
 
-
-
         ..<br>
         The function sample() is called to return the next predicted character.<br>
         <br>
         ..<br>
 
+
+        <h5>sample() function</h5>
+        The sample() function receives the predictions of each character as a probability.<br>
         <div class="code">
           preds = exp_preds / np.sum(exp_preds)
         </div>
@@ -59,6 +62,7 @@
         list where the sum of the new values equals 1.<br>
 
         <h5>temperature parameter</h5>
+
         What does the temperature parameter in the language prediction do?<br>
         It varies the chances of characters with lower probabilities to be selected.<br>
         <ul>
@@ -77,8 +81,25 @@
           </li>
         </ul>
 
-        The sample() function receives the predictions of each character as a probability.<br>
+        <h5>Example of different temperature values</h5>
+
         <img src="images/LSTM_temperature_00.png" alt="LSTM_temperature_00" width="800"><br>
+        <table>
+          <tr>
+            <td>Index</td>
+            <td>Probability</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>73%</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>4%</td>
+          </tr>
+        </table>
+
+
         The character of index 1 has a probability of 73% and the character of index 12 has a probability of 15%.<br>
         The ratio p(1)/p(12) is 4.8.<br>
         <br>
@@ -88,6 +109,7 @@
         The ratio p(1)/p(12) is 23.4<br>
         That means that the likelihood of character 1 being selected has been increased.<br>
         <br>
+        <img src="images/LSTM_temperature_02.png" alt="LSTM_temperature_02" width="800"><br>
 
 
         <a href=""> </a><br>
