@@ -39,7 +39,7 @@
 
         The example in chapter 10.3 uses an LSTM network to generate text.
 
-        The code first turns a piece of text into sequences of maxlen (in this case 40) characters, 
+        The code first turns a piece of text into sequences of maxlen (in this case 40) characters,
         and the the subsequent character for each sequence is used as the y value for the training.
         <br>
 
@@ -67,50 +67,75 @@
         It varies the chances of characters with lower probabilities to be selected.<br>
         <ul>
           <li>
-            If the temperature is less than 1:<br>
-            characters with lower probability than the one with the highest will be made even less likely to be
-            selected.<br>
+            temperature < 1:<br>
+              characters with lower probability than the one with the highest will be made even less likely to be
+              selected.<br>
           </li>
           <li>
-            If the temperature is 1:<br>
+            temperature = 1:<br>
             no change.
           </li>
           <li>
-            If the temperature is greater than 1:
-            characters with lower probability than the one with the highest will be made more likely to be
+            temperature > 1:<br>
+            characters with lower probability than the one with the highest will be made more likely to be selected
           </li>
         </ul>
 
         <h5>Example of different temperature values</h5>
-
+        temperature=1.0: (original values)<br>
         <img src="images/LSTM_temperature_00.png" alt="LSTM_temperature_00" width="800"><br>
-        <table>
+        <br>
+        temperature=0.5:<br>
+        <img src="images/LSTM_temperature_01.png" alt="LSTM_temperature_01" width="800"><br>
+        <br>
+        temperature=2.0:<br>
+        <img src="images/LSTM_temperature_02.png" alt="LSTM_temperature_02" width="800"><br>
+        <br>
+        The following table shows the probability of various characters to be selected:<br>
+        <br>
+        <table border="1">
           <tr>
             <td>Index</td>
-            <td>Probability</td>
+            <td>t=0.5<br>Probability</td>
+            <td>t=1<br>Probability</td>
+            <td>t=2<br>Probability</td>
           </tr>
           <tr>
             <td>1</td>
+            <td>95%</td>
             <td>73%</td>
+            <td>%</td>
           </tr>
           <tr>
             <td>12</td>
             <td>4%</td>
+            <td>15%</td>
+            <td>%</td>
           </tr>
         </table>
 
-
-        The character of index 1 has a probability of 73% and the character of index 12 has a probability of 15%.<br>
-        The ratio p(1)/p(12) is 4.8.<br>
+        <table border="1">
+          <tr>
+            <td>t=0.5<br>ratio</td>
+            <td>t=1<br>ratio</td>
+            <td>t=2<br>ratio</td>
+          </tr>
+          <br>
+          How much more likely is the character with index 1 to be selected versus the character with index 12?<br>
+          We can look at the ratio of their probabilities p(1)/p(12).<br>
+          <br>
+          <tr>
+            <td>23.4</td>
+            <td>4.8</td>
+            <td>2.2</td>
+          </tr>
+        </table>
         <br>
-        temperature=0.5:<br>
-        <img src="images/LSTM_temperature_01.png" alt="LSTM_temperature_01" width="800"><br>
-        The character of index 1 has a probability of 95% and the character of index 12 has a probability of 4%.<br>
-        The ratio p(1)/p(12) is 23.4<br>
-        That means that the likelihood of character 1 being selected has been increased.<br>
-        <br>
-        <img src="images/LSTM_temperature_02.png" alt="LSTM_temperature_02" width="800"><br>
+        We can see that with a temperature of 0.5, the character with index 1 becomes more likely to be selected.<br>
+        It is obvious that with a temperature < 1, the character with the original greatest probability will become
+        even more likely to be selected, which can be considered the more "safe" approach.<br>
 
+        The higher we set the temperature, the more chances the originally less likely characters get to be selected.
 
         <a href=""> </a><br>
       </div>
