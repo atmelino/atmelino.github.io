@@ -63,13 +63,18 @@
         The predicted character is printed to the screen, and the loop continues.<br>
 
         <h5>sample() function</h5>
-        The sample() function receives the predictions of each character as a probability.<br>
+        The sample() function receives the predictions of each character as probabilities.<br>
+        <br>
+        Next, the probabilities are adjusted, according to the temperature parameter (See below.)<br>
+        <br>
+        Then the probabilities are normalized:<br>
         <div class="code">
           preds = exp_preds / np.sum(exp_preds)
         </div>
         each value in a dataset is divided by the total sum of all values in that dataset. This results in a normalized
         list where the sum of the new values equals 1.<br>
-
+        <br>
+        Finally, an index for the predicted next character is chosen with the multinomial function(See below.)
         <h5>temperature parameter</h5>
 
         What does the temperature parameter in the language prediction do?<br>
@@ -77,8 +82,8 @@
         <ul>
           <li>
             temperature &lt; 1:<br>
-              characters with lower probability than the one with the highest will be made even less likely to be
-              selected.<br>
+            characters with lower probability than the one with the highest will be made even less likely to be
+            selected.<br>
           </li>
           <li>
             temperature = 1:<br>
@@ -147,10 +152,11 @@
         The higher we set the temperature, the more chances the originally less likely characters get to be
         selected.<br>
         <br>
+        <h5>Sample Draw: multinomial function</h5>
         In the final step, the multinomial function returns an index according to the temperature-adjusted probabilities
         in the prediction.<br>
         <br>
-        The distribution will be such that it matches the probabilities of the indices.<br>
+        The distribution of the drawn samples will be such that it matches the probabilities of the indices.<br>
         <div class="code">
           probas = np.random.multinomial(1, preds, 1)
         </div>
