@@ -175,13 +175,56 @@
         <h2>March 7, 2026</h2>
 
         J. Heaton's class chapter 10.4 includes a link to a tutorial for implementing a transformer from scratch<br>
-      
+
         <a href="https://www.tensorflow.org/text/tutorials/transformer">
           https://www.tensorflow.org/text/tutorials/transformer </a><br>
         <a href=""> </a><br>
         <a href=""> </a><br>
-        <a href="https://research.google/blog/transformer-a-novel-neural-network-architecture-for-language-understanding/">
-          https://research.google/blog/transformer-a-novel-neural-network-architecture-for-language-understanding/ </a><br>
+        <a
+          href="https://research.google/blog/transformer-a-novel-neural-network-architecture-for-language-understanding/">
+          https://research.google/blog/transformer-a-novel-neural-network-architecture-for-language-understanding/
+        </a><br>
+      </div>
+
+      <div class=" card">
+        <h2>March 13, 2026</h2>
+
+        Chapter 10.5, "Programming Transformers with Keras"<br>
+        <br>
+        The code includes lines where a function is called and an expression in parentheses is added right after the
+        parentheses for the function argument, for example:<br>
+        <div class="code">
+          x = layers.LayerNormalization(epsilon=1e-6)(inputs)
+          x = layers.Dropout(dropout)(x)
+        </div>
+        <br>
+        What does this constuct do?<br>
+        <div class="data">
+          f(a)(b) just means that the expression f(a) returns a value that is itself callable.
+        </div>
+        from<br>
+        "Python functions with multiple parameter brackets"<br>
+        <a href="https://stackoverflow.com/questions/42874825/python-functions-with-multiple-parameter-brackets">
+          https://stackoverflow.com/questions/42874825/python-functions-with-multiple-parameter-brackets </a><br>
+
+        <div class="code">
+          g = f(a)<br>
+          g(b)
+        </div>
+        or<br>
+        <div class="code">
+          (f(a))(b) # f(a) is evaluated first, then the result is applied to b
+        </div>
+
+        Applying this to the above code:<br>
+        <div class="code">
+          intermediate = layers.LayerNormalization(epsilon=1e-6)
+          x = intermediate(input)
+        </div>
+
+
+
+        <a href=""> </a><br>
       </div>
 
       <div class=" card">
