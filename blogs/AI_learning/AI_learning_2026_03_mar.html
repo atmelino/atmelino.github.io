@@ -194,32 +194,49 @@
         The code includes lines where a function is called and an expression in parentheses is added right after the
         parentheses for the function argument, for example:<br>
         <div class="code">
-          x = layers.LayerNormalization(epsilon=1e-6)(inputs)
-          x = layers.Dropout(dropout)(x)
+          x = layers.LayerNormalization(epsilon=1e-6)(inputs)<br>
         </div>
+        What does this construct do?<br>
         <br>
-        What does this constuct do?<br>
+        Example with f(a)(b):<br>
+        <br>
+        from "Python functions with multiple parameter brackets"<br>
+        <a href="https://stackoverflow.com/questions/42874825/python-functions-with-multiple-parameter-brackets">
+          https://stackoverflow.com/questions/42874825/python-functions-with-multiple-parameter-brackets </a><br>
+        <br>
         <div class="data">
           f(a)(b) just means that the expression f(a) returns a value that is itself callable.
         </div>
-        from<br>
-        "Python functions with multiple parameter brackets"<br>
-        <a href="https://stackoverflow.com/questions/42874825/python-functions-with-multiple-parameter-brackets">
-          https://stackoverflow.com/questions/42874825/python-functions-with-multiple-parameter-brackets </a><br>
 
-        <div class="code">
-          g = f(a)<br>
-          g(b)
-        </div>
-        or<br>
-        <div class="code">
-          (f(a))(b) # f(a) is evaluated first, then the result is applied to b
+        <div class="data">
+          f(a)(b) calls f with one parameter a, which then returns another function, which is then called with one
+          parameter b
         </div>
 
+        <div class="code">
+          def func(a):<br>
+          &nbsp;def func2(b):<br>
+          &nbsp;&nbsp;return a + b<br>
+          &nbsp;return func2
+        </div>
+        <br>
+        Note that func returns a function, not a value.<br>
+        <br>
+
+        <br>
         Applying this to the above code:<br>
         <div class="code">
-          intermediate = layers.LayerNormalization(epsilon=1e-6)
-          x = intermediate(input)
+          x = layers.LayerNormalization(epsilon=1e-6)(inputs)<br>
+        </div>
+        has the same result as
+        <div class="code">
+          intermediate = layers.LayerNormalization(epsilon=1e-6)<br>
+          x = intermediate(inputs)
+        </div>
+        <br>
+        The code continues with<br>
+        <div class="code">
+          x = layers.Dropout(dropout)(x)
         </div>
 
 
