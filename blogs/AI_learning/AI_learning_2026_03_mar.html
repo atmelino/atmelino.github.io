@@ -342,7 +342,7 @@
         <br>
         requires the library "tensorflow-text>=2.11"<br>
         <br>
-        However the jh_class conda envirnoment is not compatible with this library.<br>
+        However the jh_class conda environment is not compatible with this library.<br>
         <br>
 
         <div class="code">
@@ -364,6 +364,17 @@
           pip install tensorflow-text<br>
         </div>
 
+
+
+        Warning appears:<br>
+        <div class="output">
+          Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at
+          tensorflow/core/protobuf/cluster.proto
+        </div>
+        To get rid of warning:<br>
+        <div class="code">
+          pip install "protobuf>=5.28.3,&lt;6"
+        </div>
 
         <a href=""> </a><br>
       </div>
