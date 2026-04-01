@@ -365,7 +365,6 @@
         </div>
 
 
-
         Warning appears:<br>
         <div class="output">
           Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at
@@ -386,26 +385,53 @@
         <div class="code">
           np.random.uniform(0,1,50) &lt; 0.8
         </div>
-        The expression np.random.uniform(0, 1, 50) < 0.8 generates a 1-dimensional NumPy array of 50 random
-          floating-point numbers drawn from a uniform distribution over the interval [0.0, 1.0) and compares each value
-          to 0.8, returning a boolean array of True or False.<br>
-          <br>
-          Approximately 80% of the values in the generated array are expected to be True, assuming a large enough sample
-          size.
-          <br>
-          <br>
+        The expression np.random.uniform(0, 1, 50) &lt; 0.8 generates a 1-dimensional NumPy array of 50 random
+        floating-point numbers drawn from a uniform distribution over the interval [0.0, 1.0) and compares each value
+        to 0.8, returning a boolean array of True or False.<br>
+        <br>
+        Approximately 80% of the values in the generated array are expected to be True, assuming a large enough sample
+        size.
+        <br>
+        <br>
+        <a href=""> </a><br>
+        <a href=""> </a><br>
+        <a href=""> </a><br>
+        <a href=""> </a><br>
+        <a href=""> </a><br>
+      </div>
 
+      <div class=" card">
+        <h2>March 31, 2026</h2>
+        The line
+        <div class="code">
+          target_text_processor.adapt(train_raw.map(lambda context, target: target))
+        </div>
+        causes error
+        <div class="output">
+          tensorflow/core/framework/local_rendezvous.cc:407] Local rendezvous is aborting with status: OUT_OF_RANGE: End
+          of sequence
+        </div>
+        <br>
+        <h5>Text Vectorization</h5>
+        API page of tf.keras.layers.TextVectorization:<br>
+        <a href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/TextVectorization">
+          https://www.tensorflow.org/api_docs/python/tf/keras/layers/TextVectorization
+        </a><br>
+        "The vocabulary for the layer must be either supplied on construction or learned via adapt()."
+        <br><br>
 
+        Example on this page:<br>
+        OOV-token = out of vocabulary token.<br>
+        When using output_mode='int', index 0 is reserved for masking, and the OOV token is assigned to index 1.<br>
+        <br>
 
+        <h5>Example with tf.data.Dataset</h5>
 
-
-
-
-          <a href=""> </a><br>
-          <a href=""> </a><br>
-          <a href=""> </a><br>
-          <a href=""> </a><br>
-          <a href=""> </a><br>
+        The API page lists example with text vectorization:
+        <a href="https://www.tensorflow.org/tutorials/load_data/text">
+          https://www.tensorflow.org/tutorials/load_data/text</a><br>
+        <a href=""> </a><br>
+        <a href=""> </a><br>
       </div>
 
 
