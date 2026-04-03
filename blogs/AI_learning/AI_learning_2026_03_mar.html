@@ -427,13 +427,93 @@
 
         <h5>Example with tf.data.Dataset</h5>
 
-        The API page lists example with text vectorization:
+        The API page lists example with text vectorization:<br>
         <a href="https://www.tensorflow.org/tutorials/load_data/text">
           https://www.tensorflow.org/tutorials/load_data/text</a><br>
+
+
+        This example also has the error<br>
+
+        <div class="output">
+          tensorflow/core/framework/local_rendezvous.cc:407] Local rendezvous is aborting with status: OUT_OF_RANGE: End
+          of sequence
+        </div>
+
+        at the line
+        <div class="code">
+          for text_batch, label_batch in raw_train_ds.take(1):<br>
+          for i in range(2):<br>
+          print("Question: ", text_batch.numpy()[i])
+        </div>
+
         <a href=""> </a><br>
         <a href=""> </a><br>
       </div>
 
+
+      <div class=" card">
+        <h2>April 2, 2026</h2>
+        The example for text vectorization:<br>
+        <a href="https://www.tensorflow.org/tutorials/load_data/text">
+          https://www.tensorflow.org/tutorials/load_data/text</a><br>
+        <br>
+        links to a colab page:<br>
+        <a
+          href="https://colab.research.google.com/github/tensorflow/docs/blob/master/site/en/tutorials/load_data/text.ipynb">
+          https://colab.research.google.com/github/tensorflow/docs/blob/master/site/en/tutorials/load_data/text.ipynb
+        </a><br>
+        <br>
+        Even the colab page does not work!<br>
+        <br>
+        First line<br>
+        <div class="code">
+          !pip install "tensorflow-text==2.13.*"
+        </div>
+        causes error<br>
+        <div class="output">
+          ERROR: Could not find a version that satisfies the requirement tensorflow-text==2.13.* (from versions: 2.18.1,
+          2.19.0rc0, 2.19.0, 2.20.0, 2.20.1)<br>
+          ERROR: No matching distribution found for tensorflow-text==2.13.*
+        </div>
+        <a href=""> </a><br>
+      </div>
+
+
+
+      <div class=" card">
+        <h2>April 2, 2026</h2>
+        <h5>Attempt with newer software versions</h5>
+
+        <div class="code">
+          conda create -n tf-text python=3.13.11
+        </div>
+        Then activate this environment before installing packages!<br>
+        <div class="code">
+          conda activate tf-text
+        </div>
+        Then install via pip<br>
+        <div class="code">
+          pip install tensorflow-text
+        </div>
+        and
+        <div class="code">
+          conda install -c conda-forge matplotlib -y<br>
+        </div>
+        <div class="code">
+          pip install tensorflow_datasets
+        </div>
+        Still causes same error<br>
+        <div class="output">
+          tensorflow/core/framework/local_rendezvous.cc:407] Local rendezvous is aborting with status: OUT_OF_RANGE: End
+          of sequence
+        </div>
+
+
+        <a href=""> </a><br>
+        <a href=""> </a><br>
+        <a href=""> </a><br>
+        <a href=""> </a><br>
+      </div>
 
 
 
