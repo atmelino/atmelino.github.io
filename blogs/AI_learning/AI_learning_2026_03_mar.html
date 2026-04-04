@@ -502,22 +502,73 @@
         <div class="code">
           pip install tensorflow_datasets
         </div>
-        Still causes same error<br>
+        This gets rid of the Protobuf gencode error, but<br>
+        still causes the End of sequence error<br>
         <div class="output">
           tensorflow/core/framework/local_rendezvous.cc:407] Local rendezvous is aborting with status: OUT_OF_RANGE: End
           of sequence
         </div>
-
-
-        <a href=""> </a><br>
-        <a href=""> </a><br>
-        <a href=""> </a><br>
         <a href=""> </a><br>
       </div>
 
 
 
 
+
+      <div class=" card">
+        <h2>April 3, 2026</h2>
+        The example at<br>
+        <a href="https://colab.research.google.com/github/tensorflow/datasets/blob/master/docs/_index.ipynb">
+          https://colab.research.google.com/github/tensorflow/datasets/blob/master/docs/_index.ipynb </a><br>
+        causes the errors<br>
+        <div class="output">
+          tensorflow/core/kernels/data/tf_record_dataset_op.cc:396] The default buffer size is 262144, which is
+          overridden by the user specified `buffer_size` of 8388608<br>
+          tensorflow/core/kernels/data/cache_dataset_ops.cc:917] The calling iterator did not fully read the dataset
+          being cached. In order to avoid unexpected truncation of the dataset, the partially cached contents of the
+          dataset will be discarded. This can happen if you have an input pipeline similar to
+          `dataset.cache().take(k).repeat()`. You should use `dataset.take(k).cache().repeat()` instead.<br>
+          tensorflow/core/framework/local_rendezvous.cc:407] Local rendezvous is aborting with status: OUT_OF_RANGE: End
+          of sequence
+        </div>
+        <br>
+        <br>
+        An error that was described on github:<br>
+        <a href="https://github.com/tensorflow/tensorflow/issues/62963">
+          https://github.com/tensorflow/tensorflow/issues/62963 </a><br>
+        I was able to reproduce the error.<br>
+        <br>
+
+
+        Previous page refers to (link named issue)<br>
+
+        <a href="https://github.com/tensorflow/tensorflow/issues/68593">
+          https://github.com/tensorflow/tensorflow/issues/68593 </a><br>
+        <a href=""> </a><br>
+
+
+        A post on March 2 says that tensorflow 2.21 resolves the issue.<br>
+        It refers to a gist<br>
+
+        <a
+          href="https://colab.research.google.com/gist/Venkat6871/fdd5ded66d27bf590c8b3e52f60a5115/68593_tf_2-21-0-rc0-nightly-v.ipynb">
+          https://colab.research.google.com/gist/Venkat6871/fdd5ded66d27bf590c8b3e52f60a5115/68593_tf_2-21-0-rc0-nightly-v.ipynb
+        </a><br>
+
+
+        To get a newer tensorflow:<br>
+        <div class="code">
+          pip uninstall tensorflow -y && pip install tf-nightly
+        </div>
+
+
+
+        
+        <a href=""> </a><br>
+        <a href=""> </a><br>
+
+
+      </div>
 
       <div class=" card">
         <h2></h2>
