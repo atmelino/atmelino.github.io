@@ -561,13 +561,140 @@
           pip uninstall tensorflow -y && pip install tf-nightly
         </div>
 
-
-
-        
         <a href=""> </a><br>
         <a href=""> </a><br>
 
+      </div>
 
+      <div class=" card">
+        <h2>April 4, 2026</h2>
+        This package configuration lets the example at <br>
+        <a
+          href="https://colab.research.google.com/gist/Venkat6871/fdd5ded66d27bf590c8b3e52f60a5115/68593_tf_2-21-0-rc0-nightly-v.ipynb">
+          https://colab.research.google.com/gist/Venkat6871/fdd5ded66d27bf590c8b3e52f60a5115/68593_tf_2-21-0-rc0-nightly-v.ipynb
+        </a><br>
+
+        run without error:<br>
+        <div class="code">
+          conda create -n tf-new python=3.13.11
+        </div>
+        Then activate this environment before installing packages!<br>
+        <div class="code">
+          conda activate tf-new
+        </div>
+        <div class="code">
+          pip uninstall tensorflow -y && pip install tf-nightly
+        </div>
+        The code<br>
+        <div class="code">
+          print(f"Tensor Flow Version: {tf.__version__}")
+        </div>
+        will now report<br>
+        <div class="output">
+          Tensor Flow Version: 2.22.0-dev20260404
+        </div>
+        <br>
+        Both
+        <div class="code">
+          conda list<br>
+          pip list
+        </div>
+        report
+        <div class="output">
+          tf_nightly 2.22.0.dev20260404
+        </div>
+        but no tensorflow package.<br>
+        <br>
+        <br>
+        If I try to run the example<br>
+        <a href="https://www.tensorflow.org/tutorials/load_data/text">
+          https://www.tensorflow.org/tutorials/load_data/text
+        </a><br>
+        python complains:
+        <div class="output">
+          ModuleNotFoundError: No module named 'tensorflow_text'
+        </div>
+
+        When I install tensorflow-text with<br>
+        <div class="code">
+          pip install tensorflow-text
+        </div>
+
+        the command will unfortunately also install tensorflow version 2.20
+        <div class="output">
+          tensorboard 2.20.0 pypi_0 pypi
+        </div>
+        and
+        <div class="code">
+          print(f"Tensor Flow Version: {tf.__version__}")
+        </div>
+        will report<br>
+        <div class="output">
+          Tensor Flow Version: 2.20.0
+        </div>
+        in other words, the tensorflow-text install has ruined the configuration and the End of Sequence error is
+        back.<br>
+        <br>
+        <br>
+
+        Lets try the latest release:<br>
+        <br>
+        Tensorflow Releases:<br>
+        <a href="https://github.com/tensorflow/tensorflow/releases">
+          https://github.com/tensorflow/tensorflow/releases </a><br>
+        <br>
+        <div class="code">
+          conda create -n tf-new python=3.13.11
+        </div>
+        Then activate this environment before installing packages!<br>
+        <div class="code">
+          conda activate tf-new
+        </div>
+        Checking the version:<br>
+        <div class="code">
+          pip install tensorflow==2.21.0
+        </div>
+        <div class="code">
+          print(f"Tensor Flow Version: {tf.__version__}")
+        </div>
+        will report<br>
+        <div class="output">
+          Tensor Flow Version: 2.21.0
+        </div>
+
+        The example at <br>
+        <a
+          href="https://colab.research.google.com/gist/Venkat6871/fdd5ded66d27bf590c8b3e52f60a5115/68593_tf_2-21-0-rc0-nightly-v.ipynb">
+          https://colab.research.google.com/gist/Venkat6871/fdd5ded66d27bf590c8b3e52f60a5115/68593_tf_2-21-0-rc0-nightly-v.ipynb
+        </a><br>
+        runs without error.<br>
+        <div class="code">
+          pip install tensorflow_datasets
+        </div>
+        will work, but<br>
+        <div class="code">
+          pip install tensorflow-text
+        </div>
+        will downgrade tensorflow to version 2.20 <br>
+        <br>
+        and the End of sequence error is back.<br>
+        <br>
+        <br>
+        Is there an older version of the packages that works?<br>
+        <br>
+        Note:
+        <a href="https://github.com/tensorflow/text">
+          https://github.com/tensorflow/text </a><br>
+        requests that the same version of tensorflow-text is installed as tensorflow.<br>
+
+        Tried Tensorflow 2.18, 2.14, 2.11, 2.10,<br>
+        None of them worked.<br>
+        <br>
+
+
+        <a href=""> </a><br>
+        <a href=""> </a><br>
+        <a href=""> </a><br>
       </div>
 
       <div class=" card">
