@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type="text/css" href="../../css/blog.css" media="all" rel="stylesheet">
+  <title>atmelino</title>
+</head>
+
+<body>
+
+  <div class="header">
+    <table id="headerline_table">
+      <tr>
+        <td width="200">
+          <a href="../../index.html"><img src="../../images/home.png" alt="home" height="60"></a>
+          <a href="../../blogs/index.html"><img src="../../images/scroll.png" alt="scroll" height="60"></a>
+          <a href="../../blogs/AI_learning/index.html"><img src="../../images/AI_01.png" alt="deno" height="60"></a>
+        </td>
+        <td>
+          <h2>AI learning blog April 2026 </h2>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+
+  <div class="row">
+    <div class="leftcolumn">
+
+      <div class=" card">
+        <h2>April 2, 2026</h2>
+        The example for text vectorization:<br>
+        <a href="https://www.tensorflow.org/tutorials/load_data/text">
+          https://www.tensorflow.org/tutorials/load_data/text</a><br>
+        <br>
+        links to a colab page:<br>
+        <a
+          href="https://colab.research.google.com/github/tensorflow/docs/blob/master/site/en/tutorials/load_data/text.ipynb">
+          https://colab.research.google.com/github/tensorflow/docs/blob/master/site/en/tutorials/load_data/text.ipynb
+        </a><br>
+        <br>
+        Even the colab page does not work!<br>
+        <br>
+        First line<br>
+        <div class="code">
+          !pip install "tensorflow-text==2.13.*"
+        </div>
+        causes error<br>
+        <div class="output">
+          ERROR: Could not find a version that satisfies the requirement tensorflow-text==2.13.* (from versions: 2.18.1,
+          2.19.0rc0, 2.19.0, 2.20.0, 2.20.1)<br>
+          ERROR: No matching distribution found for tensorflow-text==2.13.*
+        </div>
+        <a href=""> </a><br>
+      </div>
+
+
+
+      <div class=" card">
+        <h2>April 2, 2026</h2>
+        <h5>Attempt with newer software versions</h5>
+
+        <div class="code">
+          conda create -n tf-text python=3.13.11
+        </div>
+        Then activate this environment before installing packages!<br>
+        <div class="code">
+          conda activate tf-text
+        </div>
+        Then install via pip<br>
+        <div class="code">
+          pip install tensorflow-text
+        </div>
+        and
+        <div class="code">
+          conda install -c conda-forge matplotlib -y<br>
+        </div>
+        <div class="code">
+          pip install tensorflow_datasets
+        </div>
+        This gets rid of the Protobuf gencode error, but<br>
+        still causes the End of sequence error<br>
+        <div class="output">
+          tensorflow/core/framework/local_rendezvous.cc:407] Local rendezvous is aborting with status: OUT_OF_RANGE: End
+          of sequence
+        </div>
+        <a href=""> </a><br>
+      </div>
+
+
+
+
+
+      <div class=" card">
+        <h2>April 3, 2026</h2>
+        The example at<br>
+        <a href="https://colab.research.google.com/github/tensorflow/datasets/blob/master/docs/_index.ipynb">
+          https://colab.research.google.com/github/tensorflow/datasets/blob/master/docs/_index.ipynb </a><br>
+        causes the errors<br>
+        <div class="output">
+          tensorflow/core/kernels/data/tf_record_dataset_op.cc:396] The default buffer size is 262144, which is
+          overridden by the user specified `buffer_size` of 8388608<br>
+          tensorflow/core/kernels/data/cache_dataset_ops.cc:917] The calling iterator did not fully read the dataset
+          being cached. In order to avoid unexpected truncation of the dataset, the partially cached contents of the
+          dataset will be discarded. This can happen if you have an input pipeline similar to
+          `dataset.cache().take(k).repeat()`. You should use `dataset.take(k).cache().repeat()` instead.<br>
+          tensorflow/core/framework/local_rendezvous.cc:407] Local rendezvous is aborting with status: OUT_OF_RANGE: End
+          of sequence
+        </div>
+        <br>
+        <br>
+        An error that was described on github:<br>
+        <a href="https://github.com/tensorflow/tensorflow/issues/62963">
+          https://github.com/tensorflow/tensorflow/issues/62963 </a><br>
+        I was able to reproduce the error.<br>
+        <br>
+
+
+        Previous page refers to (link named issue)<br>
+
+        <a href="https://github.com/tensorflow/tensorflow/issues/68593">
+          https://github.com/tensorflow/tensorflow/issues/68593 </a><br>
+        <a href=""> </a><br>
+
+
+        A post on March 2 says that tensorflow 2.21 resolves the issue.<br>
+        It refers to a gist<br>
+
+        <a
+          href="https://colab.research.google.com/gist/Venkat6871/fdd5ded66d27bf590c8b3e52f60a5115/68593_tf_2-21-0-rc0-nightly-v.ipynb">
+          https://colab.research.google.com/gist/Venkat6871/fdd5ded66d27bf590c8b3e52f60a5115/68593_tf_2-21-0-rc0-nightly-v.ipynb
+        </a><br>
+
+
+        To get a newer tensorflow:<br>
+        <div class="code">
+          pip uninstall tensorflow -y && pip install tf-nightly
+        </div>
+
+        <a href=""> </a><br>
+        <a href=""> </a><br>
+
+      </div>
+
+      <div class=" card">
+        <h2>April 4, 2026</h2>
+        This package configuration lets the example at <br>
+        <a
+          href="https://colab.research.google.com/gist/Venkat6871/fdd5ded66d27bf590c8b3e52f60a5115/68593_tf_2-21-0-rc0-nightly-v.ipynb">
+          https://colab.research.google.com/gist/Venkat6871/fdd5ded66d27bf590c8b3e52f60a5115/68593_tf_2-21-0-rc0-nightly-v.ipynb
+        </a><br>
+
+        run without error:<br>
+        <div class="code">
+          conda create -n tf-new python=3.13.11
+        </div>
+        Then activate this environment before installing packages!<br>
+        <div class="code">
+          conda activate tf-new
+        </div>
+        <div class="code">
+          pip uninstall tensorflow -y && pip install tf-nightly
+        </div>
+        The code<br>
+        <div class="code">
+          print(f"Tensor Flow Version: {tf.__version__}")
+        </div>
+        will now report<br>
+        <div class="output">
+          Tensor Flow Version: 2.22.0-dev20260404
+        </div>
+        <br>
+        Both
+        <div class="code">
+          conda list<br>
+          pip list
+        </div>
+        report
+        <div class="output">
+          tf_nightly 2.22.0.dev20260404
+        </div>
+        but no tensorflow package.<br>
+        <br>
+        <br>
+        If I try to run the example<br>
+        <a href="https://www.tensorflow.org/tutorials/load_data/text">
+          https://www.tensorflow.org/tutorials/load_data/text
+        </a><br>
+        python complains:
+        <div class="output">
+          ModuleNotFoundError: No module named 'tensorflow_text'
+        </div>
+
+        When I install tensorflow-text with<br>
+        <div class="code">
+          pip install tensorflow-text
+        </div>
+
+        the command will unfortunately also install tensorflow version 2.20
+        <div class="output">
+          tensorboard 2.20.0 pypi_0 pypi
+        </div>
+        and
+        <div class="code">
+          print(f"Tensor Flow Version: {tf.__version__}")
+        </div>
+        will report<br>
+        <div class="output">
+          Tensor Flow Version: 2.20.0
+        </div>
+        in other words, the tensorflow-text install has ruined the configuration and the End of Sequence error is
+        back.<br>
+        <br>
+        <br>
+
+        Lets try the latest release:<br>
+        <br>
+        Tensorflow Releases:<br>
+        <a href="https://github.com/tensorflow/tensorflow/releases">
+          https://github.com/tensorflow/tensorflow/releases </a><br>
+        <br>
+        <div class="code">
+          conda create -n tf-new python=3.13.11
+        </div>
+        Then activate this environment before installing packages!<br>
+        <div class="code">
+          conda activate tf-new
+        </div>
+        Checking the version:<br>
+        <div class="code">
+          pip install tensorflow==2.21.0
+        </div>
+        <div class="code">
+          print(f"Tensor Flow Version: {tf.__version__}")
+        </div>
+        will report<br>
+        <div class="output">
+          Tensor Flow Version: 2.21.0
+        </div>
+
+        The example at <br>
+        <a
+          href="https://colab.research.google.com/gist/Venkat6871/fdd5ded66d27bf590c8b3e52f60a5115/68593_tf_2-21-0-rc0-nightly-v.ipynb">
+          https://colab.research.google.com/gist/Venkat6871/fdd5ded66d27bf590c8b3e52f60a5115/68593_tf_2-21-0-rc0-nightly-v.ipynb
+        </a><br>
+        runs without error.<br>
+        <div class="code">
+          pip install tensorflow_datasets
+        </div>
+        will work, but<br>
+        <div class="code">
+          pip install tensorflow-text
+        </div>
+        will downgrade tensorflow to version 2.20 <br>
+        <br>
+        and the End of sequence error is back.<br>
+        <br>
+        <br>
+        Is there an older version of the packages that works?<br>
+        <br>
+        Note:
+        <a href="https://github.com/tensorflow/text">
+          https://github.com/tensorflow/text </a><br>
+        requests that the same version of tensorflow-text is installed as tensorflow.<br>
+
+        Tried Tensorflow 2.18, 2.14, 2.11, 2.10,<br>
+        None of them worked.<br>
+        <br>
+
+
+        <a href=""> </a><br>
+        <a href=""> </a><br>
+        <a href=""> </a><br>
+      </div>
+
+      <div class=" card">
+        <h2></h2>
+
+        <a href=""> </a><br>
+      </div>
+
+
+    </div>
+
+    <div class="rightcolumn">
+      <div class="card">
+        <h3>Posts by Date</h3>
+        <a href="AI_learning_2023_02_feb.html">
+          AI_learning_2023_02_feb.html</a><br>
+        <a href="AI_learning_2023_03_mar.html">
+          AI_learning_2023_03_mar.html</a><br>
+        <br>
+      </div>
+
+      <div class="card">
+        <h3>Follow Me</h3>
+        <a href="https://discord.gg/F7KQySEW"><img src="../../images/discord.png" alt="discord" height="30"></a>
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+
+  <div class="footer">
+    <h3>Modified July 2023</h3>
+  </div>
+</body>
+
+</html>
