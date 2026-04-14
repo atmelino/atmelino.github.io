@@ -321,14 +321,36 @@
         </a><br>
 
 
-
-
-
-
         <a href=""> </a><br>
         <a href=""> </a><br>
       </div>
 
+      <div class=" card">
+        <h2>April 13, 2026</h2>
+
+        The English-Spanish Translation: Transformer example on Kaggle works, except for the saving and loading process
+        of the model.<br>
+        <br>
+        The code does not have an explicit save instruction, rather intermediate progress is saved in the
+        tf.keras.callbacks.ModelCheckpoint callback of the model.fit() call.<br>
+        <br>
+        When I run the code as is, the checkpoint saving results in a directory named model.tf being written.<br>
+        <br>
+        but at the line
+
+        transformer.load_weights("model.tf")
+
+
+
+        tensorflow.python.framework.errors_impl.NotFoundError: Unsuccessful TensorSliceReader constructor: Failed to
+        find any matching files for model.tf
+
+
+
+
+
+        <a href=""> </a><br>
+      </div>
 
 
 
