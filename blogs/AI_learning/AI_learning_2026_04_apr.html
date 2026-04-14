@@ -337,14 +337,14 @@
         When I run the code as is, the checkpoint saving results in a directory named model.tf being written.<br>
         <br>
         but at the line
+        <div class="code">
+          transformer.load_weights("model.tf")
+        </div>
 
-        transformer.load_weights("model.tf")
-
-
-
-        tensorflow.python.framework.errors_impl.NotFoundError: Unsuccessful TensorSliceReader constructor: Failed to
-        find any matching files for model.tf
-
+        <div class="output">
+          tensorflow.python.framework.errors_impl.NotFoundError: Unsuccessful TensorSliceReader constructor: Failed to
+          find any matching files for model.tf
+        </div>
 
 
 
