@@ -334,22 +334,66 @@
         The code does not have an explicit save instruction, rather intermediate progress is saved in the
         tf.keras.callbacks.ModelCheckpoint callback of the model.fit() call.<br>
         <br>
-        When I run the code as is, the checkpoint saving results in a directory named model.tf being written.<br>
+        When I run the code as is, the checkpoint saving results in a directory named model.tf being created,
+        however loading the model leads to an error.<br>
         <br>
-        but at the line
+        The following applies to loading inside the training block<br>
+        <br>
+        The original combination
         <div class="code">
+          filepath="model.tf",<br>
+          ..<br>
           transformer.load_weights("model.tf")
         </div>
-
+        leads to an error
         <div class="output">
-          tensorflow.python.framework.errors_impl.NotFoundError: Unsuccessful TensorSliceReader constructor: Failed to
-          find any matching files for model.tf
+          tensorflow/core/util/tensor_slice_reader.cc:98] Could not open model.tf: FAILED_PRECONDITION: model.tf; Is a
+          directory: perhaps your file is in a different file format and you need to use a different restore operator?
         </div>
-
-
-
+        <br>
+        The combination
+        <div class="code">
+          filepath="model.tf",<br>
+          ..<br>
+          transformer.load_model("model.tf")
+        </div>
+        leads to an error
+        <div class="output">
+          AttributeError: 'Functional' object has no attribute 'load_model'
+        </div>
+        <br>
+        The API documentation of tf.keras.callbacks.ModelCheckpoint at<br>
+        <a href="https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/ModelCheckpoint">
+          https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/ModelCheckpoint </a><br>
+        mentions only files for saving weights or the model, but not a folder:<br>
+        - weights.h5 for saving weights only<br>
+        - model.keras for saving the whole model.<br>
+        <br>
+        The combination
+        <div class="code">
+          filepath="model.keras",<br>
+          ..<br>
+          transformer.load_model("model.keras")
+        </div>
+        leads to an error
+        <div class="output">
+          AttributeError: 'Functional' object has no attribute 'load_model'
+        </div>
+        <br>
+        The combination
+        <div class="code">
+          filepath="model.keras",<br>
+          ..<br>
+          transformer.load_weights("model.keras")
+        </div>
+        works, and the translation is successful.<br>
+        <br>
+        <br>
 
         <a href=""> </a><br>
+        <a href=""> </a><br>
+        <a href=""> </a><br>
+
       </div>
 
 
