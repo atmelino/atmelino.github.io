@@ -396,7 +396,61 @@
 
       </div>
 
+      <div class=" card">
+        <h2>April 14, 2026</h2>
 
+        The transformer can also be saved explicitly, outside of the checkpoint callback.<br>
+        <br>
+        <div class="code">
+          transformer.save("model.keras")
+        </div>
+        However, loading the transformer<br>
+        <div class="code">
+          transformer.load_model("model.keras")
+        </div>
+        leads to the error
+        <div class="output">
+          TypeError: Cannot deserialize object of type `PositionalEmbedding`. If `PositionalEmbedding` is a custom
+          class, please register it using the `@keras.saving.register_keras_serializable()` decorator.
+        </div>
+        <br>
+        <br>
+        This problem can be solved by declaring the classes<br>
+        <div class="code">
+          transformer = load_model(<br>
+          &nbsp;checkpoint_filepath,<br>
+          &nbsp;custom_objects={<br>
+          &nbsp;&nbsp;"PositionalEmbedding": PositionalEmbedding,<br>
+          &nbsp;&nbsp;"TransformerEncoder": TransformerEncoder,<br>
+          &nbsp;&nbsp;"TransformerDecoder": TransformerDecoder,<br>
+          &nbsp;}<br>
+          )
+        </div>
+
+        "save and load keras transformer model"<br>
+        <a href="https://stackoverflow.com/questions/78396871/save-and-load-keras-transformer-model">
+          https://stackoverflow.com/questions/78396871/save-and-load-keras-transformer-model
+        </a><br>
+
+
+        <a href=""> </a><br>
+      </div>
+
+
+
+      <div class=" card">
+        <h2>April 15, 2026</h2>
+
+        This combination works for saving and loading a transformer.<br>
+        <br>
+
+
+
+
+        <a href=""> </a><br>
+        <a href=""> </a><br>
+        <a href=""> </a><br>
+      </div>
 
       <div class=" card">
         <h2></h2>
