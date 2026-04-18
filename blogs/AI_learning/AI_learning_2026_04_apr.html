@@ -439,12 +439,20 @@
 
 
       <div class=" card">
-        <h2>April 15, 2026</h2>
+        <h2>April 17, 2026</h2>
 
-        This combination works for saving and loading a transformer.<br>
+        When loading the transformer that was trained with English-Spanish language data, it is necesseray to provide
+        the vocabulary with which the transformer was trained to the code.<br>
         <br>
-
-
+        <br>
+        This can be done by using the same steps in the training for the original input data:<br>
+        <br>
+        - load into Pandas dataframe<br>
+        - strip punctuation characters<br>
+        - standardize<br>
+        - TextVectorization<br>
+        - adapt<br>
+         
 
 
         <a href=""> </a><br>
